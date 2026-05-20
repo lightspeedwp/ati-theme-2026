@@ -473,7 +473,7 @@
 					"shadow": "0 1px 2px rgba(35, 31, 32, 0.10)"
 				},
 				{
-					"name": "Card",
+					"name": "Base",
 					"slug": "300",
 					"shadow": "0 8px 24px rgba(35, 31, 32, 0.12)"
 				},
@@ -510,22 +510,35 @@
 					"dark": "var(--wp--preset--color--neutral-600)"
 				}
 			},
-			"border": {
-				"width": {
-					"thin": "1px",
-					"thick": "2px"
-				}
-			},
 			"typography": {
-				"font-weight": {
-					"regular": "400",
-					"medium": "500",
-					"semibold": "600",
-					"bold": "700"
-				},
-				"letter-spacing": {
-					"wide": "0.6px"
-				},
+                "letter-spacing": {
+                    "tighter": "-0.05em",
+                    "tight": "-0.025em",
+                    "normal": "0",
+                    "wide": "0.025em",
+                    "wider": "0.05em",
+                    "widest": "0.1em"
+                },
+                "font-weight": {
+                    "thin": "100",
+                    "extralight": "200",
+                    "light": "300",
+                    "normal": "400",
+                    "medium": "500",
+                    "semibold": "600",
+                    "bold": "700",
+                    "extrabold": "800",
+                    "black": "900"
+                }
+            },
+            "border": {
+                "width": {
+                    "thin": "1px",
+                    "thick": "2px",
+                    "heavy": "4px",
+                    "extra-heavy": "8px"
+                }
+            },
 				"line-height": {
 					"none": "1",
 					"tight": "1.1",
@@ -534,19 +547,11 @@
 					"relaxed": "1.625"
 				}
 			},
-			"layout": {
-				"content-size": "800px",
-				"wide-size": "1320px"
-			},
-			"spacing": {
-				"control": "15px"
-			},
 			"tour-operator": {
 				"meta-panel-gap": "0.5rem",
 				"meta-panel-padding-x": "0.75rem",
 				"meta-panel-padding-y": "0.5rem"
-			}
-		},
+			},
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
@@ -557,8 +562,8 @@
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--brand-serif)",
 			"fontSize": "var(--wp--preset--font-size--200)",
-			"fontWeight": "400",
-			"lineHeight": "var(--wp--custom--typography--line-height--normal)"
+			"fontWeight": "var:custom|typography|font-weight|normal",
+			"lineHeight": "var:custom|typography|line-height|normal"
 		},
 		"spacing": {
 			"blockGap": "var(--wp--preset--spacing--30)",
@@ -590,7 +595,7 @@
 				"typography": {
 					"fontFamily": "var:preset|font-family|brand-serif",
 					"fontSize": "var:preset|font-size|200",
-					"fontWeight": "400",
+					"fontWeight": "var:custom|typography|font-weight|normal",
 					"letterSpacing": "var:custom|typography|letter-spacing|wide",
 					"textTransform": "uppercase"
 				},
@@ -607,26 +612,26 @@
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|brand-serif",
-					"fontWeight": "600",
+					"fontWeight": "var:custom|typography|font-weight|semibold",
 					"lineHeight": "var:custom|typography|line-height|tight"
 				}
 			},
 			"h1": {
 				"typography": {
 					"fontSize": "var:preset|font-size|800",
-					"lineHeight": "64px"
+					"lineHeight": "var:custom|typography|line-height|tight"
 				}
 			},
 			"h2": {
 				"typography": {
 					"fontSize": "var:preset|font-size|600",
-					"lineHeight": "48px"
+					"lineHeight": "var:custom|typography|line-height|snug"
 				}
 			},
 			"h3": {
 				"typography": {
 					"fontSize": "var:preset|font-size|400",
-					"lineHeight": "32px"
+					"lineHeight": "var:custom|typography|line-height|snug"
 				}
 			},
 			"h4": {
@@ -667,7 +672,7 @@
 				"typography": {
 					"fontFamily": "var:preset|font-family|brand-serif",
 					"fontSize": "var:preset|font-size|200",
-					"lineHeight": "24px"
+					"lineHeight": "var:custom|typography|line-height|normal"
 				}
 			}
 		},
@@ -797,7 +802,7 @@
 						},
 						"typography": {
 							"fontFamily": "var:preset|font-family|brand-serif",
-							"fontWeight": "600"
+							"fontWeight": "var:custom|typography|font-weight|semibold"
 						}
 					}
 				}
@@ -841,7 +846,7 @@
 				"typography": {
 					"fontFamily": "var:preset|font-family|brand-serif",
 					"fontSize": "16px",
-					"fontWeight": "400",
+					"fontWeight": "var:custom|typography|font-weight|normal",
 					"letterSpacing": "var:custom|typography|letter-spacing|wide",
 					"textTransform": "uppercase"
 				}
@@ -877,7 +882,7 @@
 				"typography": {
 					"fontFamily": "var:preset|font-family|brand-serif",
 					"fontSize": "16px",
-					"fontWeight": "400",
+					"fontWeight": "var:custom|typography|font-weight|normal",
 					"letterSpacing": "var:custom|typography|letter-spacing|wide",
 					"textTransform": "uppercase"
 				}
