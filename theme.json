@@ -260,7 +260,7 @@
 						"max": "0.75rem",
 						"min": "0.7rem"
 					},
-					"name": "100",
+					"name": "Tiny",
 					"size": "0.75rem",
 					"slug": "100"
 				},
@@ -269,7 +269,7 @@
 						"max": "1rem",
 						"min": "0.85rem"
 					},
-					"name": "200",
+					"name": "Base",
 					"size": "1rem",
 					"slug": "200"
 				},
@@ -278,7 +278,7 @@
 						"max": "1.15rem",
 						"min": "1rem"
 					},
-					"name": "300",
+					"name": "Small",
 					"size": "1.15rem",
 					"slug": "300"
 				},
@@ -287,7 +287,7 @@
 						"max": "1.5rem",
 						"min": "1.25rem"
 					},
-					"name": "400",
+					"name": "Medium",
 					"size": "1.5rem",
 					"slug": "400"
 				},
@@ -296,7 +296,7 @@
 						"max": "2rem",
 						"min": "1.6rem"
 					},
-					"name": "500",
+					"name": "Large",
 					"size": "2rem",
 					"slug": "500"
 				},
@@ -305,7 +305,7 @@
 						"max": "2.5rem",
 						"min": "2.1rem"
 					},
-					"name": "600",
+					"name": "X-Large",
 					"size": "2.5rem",
 					"slug": "600"
 				},
@@ -314,7 +314,7 @@
 						"max": "3rem",
 						"min": "2.4rem"
 					},
-					"name": "700",
+					"name": "Huge",
 					"size": "3rem",
 					"slug": "700"
 				},
@@ -323,7 +323,7 @@
 						"max": "4rem",
 						"min": "3.1rem"
 					},
-					"name": "800",
+					"name": "Gigantic",
 					"size": "4rem",
 					"slug": "800"
 				},
@@ -332,7 +332,7 @@
 						"max": "5rem",
 						"min": "3.5rem"
 					},
-					"name": "900",
+					"name": "Display",
 					"size": "5rem",
 					"slug": "900"
 				}
@@ -365,8 +365,9 @@
 			"spacingSizes": [
 				{
 					"name": "XXS",
-					"size": "clamp(0.250rem, calc(0.227rem + 0.006vw), 0.313rem)",
-					"slug": "5"
+					"slug": "5",
+					"size": "clamp(0.250rem, calc(0.227rem + 0.006vw), 0.313rem)"
+
 				},
 				{
 					"name": "XS",
@@ -432,27 +433,27 @@
 			"radius": true,
 			"radiusSizes": [
 				{
-					"name": "100 - Tiny",
+					"name": "Tiny",
 					"slug": "100",
 					"size": "4px"
 				},
 				{
-					"name": "300 - Small",
+					"name": "Small",
 					"slug": "300",
 					"size": "8px"
 				},
 				{
-					"name": "500 - ATI control",
+					"name": "Medium",
 					"slug": "500",
 					"size": "15px"
 				},
 				{
-					"name": "700 - Large",
+					"name": "Large",
 					"slug": "700",
 					"size": "24px"
 				},
 				{
-					"name": "900 - Full",
+					"name": "Round",
 					"slug": "900",
 					"size": "9999px"
 				}
@@ -462,27 +463,27 @@
 			"defaultPresets": false,
 			"presets": [
 				{
-					"name": "100 - None",
+					"name": "None",
 					"slug": "100",
 					"shadow": "none"
 				},
 				{
-					"name": "200 - Subtle",
+					"name": "Subtle",
 					"slug": "200",
 					"shadow": "0 1px 2px rgba(35, 31, 32, 0.10)"
 				},
 				{
-					"name": "300 - Card",
+					"name": "Card",
 					"slug": "300",
 					"shadow": "0 8px 24px rgba(35, 31, 32, 0.12)"
 				},
 				{
-					"name": "500 - Lifted",
+					"name": "Lifted",
 					"slug": "500",
 					"shadow": "0 16px 40px rgba(35, 31, 32, 0.16)"
 				},
 				{
-					"name": "700 - Overlay",
+					"name": "Overlay",
 					"slug": "700",
 					"shadow": "0 24px 70px rgba(35, 31, 32, 0.20)"
 				}
@@ -511,8 +512,8 @@
 			},
 			"border": {
 				"width": {
-					"100": "1px",
-					"200": "2px"
+					"thin": "1px",
+					"thick": "2px"
 				}
 			},
 			"typography": {
