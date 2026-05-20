@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/wp/trunk/theme.json",
+	"version": 3,
+	"title": "Page Section Default",
+	"slug": "ati-page-section-default",
+	"blockTypes": [
+		"core/group"
+	],
+	"description": "Default styling for ATI page sections",
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|contrast"
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|60",
+				"bottom": "var:preset|spacing|60"
+			},
+			"margin": {
+				"top": "0",
+				"bottom": "0"
+			},
+			"blockGap": "var:preset|spacing|50"
+		}
+	}
+}

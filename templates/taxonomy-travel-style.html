@@ -1,0 +1,58 @@
+<!-- wp:template-part {"slug":"header-2","theme":"ati-theme-2026","area":"header"} /-->
+
+<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"is-style-default has-text-color has-link-color","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}},"backgroundColor":"primary-100","fontSize":"400","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-default has-text-color has-link-color has-primary-100-background-color has-background has-400-font-size"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
+    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"200","layout":{"type":"default"}} -->
+    <div class="wp-block-group alignwide is-style-default has-200-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"name":"Hero"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|30"}}},"backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-default has-primary-100-background-color has-background"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
+    <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
+    <div class="wp-block-group alignwide">
+        <!-- wp:query-title {"type":"archive","showPrefix":false,"align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"900"} /-->
+
+        <!-- wp:term-description /-->
+    </div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ati-page-section-default","backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
+<div
+    class="wp-block-group alignwide is-style-ati-page-section-default has-primary-100-background-color has-background">
+    <!-- wp:query {"queryId":27,"query":{"perPage":15,"pages":"3","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""}} -->
+    <div class="wp-block-query alignwide">
+        <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
+        <!-- wp:block {"ref":57619} /-->
+        <!-- /wp:post-template -->
+
+        <!-- wp:query-no-results -->
+        <!-- wp:paragraph {"align":"center","placeholder":"Add text or blocks that will display when the query returns no results."} -->
+        <p class="has-text-align-center">Unfortunately, there are no tours listed at the moment. Please check back soon
+            as we regularly update our offerings.</p>
+        <!-- /wp:paragraph -->
+        <!-- /wp:query-no-results -->
+
+        <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group alignwide"
+            style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
+            <!-- wp:query-pagination {"paginationArrow":"chevron","align":"wide","className":"is-style-default","layout":{"type":"flex","justifyContent":"space-between"}} -->
+            <!-- wp:query-pagination-previous {"label":"Previous"} /-->
+
+            <!-- wp:query-pagination-numbers {"midSize":1} /-->
+
+            <!-- wp:query-pagination-next {"label":"Next"} /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:query -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer-2","theme":"ati-theme-2026","area":"footer"} /-->

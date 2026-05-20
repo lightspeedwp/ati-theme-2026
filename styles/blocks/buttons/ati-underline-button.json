@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "ATI Underline",
+	"slug": "ati-underline-button",
+	"blockTypes": [
+		"core/button"
+	],
+	"description": "ATI underline text button",
+	"styles": {
+		"border": {
+			"width": "0",
+			"style": "none"
+		},
+		"color": {
+			"background": "transparent",
+			"text": "var:preset|color|base"
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|200",
+			"fontWeight": "600",
+			"letterSpacing": "1px"
+		},
+		"css": "&{padding: 0; text-decoration-line: underline; text-decoration-color: var(--wp--preset--color--cta-500); text-decoration-thickness: 2px; text-underline-offset: 5px; transition: color 200ms ease;} & svg{transition: transform 200ms ease; text-decoration: none;}"
+	}
+}

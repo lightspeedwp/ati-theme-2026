@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Card Button",
+	"slug": "card-button",
+	"blockTypes": [
+		"core/button"
+	],
+	"description": "ATI destination and archive card button",
+	"styles": {
+		"border": {
+			"radius": "var:preset|border-radius|500",
+			"width": "0",
+			"style": "none"
+		},
+		"color": {
+			"background": "var:preset|color|brand-500",
+			"text": "var:preset|color|contrast"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-serif",
+			"fontSize": "var:preset|font-size|300",
+			"fontWeight": "400",
+			"textTransform": "uppercase"
+		},
+		"spacing": {
+			"padding": {
+				"top": "12px",
+				"right": "var:preset|spacing|20",
+				"bottom": "12px",
+				"left": "var:preset|spacing|20"
+			}
+		},
+		"css": "&{box-shadow:none; text-decoration:none; transition:background-color 200ms ease,color 200ms ease;} &:hover{background-color:var(--wp--preset--color--accent-500); color:var(--wp--preset--color--base);} &:focus-visible{outline:2px solid var(--wp--preset--color--accent-500); outline-offset:2px;} & svg{transition:transform 200ms ease;} &:hover svg{transform:translateX(2px);}"
+	}
+}

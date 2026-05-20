@@ -1,0 +1,275 @@
+/*
+Theme Name: ATI Theme 2026
+Theme URI: https://github.com/lightspeedwp/ati-theme-2026
+Author: LightSpeed
+Author URI: https://lightspeedwp.agency/
+Description: Standalone Ollie-derived block theme for ATI Holidays, using the ATI 2026 token system and Tour Operator-compatible templates.
+Requires at least: 6.9
+Tested up to: 6.9
+Requires PHP: 7.3
+Version: 0.1.0
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: ati-theme-2026
+Tags: block-patterns, block-styles, full-site-editing, template-editing, translation-ready, wide-blocks
+*/
+
+/* ========================================================================== */
+
+/* Slider Buttons & Bars                                                      */
+
+/* ========================================================================== */
+
+/* Slider Buttons */
+
+/* Position arrows vertically centered */
+.lsx-to-slider .slick-arrow {
+	position: absolute !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	z-index: 2;
+}
+
+/* Left & right anchors */
+.lsx-to-slider .slick-prev {
+	left: -4rem !important;
+}
+
+.lsx-to-slider .slick-next {
+	right: -4rem !important;
+	transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* Remove default arrows */
+.lsx-to-slider .slick-arrow::before {
+	content: none !important;
+}
+
+/* Keep icon + sizing overrides */
+.lsx-to-slider .slick-prev,
+.lsx-to-slider .slick-next {
+	width: 54px !important;
+	height: 54px !important;
+	background: url('./assets/icons/slider-button-default.svg') no-repeat center/contain !important;
+	border: none !important;
+	margin: 0 !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-image 0.2s ease;
+}
+
+/* Hover + focus states */
+.lsx-to-slider .slick-prev:hover,
+.lsx-to-slider .slick-prev:focus-visible,
+.lsx-to-slider .slick-next:hover,
+.lsx-to-slider .slick-next:focus-visible {
+	background-image: url('./assets/icons/slider-button-hover.svg') !important;
+}
+
+/* Slider dots */
+.lsx-to-slider .slick-dots {
+	position: static !important;
+	left: auto !important;
+	right: auto !important;
+	transform: none !important;
+	width: max-content !important;
+	margin: var(--wp--preset--spacing--30) auto 0 !important;
+	padding: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: var(--wp--preset--spacing--20) !important;
+	list-style: none !important;
+}
+
+/* @media (min-width: 782px) {
+	.lsx-to-slider .slick-dots {
+		display: none !important;
+	}
+} */
+
+.lsx-to-slider .slick-dots li {
+	margin: 0 !important;
+	padding: 0 !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
+
+.lsx-to-slider .slick-dots li button::before {
+	content: none !important;
+}
+
+.lsx-to-slider .slick-dots li button {
+	width: 12px !important;
+	height: 12px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: block;
+	border: 0 !important;
+	border-radius: 999px !important;
+	background: var(--wp--preset--color--cta-500) !important;
+	cursor: pointer;
+	overflow: hidden;
+	text-indent: -9999px;
+	transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.lsx-to-slider .slick-dots li.slick-active button,
+.lsx-to-slider .slick-dots li button:hover,
+.lsx-to-slider .slick-dots li button:focus-visible {
+	width: 32px !important;
+	background: var(--wp--preset--color--primary-500) !important;
+}
+
+.lsx-to-slider .slick-dots li button:focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary-500);
+	outline-offset: 2px;
+}
+
+
+/* ========================================================================== */
+
+/* Expanding Header Search             										  */
+
+/* ========================================================================== */
+
+/* Expanding overlay input pattern */
+.is-style-header-search {
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+/* Style the button as an icon button */
+.is-style-header-search .wp-block-search__button {
+	height: 100%;
+	align-items: center;
+	display: flex;
+	box-sizing: border-box;
+	background: transparent;
+	color: currentColor;
+	transition: none;
+	border: none;
+}
+
+/* Remove any default hover background */
+.is-style-header-search .wp-block-search__button:hover,
+.is-style-header-search .wp-block-search__button:focus-visible {
+	background: transparent;
+	color: currentColor;
+	outline: none;
+}
+
+/* Icon size */
+.is-style-header-search .search-icon {
+	width: 32px;
+	height: 32px;
+	display: block;
+	transform: scaleX(-1);
+}
+
+/* Collapsed state */
+.is-style-header-search .wp-block-search__input {
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	min-width: 0;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: var(--wp--preset--border-radius--300);
+	transition:
+		width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+		opacity 0.2s,
+		padding 0.2s;
+	background: var(--wp--preset--color--base);
+	padding: 8px;
+	z-index: 25;
+	box-shadow: var(--wp--preset--shadow--200);
+}
+
+/* Expanded state */
+.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+	width: 600px;
+	min-width: 240px;
+	opacity: 1;
+	pointer-events: auto;
+	padding: 10px 20px;
+}
+
+/* Hidden state (for screen readers) */
+.is-style-header-search .wp-block-search__searchfield-hidden {
+	width: 0 !important;
+	min-width: 0 !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	padding: 8px 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+		width: 360px;
+	}
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 600px) {
+	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+		width: 260px;
+	}
+}
+
+/* ========================================================================== */
+
+/* Navigation                                        */
+
+/* ========================================================================== */
+
+/* === Footer Navigation: Base & Hover === */
+.is-style-footer-nav .wp-block-navigation__container {
+	color: var(--wp--preset--color--base);
+}
+
+/* Footer navigation block: font-weight 500, contrast color, brand-dark hover */
+.is-style-footer-nav .wp-block-navigation__container,
+.footer-nav .wp-block-navigation-item__content {
+	font-weight: 500;
+	color: var(--wp--preset--color--base);
+}
+
+.is-style-footer-nav .wp-block-navigation-item__content:hover,
+.is-style-footer-nav .wp-block-navigation-item__content:focus-visible {
+	color: var(--wp--preset--color--primary-500);
+	text-decoration: none;
+}
+
+/* === Header Navigation: Base & Hover === */
+.is-style-header-nav .wp-block-navigation__container {
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Header navigation block: font-weight 500, contrast color, brand-dark hover */
+.is-style-header-nav .wp-block-navigation__container,
+.is-style-header-nav .wp-block-navigation-item__content {
+	font-weight: 600;
+	color: var(--wp--preset--color--contrast);
+}
+
+.is-style-header-nav .wp-block-navigation-item__content:hover,
+.is-style-header-nav .wp-block-navigation-item__content:focus-visible {
+	color: var(--wp--preset--color--cta-500);
+	text-decoration: none;
+}
+
+.is-style-header-nav .current-menu-item>.wp-block-navigation-item__content,
+.is-style-header-nav .current-menu-ancestor>.wp-block-navigation-item__content {
+	color: var(--wp--preset--color--primary-500);
+	text-decoration: none !important;
+	cursor: default;
+}

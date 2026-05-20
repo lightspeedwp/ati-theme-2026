@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "ATI Uppercase Bold",
+	"slug": "ati-uppercase-bold",
+	"blockTypes": [
+		"core/paragraph"
+	],
+	"description": "ATI Uppercase Bold Paragraph",
+	"styles": {
+		"typography": {
+			"fontWeight": "medium",
+			"textTransform": "uppercase",
+			"letterSpacing": "1px"
+		}
+	}
+}

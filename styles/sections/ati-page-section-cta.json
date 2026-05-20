@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/wp/trunk/theme.json",
+	"version": 3,
+	"title": "Page Section CTA",
+	"slug": "ati-page-section-cta",
+	"blockTypes": [
+		"core/group"
+	],
+	"description": "ATI CTA styling for page sections",
+	"styles": {
+		"color": {
+			"gradient": "linear-gradient(135deg, var(--wp--preset--color--primary-500) 0%, var(--wp--preset--color--cta-500) 100%)",
+			"text": "var:preset|color|base"
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|60",
+				"bottom": "var:preset|spacing|60"
+			},
+			"margin": {
+				"top": "0",
+				"bottom": "0"
+			},
+			"blockGap": "var:preset|spacing|50"
+		}
+	}
+}
