@@ -15,11 +15,13 @@ Follow the user's request and this file's guidance when working in `ati-theme-20
 - **Primary family** (`primary-500` = #232020): Use for primary actions, buttons, and main interactive elements.
 - **CTA family** (`cta-500` = #D54F00): Use for conversion actions, hover states, and secondary emphasis.
 - **Accent family** (`accent-500` = #AA653C): Use for additional visual emphasis and decorative accents (shares tone with CTA but distinct).
-- Do not reintroduce legacy colour aliases such as `primary`, `primary-accent`, `main`, `border-light`, or `border-dark`.
+- Do not reintroduce legacy colour aliases such as `primary`, `primary-accent`, `main`, `border-light`, or `border-dark` as presets.
 - Use `Forum, serif` through the `brand-serif` font-family preset.
-- Use numeric slugs for font sizes, spacing, shadows, and border radii.
+- Use numeric slugs for preset font sizes, spacing, shadows, and border radii.
 - `border-radius` preset `500` is the ATI 15px control radius.
 - Font sizes and spacing use fluid scaling with `clamp()` for responsive design.
+- Use semantic `settings.custom` tokens where available (`custom.color.*`, `custom.typography.*`, `custom.line-height`, `custom.border.width`, `custom.tour-operator.*`) rather than hard-coded values.
+- Treat `styles.elements` and `styles.blocks` in `theme.json` as canonical defaults for buttons, links, headings, paragraphs, and Tour Operator block styling.
 
 ## File ownership
 
