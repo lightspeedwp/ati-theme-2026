@@ -266,143 +266,149 @@
 					"slug": "mono"
 				}
 			],
-      "fontSizes": [
-        {
-					"fluid": {
-						"min": ".6rem",
-						"max": ".7rem"
-					},
-					"size": ".7rem",
-					"slug": "tiny",
-					"name": "Tiny"
-				},
-        {
-					"fluid": {
-						"min": ".825rem",
-						"max": ".95rem"
-					},
-					"size": ".95rem",
-					"slug": "x-small",
-					"name": "Extra Small"
-				},
-				{
-					"fluid": {
-						"min": ".9rem",
-						"max": "1.05rem"
-					},
-					"size": "1.05rem",
-					"slug": "small",
-					"name": "Small"
-				},
-				{
-					"fluid": {
-						"min": "1rem",
-						"max": "1.165rem"
-					},
-					"size": "1.165rem",
-					"slug": "base",
-					"name": "Base"
-				},
-				{
-					"fluid": {
-						"min": "1.2rem",
-						"max": "1.40rem"
-					},
-					"size": "1.40rem",
-					"slug": "medium",
-					"name": "Medium"
-				},
-        {
-					"fluid": {
-						"min": "1.4rem",
-						"max": "1.80rem"
-					},
-					"size": "1.80rem",
-					"slug": "large",
-					"name": "Large"
-				},
-				{
-					"fluid": {
-						"min": "1.5rem",
-						"max": "2.20rem"
-					},
-					"size": "2.20rem",
-					"slug": "x-large",
-					"name": "Extra Large"
-				},
-				{
-					"fluid": {
-						"min": "1.875rem",
-						"max": "2.9rem"
-					},
-					"size": "2.9rem",
-					"slug": "xx-large",
-					"name": "Extra Extra Large"
-				},
-				{
-					"fluid": {
-						"min": "2.25rem",
-						"max": "3.75rem"
-					},
-					"size": "3.75rem",
-					"slug": "huge",
-					"name": "Huge"
-				},
-        {
-					"fluid": {
-						"min": "2.5rem",
-						"max": "5rem"
-					},
-					"size": "4.5rem",
-					"slug": "gigantic",
-					"name": "Gigantic"
-				}
-      ]
+            "fontSizes": [
+                {
+                    "name": "Tiny",
+                    "slug": "100",
+                    "size": "0.75rem",
+                    "fluid": {
+                        "min": "0.688rem",
+                        "max": "0.75rem"
+                    }
+                },
+                {
+                    "name": "Base",
+                    "slug": "200",
+                    "size": "1rem",
+                    "fluid": {
+                        "min": "0.875rem",
+                        "max": "1rem"
+                    }
+                },
+                {
+                    "name": "Small",
+                    "slug": "300",
+                    "size": "1.25rem",
+                    "fluid": {
+                        "min": "1rem",
+                        "max": "1.25rem"
+                    }
+                },
+                {
+                    "name": "Medium",
+                    "slug": "400",
+                    "size": "1.5rem",
+                    "fluid": {
+                        "min": "1.25rem",
+                        "max": "1.5rem"
+                    }
+                },
+                {
+                    "name": "Large",
+                    "slug": "500",
+                    "size": "2rem",
+                    "fluid": {
+                        "min": "1.625rem",
+                        "max": "2rem"
+                    }
+                },
+                {
+                    "name": "X-Large",
+                    "slug": "600",
+                    "size": "2.5rem",
+                    "fluid": {
+                        "min": "2.125rem",
+                        "max": "2.5rem"
+                    }
+                },
+                {
+                    "name": "Huge",
+                    "slug": "700",
+                    "size": "3rem",
+                    "fluid": {
+                        "min": "2.375rem",
+                        "max": "3rem"
+                    }
+                },
+                {
+                    "name": "Gigantic",
+                    "slug": "800",
+                    "size": "3.75rem",
+                    "fluid": {
+                        "min": "2.625rem",
+                        "max": "3.75rem"
+                    }
+                },
+                {
+                    "name": "Colossal",
+                    "slug": "900",
+                    "size": "4.5rem",
+                    "fluid": {
+                        "min": "2.75rem",
+                        "max": "4.5rem"
+                    }
+                }
+            ]
 		},
     "spacing": {
 			"defaultSpacingSizes": false,
-			"spacingSizes": [
-        { 
-          "name": "Tiny",
-          "size": "clamp(.4rem, 1vw, .6rem)",
-          "slug": "tiny"
-        },
-				{
-					"name": "Small",
-					"size": "clamp(.5rem, 2.5vw, 1rem)",
-					"slug": "small"
-				},
-				{
-					"name": "Medium",
-					"size": "clamp(1.5rem, 4vw, 2rem)",
-					"slug": "medium"
-				},
-				{
-					"name": "Large",
-					"size": "clamp(2rem, 5vw, 3rem)",
-					"slug": "large"
-				},
-				{
-					"name": "Extra Large",
-					"size": "clamp(3rem, 7vw, 5rem)",
-					"slug": "x-large"
-				},
-				{
-					"name": "Extra Extra Large",
-					"size": "clamp(4rem, 9vw, 7rem)",
-					"slug": "xx-large"
-				},
-				{
-					"name": "Huge",
-					"size": "clamp(5rem, 12vw, 9rem)",
-					"slug": "xxx-large"
-				},
-				{
-					"name": "Gigantic",
-					"size": "clamp(6rem, 14vw, 13rem)",
-					"slug": "xxxx-large"
-				}
-			],
+            "spacingSizes": [
+                {
+                    "name": "XXS",
+                    "slug": "5",
+                    "size": "clamp(0.250rem, calc(0.227rem + 0.006vw), 0.312rem)"
+                },
+                {
+                    "name": "XS",
+                    "slug": "10",
+                    "size": "clamp(0.500rem, calc(0.454rem + 0.012vw), 0.625rem)"
+                },
+                {
+                    "name": "S",
+                    "slug": "20",
+                    "size": "clamp(0.875rem, calc(0.736rem + 0.036vw), 1.250rem)"
+                },
+                {
+                    "name": "M",
+                    "slug": "30",
+                    "size": "clamp(1.250rem, calc(1.018rem + 0.060vw), 1.875rem)"
+                },
+                {
+                    "name": "L",
+                    "slug": "40",
+                    "size": "clamp(1.625rem, calc(1.300rem + 0.083vw), 2.500rem)"
+                },
+                {
+                    "name": "XL",
+                    "slug": "50",
+                    "size": "clamp(2.062rem, calc(1.668rem + 0.101vw), 3.125rem)"
+                },
+                {
+                    "name": "XXL",
+                    "slug": "60",
+                    "size": "clamp(2.312rem, calc(1.779rem + 0.137vw), 3.750rem)"
+                },
+                {
+                    "name": "XXXL",
+                    "slug": "70",
+                    "size": "clamp(3.125rem, calc(2.875rem + 1.250vw), 4.375rem)"
+                },
+                {
+                    "name": "XXXXL",
+                    "slug": "80",
+                    "size": "clamp(4.000rem, calc(3.600rem + 2.000vw), 6.000rem)"
+                },
+                {
+                    "name": "Gigantic",
+                    "slug": "90",
+                    "size": "clamp(5.000rem, calc(4.555rem + 2.225vw), 7.225rem)"
+                },
+                {
+                    "name": "Colossal",
+                    "slug": "100",
+                    "size": "clamp(6.500rem, calc(6.150rem + 1.750vw), 8.250rem)"
+                }
+            ],
 			"units": [
 				"px",
 				"em",
@@ -431,7 +437,7 @@
 				{
 					"name": "medium",
 					"slug": "500",
-					"size": "15px"
+					"size": "16px"
 				},
 				{
 					"name": "large",
@@ -547,7 +553,7 @@
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--brand-serif)",
-			"fontSize": "var(--wp--preset--font-size--200)",
+			"fontSize": "var(--wp--preset--font-size--300)",
 			"fontWeight": "400",
 			"lineHeight": "var(--wp--custom--typography--line-height--normal)"
 		},
@@ -563,34 +569,29 @@
 		"elements": {
 			"button": {
 				"border": {
-					"radius": "var:preset|border-radius|500",
-					"width": "0"
-				},
-				"color": {
-					"background": "var:preset|color|primary-500",
-					"text": "var:preset|color|base"
-				},
-				"spacing": {
-					"padding": {
-						"top": "0.75rem",
-						"right": "1.25rem",
-						"bottom": "0.75rem",
-						"left": "1.25rem"
-					}
-				},
-				"typography": {
-					"fontFamily": "var:preset|font-family|brand-serif",
-					"fontSize": "var:preset|font-size|200",
-					"fontWeight": "400",
-					"letterSpacing": "var:custom|typography|letter-spacing|wide",
-					"textTransform": "uppercase"
-				},
-				":hover": {
-					"color": {
-						"background": "var:preset|color|cta-500",
-						"text": "var:preset|color|base"
-					}
-				}
+			"radius": "var:preset|border-radius|300",
+			"width": "1px",
+			"color": "var:preset|color|cta-500",
+			"style": "solid"
+		},
+		"color": {
+			"background": "var:preset|color|cta-500",
+			"text": "var:preset|color|base"
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|200",
+			"fontWeight": "600",
+			"letterSpacing": "1px"
+		},
+		"spacing": {
+			"padding": {
+				"left": "var:preset|spacing|30",
+				"right": "var:preset|spacing|30",
+				"top": "var:preset|spacing|20",
+				"bottom": "var:preset|spacing|20"
+			}
+		},
+		"css": "&{transition: background-color 200ms ease} &:hover{background-color: var(--wp--preset--color--cta-500); color: var(--wp--preset--color--base); border-color: var(--wp--preset--color--cta-500);} &:focus-visible{outline: 2px solid var(--wp--preset--color--cta-500); outline-offset: 2px;} &:active{background-color: var(--wp--preset--color--cta-500); color: var(--wp--preset--color--base); border-color: var(--wp--preset--color--cta-500);}"
 			},
 			"heading": {
 				"color": {
@@ -605,24 +606,25 @@
 			"h1": {
 				"typography": {
 					"fontSize": "var:preset|font-size|800",
-					"lineHeight": "64px"
+					"lineHeight": "var:custom|typography|line-height|snug"
 				}
 			},
 			"h2": {
 				"typography": {
 					"fontSize": "var:preset|font-size|600",
-					"lineHeight": "48px"
+					"lineHeight": "var:custom|typography|line-height|snug"
 				}
 			},
 			"h3": {
 				"typography": {
 					"fontSize": "var:preset|font-size|400",
-					"lineHeight": "32px"
+					"lineHeight": "var:custom|typography|line-height|snug"
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "var:preset|font-size|300"
+					"fontSize": "var:preset|font-size|300",
+					"lineHeight": "var:custom|typography|line-height|normal"
 				}
 			},
 			"h5": {
@@ -663,6 +665,39 @@
 			}
 		},
 		"blocks": {
+			"core/button": {
+		"border": {
+			"radius": "var:preset|border-radius|300",
+			"width": "2px",
+			"color": "var:preset|color|base",
+			"style": "solid"
+		},
+		"color": {
+			"background": "color-mix(in srgb, var(--wp--preset--color--contrast) 40%, transparent)",
+			"text": "var:preset|color|base"
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|200",
+			"fontWeight": "600",
+			"letterSpacing": "1px"
+		},
+		"spacing": {
+			"padding": {
+				"left": "calc(var(--wp--preset--spacing--30) - 2px)",
+				"right": "calc(var(--wp--preset--spacing--30) - 2px)",
+				"top": "calc(var(--wp--preset--spacing--20) - 2px)",
+				"bottom": "calc(var(--wp--preset--spacing--20) - 2px)"
+			}
+		},
+		"css": "&{transition: background-color 200ms ease; color: var(--wp--preset--color--base);} & svg{color: currentColor; fill: currentColor;} &:hover{background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 60%, transparent);}"
+			},
+			"core/template-part": {
+				"spacing": {
+					"margin": {
+						"top": "0"
+					}
+				}
+			},
 			"core/query-pagination": {
 				"spacing": {
 					"blockGap": "var(--wp--preset--spacing--30)"

@@ -45,26 +45,22 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	content: none !important;
 }
 
-/* Keep icon + sizing overrides */
+/* Icon overrides */
 .lsx-to-slider .slick-prev,
 .lsx-to-slider .slick-next {
-	width: 54px !important;
-	height: 54px !important;
-	background: url('./assets/icons/slider-button-default.svg') no-repeat center/contain !important;
 	border: none !important;
 	margin: 0 !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: background-image 0.2s ease;
 }
 
-/* Hover + focus states */
-.lsx-to-slider .slick-prev:hover,
-.lsx-to-slider .slick-prev:focus-visible,
-.lsx-to-slider .slick-next:hover,
-.lsx-to-slider .slick-next:focus-visible {
-	background-image: url('./assets/icons/slider-button-hover.svg') !important;
+.lsx-to-slider .slick-prev {
+	background: url('assets/icons/ati-slider-arrow-left.svg') no-repeat center/contain !important;
+}
+
+.lsx-to-slider .slick-next {
+	background: url('assets/icons/ati-slider-arrow-right.svg') no-repeat center/contain !important;
 }
 
 /* Slider dots */
@@ -108,9 +104,9 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	margin: 0 !important;
 	padding: 0 !important;
 	display: block;
-	border: 0 !important;
-	border-radius: 999px !important;
-	background: var(--wp--preset--color--cta-500) !important;
+	border: 1px solid var(--wp--preset--color--primary-500) !important;
+	border-radius: 1px !important;
+	background: var(--wp--preset--color--base) !important;
 	cursor: pointer;
 	overflow: hidden;
 	text-indent: -9999px;
@@ -120,7 +116,6 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 .lsx-to-slider .slick-dots li.slick-active button,
 .lsx-to-slider .slick-dots li button:hover,
 .lsx-to-slider .slick-dots li button:focus-visible {
-	width: 32px !important;
 	background: var(--wp--preset--color--primary-500) !important;
 }
 
@@ -239,37 +234,37 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 /* Footer navigation block: font-weight 500, contrast color, brand-dark hover */
 .is-style-footer-nav .wp-block-navigation__container,
 .footer-nav .wp-block-navigation-item__content {
-	font-weight: 500;
 	color: var(--wp--preset--color--base);
 }
 
 .is-style-footer-nav .wp-block-navigation-item__content:hover,
 .is-style-footer-nav .wp-block-navigation-item__content:focus-visible {
-	color: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--cta-500);
 	text-decoration: none;
 }
 
 /* === Header Navigation: Base & Hover === */
 .is-style-header-nav .wp-block-navigation__container {
-	color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
 }
 
-/* Header navigation block: font-weight 500, contrast color, brand-dark hover */
+/* Header navigation block */
 .is-style-header-nav .wp-block-navigation__container,
 .is-style-header-nav .wp-block-navigation-item__content {
 	font-weight: 600;
-	color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
 }
 
 .is-style-header-nav .wp-block-navigation-item__content:hover,
 .is-style-header-nav .wp-block-navigation-item__content:focus-visible {
-	color: var(--wp--preset--color--cta-500);
+	color: var(--wp--preset--color--brand-500);
 	text-decoration: none;
 }
 
 .is-style-header-nav .current-menu-item>.wp-block-navigation-item__content,
 .is-style-header-nav .current-menu-ancestor>.wp-block-navigation-item__content {
-	color: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--brand-500);
 	text-decoration: none !important;
 	cursor: default;
 }
+
