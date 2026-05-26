@@ -1,18 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
 	"version": 3,
-	"title": "Card Button",
-	"slug": "card-button",
+	"title": "Card Button Brand",
+	"slug": "card-button-brand",
 	"blockTypes": [
 		"core/button"
 	],
 	"description": "ATI destination and archive card button",
 	"styles": {
-		"border": {
-			"radius": "var:preset|border-radius|500",
-			"width": "0",
-			"style": "none"
-		},
 		"color": {
 			"background": "var:preset|color|brand-500",
 			"text": "var:preset|color|contrast"
@@ -25,9 +20,9 @@
 		},
 		"spacing": {
 			"padding": {
-				"top": "12px",
+				"top": "var:preset|spacing|10",
 				"right": "var:preset|spacing|20",
-				"bottom": "12px",
+				"bottom": "var:preset|spacing|10",
 				"left": "var:preset|spacing|20"
 			}
 		},

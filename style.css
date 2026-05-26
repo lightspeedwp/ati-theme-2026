@@ -32,12 +32,11 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 
 /* Left & right anchors */
 .lsx-to-slider .slick-prev {
-	left: -4rem !important;
+	left: -2rem !important;
 }
 
 .lsx-to-slider .slick-next {
-	right: -4rem !important;
-	transform: translateY(-50%) rotate(180deg) !important;
+	right: -2rem !important;
 }
 
 /* Remove default arrows */
@@ -70,7 +69,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	right: auto !important;
 	transform: none !important;
 	width: max-content !important;
-	margin: var(--wp--preset--spacing--30) auto 0 !important;
+	margin: var(--wp--preset--spacing--20) auto 0 !important;
 	padding: 0 !important;
 	display: flex !important;
 	align-items: center !important;
@@ -99,17 +98,16 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 }
 
 .lsx-to-slider .slick-dots li button {
-	width: 12px !important;
-	height: 12px !important;
+	width: 24px !important;
+	height: 8px !important;
 	margin: 0 !important;
 	padding: 0 !important;
+	border: none !important;
 	display: block;
-	border: 1px solid var(--wp--preset--color--primary-500) !important;
 	border-radius: 1px !important;
-	background: var(--wp--preset--color--base) !important;
+	background: var(--wp--preset--color--brand-500) !important;
 	cursor: pointer;
 	overflow: hidden;
-	text-indent: -9999px;
 	transition: width 0.2s ease, background-color 0.2s ease;
 }
 
