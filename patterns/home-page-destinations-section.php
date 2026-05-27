@@ -54,10 +54,10 @@ $destinations = array(
 );
 ?>
 <!-- wp:group {"tagName":"section","metadata":{"name":"Home Page Destinations Section"},"align":"wide","className":"ati-home-page-destinations-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-<section class="wp-block-group alignwide ati-home-page-destinations-section" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:html -->
-<div class="ati-home-page-destinations-section__viewport" style="width:100%">
-	<div class="image destination-map" style="margin-inline:auto;max-width:520px;width:100%;text-align:center">
-		<img width="520" height="478" decoding="async" loading="eager" class="disable-lazyload" name="map-destinations" src="<?php echo $map_image_url; ?>" id="map-destinations" usemap="#m-map-destinations" style="display:block;height:auto;width:100%" alt="<?php esc_attr_e( 'ATI Holidays destinations map', 'ati-theme-2026' ); ?>">
+<section class="wp-block-group alignwide ati-home-page-destinations-section" style="background:transparent;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:html -->
+<div class="ati-home-page-destinations-section__viewport" style="background:transparent;width:100%">
+	<div class="image destination-map" style="background:transparent;margin-inline:auto;max-width:520px;width:100%;text-align:center">
+		<img width="520" height="478" decoding="async" loading="eager" class="disable-lazyload" name="map-destinations" src="<?php echo $map_image_url; ?>" id="map-destinations" usemap="#m-map-destinations" style="background:transparent;display:block;height:auto;width:100%" alt="<?php esc_attr_e( 'ATI Holidays destinations map', 'ati-theme-2026' ); ?>">
 		<map name="m-map-destinations" id="m-map-destinations">
 			<?php foreach ( $destinations as $destination ) : ?>
 				<area shape="poly" name="<?php echo esc_attr( $destination['name'] ); ?>" href="<?php echo esc_url( home_url( $destination['path'] ) ); ?>" coords="<?php echo esc_attr( $destination['coords'] ); ?>" alt="<?php echo esc_attr( $destination['label'] ); ?>" aria-label="<?php echo esc_attr( $destination['label'] ); ?>">

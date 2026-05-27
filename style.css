@@ -229,7 +229,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	color: var(--wp--preset--color--base);
 }
 
-/* Footer navigation block: font-weight 500, contrast color, brand-dark hover */
+/* Footer navigation block */
 .is-style-footer-nav .wp-block-navigation__container,
 .footer-nav .wp-block-navigation-item__content {
 	color: var(--wp--preset--color--base);
@@ -249,7 +249,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 /* Header navigation block */
 .is-style-header-nav .wp-block-navigation__container,
 .is-style-header-nav .wp-block-navigation-item__content {
-	font-weight: 600;
+	font-weight: 300;
 	color: var(--wp--preset--color--base);
 }
 
