@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/wp/trunk/theme.json",
+	"version": 3,
+	"title": "ATI Subheading",
+	"slug": "ati-subheading",
+	"blockTypes": [
+		"core/paragraph"
+	],
+	"description": "ATI paragraph subheading with centred divider",
+	"styles": {
+		"color": {
+			"text": "var:preset|color|neutral-500"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|heading",
+			"fontSize": "var:preset|font-size|500",
+			"fontWeight": "var:custom|typography|font-weight|light",
+			"lineHeight": "var:custom|typography|line-height|snug",
+            "letterSpacing": "var:custom|typography|letter-spacing|wide"
+		},
+		"spacing": {
+			"padding": {
+				"bottom": "var:preset|spacing|30"
+			}
+		},
+		"css": "&{text-align:center;} &::after{content:''; display:block; inline-size:var(--wp--preset--spacing--80); block-size:var(--wp--custom--border--width--thick); margin-block-start:var(--wp--preset--spacing--20); margin-inline:auto; background-color:var(--wp--preset--color--neutral-300)}"
+	}
+}

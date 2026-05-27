@@ -567,7 +567,7 @@
         "typography": {
           "fontSize": "var:preset|font-size|300",
 		  "fontWeight": "var(--wp--custom--typography--font-weight--light)",
-          "letterSpacing": "1px",
+          "letterSpacing": "var:custom|typography|letter-spacing|wide",
           "textTransform": "uppercase"
         },
         "spacing": {
@@ -669,7 +669,8 @@
             "typography": {
               "fontSize": "var:preset|font-size|200",
               "fontWeight": "var:custom|typography|font-weight|normal",
-              "letterSpacing": "1px"
+              "letterSpacing": "var:custom|typography|letter-spacing|wide",
+              "textTransform": "uppercase"
             },
             "spacing": {
               "padding": {

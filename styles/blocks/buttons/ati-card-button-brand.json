@@ -15,7 +15,8 @@
 		"typography": {
 			"fontFamily": "var:preset|font-family|brand-serif",
 			"fontSize": "var:preset|font-size|300",
-			"fontWeight": "400",
+			"fontWeight": "200",
+			"letterSpacing": "var:custom|typography|letter-spacing|wide",
 			"textTransform": "uppercase"
 		},
 		"spacing": {
