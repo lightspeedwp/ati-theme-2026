@@ -571,8 +571,8 @@
         },
         "spacing": {
           "padding": {
-            "left": "var:preset|spacing|30",
-            "right": "var:preset|spacing|30",
+            "left": "var:preset|spacing|40",
+            "right": "var:preset|spacing|40",
             "top": "var:preset|spacing|20",
             "bottom": "var:preset|spacing|20"
           }
@@ -657,8 +657,7 @@
         "variations": {
           "outline": {
             "border": {
-              "radius": "var:preset|border-radius|300",
-              "width": "2px",
+              "width": "1px",
               "color": "var:preset|color|base",
               "style": "solid"
             },
@@ -668,15 +667,15 @@
             },
             "typography": {
               "fontSize": "var:preset|font-size|200",
-              "fontWeight": "600",
+              "fontWeight": "var:custom|typography|font-weight|normal",
               "letterSpacing": "1px"
             },
             "spacing": {
               "padding": {
-                "left": "calc(var(--wp--preset--spacing--30) - 2px)",
-                "right": "calc(var(--wp--preset--spacing--30) - 2px)",
-                "top": "calc(var(--wp--preset--spacing--20) - 2px)",
-                "bottom": "calc(var(--wp--preset--spacing--20) - 2px)"
+                "left": "var(--wp--preset--spacing--40)",
+                "right": "var(--wp--preset--spacing--40)",
+                "top": "var(--wp--preset--spacing--20)",
+                "bottom": "var(--wp--preset--spacing--20)"
               }
             },
             "css": "&{transition: background-color 200ms ease; color: var(--wp--preset--color--base);} & svg{color: currentColor; fill: currentColor;} &:hover{background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 60%, transparent);}"
