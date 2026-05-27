@@ -14,8 +14,8 @@
 		},
 		"spacing": {
 			"padding": {
-				"top": "var:preset|spacing|70",
-				"bottom": "var:preset|spacing|70"
+				"top": "var:preset|spacing|90",
+				"bottom": "var:preset|spacing|90"
 			},
 			"margin": {
 				"top": "0",
