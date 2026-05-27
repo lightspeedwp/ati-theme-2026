@@ -2,7 +2,7 @@
 /**
  * Title: Tour Card - Brand
  * Slug: ati-tour-card-brand
- * Inserter: yes
+ * Inserter: no
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Tour Card - Brand","categories":["lsx-tour-operator"]},"className":"overflow-hidden","style":{"spacing":{"blockGap":"var:preset|spacing|20"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary-500","textColor":"base","layout":{"type":"default"},"ariaLabel":"Tour Card"} -->

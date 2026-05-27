@@ -33,11 +33,25 @@ $theme->get( 'Version' )
 );
 
 $faq_script = get_theme_file_path( 'assets/js/faq-accordion.js' );
+$responsive_image_map_script = get_theme_file_path( 'assets/js/responsive-image-maps.js' );
 
 if ( file_exists( $faq_script ) ) {
 wp_enqueue_script(
 'ati-theme-2026-faq-accordion',
 get_theme_file_uri( 'assets/js/faq-accordion.js' ),
+array(),
+$theme->get( 'Version' ),
+array(
+'strategy'  => 'defer',
+'in_footer' => true,
+)
+);
+}
+
+if ( file_exists( $responsive_image_map_script ) ) {
+wp_enqueue_script(
+'ati-theme-2026-responsive-image-maps',
+get_theme_file_uri( 'assets/js/responsive-image-maps.js' ),
 array(),
 $theme->get( 'Version' ),
 array(

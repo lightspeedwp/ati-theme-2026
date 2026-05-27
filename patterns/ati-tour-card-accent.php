@@ -2,7 +2,7 @@
 /**
  * Title: Tour Card - Accent
  * Slug: ati-tour-card-accent
- * Inserter: yes
+ * Inserter: no
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Tour Card - Accent","categories":["lsx-tour-operator"]},"className":"overflow-hidden","style":{"spacing":{"blockGap":"var:preset|spacing|20"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"backgroundColor":"base","textColor":"contrast","layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
