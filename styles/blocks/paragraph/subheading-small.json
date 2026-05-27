@@ -1,16 +1,16 @@
 {
 	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
 	"version": 3,
-	"title": "GA Subheading Small",
-	"slug": "ga-subheading-small",
+	"title": "Subheading Small",
+	"slug": "subheading-small",
 	"blockTypes": [
 		"core/paragraph"
 	],
-	"description": "GoAfrica Subheading Small Paragraph",
+	"description": "ATI Subheading Small Paragraph",
 	"styles": {
 		"typography": {
-            "fontSize": "var(--wp--preset--font-size--small)",
-            "fontWeight": "500"
+            "fontSize": "var(--wp--preset--font-size--300)",
+            "lineHeight": "var(--wp--custom--typography--line-height--normal)"
         } 
 	}
 }
