@@ -543,7 +543,7 @@
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--heading)",
       "fontSize": "var(--wp--preset--font-size--300)",
-      "fontWeight": "var(--wp--custom--typography--font-weight--normal)",
+      "fontWeight": "var(--wp--custom--typography--font-weight--light)",
       "lineHeight": "var(--wp--custom--typography--line-height--normal)"
     },
     "spacing": {
