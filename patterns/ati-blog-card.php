@@ -1,7 +1,8 @@
 <?php
 /**
- * Title: GA Blog Card
+ * Title: ATI Blog Card
  * Slug: ati-blog-card
+ * Theme: ati-theme-2026
  * Inserter: yes
  */
 ?>

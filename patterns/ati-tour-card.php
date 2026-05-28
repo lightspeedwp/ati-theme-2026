@@ -2,9 +2,11 @@
 /**
  * Title: Tour Card
  * Slug: ati-tour-card
+ * Theme: ati-theme-2026
  * Inserter: yes
  */
 ?>
+
 <!-- wp:group {"metadata":{"name":"Tour Card"},"className":"overflow-hidden is-style-default","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
 <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-default"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
 

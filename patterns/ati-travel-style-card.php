@@ -2,9 +2,11 @@
 /**
  * Title: Travel Style Card
  * Slug: ati-travel-style-card
+ * Theme: ati-theme-2026
  * Inserter: yes
  */
 ?>
+
 <!-- wp:cover {"url":"/wp-content/uploads/2026/04/Onze-Safari-Auto.webp","id":1448,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 30%,rgb(0,0,0) 70%)","contentPosition":"bottom center","sizeSlug":"full","className":"is-style-ati-travel-style-card","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"0"},"dimensions":{"aspectRatio":"1/1"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover has-custom-content-position is-position-bottom-center is-style-ati-travel-style-card" style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300)"><img class="wp-block-cover__image-background wp-image-1448 size-full" alt="" src="/wp-content/uploads/2026/04/Onze-Safari-Auto.webp" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient" style="background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgb(0,0,0) 70%)"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"textColor":"base","fontSize":"400"} -->

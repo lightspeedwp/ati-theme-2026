@@ -2,9 +2,11 @@
 /**
  * Title: ATI Destination Card
  * Slug: ati-destination-card
+ * Theme: ati-theme-2026
  * Inserter: yes
  */
 ?>
+
 <!-- wp:group {"tagName":"article","metadata":{"name":"Destination Card","categories":["lsx-tour-operator"]},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Destination Card"} -->
 <article aria-label="Destination Card" class="wp-block-group"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
 

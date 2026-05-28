@@ -1,7 +1,8 @@
 <?php
 /**
- * Title: GA Accommodation Card
+ * Title: ATI Accommodation Card
  * Slug: ati-accommodation-card
+ * Theme: ati-theme-2026
  * Inserter: yes
  */
 ?>
