@@ -27,37 +27,16 @@
         },
         ":hover": {
           "color": {
-            "text": "var:preset|color|cta-500"
+            "text": "var:preset|color|brand-500"
           }
         }
       },
-      "button": {
-        "color": {
-			"background": "var:preset|color|brand-500",
-			"text": "var:preset|color|contrast"
-		},
-		"typography": {
-			"fontFamily": "var:preset|font-family|brand-serif",
-			"fontSize": "var:preset|font-size|300",
-			"fontWeight": "400",
-			"textTransform": "uppercase"
-		},
-		"spacing": {
-			"padding": {
-				"top": "var:preset|spacing|10",
-				"right": "var:preset|spacing|20",
-				"bottom": "var:preset|spacing|10",
-				"left": "var:preset|spacing|20"
-			}
-		},
-		"css": "&{box-shadow:none; text-decoration:none; transition:background-color 200ms ease,color 200ms ease;} &:hover{background-color:var(--wp--preset--color--accent-500); color:var(--wp--preset--color--base);} &:focus-visible{outline:2px solid var(--wp--preset--color--accent-500); outline-offset:2px;} & svg{transition:transform 200ms ease;} &:hover svg{transform:translateX(2px);}"
-      },
       "separator": {
         "color": {
-          "background": "var:preset|color|cta-500"
+          "background": "var:preset|color|brand-500"
         }
       }
     },
-    "css": "&{overflow:hidden;} & [aria-label=\"Tour details\"]{border-top-color:var(--wp--preset--color--cta-500);} & .wp-block-outermost-icon-block .icon-container{color:var(--wp--preset--color--cta-500);} & .wp-block-outermost-icon-block svg{fill:currentColor;} & .wp-block-button__link{background-color:var(--wp--preset--color--cta-500); color:var(--wp--preset--color--base);} & .wp-block-button__link:hover{background-color:var(--wp--preset--color--accent-500); color:var(--wp--preset--color--base);} & .wp-block-button__link:focus-visible{outline:2px solid var(--wp--preset--color--cta-500); outline-offset:2px;}"
+    "css": "&{overflow:hidden;} & [aria-label=\"Tour details\"]{border-top-color:var(--wp--preset--color--brand-500);} & .wp-block-outermost-icon-block .icon-container{color:var(--wp--preset--color--brand-500);} & .wp-block-outermost-icon-block svg{fill:currentColor;} & .wp-block-button__link{background-color:var(--wp--preset--color--brand-500); color:var(--wp--preset--color--base);} & .wp-block-button__link:hover{background-color:var(--wp--preset--color--accent-500); color:var(--wp--preset--color--base);} & .wp-block-button__link:focus-visible{outline:2px solid var(--wp--preset--color--brand-500); outline-offset:2px;}"
   }
 }
