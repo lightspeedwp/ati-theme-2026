@@ -27,6 +27,6 @@
 				"left": "var:preset|spacing|20"
 			}
 		},
-		"css": "&{text-decoration:none; transition:background-color 200ms ease,color 200ms ease;} &:hover{background-color:var(--wp--preset--color--brand-500); color:var(--wp--preset--color--contrast);} &:focus-visible{outline:2px solid var(--wp--preset--color--accent-500); outline-offset:2px;} & svg{transition:transform 200ms ease;} &:hover svg{transform:translateX(5px);}"
+		"css": "&{text-decoration:none; transition:background-color 200ms ease,color 200ms ease;} &:hover{background-color:var(--wp--preset--color--brand-500); color:var(--wp--preset--color--contrast);} &:focus-visible{outline:2px solid var(--wp--preset--color--accent-500); outline-offset:2px;} & svg{transition:transform 200ms ease-in;} &:hover svg{transform:translateX(5px);}"
 	}
 }
