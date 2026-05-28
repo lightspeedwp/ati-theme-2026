@@ -1,552 +1,140 @@
-<!-- wp:template-part {"slug":"header-2","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"is-style-default has-text-color has-link-color","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-default has-text-color has-link-color has-primary-100-background-color has-background"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"200","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide is-style-default has-200-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Archive Hero","patternName":"core/block/57326"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|30"}}},"backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-default has-primary-100-background-color has-background"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
-    <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left","contentSize":"900px"}} -->
-    <div class="wp-block-group alignwide">
-        <!-- wp:heading {"level":1,"align":"wide","className":"is-style-default","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"900"} -->
-        <h1 class="wp-block-heading alignwide is-style-default has-primary-500-color has-text-color has-link-color has-900-font-size"
-            style="font-style:normal;font-weight:500">Onze Bestemmingen</h1>
+<!-- wp:group {"metadata":{"name":"Archive Hero"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|70"}},"background":{"backgroundImage":{"url":"https://ati-holidays.lightspeedwp.dev/wp-content/uploads/2016/04/138-Etosha-Wildlife.jpg","id":19602,"source":"file","title":"138 Etosha Wildlife"},"backgroundSize":"cover","backgroundPosition":"50% 50%"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-default"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--70)">
+    <!-- wp:block {"ref":22500} /-->
+
+    <!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained","justifyContent":"center","contentSize":"900px"}} -->
+    <div class="wp-block-group alignwide"
+        style="min-height:0px;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--40)">
+        <!-- wp:heading {"level":1,"align":"wide","className":"is-style-shadow-text","style":{"typography":{"fontStyle":"normal","fontWeight":"500","textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"900"} -->
+        <h1
+            class="wp-block-heading has-text-align-center alignwide is-style-shadow-text has-base-color has-text-color has-link-color has-900-font-size">
+            Destinations</h1>
         <!-- /wp:heading -->
+    </div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
 
-        <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"neutral-700"} -->
-        <p class="has-neutral-700-color has-text-color has-link-color" style="font-style:normal;font-weight:500">Ontdek de
-            veelzijdigheid van Afrika. Van de uitgestrekte savannes in het oosten tot de bruisende steden in het zuiden
-            en de tropische eilanden in de Indische Oceaan. Wij bieden reizen aan naar de mooiste plekken van het
-            continent.</p>
+<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ati-page-section-default facetwp-template","backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+<div
+    class="wp-block-group alignwide is-style-ati-page-section-default facetwp-template has-neutral-100-background-color has-background">
+    <!-- wp:query {"queryId":55,"query":{"perPage":15,"pages":"3","offset":"0","postType":"destination","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":false} -->
+    <div class="wp-block-query alignwide parents-only">
+        <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"22rem"}} -->
+        <!-- wp:group {"tagName":"article","metadata":{"name":"Destination Card","patternName":"ati-destination-card"},"className":"is-style-tour-card-light","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Destination Card"} -->
+        <article aria-label="Destination Card" class="wp-block-group is-style-tour-card-light">
+            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
+
+            <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
+            <div class="wp-block-group"
+                style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20)">
+                <!-- wp:group {"metadata":{"name":"Destination Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+                <div class="wp-block-group center-vertically" style="min-height:0rem">
+                    <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|contrast"}}}}},"textColor":"contrast"} /-->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Destination Information"},"style":{"border":{"top":{"color":"var:preset|color|brand-500","width":"1px"},"bottom":{"width":"0px","style":"none"},"right":[],"left":[]},"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"},"ariaLabel":"Tour details"} -->
+                <div aria-label="Tour details" class="wp-block-group"
+                    style="border-top-color:var(--wp--preset--color--brand-500);border-top-width:1px;border-bottom-style:none;border-bottom-width:0px;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0)">
+                    <!-- wp:group {"metadata":{"name":"Travel Style Row"},"className":"lsx-travel-style-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                    <div class="wp-block-group lsx-travel-style-wrapper"
+                        style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                        <!-- wp:outermost/icon-block {"iconName":"","width":"20px","style":{"spacing":{"padding":{"top":"2px","bottom":"2px"}}}} -->
+                        <div class="wp-block-outermost-icon-block">
+                            <div class="icon-container"
+                                style="width:20px;padding-top:2px;padding-bottom:2px;transform:rotate(0deg) scaleX(1) scaleY(1)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z">
+                                    </path>
+                                </svg></div>
+                        </div>
+                        <!-- /wp:outermost/icon-block -->
+
+                        <!-- wp:post-terms {"term":"travel-style","prefix":"Travel Styles: ","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|cta-500"}}}}},"fontSize":"200"} /-->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Destination Text Content"},"layout":{"type":"default"}} -->
+                <div class="wp-block-group">
+                    <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":40,"className":"line-clamp-4","fontSize":"200"} /-->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:buttons -->
+            <div class="wp-block-buttons">
+                <!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"is-style-card-button button-full-width-false button-3d-false","style":{"border":{"radius":"0px"}}} -->
+                <div
+                    class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button button-full-width-false button-3d-false">
+                    <a class="wp-block-button__link has-primary-background-color has-background wp-element-button"
+                        href="#permalink" style="border-radius:0px;box-shadow:none">View more</a></div>
+                <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons -->
+        </article>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
+
+        <!-- wp:query-no-results -->
+        <!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","style":{"typography":{"textAlign":"center"}}} -->
+        <p class="has-text-align-center">Unfortunately, there are no destinations listed at the moment. Please check
+            back soon as we regularly update our offerings.</p>
         <!-- /wp:paragraph -->
+        <!-- /wp:query-no-results -->
+
+        <!-- wp:group {"metadata":{"name":"Pagination Desktop"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"layout":{"type":"constrained"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"medium":false,"small":true}}}}]}} -->
+        <div class="wp-block-group alignwide"
+            style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--30)">
+            <!-- wp:query-pagination {"paginationArrow":"chevron","align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+            <!-- wp:query-pagination-previous {"label":"Previous"} /-->
+
+            <!-- wp:query-pagination-numbers {"midSize":1} /-->
+
+            <!-- wp:query-pagination-next {"label":"Next"} /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"metadata":{"name":"Pagination Mobile"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}},"layout":{"type":"constrained"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"large":true,"medium":true}}}}]}} -->
+        <div class="wp-block-group alignwide"
+            style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
+            <!-- wp:query-pagination {"paginationArrow":"chevron","align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+            <!-- wp:query-pagination-previous {"label":"Previous"} /-->
+
+            <!-- wp:query-pagination-numbers {"midSize":0,"metadata":{"blockVisibility":false}} /-->
+
+            <!-- wp:query-pagination-next {"label":"Next"} /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:group -->
     </div>
-    <!-- /wp:group -->
+    <!-- /wp:query -->
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ati-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|50"},"blockGap":"0"}},"backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide is-style-ati-page-section-default has-primary-100-background-color has-background"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","style":{"color":{"background":"#00000000"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|50","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide is-style-default has-background"
-        style="background-color:#00000000;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:var(--wp--preset--spacing--50)">
-        <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left","contentSize":"900px"}} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:heading {"align":"wide","className":"is-style-default","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"800"} -->
-            <h2 class="wp-block-heading alignwide is-style-default has-primary-500-color has-text-color has-link-color has-800-font-size"
-                style="font-style:normal;font-weight:500">Zuidelijk Afrika</h2>
-            <!-- /wp:heading -->
-
-            <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"neutral-700"} -->
-            <p class="has-neutral-700-color has-text-color has-link-color" style="font-style:normal;font-weight:500">Van
-                spectaculaire woestijnen tot de machtige Victoria watervallen. Zuidelijk Afrika biedt een rijke mix van
-                wildlife, cultuur en landschappen.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
-
-        <!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"22rem"},"animationType":"fadeInUp","animationDuration":0.5,"animateOnScroll":true,"scrollOffset":-70,"animationPresetId":"home-cards-2","animateSequentially":true} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:cover {"url":"http://localhost:8898/wp-content/uploads/2026/04/dawn-westveld-xPbprms3u6Q-unsplash-1024x682.jpg","id":1342,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/zuid-afrika/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-1342 size-large" alt=""
-                    src="http://localhost:8898/wp-content/uploads/2026/04/dawn-westveld-xPbprms3u6Q-unsplash-1024x682.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Zuid-Afrika</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">De wereld in één land. Safari, bergen, strand en
-                            bruisende steden.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"http://localhost:8898/wp-content/uploads/2026/04/joshua-kettle-1Ei6NaGZPiE-unsplash-768x1024.jpg","id":1419,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/namibie/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-1419 size-large" alt=""
-                    src="http://localhost:8898/wp-content/uploads/2026/04/joshua-kettle-1Ei6NaGZPiE-unsplash-768x1024.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Namibië</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Adembenemende landschappen, uitgestrekte woestijnen
-                            en
-                            wildlife.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"http://localhost:8898/wp-content/uploads/2026/04/birger-strahl-cusbuH6PdTM-unsplash-682x1024.jpg","id":1420,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/botswana/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-1420 size-large" alt=""
-                    src="http://localhost:8898/wp-content/uploads/2026/04/birger-strahl-cusbuH6PdTM-unsplash-682x1024.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Botswana</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Exclusieve safari's in de Okavango Delta en Chobe
-                            National Park.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"http://localhost:8898/wp-content/uploads/2026/04/teresa-o-QnJMYgi5VeE-unsplash-768x1024.jpg","id":1421,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/zimbabwe/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-1421 size-large" alt=""
-                    src="http://localhost:8898/wp-content/uploads/2026/04/teresa-o-QnJMYgi5VeE-unsplash-768x1024.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Zimbabwe</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Het land van de Victoria Watervallen en wildparken
-                            zoals Hwange.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"http://localhost:8898/wp-content/uploads/2026/04/birger-strahl-dBIOmT3vw1c-unsplash-684x1024.jpg","id":1422,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/zambia/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-1422 size-large" alt=""
-                    src="http://localhost:8898/wp-content/uploads/2026/04/birger-strahl-dBIOmT3vw1c-unsplash-684x1024.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Zambia</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">De bakermat van de wandelsafari. Ruig, authentiek
-                            en
-                            vol avontuur.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-        </div>
-        <!-- /wp:group -->
-    </div>
-    <!-- /wp:group -->
-
-    <!-- wp:group {"metadata":{"name":"Separator"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"background":"#00000000"}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide has-background"
-        style="background-color:#00000000;margin-top:0;margin-bottom:0">
-        <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","style":{"color":{"background":"#1e4a3a24"}}} -->
-        <hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-separator-thin"
-            style="background-color:#1e4a3a24;color:#1e4a3a24" />
-        <!-- /wp:separator -->
-    </div>
-    <!-- /wp:group -->
-
-    <!-- wp:group {"align":"wide","className":"is-style-default","style":{"color":{"background":"#00000000"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|50","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide is-style-default has-background"
-        style="background-color:#00000000;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
-        <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left","contentSize":"900px"}} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:heading {"align":"wide","className":"is-style-default","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"800"} -->
-            <h2 class="wp-block-heading alignwide is-style-default has-primary-500-color has-text-color has-link-color has-800-font-size"
-                style="font-style:normal;font-weight:500">Oost-Afrika</h2>
-            <!-- /wp:heading -->
-
-            <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"neutral-700"} -->
-            <p class="has-neutral-700-color has-text-color has-link-color" style="font-style:normal;font-weight:500">De
-                thuisbasis van de Grote Migratie, berggorilla's en het prachtige Malawimeer. Oost-Afrika is het
-                kloppende hart van de Afrikaanse safari.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
-
-        <!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"22rem"},"animationType":"fadeInUp","animationDuration":0.5,"animateOnScroll":true,"scrollOffset":-70,"animationPresetId":"home-cards-2","animateSequentially":true} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:cover {"url":"http://localhost:8898/wp-content/uploads/2026/04/bart-van-der-lugt-6kIBoPgi5q0-unsplash-576x1024.jpg","id":1417,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/tanzania/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-1417 size-large" alt=""
-                    src="http://localhost:8898/wp-content/uploads/2026/04/bart-van-der-lugt-6kIBoPgi5q0-unsplash-576x1024.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Tanzania</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Huis van de Serengeti, de Big Five en de tropische
-                            stranden van Zanzibar.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"/wp-content/uploads/sergey-pesterev-DWXR-nAbxCk-unsplash-1-1280x857.jpg","id":58479,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/kenia/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-58479 size-large" alt=""
-                    src="/wp-content/uploads/sergey-pesterev-DWXR-nAbxCk-unsplash-1-1280x857.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Kenya</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">De bakermat van de safari. Masai Mara, Amboseli en
-                            prachtige meren.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"/wp-content/uploads/k3n-Qa2ln5HC1uk-unsplash-960x1280.jpg","id":58466,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/oeganda/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-58466 size-large" alt=""
-                    src="/wp-content/uploads/k3n-Qa2ln5HC1uk-unsplash-960x1280.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Oeganda</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Ontmoet berggorilla's in het wild en ontdek de
-                            Parel van Afrika.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"/wp-content/uploads/omar-hakeem-2MEKm_xOHDY-unsplash-1280x719.jpg","id":58453,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/malawi/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-58453 size-large" alt=""
-                    src="/wp-content/uploads/omar-hakeem-2MEKm_xOHDY-unsplash-1280x719.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Malawi</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Het warme hart van Afrika met het prachtige
-                            Malawimeer.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-        </div>
-        <!-- /wp:group -->
-    </div>
-    <!-- /wp:group -->
-
-    <!-- wp:group {"metadata":{"name":"Separator"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"background":"#00000000"}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide has-background"
-        style="background-color:#00000000;margin-top:0;margin-bottom:0">
-        <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","style":{"color":{"background":"#1e4a3a24"}}} -->
-        <hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-separator-thin"
-            style="background-color:#1e4a3a24;color:#1e4a3a24" />
-        <!-- /wp:separator -->
-    </div>
-    <!-- /wp:group -->
-
-    <!-- wp:group {"align":"wide","className":"is-style-default","style":{"color":{"background":"#00000000"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"0"},"blockGap":"var:preset|spacing|50","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide is-style-default has-background"
-        style="background-color:#00000000;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:0">
-        <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left","contentSize":"900px"}} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:heading {"align":"wide","className":"is-style-default","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"800"} -->
-            <h2 class="wp-block-heading alignwide is-style-default has-primary-500-color has-text-color has-link-color has-800-font-size"
-                style="font-style:normal;font-weight:500">Indische Oceaan Eilanden</h2>
-            <!-- /wp:heading -->
-
-            <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"neutral-700"} -->
-            <p class="has-neutral-700-color has-text-color has-link-color" style="font-style:normal;font-weight:500">
-                Tropische paradijzen met witte zandstranden, kristalhelder water en unieke biodiversiteit. Perfecte
-                bestemmingen voor een strandvakantie na uw safari.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
-
-        <!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"22rem"},"animationType":"fadeInUp","animationDuration":0.5,"animateOnScroll":true,"scrollOffset":-70,"animationPresetId":"home-cards-2","animateSequentially":true} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:cover {"url":"/wp-content/uploads/graphic-node-yPSbirjJWzs-unsplash-1-1280x854.jpg","id":58440,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/mauritius/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-58440 size-large" alt=""
-                    src="/wp-content/uploads/graphic-node-yPSbirjJWzs-unsplash-1-1280x854.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Mauritius</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Tropisch paradijs met witte zandstranden.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-
-            <!-- wp:cover {"url":"/wp-content/uploads/dan-dy-WwUnM9iLWwM-unsplash-1280x960.jpg","id":58430,"isUserOverlayColor":true,"customGradient":"linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)","contentPosition":"bottom left","sizeSlug":"large","metadata":{"patternName":"ati-theme-2026/ati-destination-home","name":"Destination Home card"},"className":"is-style-ati-cover-hover-zoom","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"dimensions":{"aspectRatio":"3/4"}},"layout":{"type":"constrained"},"href":"/destination/madagaskar/","linkDestination":"custom"} -->
-            <div class="wp-block-cover has-custom-content-position is-position-bottom-left is-style-ati-cover-hover-zoom"
-                style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-                <img class="wp-block-cover__image-background wp-image-58430 size-large" alt=""
-                    src="/wp-content/uploads/dan-dy-WwUnM9iLWwM-unsplash-1280x960.jpg"
-                    data-object-fit="cover" /><span aria-hidden="true"
-                    class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
-                    style="background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgb(0,0,0) 100%)"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:heading {"level":3,"className":"has-text-align-left is-style-shadow-text","style":{"typography":{"textAlign":"left","fontStyle":"normal","fontWeight":"500"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"fontSize":"600"} -->
-                        <h3 class="wp-block-heading has-text-align-left is-style-shadow-text has-600-font-size"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;font-style:normal;font-weight:500">
-                            Madagaskar</h3>
-                        <!-- /wp:heading -->
-
-                        <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-                        <p style="font-style:normal;font-weight:400">Een unieke wereld vol lemurenen bijzondere
-                            landschappen.</p>
-                        <!-- /wp:paragraph -->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:buttons -->
-                    <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"is-style-ati-underline-button","icon":"arrow-right"} -->
-                        <div class="wp-block-button is-style-ati-underline-button"><a
-                                class="wp-block-button__link wp-element-button">Bekijk rondreizen</a></div>
-                        <!-- /wp:button -->
-                    </div>
-                    <!-- /wp:buttons -->
-                </div>
-            </div>
-            <!-- /wp:cover -->
-        </div>
-        <!-- /wp:group -->
-    </div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"metadata":{"name":"Separator"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide has-primary-100-background-color has-background"
-    style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","style":{"color":{"background":"#1e4a3a24"}}} -->
-    <hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-separator-thin"
-        style="background-color:#1e4a3a24;color:#1e4a3a24" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Google Map"},"align":"full","className":"lsx-location-wrapper is-style-ati-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
-<section
-    class="wp-block-group alignfull lsx-location-wrapper is-style-ati-page-section-default has-primary-100-background-color has-background"
+<!-- wp:group {"tagName":"section","metadata":{"name":"Google Map"},"align":"full","className":"lsx-location-wrapper is-style-ati-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull lsx-location-wrapper is-style-ati-page-section-default"
     style="margin-top:0;margin-bottom:0">
     <!-- wp:group {"metadata":{"name":"Map Container"},"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
     <div class="wp-block-group alignfull" style="margin-top:0;margin-bottom:0">
         <!-- wp:cover {"url":"/wp-content/plugins/tour-operator/assets/img/blocks/placeholder-map-1920x656.jpg","dimRatio":50,"customOverlayColor":"#e2f0f7","isUserOverlayColor":false,"isDark":false,"className":"lsx-map-preview","layout":{"type":"constrained"}} -->
-        <div class="wp-block-cover is-light lsx-map-preview"><img class="wp-block-cover__image-background" alt=""
-                src="/wp-content/plugins/tour-operator/assets/img/blocks/placeholder-map-1920x656.jpg"
+        <div class="wp-block-cover alignfull is-light lsx-map-preview"><img class="wp-block-cover__image-background"
+                alt="" src="/wp-content/plugins/tour-operator/assets/img/blocks/placeholder-map-1920x656.jpg"
                 data-object-fit="cover" /><span aria-hidden="true" class="wp-block-cover__background has-background-dim"
                 style="background-color:#e2f0f7"></span>
             <div class="wp-block-cover__inner-container">
-                <!-- wp:paragraph {"align":"center","className":"has-text-align-center has-600-font-size","fontSize":"600"} -->
+                <!-- wp:paragraph {"className":"has-text-align-center has-600-font-size","style":{"typography":{"textAlign":"center"}},"fontSize":"600"} -->
                 <p class="has-text-align-center has-600-font-size"><a href="#">Click here to display the map</a></p>
                 <!-- /wp:paragraph -->
             </div>
@@ -561,4 +149,4 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer-2","theme":"ati-theme-2026","area":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"ati-theme-2026","area":"footer"} /-->

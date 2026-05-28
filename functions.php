@@ -181,3 +181,4 @@ $block_content,
 return $block_content;
 }
 add_filter( 'render_block', 'ati_theme_2026_render_rating_stars', 35, 2 );
+
