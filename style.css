@@ -276,7 +276,10 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
    overrides (background, padding, border-radius from block supports) win via
    inline styles added by get_block_wrapper_attributes(). */
 .wp-block-ati-team-contact-card {
-	padding: var(--wp--preset--spacing--30);
+	padding-top: var(--wp--preset--spacing--30);
+	padding-bottom: 0px;
+	padding-left: var(--wp--preset--spacing--30);
+	padding-right: var(--wp--preset--spacing--30);
 }
 
 /* Apply the default background only when the editor hasn't set one. */
