@@ -62,7 +62,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 $thumb_html = '';
 if ( $thumbnail ) {
 	$thumb_html = sprintf(
-		'<div class="lsx-to-contact-thumb"><a href="%s">%s</a></div>',
+		'<div class="lsx-to-contact-thumb"><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></div>',
 		esc_url( $permalink ),
 		$thumbnail
 	);
@@ -71,7 +71,7 @@ if ( $thumbnail ) {
 $info_html = sprintf(
 	'<div class="lsx-to-contact-info">' .
 		'<small class="lsx-to-contact-prefix">%s</small>' .
-		'<h4 class="lsx-to-contact-name"><a href="%s">%s</a></h4>' .
+		'<h4 class="lsx-to-contact-name"><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h4>' .
 	'</div>',
 	esc_html__( 'Your travel expert:', 'ati-theme-2026' ),
 	esc_url( $permalink ),
