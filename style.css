@@ -344,6 +344,6 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 }
 
 .lsx-to-contact-widget .lsx-to-contact-name a:hover {
-	color: var(--wp--preset--color--brand-800);
+	color: var(--wp--preset--color--brand-200);
 }
 
