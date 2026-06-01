@@ -266,3 +266,84 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	cursor: default;
 }
 
+/* ========================================================================== */
+
+/* Team Contact Card Pattern                                                  */
+
+/* ========================================================================== */
+
+/* Default visual appearance — kept on the block class so editor sidebar
+   overrides (background, padding, border-radius from block supports) win via
+   inline styles added by get_block_wrapper_attributes(). */
+.wp-block-ati-team-contact-card {
+	padding: var(--wp--preset--spacing--30);
+}
+
+/* Apply the default background only when the editor hasn't set one. */
+.wp-block-ati-team-contact-card:not(.has-background) {
+	background-color: var(--wp--preset--color--accent-500);
+}
+
+/* Layout — row flex matching the original's horizontal card layout. */
+.lsx-to-contact-widget {
+	overflow: visible;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--wp--preset--spacing--20);
+}
+
+/* Circular profile image — floats above the card's top edge via negative
+   margin-top.  */
+.lsx-to-contact-widget .lsx-to-contact-thumb {
+	--contact-img-size: clamp(100px, 20vw, 120px);
+	margin-top: calc(-1 * var(--wp--preset--spacing--60));
+	align-self: flex-start;
+	flex: 0 0 var(--contact-img-size);
+	width: var(--contact-img-size);
+	height: var(--contact-img-size);
+	border-radius: var(--wp--preset--border-radius--900);
+	overflow: hidden;
+}
+
+.lsx-to-contact-widget .lsx-to-contact-thumb a,
+.lsx-to-contact-widget .lsx-to-contact-thumb img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.lsx-to-contact-widget .lsx-to-contact-info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--10);
+}
+
+.lsx-to-contact-widget .lsx-to-contact-prefix {
+	display: block;
+	color: var(--wp--preset--color--base);
+	font-size: var(--wp--preset--font-size--200);
+	font-weight: var(--wp--custom--typography--font-weight--light);
+	letter-spacing: var(--wp--custom--typography--letter-spacing--wide);
+}
+
+.lsx-to-contact-widget .lsx-to-contact-name {
+	font-size: var(--wp--preset--font-size--400);
+	font-weight: var(--wp--custom--typography--font-weight--normal);
+	margin: 0;
+	color: var(--wp--preset--color--base);
+	letter-spacing: var(--wp--custom--typography--letter-spacing--wide);
+}
+
+.lsx-to-contact-widget .lsx-to-contact-name a,
+.lsx-to-contact-widget .lsx-to-contact-name a:visited {
+	color: var(--wp--preset--color--base);
+	text-decoration: none;
+}
+
+.lsx-to-contact-widget .lsx-to-contact-name a:hover {
+	color: var(--wp--preset--color--brand-300);
+}
+

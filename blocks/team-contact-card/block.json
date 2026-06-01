@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ati/team-contact-card",
+	"version": "1.0.0",
+	"title": "Team Contact Card",
+	"category": "theme",
+	"description": "Displays the team member connected to the current tour, accommodation, or destination.",
+	"icon": "id-alt",
+	"keywords": [ "team", "contact", "expert", "travel" ],
+	"textdomain": "ati-theme-2026",
+	"usesContext": [ "postId", "postType" ],
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"border": {
+			"radius": true
+		},
+		"__experimentalDefaultControls": {
+			"backgroundColor": true,
+			"padding": true
+		}
+	}
+}

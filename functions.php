@@ -182,3 +182,15 @@ return $block_content;
 }
 add_filter( 'render_block', 'ati_theme_2026_render_rating_stars', 35, 2 );
 
+/**
+ * Register custom theme blocks from their block.json manifests.
+ *
+ * Each subdirectory under /blocks/ contains a block.json (which declares the
+ * block to the editor, its supports, and its render file) so no inline
+ * render_callback is needed here.
+ */
+function ati_theme_2026_register_blocks() {
+	register_block_type( get_template_directory() . '/blocks/team-contact-card' );
+}
+add_action( 'init', 'ati_theme_2026_register_blocks' );
+
