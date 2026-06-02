@@ -1,100 +1,88 @@
-<!-- wp:template-part {"slug":"header-2","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"has-text-color has-link-color is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-text-color has-link-color is-style-default"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"200","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide is-style-default has-200-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Archive Hero","patternName":"core/block/57326"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Archive Hero"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|70"}},"background":{"backgroundImage":{"url":"https://ati-holidays.lightspeedwp.dev/wp-content/uploads/2023/02/Feb-14-Sossusvlei-058-scaled.jpg","id":19828,"source":"file","title":"Feb 14 Sossusvlei 058"},"backgroundSize":"cover","backgroundPosition":"50% 50%"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-default"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
-    <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left","contentSize":"900px"}} -->
-    <div class="wp-block-group alignwide">
-        <!-- wp:heading {"level":1,"align":"wide","className":"is-style-default","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|cta-500"}}}},"textColor":"cta-500","fontSize":"900"} -->
-        <h1 class="wp-block-heading alignwide is-style-default has-cta-500-color has-text-color has-link-color has-900-font-size"
-            style="font-style:normal;font-weight:500">Verhalen uit Afrika</h1>
-        <!-- /wp:heading -->
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--70)">
+    <!-- wp:block {"ref":22500} /-->
 
-        <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"neutral-700"} -->
-        <p class="has-neutral-700-color has-text-color has-link-color" style="font-style:normal;font-weight:500">Laat je
-            inspireren door onze reisverhalen, praktische tips en het laatste nieuws over onze bestemmingen. Bereid je
-            voor op jouw droomreis.</p>
-        <!-- /wp:paragraph -->
+    <!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained","justifyContent":"center","contentSize":"900px"}} -->
+    <div class="wp-block-group alignwide"
+        style="min-height:0px;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--40)">
+        <!-- wp:heading {"level":1,"align":"wide","className":"is-style-shadow-text","style":{"typography":{"fontStyle":"normal","fontWeight":"500","textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"800"} -->
+        <h1 class="wp-block-heading has-text-align-center alignwide is-style-shadow-text has-base-color has-text-color has-link-color has-800-font-size"
+            style="font-style:normal;font-weight:500">Welcome to the ATI Holidays Blog!</h1>
+        <!-- /wp:heading -->
     </div>
     <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","className":"is-style-ati-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group is-style-ati-page-section-default" style="margin-top:0;margin-bottom:0">
+<!-- wp:group {"tagName":"main","className":"is-style-ati-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+<main class="wp-block-group is-style-ati-page-section-default has-neutral-100-background-color has-background"
+    style="margin-top:0;margin-bottom:0">
     <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[],"perPage":15},"align":"wide","layout":{"type":"default"}} -->
     <div class="wp-block-query alignwide">
         <!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
-        <!-- wp:group {"metadata":{"name":"Blog Card","patternName":"ati-theme-2026/ati-blog-card"},"className":"overflow-hidden is-style-ati-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
-        <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-ati-tour-card"
-            style="border-radius:0.5rem">
-            <!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#f3ebef","isUserOverlayColor":false,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"}},"layout":{"type":"constrained"}} -->
-            <div class="wp-block-cover is-light has-custom-content-position is-position-top-left"><span
-                    aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"
-                    style="background-color:#f3ebef"></span>
-                <div class="wp-block-cover__inner-container">
-                    <!-- wp:post-terms {"term":"category","separator":"   ","className":"is-style-term-button ati-tour-card-badges","style":{"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}}} /-->
-                </div>
-            </div>
-            <!-- /wp:cover -->
+        <!-- wp:group {"metadata":{"name":"Blog Card","patternName":"ati-theme-2026/ati-blog-card"},"className":"overflow-hidden is-style-tour-card-light","style":{"spacing":{"blockGap":"0"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
+        <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-light"
+            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0">
+            <!-- wp:post-featured-image {"aspectRatio":"3/2"} /-->
 
-            <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
+            <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
             <div class="wp-block-group"
-                style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
-                <!-- wp:group {"metadata":{"name":"Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"},"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
-                <div class="wp-block-group center-vertically" style="min-height:0rem;padding-top:0;padding-bottom:0">
+                style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+                <!-- wp:group {"metadata":{"name":"Title"},"style":{"dimensions":{"minHeight":"0rem"},"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+                <div class="wp-block-group" style="min-height:0rem;padding-top:0;padding-bottom:0">
                     <!-- wp:post-title {"textAlign":"left","level":3,"isLink":true,"style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}},"color":{"text":"var:preset|color|contrast"}}},"typography":{"lineHeight":"1.25"}},"textColor":"contrast","fontSize":"400"} /-->
                 </div>
                 <!-- /wp:group -->
 
-                <!-- wp:group {"metadata":{"name":"Meta"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                <div class="wp-block-group">
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <!-- wp:group {"metadata":{"name":"Meta"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+                <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                     <div class="wp-block-group">
-                        <!-- wp:outermost/icon-block {"iconName":"","iconColor":"cta-500","iconColorValue":"#AA653C","width":"20px"} -->
-                        <div class="wp-block-outermost-icon-block">
-                            <div class="icon-container has-icon-color has-cta-500-color"
-                                style="color:#AA653C;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
-                                    viewBox="0 0 256 256">
-                                    <path
-                                        d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z">
-                                    </path>
-                                </svg></div>
-                        </div>
-                        <!-- /wp:outermost/icon-block -->
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group">
+                            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"accent-500","iconColorValue":"#AA653C","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container has-icon-color has-accent-500-color"
+                                    style="color:#AA653C;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
 
-                        <!-- wp:post-date {"datetime":"2026-04-23T10:45:14.464Z","format":"j M Y","fontSize":"100"} /-->
+                            <!-- wp:post-date {"datetime":"2026-04-23T10:45:14.464Z","format":"j M Y","fontSize":"100"} /-->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group">
+                            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"accent-500","iconColorValue":"#AA653C","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container has-icon-color has-accent-500-color"
+                                    style="color:#AA653C;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:post-time-to-read {"fontSize":"100"} /-->
+                        </div>
+                        <!-- /wp:group -->
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:outermost/icon-block {"iconName":"","iconColor":"cta-500","iconColorValue":"#AA653C","width":"20px"} -->
-                        <div class="wp-block-outermost-icon-block">
-                            <div class="icon-container has-icon-color has-cta-500-color"
-                                style="color:#AA653C;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
-                                    viewBox="0 0 256 256">
-                                    <path
-                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z">
-                                    </path>
-                                </svg></div>
-                        </div>
-                        <!-- /wp:outermost/icon-block -->
-
-                        <!-- wp:post-time-to-read {"fontSize":"100"} /-->
-                    </div>
-                    <!-- /wp:group -->
+                    <!-- wp:post-terms {"term":"category","separator":"   ","prefix":"Posted in: ","className":"is-style-term-button ati-tour-card-badges","style":{"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|accent-500"},":hover":{"color":{"text":"var:preset|color|accent-600"}}}}},"fontSize":"200"} /-->
                 </div>
                 <!-- /wp:group -->
 
@@ -105,7 +93,7 @@
                 </div>
                 <!-- /wp:group -->
 
-                <!-- wp:post-terms {"term":"post_tag","prefix":"Tags: ","className":"is-style-default","style":{"typography":{"textTransform":"none","fontStyle":"normal","fontWeight":"600"}},"fontSize":"100"} /-->
+                <!-- wp:post-terms {"term":"post_tag","prefix":"Tags: ","className":"is-style-default","style":{"typography":{"textTransform":"none","fontStyle":"italic","fontWeight":"400"}},"fontSize":"200"} /-->
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
                 <div class="wp-block-group">
@@ -130,9 +118,9 @@
 
                     <!-- wp:buttons -->
                     <div class="wp-block-buttons">
-                        <!-- wp:button {"backgroundColor":"base","textColor":"cta-500","style":{"elements":{"link":{"color":{"text":"var:preset|color|cta-500"}}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}}},"icon":"arrow-right","iconSpacing":"0.2em"} -->
+                        <!-- wp:button {"backgroundColor":"base","textColor":"accent-500","hoverTextColor":"accent-600","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-500"}}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}}},"icon":"arrow-right","iconSpacing":"0.2em"} -->
                         <div class="wp-block-button"><a
-                                class="wp-block-button__link has-cta-500-color has-base-background-color has-text-color has-background has-link-color wp-element-button"
+                                class="wp-block-button__link has-accent-500-color has-base-background-color has-text-color has-background has-link-color wp-element-button"
                                 style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">Read more</a>
                         </div>
                         <!-- /wp:button -->
@@ -176,4 +164,4 @@
 </main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer-2","theme":"ati-theme-2026","area":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"ati-theme-2026","area":"footer"} /-->
