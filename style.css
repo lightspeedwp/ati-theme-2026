@@ -350,3 +350,73 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	color: var(--wp--preset--color--brand-200);
 }
 
+/* ========================================================================== */
+
+/* LSX Included/Not Included Lists                                           */
+
+/* ========================================================================== */
+
+ul.lsx-included-list,
+ul.lsx-not_included-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.lsx-included-list li,
+ul.lsx-not_included-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	margin-bottom: 0.5rem;
+}
+
+ul.lsx-included-list li svg,
+ul.lsx-not_included-list li svg {
+	flex-shrink: 0;
+	margin-top: 0.125rem;
+	width: 24px;
+	height: 24px;
+}
+
+ul.lsx-included-list li svg {
+	color: var(--wp--preset--color--primary-500, #080808);
+}
+
+ul.lsx-not_included-list li svg {
+	color: var(--wp--preset--color--primary-500, #080808);
+}
+
+/* === FacetWP Sort Facet === */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort {
+	margin-bottom: 0 !important;
+}
+
+/* Select dropdown */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
+	font-family: inherit !important;
+	border: none !important;
+	background-color: var(--wp--preset--color--base);
+	padding-right: 3.5rem;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	position: relative;
+	line-height: 1.3;
+	height: 2.5em;
+	background-image: url('/wp-content/themes/ati-theme-2026/assets/icons/sorting-chevron.svg');
+	background-repeat: no-repeat;
+	background-position: right 0.8rem center;
+	background-size: 1.5rem 1.5rem;
+}
+
+/* Outline focus state */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select:focus {
+	outline: 2px solid var(--wp--preset--color--accent-500);
+}
+
+/* Remove default dropdown arrow in Firefox */
+@-moz-document url-prefix() {
+	.wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
+		background-image: url('/wp-content/themes/ati-theme-2026/assets/icons/sorting-chevron.svg');
+	}
+}
