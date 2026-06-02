@@ -192,8 +192,12 @@ add_filter( 'lsx_to_custom_field_query', 'ati_theme_2026_filter_rating_stars', 1
 
 /**
  * Render bound rating paragraphs as SVG stars via the render_block hook.
- * Catches any remaining star images not handled by the lsx_to_custom_field_query filter
- * (e.g. when the block binding injects sanitised content before our filter can run).
+ *
+ * WordPress's block-binding API sanitises the value returned by
+ * lsx_to_custom_field_query with wp_kses_post(), which strips SVG children
+ * from any <span> our lsx filter produces. This hook runs on the fully
+ * rendered HTML and re-injects the SVG content, using post meta as the
+ * authoritative star count to avoid any dependency on the sanitised markup.
  *
  * @param string $block_content Rendered block content.
  * @param array  $block         Parsed block data.
@@ -209,26 +213,64 @@ if ( empty( $binding['source'] ) || 'lsx/post-meta' !== $binding['source'] || em
 return $block_content;
 }
 
-$full_count  = preg_match_all( '/rating-star-full\.png/i', $block_content );
-$empty_count = preg_match_all( '/rating-star-empty\.png/i', $block_content );
-
-if ( 0 === $full_count + $empty_count ) {
-$full_count  = preg_match_all( '/\bfa-star\b(?!-o)/i', $block_content );
-$empty_count = preg_match_all( '/\bfa-star-o\b/i', $block_content );
+// Prefer an authoritative count from post meta so we are not dependent on
+// whatever survived wp_kses_post() sanitisation in the bound HTML.
+$post_id = get_the_ID();
+if ( $post_id ) {
+	$raw_rating = (int) get_post_meta( $post_id, 'rating', true );
+	if ( $raw_rating > 0 ) {
+		$full_count  = min( $raw_rating, 5 );
+		$empty_count = max( 0, 5 - $full_count );
+	}
 }
 
-if ( 0 === $full_count + $empty_count ) {
-return $block_content;
+// Fallback: count star images still present in the HTML (non-binding contexts).
+if ( ! isset( $full_count ) ) {
+	$full_count  = preg_match_all( '/rating-star-full\.png/i', $block_content );
+	$empty_count = preg_match_all( '/rating-star-empty\.png/i', $block_content );
+
+	if ( 0 === $full_count + $empty_count ) {
+		$full_count  = preg_match_all( '/\bfa-star\b(?!-o)/i', $block_content );
+		$empty_count = preg_match_all( '/\bfa-star-o\b/i', $block_content );
+	}
+
+	if ( 0 === $full_count + $empty_count ) {
+		return $block_content;
+	}
 }
 
 $stars_markup = ati_theme_2026_build_star_markup( $full_count, $empty_count );
 
-$block_content = preg_replace(
-'/(<p\b[^>]*>)(.*?)(<\/p>)/si',
-'$1' . $stars_markup . '$3',
-$block_content,
-1
-);
+// Replace an existing (possibly empty) .ati-rating-stars span – left by the
+// lsx_to_custom_field_query filter after wp_kses_post() stripped its SVG children.
+if ( false !== strpos( $block_content, 'ati-rating-stars' ) ) {
+	return preg_replace(
+		'/<span[^>]+class="[^"]*ati-rating-stars[^"]*"[^>]*>.*?<\/span>/si',
+		$stars_markup,
+		$block_content,
+		1
+	);
+}
+
+// Fallback: replace figure/img star elements, preserving any prefix text.
+if ( false !== strpos( $block_content, 'rating-star' ) ) {
+	return preg_replace(
+		'/(?:<figure[^>]*>.*?rating-star-(?:full|empty)\.png[^>]*\/?>(?:.*?<\/figure>)?\s*)+/si',
+		$stars_markup,
+		$block_content,
+		1
+	);
+}
+
+// Fallback: replace Font Awesome star icons (tour post type).
+if ( false !== strpos( $block_content, 'fa-star' ) ) {
+	return preg_replace(
+		'/(?:<i[^>]+class="[^"]*fa[^"]*fa-star[^"]*"[^>]*>.*?<\/i>\s*)+/si',
+		$stars_markup,
+		$block_content,
+		1
+	);
+}
 
 return $block_content;
 }
