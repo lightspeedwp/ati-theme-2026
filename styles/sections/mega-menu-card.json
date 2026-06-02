@@ -1,8 +1,8 @@
 {
   "$schema": "https://schemas.wp.org/wp/trunk/theme.json",
   "version": 3,
-  "title": "Mega Menu Link Card",
-  "slug": "mega-menu-link-card",
+  "title": "ATI Mega Menu Card",
+  "slug": "ati-mega-menu-card",
   "blockTypes": [
     "core/group"
   ],
