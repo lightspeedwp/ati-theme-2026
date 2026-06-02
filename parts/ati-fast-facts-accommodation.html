@@ -8,14 +8,14 @@
         <h3 class="wp-block-heading">Accommodation Summary</h3>
         <!-- /wp:heading -->
 
-        <!-- wp:group {"className":"fast-facts-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"200","layout":{"type":"default"}} -->
-        <div class="wp-block-group fast-facts-wrapper has-200-font-size">
-            <!-- wp:group {"metadata":{"name":"Rating"},"className":"lsx-rating-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","verticalAlignment":"top","flexWrap":"nowrap"}} -->
+        <!-- wp:group {"className":"fast-facts-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"},"elements":{"link":{"color":{"text":"var:preset|color|accent-500"},":hover":{"color":{"text":"var:preset|color|accent-600"}}}}},"fontSize":"200","layout":{"type":"default"}} -->
+        <div class="wp-block-group fast-facts-wrapper has-link-color has-200-font-size">
+            <!-- wp:group {"metadata":{"name":"Rating"},"className":"lsx-rating-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
             <div class="wp-block-group lsx-rating-wrapper">
-                <!-- wp:outermost/icon-block {"iconName":"","width":"20px","style":{"spacing":{"padding":{"top":"1px","bottom":"1px"}}}} -->
+                <!-- wp:outermost/icon-block {"iconName":"","width":"20px","style":{"spacing":{"padding":{"top":"6px","bottom":"4px"}}}} -->
                 <div class="wp-block-outermost-icon-block">
                     <div class="icon-container"
-                        style="width:20px;padding-top:1px;padding-bottom:1px;transform:rotate(0deg) scaleX(1) scaleY(1)">
+                        style="width:20px;padding-top:6px;padding-bottom:4px;transform:rotate(0deg) scaleX(1) scaleY(1)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
                             viewBox="0 0 256 256">
                             <path
@@ -25,14 +25,14 @@
                 </div>
                 <!-- /wp:outermost/icon-block -->
 
-                <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+                <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|5"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating"}}}},"prefix":"Rating:"} -->
-                    <p></p>
+                    <!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"4px","bottom":"0px"}}},"fontSize":"200"} -->
+                    <p class="has-200-font-size" style="padding-top:4px;padding-bottom:0px">Rating:</p>
                     <!-- /wp:paragraph -->
 
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating_type"}}}}} -->
-                    <p></p>
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating"}}}},"fontSize":"200"} -->
+                    <p class="has-200-font-size"></p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
@@ -56,7 +56,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"number_of_rooms"}}}},"prefix":"Number of units:"} -->
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"number_of_rooms"}}}},"prefix":"Number of units: "} -->
                     <p></p>
                     <!-- /wp:paragraph -->
                 </div>
@@ -81,7 +81,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"single_supplement"}}}},"prefix":"Single supplement:"} -->
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"single_supplement"}}}},"prefix":"Single supplement: "} -->
                     <p></p>
                     <!-- /wp:paragraph -->
                 </div>
@@ -106,7 +106,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkin_time"}}}},"prefix":"Check in time:"} -->
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkin_time"}}}},"prefix":"Check in time: "} -->
                     <p></p>
                     <!-- /wp:paragraph -->
                 </div>
@@ -131,7 +131,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkout_time"}}}},"prefix":"Check out time:"} -->
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkout_time"}}}},"prefix":"Check out time: "} -->
                     <p></p>
                     <!-- /wp:paragraph -->
                 </div>
@@ -156,7 +156,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"minimum_child_age"}}}},"prefix":"Minimum child age:"} -->
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"minimum_child_age"}}}},"prefix":"Minimum child age: "} -->
                     <p></p>
                     <!-- /wp:paragraph -->
                 </div>
@@ -181,7 +181,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_accommodation"}}}},"prefix":"Location:"} -->
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_accommodation"}}}},"prefix":"Location: "} -->
                     <p></p>
                     <!-- /wp:paragraph -->
                 </div>
@@ -206,7 +206,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"spoken_languages"}}}},"prefix":"Spoken Languages:"} -->
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"spoken_languages"}}}},"prefix":"Spoken Languages: "} -->
                     <p></p>
                     <!-- /wp:paragraph -->
                 </div>
@@ -231,7 +231,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:post-terms {"term":"travel-style","prefix":"Travel Styles:","fontSize":"200"} /--></div>
+                    <!-- wp:post-terms {"term":"travel-style","prefix":"Travel Styles: ","fontSize":"200"} /--></div>
                 <!-- /wp:group -->
             </div>
             <!-- /wp:group -->
@@ -250,7 +250,7 @@
                 </div>
                 <!-- /wp:outermost/icon-block -->
 
-                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"special_interests"}}}},"fontSize":"200","prefix":"Special Interests:"} -->
+                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"special_interests"}}}},"fontSize":"200","prefix":"Special Interests: "} -->
                 <p class="has-200-font-size"></p>
                 <!-- /wp:paragraph -->
             </div>
@@ -273,7 +273,7 @@
 
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:post-terms {"term":"accommodation-type","prefix":"Accommodation Type:","fontSize":"200"} /-->
+                    <!-- wp:post-terms {"term":"accommodation-type","prefix":"Accommodation Type: ","fontSize":"200"} /-->
                 </div>
                 <!-- /wp:group -->
             </div>
@@ -293,7 +293,7 @@
                 </div>
                 <!-- /wp:outermost/icon-block -->
 
-                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"suggested_visitor_types"}}}},"fontSize":"200","prefix":"Friendly:"} -->
+                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"suggested_visitor_types"}}}},"fontSize":"200","prefix":"Friendly: "} -->
                 <p class="has-200-font-size"></p>
                 <!-- /wp:paragraph -->
             </div>
