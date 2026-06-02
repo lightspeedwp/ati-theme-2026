@@ -1,98 +1,105 @@
-<!-- wp:template-part {"slug":"header","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"is-style-default has-text-color has-link-color","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"primary-100","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-default has-text-color has-link-color has-primary-100-background-color has-background"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"200","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide is-style-default has-200-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:cover {"useFeaturedImage":true,"dimRatio":70,"isUserOverlayColor":true,"minHeight":480,"customGradient":"linear-gradient(60deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 76%)","contentPosition":"bottom center","tagName":"section","metadata":{"name":"Hero"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-<section class="wp-block-cover has-custom-content-position is-position-bottom-center"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);min-height:480px">
-    <span aria-hidden="true"
-        class="wp-block-cover__background has-background-dim-70 has-background-dim has-background-gradient"
-        style="background:linear-gradient(60deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 76%)"></span>
-    <div class="wp-block-cover__inner-container">
-        <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
-        <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"default"}} -->
-            <div class="wp-block-group">
-                <!-- wp:post-title {"textAlign":"left","level":1,"className":"wp-block-heading has-text-align-center is-style-shadow-text","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"900"} /-->
+<!-- wp:group {"metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:cover {"useFeaturedImage":true,"dimRatio":10,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":50,"contentPosition":"center center","isDark":false,"tagName":"section","metadata":{"name":"Hero"},"className":"alignfull is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|70","right":"var:preset|spacing|0","left":"var:preset|spacing|0"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
+    <section class="wp-block-cover is-light alignfull is-style-default"
+        style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--0);min-height:50px">
+        <span aria-hidden="true"
+            class="wp-block-cover__background has-contrast-background-color has-background-dim-10 has-background-dim"></span>
+        <div class="wp-block-cover__inner-container">
+            <!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"has-text-color has-link-color is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}},"color":{"background":"#dbbd8dde"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignfull has-text-color has-link-color is-style-default has-background"
+                style="background-color:#dbbd8dde;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
+                <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"200","layout":{"type":"default"}} -->
+                <div class="wp-block-group alignwide is-style-default has-200-font-size">
+                    <!-- wp:yoast-seo/breadcrumbs /--></div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
 
-                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"className":"has-base-color has-text-color has-link-color","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"typography":{"textAlign":"left"}},"textColor":"base","fontSize":"200"} -->
-                <p class="has-text-align-left has-base-color has-text-color has-link-color has-200-font-size"></p>
+            <!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40","right":"var:preset|spacing|20","left":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"center","contentSize":"1100px"}} -->
+            <div class="wp-block-group alignwide"
+                style="min-height:0px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--20)">
+                <!-- wp:post-title {"textAlign":"center","level":1,"align":"wide","className":"is-style-shadow-text","style":{"typography":{"fontStyle":"normal","fontWeight":"500","textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
+
+                <!-- wp:paragraph {"metadata":{"name":"Tagline","bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"className":"lsx-tagline-wrapper is-style-shadow-text has-base-color has-text-color has-link-color","style":{"typography":{"textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
+                <p
+                    class="has-text-align-center lsx-tagline-wrapper is-style-shadow-text has-base-color has-text-color has-link-color">
+                </p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
         </div>
-        <!-- /wp:group -->
-    </div>
-</section>
-<!-- /wp:cover -->
+    </section>
+    <!-- /wp:cover -->
+</div>
+<!-- /wp:group -->
 
-<!-- wp:lsx-tour-operator/sticky-menu {"menuItems":[{"id":"overview","title":"Overview"},{"id":"map","title":"Map"},{"id":"units","title":"Units"},{"id":"facilities","title":"Facilities"},{"id":"gallery","title":"Gallery"},{"id":"pricing","title":"Pricing"},{"id":"related-reviews","title":"Reviews"},{"id":"related-tours","title":"Tours"},{"id":"related-accommodations","title":"Related Accommodations"}],"customActiveBackgroundColor":"#F8F7F3","customActiveTextColor":"#AA653C","hoverBackgroundColor":"neutral-100","hoverTextColor":"cta-500","backgroundColor":"base","textColor":"contrast","fontSize":"200","style":{"typography":{"textAlign":"center"},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}}} -->
-<div style="margin-top:0;margin-bottom:0;--active-bg-color:#F8F7F3;--active-text-color:#AA653C;--hover-bg-color:var(--wp--preset--color--neutral-100);--hover-text-color:var(--wp--preset--color--cta-500)"
-    class="wp-block-lsx-tour-operator-sticky-menu has-text-align-center has-contrast-color has-base-background-color has-text-color has-background has-link-color has-200-font-size">
+<!-- wp:lsx-tour-operator/sticky-menu {"menuItems":[{"id":"SUMMARY","title":"SUMMARY"},{"id":"MAP","title":"MAP"},{"id":"UNITS","title":"UNITS"},{"id":"FACILITIES","title":"FACILITIES"},{"id":"GALLERY","title":"GALLERY"},{"id":"INCLUDED/EXCLUDED","title":"INCLUDED/EXCLUDED"},{"id":"REVIEWS","title":"REVIEWS"},{"id":"RELATED-TOURS","title":"RELATED TOURS"},{"id":"RELATED-ACCOMMODATION","title":"RELATED ACCOMMODATION"}],"customActiveBackgroundColor":"#232020","customActiveTextColor":"#DBBD8D","hoverBackgroundColor":"primary-500","hoverTextColor":"brand-500","backgroundColor":"primary-500","textColor":"base","style":{"typography":{"textAlign":"left"},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} -->
+<div style="margin-top:0;margin-bottom:0;--active-bg-color:#232020;--active-text-color:#DBBD8D;--hover-bg-color:var(--wp--preset--color--primary-500);--hover-text-color:var(--wp--preset--color--brand-500)"
+    class="wp-block-lsx-tour-operator-sticky-menu has-text-align-left has-base-color has-primary-500-background-color has-text-color has-background has-link-color">
     <nav class="lsx-to-sticky-menu-nav is-layout-constrained has-global-padding" aria-label="Page section navigation">
         <ul class="lsx-to-sticky-menu-list alignwide" aria-label="Page sections">
-            <li class="lsx-to-sticky-menu-item" data-section-id="overview"><a class="lsx-to-sticky-menu-button"
-                    href="#overview" data-section-id="overview" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Overview</a>
+            <li class="lsx-to-sticky-menu-item" data-section-id="SUMMARY"><a class="lsx-to-sticky-menu-button"
+                    href="#SUMMARY" data-section-id="SUMMARY" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">SUMMARY</a>
             </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="map"><a class="lsx-to-sticky-menu-button" href="#map"
-                    data-section-id="map" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Map</a>
+            <li class="lsx-to-sticky-menu-item" data-section-id="MAP"><a class="lsx-to-sticky-menu-button" href="#MAP"
+                    data-section-id="MAP" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">MAP</a>
             </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="units"><a class="lsx-to-sticky-menu-button"
-                    href="#units" data-section-id="units" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Units</a>
+            <li class="lsx-to-sticky-menu-item" data-section-id="UNITS"><a class="lsx-to-sticky-menu-button"
+                    href="#UNITS" data-section-id="UNITS" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">UNITS</a>
             </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="facilities"><a class="lsx-to-sticky-menu-button"
-                    href="#facilities" data-section-id="facilities" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Facilities</a>
+            <li class="lsx-to-sticky-menu-item" data-section-id="FACILITIES"><a class="lsx-to-sticky-menu-button"
+                    href="#FACILITIES" data-section-id="FACILITIES" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">FACILITIES</a>
             </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="gallery"><a class="lsx-to-sticky-menu-button"
-                    href="#gallery" data-section-id="gallery" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Gallery</a>
+            <li class="lsx-to-sticky-menu-item" data-section-id="GALLERY"><a class="lsx-to-sticky-menu-button"
+                    href="#GALLERY" data-section-id="GALLERY" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">GALLERY</a>
             </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="pricing"><a class="lsx-to-sticky-menu-button"
-                    href="#pricing" data-section-id="pricing" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Pricing</a>
+            <li class="lsx-to-sticky-menu-item" data-section-id="INCLUDED/EXCLUDED"><a class="lsx-to-sticky-menu-button"
+                    href="#INCLUDED/EXCLUDED" data-section-id="INCLUDED/EXCLUDED" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">INCLUDED/EXCLUDED</a>
             </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="related-reviews"><a class="lsx-to-sticky-menu-button"
-                    href="#related-reviews" data-section-id="related-reviews" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Reviews</a>
+            <li class="lsx-to-sticky-menu-item" data-section-id="REVIEWS"><a class="lsx-to-sticky-menu-button"
+                    href="#REVIEWS" data-section-id="REVIEWS" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">REVIEWS</a>
             </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="related-tours"><a class="lsx-to-sticky-menu-button"
-                    href="#related-tours" data-section-id="related-tours" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Tours</a>
-            </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="related-accommodations"><a
-                    class="lsx-to-sticky-menu-button" href="#related-accommodations"
-                    data-section-id="related-accommodations" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Related
-                    Accommodations</a></li>
+            <li class="lsx-to-sticky-menu-item" data-section-id="RELATED-TOURS"><a class="lsx-to-sticky-menu-button"
+                    href="#RELATED-TOURS" data-section-id="RELATED-TOURS" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">RELATED
+                    TOURS</a></li>
+            <li class="lsx-to-sticky-menu-item" data-section-id="RELATED-ACCOMMODATION"><a
+                    class="lsx-to-sticky-menu-button" href="#RELATED-ACCOMMODATION"
+                    data-section-id="RELATED-ACCOMMODATION" aria-current="false"
+                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">RELATED
+                    ACCOMMODATION</a></li>
         </ul>
     </nav>
 </div>
 <!-- /wp:lsx-tour-operator/sticky-menu -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Overview"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|40"}}},"backgroundColor":"base","layout":{"type":"constrained"},"anchor":"overview","addToStickyMenu":true,"stickyMenuId":"overview","stickyMenuTitle":"Overview"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
 <section
-    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-base-background-color has-background lsx-to-sticky-menu-section"
-    id="overview" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40)"
-    data-sticky-menu-section="true" data-section-title="Overview" role="region" aria-labelledby="overview-header">
+    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    id="SUMMARY" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40)"
+    data-sticky-menu-section="true" data-section-title="SUMMARY" role="region" aria-labelledby="SUMMARY-header">
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
     <div class="wp-block-columns alignwide"><!-- wp:column {"width":"65%"} -->
         <div class="wp-block-column" style="flex-basis:65%">
-            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-            <div class="wp-block-group alignwide"
-                style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)">
-                <!-- wp:post-content {"align":"wide","layout":{"type":"default"}} /-->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
+            <div class="wp-block-group"><!-- wp:post-title /-->
 
-                <!-- wp:read-more {"content":"Read more","fontSize":"400"} /-->
+                <!-- wp:post-content {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} /-->
+
+                <!-- wp:read-more {"content":"Read more","hoverTextColor":"accent-600","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-500"}}}},"textColor":"accent-500","fontSize":"400"} /-->
             </div>
             <!-- /wp:group -->
         </div>
@@ -108,35 +115,11 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Map"},"align":"full","className":"lsx-location-wrapper is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"map","addToStickyMenu":true,"stickyMenuId":"map","stickyMenuTitle":"Map"} -->
-<section
-    class="wp-block-group alignfull lsx-location-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section"
-    id="map" data-sticky-menu-section="true" data-section-title="Map" role="region" aria-labelledby="map-header">
-    <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide">
-        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"brand-serif"} -->
-        <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
-            style="font-style:normal;font-weight:400">Location</h2>
-        <!-- /wp:heading -->
-
-        <!-- wp:separator {"className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"cta-500"} -->
-        <hr
-            class="wp-block-separator has-text-color has-cta-500-color has-alpha-channel-opacity has-cta-500-background-color has-background is-style-separator-thin" />
-        <!-- /wp:separator -->
-    </div>
-    <!-- /wp:group -->
-
-    <!-- wp:group {"metadata":{"name":"Map Container"},"align":"wide","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide">
+<!-- wp:group {"tagName":"section","metadata":{"name":"MAP"},"align":"full","className":"lsx-location-wrapper is-style-default","layout":{"type":"constrained"},"anchor":"MAP","addToStickyMenu":true,"stickyMenuId":"MAP","stickyMenuTitle":"MAP"} -->
+<section class="wp-block-group alignfull lsx-location-wrapper is-style-default lsx-to-sticky-menu-section" id="MAP"
+    data-sticky-menu-section="true" data-section-title="MAP" role="region" aria-labelledby="MAP-header">
+    <!-- wp:group {"metadata":{"name":"Map Container"},"align":"full","layout":{"type":"default"}} -->
+    <div class="wp-block-group alignfull">
         <!-- wp:cover {"url":"/wp-content/plugins/tour-operator/assets/img/blocks/placeholder-map-1920x656.jpg","dimRatio":50,"customOverlayColor":"#e2f0f7","isUserOverlayColor":false,"isDark":false,"className":"lsx-map-preview","layout":{"type":"constrained"}} -->
         <div class="wp-block-cover is-light lsx-map-preview"><img class="wp-block-cover__image-background" alt=""
                 src="/wp-content/plugins/tour-operator/assets/img/blocks/placeholder-map-1920x656.jpg"
@@ -154,44 +137,42 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Units"},"align":"full","className":"lsx-units-wrapper is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"units","addToStickyMenu":true,"stickyMenuId":"units","stickyMenuTitle":"Units"} -->
-<section class="wp-block-group alignfull lsx-units-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section"
-    id="units" data-sticky-menu-section="true" data-section-title="Units" role="region" aria-labelledby="units-header">
+<!-- wp:group {"tagName":"section","metadata":{"name":"UNITS"},"align":"full","className":"lsx-units-wrapper is-style-ati-page-section-default","backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"UNITS","addToStickyMenu":true,"stickyMenuId":"UNITS","stickyMenuTitle":"UNITS"} -->
+<section
+    class="wp-block-group alignfull lsx-units-wrapper is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    id="UNITS" data-sticky-menu-section="true" data-section-title="UNITS" role="region" aria-labelledby="UNITS-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"brand-serif"} -->
-        <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
+        <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+        <h2 class="wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family"
             style="font-style:normal;font-weight:400">Units</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:separator {"className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"cta-500"} -->
-        <hr
-            class="wp-block-separator has-text-color has-cta-500-color has-alpha-channel-opacity has-cta-500-background-color has-background is-style-separator-thin" />
-        <!-- /wp:separator -->
+        <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
+        <div class="wp-block-group">
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <hr
+                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+            <!-- /wp:separator -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 
     <!-- wp:group {"metadata":{"name":"Accommodation Units","bindings":{"content":{"source":"lsx/accommodation-units","type":"rooms"}}},"align":"wide","layout":{"type":"default"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:columns {"metadata":{"patternName":"lsx-tour-operator/room-card","name":"Room Card","description":"A horizontal card layout for accommodation units with image, description, and pricing.","categories":["lsx-tour-operator"]},"className":"lsx-map-preview","layout":{"type":"constrained"}} -->
-        <div class="wp-block-columns lsx-map-preview">
-            <!-- wp:column {"width":"25%","className":"has-text-align-center has-600-font-size","style":{"typography":{"textAlign":"center"}},"fontSize":"600"} -->
+        <!-- wp:columns {"metadata":{"patternName":"lsx-tour-operator/room-card","name":"Room Card","description":"A horizontal card layout for accommodation units with image, description, and pricing.","categories":["lsx-tour-operator"]},"className":"lsx-map-preview","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|10","right":"var:preset|spacing|10"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+        <div class="wp-block-columns lsx-map-preview has-base-background-color has-background"
+            style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)">
+            <!-- wp:column {"width":"25%","className":"has-text-align-center has-600-font-size","style":{"typography":{"textAlign":"center"}},"fontSize":"600","layout":{"type":"default"}} -->
             <div class="wp-block-column has-text-align-center has-600-font-size" style="flex-basis:25%">
                 <!-- wp:group {"metadata":{"name":"Image"},"className":"itinerary-image","style":{"layout":{"selfStretch":"fixed","flexSize":"300px"},"dimensions":{"minHeight":"300px"},"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
                 <div class="wp-block-group itinerary-image" style="min-height:300px">
-                    <!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"medium","linkDestination":"none","className":"itinerary-image","style":{"border":{"radius":"8px"},"layout":{"selfStretch":"fixed","flexSize":"300px"}}} -->
+                    <!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"medium","linkDestination":"none","className":"itinerary-image","style":{"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}},"layout":{"selfStretch":"fixed","flexSize":"300px"}}} -->
                     <figure class="wp-block-image size-medium has-custom-border itinerary-image"><img
-                            src="/wp-content/plugins/tour-operator/assets/img/blocks/placeholder.png"
-                            alt="Room image" style="border-radius:8px;aspect-ratio:1;object-fit:cover" /></figure>
+                            src="/wp-content/plugins/tour-operator/assets/img/blocks/placeholder.png" alt="Room image"
+                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;aspect-ratio:1;object-fit:cover" />
+                    </figure>
                     <!-- /wp:image -->
                 </div>
                 <!-- /wp:group -->
@@ -229,14 +210,14 @@
 
                     <!-- wp:column {"width":"40%"} -->
                     <div class="wp-block-column" style="flex-basis:40%">
-                        <!-- wp:group {"metadata":{"name":"Information"},"className":"lsx-itinerary-info","style":{"border":{"radius":"0.5rem"},"spacing":{"blockGap":"var:preset|spacing|20"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+                        <!-- wp:group {"metadata":{"name":"Information"},"className":"lsx-itinerary-info","style":{"border":{"radius":"0.5rem"},"spacing":{"blockGap":"var:preset|spacing|20"}},"backgroundColor":"base","layout":{"type":"constrained"},"smartSync":true} -->
                         <div class="wp-block-group lsx-itinerary-info has-base-background-color has-background"
                             style="border-radius:0.5rem">
                             <!-- wp:group {"className":"itin-location-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
                             <div class="wp-block-group itin-location-wrapper" style="font-style:normal;font-weight:500">
-                                <!-- wp:outermost/icon-block {"iconName":"","iconColor":"cta-500","iconColorValue":"#AA653C","width":"24px"} -->
+                                <!-- wp:outermost/icon-block {"iconName":"","iconColor":"accent-500","iconColorValue":"#AA653C","width":"24px"} -->
                                 <div class="wp-block-outermost-icon-block">
-                                    <div class="icon-container has-icon-color has-cta-500-color"
+                                    <div class="icon-container has-icon-color has-accent-500-color"
                                         style="color:#AA653C;width:24px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
                                             viewBox="0 0 256 256">
@@ -255,9 +236,9 @@
 
                             <!-- wp:group {"className":"itin-location-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
                             <div class="wp-block-group itin-location-wrapper" style="font-style:normal;font-weight:500">
-                                <!-- wp:outermost/icon-block {"iconName":"","iconColor":"cta-500","iconColorValue":"#AA653C","width":"24px"} -->
+                                <!-- wp:outermost/icon-block {"iconName":"","iconColor":"accent-500","iconColorValue":"#AA653C","width":"24px"} -->
                                 <div class="wp-block-outermost-icon-block">
-                                    <div class="icon-container has-icon-color has-cta-500-color"
+                                    <div class="icon-container has-icon-color has-accent-500-color"
                                         style="color:#AA653C;width:24px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
                                             viewBox="0 0 256 256">
@@ -288,30 +269,25 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Facilities"},"className":"lsx-facilities-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"facilities","addToStickyMenu":true,"stickyMenuId":"facilities","stickyMenuTitle":"Facilities"} -->
-<section id="facilities"
+<!-- wp:group {"tagName":"section","metadata":{"name":"FACILITIES"},"className":"lsx-facilities-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"FACILITIES","addToStickyMenu":true,"stickyMenuId":"FACILITIES","stickyMenuTitle":"FACILITIES"} -->
+<section id="FACILITIES"
     class="wp-block-group lsx-facilities-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default lsx-to-sticky-menu-section"
-    data-sticky-menu-section="true" data-section-title="Facilities" role="region" aria-labelledby="facilities-header">
+    data-sticky-menu-section="true" data-section-title="FACILITIES" role="region" aria-labelledby="FACILITIES-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"brand-serif"} -->
-        <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
+        <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+        <h2 class="wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family"
             style="font-style:normal;font-weight:400">Facilities</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:separator {"className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"cta-500"} -->
-        <hr
-            class="wp-block-separator has-text-color has-cta-500-color has-alpha-channel-opacity has-cta-500-background-color has-background is-style-separator-thin" />
-        <!-- /wp:separator -->
+        <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
+        <div class="wp-block-group">
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <hr
+                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+            <!-- /wp:separator -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 
@@ -325,30 +301,25 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Gallery"},"className":"lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"gallery","addToStickyMenu":true,"stickyMenuId":"gallery","stickyMenuTitle":"Gallery"} -->
-<section id="gallery"
-    class="wp-block-group lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default lsx-to-sticky-menu-section"
-    data-sticky-menu-section="true" data-section-title="Gallery" role="region" aria-labelledby="gallery-header">
+<!-- wp:group {"tagName":"section","metadata":{"name":"GALLERY"},"className":"lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"GALLERY","addToStickyMenu":true,"stickyMenuId":"GALLERY","stickyMenuTitle":"GALLERY"} -->
+<section id="GALLERY"
+    class="wp-block-group lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    data-sticky-menu-section="true" data-section-title="GALLERY" role="region" aria-labelledby="GALLERY-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"brand-serif"} -->
-        <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
+        <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+        <h2 class="wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family"
             style="font-style:normal;font-weight:400">Gallery</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:separator {"className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"cta-500"} -->
-        <hr
-            class="wp-block-separator has-text-color has-cta-500-color has-alpha-channel-opacity has-cta-500-background-color has-background is-style-separator-thin" />
-        <!-- /wp:separator -->
+        <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
+        <div class="wp-block-group">
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <hr
+                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+            <!-- /wp:separator -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 
@@ -374,90 +345,62 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Pricing"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section lsx-price-wrapper","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"base","layout":{"type":"constrained","contentSize":""},"anchor":"pricing","addToStickyMenu":true,"stickyMenuId":"pricing","stickyMenuTitle":"Pricing"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"INCLUDED/EXCLUDED"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"base","layout":{"type":"constrained","contentSize":""},"anchor":"INCLUDED/EXCLUDED","addToStickyMenu":true,"stickyMenuId":"INCLUDED/EXCLUDED","stickyMenuTitle":"INCLUDED/EXCLUDED"} -->
 <section
-    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section lsx-price-wrapper has-base-background-color has-background lsx-to-sticky-menu-section"
-    id="pricing" style="margin-top:0;margin-bottom:0" data-sticky-menu-section="true" data-section-title="Pricing"
-    role="region" aria-labelledby="pricing-header">
-    <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-    <div class="wp-block-group alignwide"><!-- wp:group {"align":"wide"} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:columns {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}},"typography":{"fontStyle":"normal","fontWeight":"600"}},"textColor":"primary-500","fontSize":"400"} -->
-            <div class="wp-block-columns has-primary-500-color has-text-color has-link-color has-400-font-size"
-                style="font-style:normal;font-weight:600">
-                <!-- wp:column {"width":"50%","anchor":"lsx-included-wrapper"} -->
-                <div class="wp-block-column" style="flex-basis:50%" id="lsx-included-wrapper">
-                    <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-900"}}}},"textColor":"neutral-900","fontSize":"400"} -->
-                    <p class="has-neutral-900-color has-text-color has-link-color has-400-font-size">Price Includes:
-                    </p>
-                    <!-- /wp:paragraph -->
+    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-base-background-color has-background lsx-to-sticky-menu-section"
+    id="INCLUDED/EXCLUDED" style="margin-top:0;margin-bottom:0" data-sticky-menu-section="true"
+    data-section-title="INCLUDED/EXCLUDED" role="region" aria-labelledby="INCLUDED/EXCLUDED-header">
+    <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+    <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%","anchor":"lsx-included-wrapper"} -->
+        <div class="wp-block-column" style="flex-basis:50%" id="lsx-included-wrapper">
+            <!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"500"} -->
+            <h3 class="wp-block-heading has-primary-500-color has-text-color has-link-color has-500-font-size">
+                <strong>Included:</strong></h3>
+            <!-- /wp:heading -->
 
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"included"}}}},"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"typography":{"fontStyle":"normal","fontWeight":"400"}},"textColor":"contrast","fontSize":"200"} -->
-                    <p class="has-contrast-color has-text-color has-link-color has-200-font-size"
-                        style="font-style:normal;font-weight:400"></p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:column -->
-
-                <!-- wp:column {"width":"50%","className":"lsx-not-included-wrapper"} -->
-                <div class="wp-block-column lsx-not-included-wrapper" style="flex-basis:50%">
-                    <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-900"}}}},"textColor":"neutral-900","fontSize":"400"} -->
-                    <p class="has-neutral-900-color has-text-color has-link-color has-400-font-size">Price Excludes:
-                    </p>
-                    <!-- /wp:paragraph -->
-
-                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"not_included"}}}},"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"typography":{"fontStyle":"normal","fontWeight":"400"}},"textColor":"contrast","fontSize":"200"} -->
-                    <p class="has-contrast-color has-text-color has-link-color has-200-font-size"
-                        style="font-style:normal;font-weight:400"></p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:column -->
-            </div>
-            <!-- /wp:columns -->
+            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"included"}}}}} -->
+            <p></p>
+            <!-- /wp:paragraph -->
         </div>
-        <!-- /wp:group -->
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"50%","className":"lsx-not-included-wrapper"} -->
+        <div class="wp-block-column lsx-not-included-wrapper" style="flex-basis:50%">
+            <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"500"} -->
+            <h2 class="wp-block-heading has-primary-500-color has-text-color has-link-color has-500-font-size">
+                <strong>Excluded:</strong></h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"not_included"}}}}} -->
+            <p></p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:column -->
     </div>
-    <!-- /wp:group -->
+    <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Reviews","blockVisibility":false},"align":"full","className":"lsx-review-related-accommodation-query-wrapper lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"related-reviews","addToStickyMenu":true,"stickyMenuId":"related-reviews","stickyMenuTitle":"Reviews"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"REVIEWS"},"align":"full","className":"lsx-review-related-accommodation-query-wrapper lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"REVIEWS","addToStickyMenu":true,"stickyMenuId":"REVIEWS","stickyMenuTitle":"REVIEWS"} -->
 <section
     class="wp-block-group alignfull lsx-review-related-accommodation-query-wrapper lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
-    id="related-reviews"
-    style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"
-    data-sticky-menu-section="true" data-section-title="Reviews" role="region" aria-labelledby="related-reviews-header">
-    <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+    id="REVIEWS" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"
+    data-sticky-menu-section="true" data-section-title="REVIEWS" role="region" aria-labelledby="REVIEWS-header">
+    <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-        <hr class="wp-block-separator has-alpha-channel-opacity" />
-        <!-- /wp:separator -->
-
-        <!-- wp:heading {"style":{"typography":{"textAlign":"center"}}} -->
-        <h2 class="wp-block-heading has-text-align-center">Reviews</h2>
+        <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+        <h2 class="wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family"
+            style="font-style:normal;font-weight:400">Reviews</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-        <hr class="wp-block-separator has-alpha-channel-opacity" />
-        <!-- /wp:separator -->
+        <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
+        <div class="wp-block-group">
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <hr
+                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+            <!-- /wp:separator -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 
@@ -466,36 +409,7 @@
         <!-- wp:query {"queryId":24,"query":{"perPage":8,"postType":"review","order":"desc","orderBy":"date"},"metadata":{"name":"Related Reviews Query"},"align":"wide","className":"lsx-to-slider"} -->
         <div class="wp-block-query alignwide lsx-to-slider">
             <!-- wp:post-template {"className":"lsx-review-related-accommodation-query","layout":{"type":"grid","columnCount":2}} -->
-            <!-- wp:group {"metadata":{"name":"Review Card","categories":["lsx-tour-operator"],"patternName":"lsx-tour-operator/review-card","description":"A card layout for displaying testimonial reviews in query loops with quotation mark and author information."},"style":{"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"},"ariaLabel":"Review Card"} -->
-            <div aria-label="Review Card" class="wp-block-group"
-                style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
-                <!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"quotationIcon","fontSize":"600"} /-->
-
-                <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
-                <div class="wp-block-group" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-                    <!-- wp:group {"metadata":{"name":"Quote"},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:post-excerpt {"textAlign":"center","showMoreOnNewLine":false,"excerptLength":40,"fontSize":"400"} /-->
-                    </div>
-                    <!-- /wp:group -->
-
-                    <!-- wp:group -->
-                    <div class="wp-block-group">
-                        <!-- wp:group {"metadata":{"name":"Author Details"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
-                        <div class="wp-block-group">
-                            <!-- wp:post-title {"textAlign":"center","level":3,"fontSize":"600","fontFamily":"brand-serif"} /-->
-
-                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"reviewer_name"}}}},"className":"has-heading-font-family","style":{"typography":{"textAlign":"center"}},"fontSize":"400"} -->
-                            <p class="has-text-align-center has-heading-font-family has-400-font-size"></p>
-                            <!-- /wp:paragraph -->
-                        </div>
-                        <!-- /wp:group -->
-                    </div>
-                    <!-- /wp:group -->
-                </div>
-                <!-- /wp:group -->
-            </div>
-            <!-- /wp:group -->
+            <!-- wp:block {"ref":22575} /-->
             <!-- /wp:post-template -->
         </div>
         <!-- /wp:query -->
@@ -504,31 +418,26 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Tours"},"align":"full","className":"lsx-tour-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"related-tours","addToStickyMenu":true,"stickyMenuId":"related-tours","stickyMenuTitle":"Tours"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"RELATED TOURS"},"align":"full","className":"lsx-tour-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"RELATED-TOURS","addToStickyMenu":true,"stickyMenuId":"RELATED-TOURS","stickyMenuTitle":"RELATED TOURS"} -->
 <section
     class="wp-block-group alignfull lsx-tour-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default lsx-to-sticky-menu-section"
-    id="related-tours" data-sticky-menu-section="true" data-section-title="Tours" role="region"
-    aria-labelledby="related-tours-header">
+    id="RELATED-TOURS" data-sticky-menu-section="true" data-section-title="RELATED TOURS" role="region"
+    aria-labelledby="RELATED-TOURS-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"brand-serif"} -->
-        <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
-            style="font-style:normal;font-weight:400">Related Tours</h2>
+        <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+        <h2 class="wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family"
+            style="font-style:normal;font-weight:400">Related tours</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:separator {"className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"cta-500"} -->
-        <hr
-            class="wp-block-separator has-text-color has-cta-500-color has-alpha-channel-opacity has-cta-500-background-color has-background is-style-separator-thin" />
-        <!-- /wp:separator -->
+        <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
+        <div class="wp-block-group">
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <hr
+                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+            <!-- /wp:separator -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 
@@ -537,139 +446,128 @@
         <!-- wp:query {"queryId":25,"query":{"perPage":6,"postType":"tour","order":"asc","orderBy":"title"},"metadata":{"name":"Related Tours Query"},"align":"wide","className":"lsx-to-slider"} -->
         <div class="wp-block-query alignwide lsx-to-slider">
             <!-- wp:post-template {"className":"lsx-tour-related-accommodation-query","layout":{"type":"grid","columnCount":3}} -->
-            <!-- wp:group {"metadata":{"name":"Tour Card","patternName":"ati-tour-card"},"className":"overflow-hidden is-style-ati-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
-            <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-ati-tour-card"
-                style="border-radius:0.5rem">
-                <!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#a08f84","isUserOverlayColor":false,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"}},"layout":{"type":"constrained"}} -->
-                <div class="wp-block-cover is-light has-custom-content-position is-position-top-left"><span
-                        aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"
-                        style="background-color:#a08f84"></span>
-                    <div class="wp-block-cover__inner-container">
-                        <!-- wp:post-terms {"term":"travel-style","className":"is-style-term-button ati-tour-card-badges"} /-->
-                    </div>
-                </div>
-                <!-- /wp:cover -->
+            <!-- wp:group {"metadata":{"name":"Tour Card","patternName":"ati-tour-card"},"className":"overflow-hidden is-style-tour-card-dark","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
+            <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-dark">
+                <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
 
-                <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
+                <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|5","bottom":"var:preset|spacing|5"}}},"layout":{"type":"default"}} -->
                 <div class="wp-block-group"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
-                    <!-- wp:group {"metadata":{"name":"Tour Info"},"style":{"spacing":{"blockGap":"10px","padding":{"bottom":"var:preset|spacing|20"}},"border":{"bottom":{"color":"var:preset|color|neutral-200","width":"1px"}}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group"
-                        style="border-bottom-color:var(--wp--preset--color--neutral-200);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--20)">
-                        <!-- wp:group {"metadata":{"name":"Tour Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"3.75rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-                        <div class="wp-block-group center-vertically" style="min-height:3.75rem">
-                            <!-- wp:post-title {"textAlign":"left","level":3,"isLink":true,"style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}}},"fontSize":"400"} /-->
+                    style="padding-top:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--30)">
+                    <!-- wp:group {"metadata":{"name":"Tour Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+                    <div class="wp-block-group center-vertically" style="min-height:0rem">
+                        <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|base"}}}}}} /-->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:group {"metadata":{"name":"Tour Information"},"style":{"border":{"top":{"color":"var:preset|color|brand-500","width":"1px"},"bottom":{"width":"0px","style":"none"},"right":[],"left":[]},"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|0"}},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|brand-300"}},"color":{"text":"var:preset|color|brand-500"}}}},"layout":{"type":"default"},"ariaLabel":"Tour details"} -->
+                    <div aria-label="Tour details" class="wp-block-group has-link-color"
+                        style="border-top-color:var(--wp--preset--color--brand-500);border-top-width:1px;border-bottom-style:none;border-bottom-width:0px;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0)">
+                        <!-- wp:group {"metadata":{"name":"Price Row"},"className":"lsx-price-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                        <div class="wp-block-group lsx-price-wrapper"
+                            style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM240,56H16a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H240a8,8,0,0,0,8-8V64A8,8,0,0,0,240,56ZM193.65,184H62.35A56.78,56.78,0,0,0,24,145.65v-35.3A56.78,56.78,0,0,0,62.35,72h131.3A56.78,56.78,0,0,0,232,110.35v35.3A56.78,56.78,0,0,0,193.65,184ZM232,93.37A40.81,40.81,0,0,1,210.63,72H232ZM45.37,72A40.81,40.81,0,0,1,24,93.37V72ZM24,162.63A40.81,40.81,0,0,1,45.37,184H24ZM210.63,184A40.81,40.81,0,0,1,232,162.63V184Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"price"}},"__default":{"source":"core/pattern-overrides"}},"name":"Price"},"className":"lsx-info-value","fontSize":"200","prefix":"Price from: "} -->
+                            <p class="lsx-info-value has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
                         </div>
                         <!-- /wp:group -->
 
-                        <!-- wp:group {"metadata":{"name":"Tour Information"},"className":"lsx-tour-info","style":{"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"},"blockGap":"0"},"border":{"top":{"width":"0px","style":"none"},"bottom":{"width":"0px","style":"none"}}},"fontSize":"400","layout":{"type":"default"},"ariaLabel":"Tour details"} -->
-                        <div aria-label="Tour details" class="wp-block-group lsx-tour-info has-400-font-size"
-                            style="border-top-style:none;border-top-width:0px;border-bottom-style:none;border-bottom-width:0px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-                            <!-- wp:group {"metadata":{"name":"Duration Row"},"className":"lsx-duration-wrapper","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group lsx-duration-wrapper">
-                                <!-- wp:group {"className":"lsx-info-label","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                                <div class="wp-block-group lsx-info-label">
-                                    <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-500","iconColorValue":"#DBBD8D","width":"20px"} -->
-                                    <div class="wp-block-outermost-icon-block">
-                                        <div class="icon-container has-icon-color has-primary-500-color"
-                                            style="color:#DBBD8D;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                                fill="#000000" viewBox="0 0 256 256">
-                                                <path
-                                                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z">
-                                                </path>
-                                            </svg></div>
-                                    </div>
-                                    <!-- /wp:outermost/icon-block -->
-                                </div>
-                                <!-- /wp:group -->
-
-                                <!-- wp:group {"className":"lsx-info-value","style":{"spacing":{"padding":{"top":"0.125rem","bottom":"0.125rem"},"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                                <div class="wp-block-group lsx-info-value"
-                                    style="padding-top:0.125rem;padding-bottom:0.125rem">
-                                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"duration"}},"__default":{"source":"core/pattern-overrides"}},"name":"Duration"},"fontSize":"200"} -->
-                                    <p class="has-200-font-size"></p>
-                                    <!-- /wp:paragraph -->
-
-                                    <!-- wp:paragraph {"fontSize":"200"} -->
-                                    <p class="has-200-font-size">dagen</p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
+                        <!-- wp:group {"metadata":{"name":"Duration Row"},"className":"lsx-duration-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                        <div class="wp-block-group lsx-duration-wrapper"
+                            style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z">
+                                        </path>
+                                    </svg></div>
                             </div>
-                            <!-- /wp:group -->
+                            <!-- /wp:outermost/icon-block -->
 
-                            <!-- wp:group {"metadata":{"name":"Destination Row"},"className":"lsx-duration-wrapper","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group lsx-duration-wrapper">
-                                <!-- wp:group {"className":"lsx-info-label","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                                <div class="wp-block-group lsx-info-label">
-                                    <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-500","iconColorValue":"#DBBD8D","width":"20px"} -->
-                                    <div class="wp-block-outermost-icon-block">
-                                        <div class="icon-container has-icon-color has-primary-500-color"
-                                            style="color:#DBBD8D;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                                fill="#000000" viewBox="0 0 256 256">
-                                                <path
-                                                    d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z">
-                                                </path>
-                                            </svg></div>
-                                    </div>
-                                    <!-- /wp:outermost/icon-block -->
-                                </div>
-                                <!-- /wp:group -->
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"duration"}},"__default":{"source":"core/pattern-overrides"}},"name":"Duration"},"fontSize":"200","prefix":"Duration: "} -->
+                            <p class="has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
 
-                                <!-- wp:group {"className":"lsx-info-value","style":{"spacing":{"padding":{"top":"0.125rem","bottom":"0.125rem"},"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                                <div class="wp-block-group lsx-info-value"
-                                    style="padding-top:0.125rem;padding-bottom:0.125rem">
-                                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_tour","parents":true}}},"name":"Destinations"},"fontSize":"200"} -->
-                                    <p class="has-200-font-size"></p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
+                        <!-- wp:group {"metadata":{"name":"Travel Style Row"},"className":"lsx-duration-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                        <div class="wp-block-group lsx-duration-wrapper"
+                            style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px","style":{"spacing":{"padding":{"top":"2px","bottom":"2px"}}}} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;padding-top:2px;padding-bottom:2px;transform:rotate(0deg) scaleX(1) scaleY(1)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z">
+                                        </path>
+                                    </svg></div>
                             </div>
-                            <!-- /wp:group -->
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:post-terms {"term":"travel-style","prefix":"Travel Styles: ","fontSize":"200"} /-->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"metadata":{"name":"Destination Row"},"className":"lsx-destination-to-tour-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                        <div class="wp-block-group lsx-destination-to-tour-wrapper"
+                            style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.62,87.62,0,0,1-6.4,32.94l-44.7-27.49a15.92,15.92,0,0,0-6.24-2.23l-22.82-3.08a16.11,16.11,0,0,0-16,7.86h-8.72l-3.8-7.86a15.91,15.91,0,0,0-11-8.67l-8-1.73L96.14,104h16.71a16.06,16.06,0,0,0,7.73-2l12.25-6.76a16.62,16.62,0,0,0,3-2.14l26.91-24.34A15.93,15.93,0,0,0,166,49.1l-.36-.65A88.11,88.11,0,0,1,216,128ZM143.31,41.34,152,56.9,125.09,81.24,112.85,88H96.14a16,16,0,0,0-13.88,8l-8.73,15.23L63.38,84.19,74.32,58.32a87.87,87.87,0,0,1,69-17ZM40,128a87.53,87.53,0,0,1,8.54-37.8l11.34,30.27a16,16,0,0,0,11.62,10l21.43,4.61L96.74,143a16.09,16.09,0,0,0,14.4,9h1.48l-7.23,16.23a16,16,0,0,0,2.86,17.37l.14.14L128,205.94l-1.94,10A88.11,88.11,0,0,1,40,128Zm102.58,86.78,1.13-5.81a16.09,16.09,0,0,0-4-13.9,1.85,1.85,0,0,1-.14-.14L120,174.74,133.7,144l22.82,3.08,45.72,28.12A88.18,88.18,0,0,1,142.58,214.78Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"destination_to_tour"}},"__default":{"source":"core/pattern-overrides"}},"name":"Destination"},"fontSize":"200","prefix":"Destinations: "} -->
+                            <p class="has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
                         </div>
                         <!-- /wp:group -->
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:columns -->
-                    <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top"} -->
-                        <div class="wp-block-column is-vertically-aligned-top">
-                            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-                            <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"100"} -->
-                                <p class="has-100-font-size">Vanaf</p>
-                                <!-- /wp:paragraph -->
-
-                                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"price"}}}},"style":{"elements":{"link":{"color":{"text":"var:preset|color|cta-500"}}}},"textColor":"cta-500","fontSize":"400"} -->
-                                <p
-                                    class="has-cta-500-color has-text-color has-link-color has-400-font-size">
-                                    price</p>
-                                <!-- /wp:paragraph -->
-                            </div>
-                            <!-- /wp:group -->
-                        </div>
-                        <!-- /wp:column -->
-
-                        <!-- wp:column {"verticalAlignment":"bottom"} -->
-                        <div class="wp-block-column is-vertically-aligned-bottom"><!-- wp:buttons -->
-                            <div class="wp-block-buttons">
-                                <!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"is-style-ati-cta-button","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"padding":{"left":"var:preset|spacing|20","right":"var:preset|spacing|20","top":"14px","bottom":"14px"}}},"fontSize":"200"} -->
-                                <div
-                                    class="wp-block-button has-custom-width wp-block-button__width-100 is-style-ati-cta-button">
-                                    <a class="wp-block-button__link has-200-font-size has-custom-font-size wp-element-button"
-                                        href="#permalink"
-                                        style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:14px;padding-right:var(--wp--preset--spacing--20);padding-bottom:14px;padding-left:var(--wp--preset--spacing--20)">Bekijk
-                                        reis</a></div>
-                                <!-- /wp:button -->
-                            </div>
-                            <!-- /wp:buttons -->
-                        </div>
-                        <!-- /wp:column -->
+                    <!-- wp:group {"metadata":{"name":"Tour Text Content"},"layout":{"type":"default"}} -->
+                    <div class="wp-block-group">
+                        <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":40,"className":"line-clamp-4","fontSize":"200"} /-->
                     </div>
-                    <!-- /wp:columns -->
+                    <!-- /wp:group -->
                 </div>
                 <!-- /wp:group -->
+
+                <!-- wp:buttons -->
+                <div class="wp-block-buttons">
+                    <!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button-brand","style":{"border":{"radius":"0px"}}} -->
+                    <div
+                        class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button-brand">
+                        <a class="wp-block-button__link wp-element-button" href="#permalink"
+                            style="border-radius:0px">View more</a></div>
+                    <!-- /wp:button -->
+                </div>
+                <!-- /wp:buttons -->
             </div>
             <!-- /wp:group -->
             <!-- /wp:post-template -->
@@ -680,124 +578,141 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Separator"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
-    <!-- wp:separator {"align":"wide","className":"is-style-separator-thin","backgroundColor":"neutral-700"} -->
-    <hr
-        class="wp-block-separator alignwide has-text-color has-neutral-700-color has-alpha-channel-opacity has-neutral-700-background-color has-background is-style-separator-thin" />
-    <!-- /wp:separator -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","metadata":{"name":"Related Accommodations"},"align":"full","className":"lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","layout":{"type":"constrained"},"anchor":"related-accommodations","addToStickyMenu":true,"stickyMenuId":"related-accommodations","stickyMenuTitle":"Related Accommodations"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"RELATED ACCOMMODATION"},"align":"full","className":"lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"RELATED-ACCOMMODATION","addToStickyMenu":true,"stickyMenuId":"RELATED-ACCOMMODATION","stickyMenuTitle":"RELATED ACCOMMODATION"} -->
 <section
-    class="wp-block-group alignfull lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default lsx-to-sticky-menu-section"
-    id="related-accommodations" data-sticky-menu-section="true" data-section-title="Related Accommodations"
-    role="region" aria-labelledby="related-accommodations-header">
+    class="wp-block-group alignfull lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    id="RELATED-ACCOMMODATION" data-sticky-menu-section="true" data-section-title="RELATED ACCOMMODATION" role="region"
+    aria-labelledby="RELATED-ACCOMMODATION-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"brand-serif"} -->
-        <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
-            style="font-style:normal;font-weight:400">Related Accommodation</h2>
+        <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+        <h2 class="wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family"
+            style="font-style:normal;font-weight:400">Related accommodation</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:separator {"className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"cta-500"} -->
-        <hr
-            class="wp-block-separator has-text-color has-cta-500-color has-alpha-channel-opacity has-cta-500-background-color has-background is-style-separator-thin" />
-        <!-- /wp:separator -->
+        <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
+        <div class="wp-block-group">
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <hr
+                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+            <!-- /wp:separator -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 
     <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:query {"queryId":28,"query":{"perPage":8,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]},"metadata":{"name":"Related Accommodation Query"},"align":"wide"} -->
+        <!-- wp:query {"queryId":28,"query":{"perPage":8,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]},"metadata":{"name":"Related Accommodation Query"},"align":"wide","className":"lsx-to-slider"} -->
         <div class="wp-block-query alignwide lsx-to-slider">
             <!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
-            <!-- wp:group {"metadata":{"name":"Accommodation Card","patternName":"ati-accommodation-card"},"className":"overflow-hidden is-style-shadow-sm is-style-column-box-shadow","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Accommodation Card","linkDestination":"post"} -->
+            <!-- wp:group {"metadata":{"name":"Accommodation Card","patternName":"ati-accommodation-card"},"className":"overflow-hidden is-style-shadow-sm is-style-tour-card-dark","style":{"border":{"radius":{"topLeft":"0rem","topRight":"0rem","bottomLeft":"0rem","bottomRight":"0rem"}}},"layout":{"type":"default"},"ariaLabel":"Accommodation Card"} -->
             <div aria-label="Accommodation Card"
-                class="wp-block-group overflow-hidden is-style-shadow-sm is-style-column-box-shadow"
-                style="border-radius:0.5rem">
-                <!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#FFF","isUserOverlayColor":false,"contentPosition":"top left","isDark":false,"className":"is-style-ati-cover-hover-zoom","style":{"dimensions":{"aspectRatio":"3/2"},"spacing":{"blockGap":"var:preset|spacing|70"}},"layout":{"type":"constrained"}} -->
-                <div
-                    class="wp-block-cover is-light has-custom-content-position is-position-top-left is-style-ati-cover-hover-zoom">
-                    <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"
-                        style="background-color:#FFF"></span>
-                    <div class="wp-block-cover__inner-container">
-                        <!-- wp:group {"style":{"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}},"spacing":{"blockGap":"165px"}},"layout":{"type":"constrained"}} -->
-                        <div class="wp-block-group"
-                            style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0">
-                            <!-- wp:group {"metadata":{"name":"Location"},"className":"lsx-destination-to-accommodation-","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top","flexWrap":"nowrap"}} -->
-                            <div class="wp-block-group lsx-destination-to-accommodation-">
-                                <!-- wp:group {"metadata":{"blockVisibility":false},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-                                <div class="wp-block-group">
-                                    <!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"destinationIcon"} /-->
-                                </div>
-                                <!-- /wp:group -->
+                class="wp-block-group overflow-hidden is-style-shadow-sm is-style-tour-card-dark"
+                style="border-top-left-radius:0rem;border-top-right-radius:0rem;border-bottom-left-radius:0rem;border-bottom-right-radius:0rem">
+                <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
 
-                                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                                <div class="wp-block-group">
-                                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_accommodation"}}}},"className":"is-style-ati-button"} -->
-                                    <p class="is-style-ati-button"></p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
-                            </div>
-                            <!-- /wp:group -->
-                        </div>
-                        <!-- /wp:group -->
-                    </div>
-                </div>
-                <!-- /wp:cover -->
-
-                <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
+                <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
                 <div class="wp-block-group"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
-                    <!-- wp:group {"metadata":{"name":"Accommodation Info"},"style":{"spacing":{"blockGap":"10px","padding":{"bottom":"var:preset|spacing|20"}},"border":{"bottom":{"color":"var:preset|color|neutral-200","width":"1px"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-                    <div class="wp-block-group"
-                        style="border-bottom-color:var(--wp--preset--color--neutral-200);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--20)">
-                        <!-- wp:group {"metadata":{"name":"Accommodation Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
-                        <div class="wp-block-group center-vertically" style="min-height:0rem">
-                            <!-- wp:post-title {"textAlign":"left","level":3,"isLink":true,"style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}},"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontSize":"400"} /-->
+                    style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--30)">
+                    <!-- wp:group {"metadata":{"name":"Accommodation Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+                    <div class="wp-block-group center-vertically" style="min-height:0rem">
+                        <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}}}} /-->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:group {"metadata":{"name":"Accommodation Information"},"className":"lsx-accommodation-info","style":{"spacing":{"padding":{"left":"var:preset|spacing|0","right":"var:preset|spacing|0","top":"var:preset|spacing|20","bottom":"var:preset|spacing|0"},"blockGap":"var:preset|spacing|10"},"border":{"top":{"color":"var:preset|color|brand-500","width":"1px"},"bottom":{"width":"0px","style":"none"},"right":[],"left":[]}},"layout":{"type":"default"},"ariaLabel":"Accommodation details"} -->
+                    <div aria-label="Accommodation details" class="wp-block-group lsx-accommodation-info"
+                        style="border-top-color:var(--wp--preset--color--brand-500);border-top-width:1px;border-bottom-style:none;border-bottom-width:0px;padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                        <!-- wp:group {"metadata":{"name":"Rating"},"className":"lsx-rating-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                        <div class="wp-block-group lsx-rating-wrapper">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating"}}}},"fontSize":"200","prefix":"Rating:"} -->
+                            <p class="has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
                         </div>
                         <!-- /wp:group -->
 
-                        <!-- wp:group {"metadata":{"name":"Accommodaiton Information"},"className":"lsx-tour-info","style":{"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"},"blockGap":"0"},"border":{"top":{"width":"0px","style":"none"},"bottom":{"width":"0px","style":"none"}}},"fontSize":"400","layout":{"type":"default"},"ariaLabel":"Tour details"} -->
-                        <div aria-label="Tour details" class="wp-block-group lsx-tour-info has-400-font-size"
-                            style="border-top-style:none;border-top-width:0px;border-bottom-style:none;border-bottom-width:0px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-                            <!-- wp:group {"metadata":{"name":"Type Row"},"className":"lsx-accommodation-type-wrapper","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group lsx-accommodation-type-wrapper">
-                                <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-500","iconColorValue":"#DBBD8D","width":"20px"} -->
-                                <div class="wp-block-outermost-icon-block">
-                                    <div class="icon-container has-icon-color has-primary-500-color"
-                                        style="color:#DBBD8D;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
-                                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
-                                            viewBox="0 0 256 256">
-                                            <path
-                                                d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z">
-                                            </path>
-                                        </svg></div>
-                                </div>
-                                <!-- /wp:outermost/icon-block -->
-
-                                <!-- wp:group {"className":"lsx-info-value","style":{"spacing":{"padding":{"top":"0.125rem","bottom":"0.125rem"},"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                                <div class="wp-block-group lsx-info-value"
-                                    style="padding-top:0.125rem;padding-bottom:0.125rem">
-                                    <!-- wp:paragraph {"fontSize":"200"} -->
-                                    <p class="has-200-font-size">Type:</p>
-                                    <!-- /wp:paragraph -->
-
-                                    <!-- wp:post-terms {"term":"accommodation-type","fontSize":"200"} /-->
-                                </div>
-                                <!-- /wp:group -->
+                        <!-- wp:group {"metadata":{"name":"Price Row"},"className":"lsx-price-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                        <div class="wp-block-group lsx-price-wrapper">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM240,56H16a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H240a8,8,0,0,0,8-8V64A8,8,0,0,0,240,56ZM193.65,184H62.35A56.78,56.78,0,0,0,24,145.65v-35.3A56.78,56.78,0,0,0,62.35,72h131.3A56.78,56.78,0,0,0,232,110.35v35.3A56.78,56.78,0,0,0,193.65,184ZM232,93.37A40.81,40.81,0,0,1,210.63,72H232ZM45.37,72A40.81,40.81,0,0,1,24,93.37V72ZM24,162.63A40.81,40.81,0,0,1,45.37,184H24ZM210.63,184A40.81,40.81,0,0,1,232,162.63V184Z">
+                                        </path>
+                                    </svg></div>
                             </div>
-                            <!-- /wp:group -->
+                            <!-- /wp:outermost/icon-block -->
 
-                            <!-- wp:group {"metadata":{"name":"Rooms Row"},"className":"lsx-number-of-rooms-wrapper","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group lsx-number-of-rooms-wrapper">
-                                <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-500","iconColorValue":"#DBBD8D","width":"20px"} -->
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"price"}},"__default":{"source":"core/pattern-overrides"}},"name":"Price"},"className":"lsx-info-value","fontSize":"200","prefix":"Price from: "} -->
+                            <p class="lsx-info-value has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"metadata":{"name":"Travel Style Row"},"className":"lsx-duration-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                        <div class="wp-block-group lsx-duration-wrapper"
+                            style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:post-terms {"term":"travel-style","prefix":"Travel styles: ","fontSize":"200"} /-->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"metadata":{"name":"Type Row"},"className":"lsx-accommodation-type-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                        <div class="wp-block-group lsx-accommodation-type-wrapper">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:post-terms {"term":"accommodation-type","prefix":"Type: ","className":"is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}}},"fontSize":"200"} /-->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"metadata":{"name":"Rooms Row"},"className":"lsx-number-of-rooms-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                        <div class="wp-block-group lsx-number-of-rooms-wrapper">
+                            <!-- wp:group {"className":"lsx-info-label","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+                            <div class="wp-block-group lsx-info-label">
+                                <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
                                 <div class="wp-block-outermost-icon-block">
-                                    <div class="icon-container has-icon-color has-primary-500-color"
-                                        style="color:#DBBD8D;width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                    <div class="icon-container"
+                                        style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
                                             viewBox="0 0 256 256">
                                             <path
@@ -806,17 +721,77 @@
                                         </svg></div>
                                 </div>
                                 <!-- /wp:outermost/icon-block -->
+                            </div>
+                            <!-- /wp:group -->
 
-                                <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                                <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"200"} -->
-                                    <p class="has-200-font-size">Rooms:</p>
-                                    <!-- /wp:paragraph -->
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"number_of_rooms"}},"__default":{"source":"core/pattern-overrides"}},"name":"Number of Rooms"},"className":"lsx-info-value","fontSize":"200","prefix":"Rooms: "} -->
+                            <p class="lsx-info-value has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
 
-                                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"number_of_rooms"}},"__default":{"source":"core/pattern-overrides"}},"name":"Number of Rooms"},"fontSize":"200"} -->
-                                    <p class="has-200-font-size"></p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
+                        <!-- wp:group {"metadata":{"name":"Suggested Visitor Types"},"className":"lsx-suggested-visitor-types-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                        <div class="wp-block-group lsx-suggested-visitor-types-wrapper">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M243.28,68.24l-24-23.56a16,16,0,0,0-22.59,0L104,136.23l-36.69-35.6a16,16,0,0,0-22.58.05l-24,24a16,16,0,0,0,0,22.61l71.62,72a16,16,0,0,0,22.63,0L243.33,90.91A16,16,0,0,0,243.28,68.24ZM103.62,208,32,136l24-24a.6.6,0,0,1,.08.08l42.35,41.09a8,8,0,0,0,11.19,0L208.06,56,232,79.6Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"suggested_visitor_types"}}}},"fontSize":"200","prefix":"Friendly:"} -->
+                            <p class="has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"metadata":{"name":"Special Interests"},"className":"lsx-special-interests-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                        <div class="wp-block-group lsx-special-interests-wrapper">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M237.2,151.87v0a47.1,47.1,0,0,0-2.35-5.45L193.26,51.8a7.82,7.82,0,0,0-1.66-2.44,32,32,0,0,0-45.26,0A8,8,0,0,0,144,55V80H112V55a8,8,0,0,0-2.34-5.66,32,32,0,0,0-45.26,0,7.82,7.82,0,0,0-1.66,2.44L21.15,146.4a47.1,47.1,0,0,0-2.35,5.45v0A48,48,0,1,0,112,168V96h32v72a48,48,0,1,0,93.2-16.13ZM76.71,59.75a16,16,0,0,1,19.29-1v73.51a47.9,47.9,0,0,0-46.79-9.92ZM64,200a32,32,0,1,1,32-32A32,32,0,0,1,64,200ZM160,58.74a16,16,0,0,1,19.29,1l27.5,62.58A47.9,47.9,0,0,0,160,132.25ZM192,200a32,32,0,1,1,32-32A32,32,0,0,1,192,200Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"special_interests"}}}},"fontSize":"200","prefix":"Special Interests:"} -->
+                            <p class="has-200-font-size"></p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"metadata":{"name":"Spoken Languages"},"className":"lsx-spoken-languages-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                        <div class="wp-block-group lsx-spoken-languages-wrapper">
+                            <!-- wp:outermost/icon-block {"iconName":"","width":"20px"} -->
+                            <div class="wp-block-outermost-icon-block">
+                                <div class="icon-container"
+                                    style="width:20px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.76,87.76,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <!-- /wp:outermost/icon-block -->
+
+                            <!-- wp:group {"metadata":{"name":"Languages Content"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                            <div class="wp-block-group">
+                                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"spoken_languages"}}}},"fontSize":"200","prefix":"Spoken Languages:"} -->
+                                <p class="has-200-font-size"></p>
+                                <!-- /wp:paragraph -->
                             </div>
                             <!-- /wp:group -->
                         </div>
@@ -824,43 +799,25 @@
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"bottom","justifyContent":"right"}} -->
-                    <div class="wp-block-group">
-                        <!-- wp:group {"className":"lsx-rating-wrapper","style":{"spacing":{"blockGap":"0"},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-                        <div class="wp-block-group lsx-rating-wrapper"><!-- wp:paragraph {"fontSize":"100"} -->
-                            <p class="has-100-font-size">Rating</p>
-                            <!-- /wp:paragraph -->
-
-                            <!-- wp:group {"metadata":{"name":"Rating"},"className":"lsx-rating-wrapper","style":{"spacing":{"blockGap":"5px"},"elements":{"link":{"color":{"text":"var:preset|color|cta-500"}}}},"textColor":"cta-500","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-                            <div
-                                class="wp-block-group lsx-rating-wrapper has-cta-500-color has-text-color has-link-color">
-                                <!-- wp:group {"metadata":{"name":"Rating Content"},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"bottom"}} -->
-                                <div class="wp-block-group">
-                                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating"}}}},"className":"is-style-ati-star-block"} -->
-                                    <p class="is-style-ati-star-block"></p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
-                            </div>
-                            <!-- /wp:group -->
-                        </div>
-                        <!-- /wp:group -->
-
-                        <!-- wp:buttons -->
-                        <div class="wp-block-buttons">
-                            <!-- wp:button {"backgroundColor":"base","textColor":"cta-500","width":100,"metadata":{"name":"Permalink"},"hoverTextColor":"cta-500","className":"is-style-fill","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|cta-500"}}}},"fontSize":"200","icon":"arrow-right"} -->
-                            <div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a
-                                    class="wp-block-button__link has-cta-500-color has-base-background-color has-text-color has-background has-link-color has-200-font-size has-custom-font-size wp-element-button"
-                                    href="#permalink"
-                                    style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">Lees
-                                    meer</a></div>
-                            <!-- /wp:button -->
-                        </div>
-                        <!-- /wp:buttons -->
+                    <!-- wp:group {"metadata":{"name":"Accommodation Text Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|0","left":"var:preset|spacing|0","bottom":"var:preset|spacing|0","top":"var:preset|spacing|0"}}},"fontSize":"200","layout":{"type":"default"}} -->
+                    <div class="wp-block-group has-200-font-size"
+                        style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                        <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":40,"className":"line-clamp-4"} /-->
                     </div>
                     <!-- /wp:group -->
                 </div>
                 <!-- /wp:group -->
+
+                <!-- wp:buttons -->
+                <div class="wp-block-buttons">
+                    <!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button-brand","style":{"border":{"radius":"0px"}}} -->
+                    <div
+                        class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button-brand">
+                        <a class="wp-block-button__link has-primary-background-color has-background wp-element-button"
+                            href="#permalink" style="border-radius:0px">View more</a></div>
+                    <!-- /wp:button -->
+                </div>
+                <!-- /wp:buttons -->
             </div>
             <!-- /wp:group -->
             <!-- /wp:post-template -->
