@@ -1,7 +1,24 @@
-<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:group {"tagName":"main","className":"site-content","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<main class="wp-block-group site-content" style="margin-top:0;margin-bottom:0"><!-- wp:post-content {"layout":{"type":"constrained"}} /--></main>
+<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
+
+<!-- wp:group {"metadata":{"name":"Hero"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|50"}}},"backgroundColor":"primary-500","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-default has-primary-500-background-color has-background"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--50)">
+    <!-- wp:block {"ref":22500} /-->
+
+    <!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained","justifyContent":"center","contentSize":"900px"}} -->
+    <div class="wp-block-group alignwide"
+        style="min-height:0px;padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
+        <!-- wp:post-title {"textAlign":"center","level":1,"align":"wide","className":"is-style-shadow-text","style":{"typography":{"fontStyle":"normal","fontWeight":"500","textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"900"} /-->
+    </div>
+    <!-- /wp:group -->
+</div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->
+<!-- wp:group {"tagName":"main","className":"site-content","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group site-content" style="margin-top:0;margin-bottom:0">
+    <!-- wp:post-content {"align":"wide","layout":{"type":"constrained"}} /--></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"ati-theme-2026","tagName":"footer","className":"site-footer"} /-->
