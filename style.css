@@ -391,6 +391,27 @@ ul.lsx-not_included-list li svg {
 	margin-bottom: 0 !important;
 }
 
+/* Rating stars */
+.ati-rating-stars {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	color: var(--wp--preset--color--contrast);
+}
+
+.ati-rating-stars .ati-star {
+	display: block;
+	fill: currentColor;
+}
+
+.is-style-tour-card-light .ati-rating-stars {
+	color: var(--wp--preset--color--accent-500);
+}
+
+.is-style-tour-card-dark .ati-rating-stars {
+	color: var(--wp--preset--color--brand-500);
+}
+
 /* Select dropdown */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
 	font-family: inherit !important;

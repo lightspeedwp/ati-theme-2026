@@ -119,7 +119,81 @@ return $block_content;
 add_filter( 'render_block', 'ati_theme_2026_render_button_links', 30, 2 );
 
 /**
- * Render bound accommodation rating paragraphs as ATI star pills.
+ * SVG markup for a filled rating star (Phosphor Star Weight Fill).
+ */
+define(
+	'ATI_STAR_FULL_SVG',
+	'<svg class="ati-star ati-star--full" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true" focusable="false">' .
+	'<path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path>' .
+	'</svg>'
+);
+
+/**
+ * SVG markup for an empty/outline rating star (Phosphor Star Weight Regular).
+ */
+define(
+	'ATI_STAR_EMPTY_SVG',
+	'<svg class="ati-star ati-star--empty" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true" focusable="false">' .
+	'<path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"></path>' .
+	'</svg>'
+);
+
+/**
+ * Build star SVG markup from a full and empty count.
+ *
+ * @param int $full_count  Number of filled stars.
+ * @param int $empty_count Number of empty stars.
+ * @return string
+ */
+function ati_theme_2026_build_star_markup( $full_count, $empty_count ) {
+	$label  = sprintf(
+		/* translators: %1$d filled, %2$d total */
+		_n( '%1$d star out of %2$d', '%1$d stars out of %2$d', $full_count, 'ati-theme-2026' ),
+		$full_count,
+		$full_count + $empty_count
+	);
+	$stars  = str_repeat( ATI_STAR_FULL_SVG, $full_count );
+	$stars .= str_repeat( ATI_STAR_EMPTY_SVG, $empty_count );
+	return '<span class="ati-rating-stars" role="img" aria-label="' . esc_attr( $label ) . '">' . $stars . '</span>';
+}
+
+/**
+ * Replace plugin star images with SVGs in lsx_to_custom_field_query output.
+ * Runs at priority 15, after accommodation (5) and tour (10) rating filters.
+ *
+ * @param string $html     Filtered HTML.
+ * @param string $meta_key Meta key being queried.
+ * @param mixed  $value    Raw meta value.
+ * @param string $before   HTML before the output.
+ * @param string $after    HTML after the output.
+ * @return string
+ */
+function ati_theme_2026_filter_rating_stars( $html, $meta_key, $value, $before, $after ) {
+	if ( 'rating' !== $meta_key || empty( $html ) ) {
+		return $html;
+	}
+
+	$full_count  = preg_match_all( '/rating-star-full\.png/i', $html );
+	$empty_count = preg_match_all( '/rating-star-empty\.png/i', $html );
+
+	// Fall back to Font Awesome classes used by the tour post type.
+	if ( 0 === $full_count + $empty_count ) {
+		$full_count  = preg_match_all( '/\bfa-star\b(?!-o)/i', $html );
+		$empty_count = preg_match_all( '/\bfa-star-o\b/i', $html );
+	}
+
+	if ( 0 === $full_count + $empty_count ) {
+		return $html;
+	}
+
+	return $before . ati_theme_2026_build_star_markup( $full_count, $empty_count ) . $after;
+}
+add_filter( 'lsx_to_custom_field_query', 'ati_theme_2026_filter_rating_stars', 15, 5 );
+
+/**
+ * Render bound rating paragraphs as SVG stars via the render_block hook.
+ * Catches any remaining star images not handled by the lsx_to_custom_field_query filter
+ * (e.g. when the block binding injects sanitised content before our filter can run).
  *
  * @param string $block_content Rendered block content.
  * @param array  $block         Parsed block data.
@@ -130,46 +204,24 @@ if ( empty( $block_content ) || empty( $block['blockName'] ) || 'core/paragraph'
 return $block_content;
 }
 
-if ( false === strpos( $block_content, 'is-style-ati-star-block' ) ) {
-return $block_content;
-}
-
 $binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
 if ( empty( $binding['source'] ) || 'lsx/post-meta' !== $binding['source'] || empty( $binding['args']['key'] ) || 'rating' !== $binding['args']['key'] ) {
 return $block_content;
 }
 
-$full_stars  = preg_match_all( '/rating-star-full\.png|fa\s+fa-star(?!-o)/i', $block_content );
-$empty_stars = preg_match_all( '/rating-star-empty\.png|fa\s+fa-star-o/i', $block_content );
-$total_stars = $full_stars + $empty_stars;
+$full_count  = preg_match_all( '/rating-star-full\.png/i', $block_content );
+$empty_count = preg_match_all( '/rating-star-empty\.png/i', $block_content );
 
-if ( 0 === $total_stars ) {
+if ( 0 === $full_count + $empty_count ) {
+$full_count  = preg_match_all( '/\bfa-star\b(?!-o)/i', $block_content );
+$empty_count = preg_match_all( '/\bfa-star-o\b/i', $block_content );
+}
+
+if ( 0 === $full_count + $empty_count ) {
 return $block_content;
 }
 
-$stars_markup = '';
-
-for ( $index = 0; $index < $full_stars; $index++ ) {
-$stars_markup .= '<span class="ati-rating-star" aria-hidden="true">&#9733;</span>';
-}
-
-for ( $index = 0; $index < $empty_stars; $index++ ) {
-$stars_markup .= '<span class="ati-rating-star is-empty" aria-hidden="true">&#9733;</span>';
-}
-
-$block_content = preg_replace_callback(
-'/<p\b([^>]*)class="([^"]*)"([^>]*)>/i',
-static function ( $matches ) {
-$classes = preg_split( '/\s+/', trim( $matches[2] ) );
-if ( ! in_array( 'ati-rating-stars', $classes, true ) ) {
-$classes[] = 'ati-rating-stars';
-}
-
-return '<p' . $matches[1] . 'class="' . esc_attr( implode( ' ', array_filter( $classes ) ) ) . '"' . $matches[3] . '>';
-},
-$block_content,
-1
-);
+$stars_markup = ati_theme_2026_build_star_markup( $full_count, $empty_count );
 
 $block_content = preg_replace(
 '/(<p\b[^>]*>)(.*?)(<\/p>)/si',
