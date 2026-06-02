@@ -24,6 +24,6 @@
         }
       }
     },
-    "css": "&{overflow:hidden; text-decoration:none;} & .wp-block-heading, & .wp-block-heading a{transition:color 200ms ease;} &:hover .wp-block-heading, &:hover .wp-block-heading a, &:focus-within .wp-block-heading, &:focus-within .wp-block-heading a{color:var(--wp--preset--color--brand-500);}"
+    "css": "&{overflow:hidden; text-decoration:none;} & .wp-block-heading, & .wp-block-heading a{transition:color 200ms ease;} &:hover .wp-block-heading, &:hover .wp-block-heading.has-text-color, &:hover .wp-block-heading.has-base-color, &:hover .wp-block-heading a, &:focus-within .wp-block-heading, &:focus-within .wp-block-heading.has-text-color, &:focus-within .wp-block-heading.has-base-color, &:focus-within .wp-block-heading a{color:var(--wp--preset--color--brand-500) !important;}"
   }
 }

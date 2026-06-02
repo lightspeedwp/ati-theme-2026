@@ -8,8 +8,8 @@
  */
 ?>
 
-<!-- wp:group {"metadata":{"name":"Mega Menu Card","patternName":"ati-mega-menu-card"},"className":"is-style-destination-link-card-dark","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary-500","textColor":"base","layout":{"type":"constrained"},"href":"/destination/zimbabwe/","linkDestination":"custom","ariaLabel":"Zimbabwe destination card"} -->
-<div aria-label="Zimbabwe destination card" class="wp-block-group is-style-destination-link-card-dark has-base-color has-primary-500-background-color has-text-color has-background has-link-color"><!-- wp:image {"id":18580,"aspectRatio":"3/2","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
+<!-- wp:group {"metadata":{"name":"Mega Menu Card","patternName":"ati-mega-menu-card"},"className":"is-style-ati-mega-menu-card","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary-500","textColor":"base","layout":{"type":"constrained"},"href":"/destination/zimbabwe/","linkDestination":"custom","ariaLabel":"Zimbabwe destination card"} -->
+<div aria-label="Zimbabwe destination card" class="wp-block-group is-style-ati-mega-menu-card has-base-color has-primary-500-background-color has-text-color has-background has-link-color"><!-- wp:image {"id":18580,"aspectRatio":"3/2","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
 <figure class="wp-block-image size-large"><img src="https://ati-holidays.lightspeedwp.dev/wp-content/uploads/2022/09/Zimbabwe-Menu-Final-1024x618.jpg" alt="Zimbabwe landscape" class="wp-image-18580" style="aspect-ratio:3/2;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
