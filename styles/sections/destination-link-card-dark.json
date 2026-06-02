@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/wp/trunk/theme.json",
+  "version": 3,
+  "title": "Destination Link Card Dark",
+  "slug": "destination-link-card-dark",
+  "blockTypes": [
+    "core/group"
+  ],
+  "description": "Dark ATI styling for linked destination teaser cards.",
+  "styles": {
+    "color": {
+      "background": "var:preset|color|primary-500",
+      "text": "var:preset|color|base"
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "var:preset|color|base"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var:preset|color|base"
+        }
+      }
+    },
+    "css": "&{overflow:hidden; text-decoration:none;} & .wp-block-heading, & .wp-block-heading a{transition:color 200ms ease;} &:hover .wp-block-heading, &:hover .wp-block-heading a, &:focus-within .wp-block-heading, &:focus-within .wp-block-heading a{color:var(--wp--preset--color--brand-500);}"
+  }
+}
