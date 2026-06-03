@@ -6,7 +6,8 @@
 	"blockTypes": [
 		"core/heading",
 		"core/paragraph",
-		"core/post-title"
+		"core/post-title",
+		"core/archive-title"
 	],
 	"description": "Subtle dark shadow for headings over image backgrounds",
 	"styles": {
