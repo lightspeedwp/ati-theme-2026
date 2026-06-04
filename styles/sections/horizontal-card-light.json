@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/wp/trunk/theme.json",
+  "version": 3,
+  "title": "Horizontal Card Light",
+  "slug": "horizontal-card-light",
+  "blockTypes": [
+    "core/group"
+  ],
+  "description": "Light ATI styling for reusable horizontal cards.",
+  "styles": {
+    "border": {
+      "radius": "var:preset|border-radius|300"
+    },
+    "color": {
+      "background": "var:preset|color|base",
+      "text": "var:preset|color|contrast"
+    },
+    "shadow": "var:preset|shadow|200",
+    "spacing": {
+      "blockGap": "var:preset|spacing|20",
+      "padding": {
+        "top": "var:preset|spacing|20",
+        "right": "var:preset|spacing|20",
+        "bottom": "var:preset|spacing|20",
+        "left": "var:preset|spacing|20"
+      }
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "var:preset|color|contrast"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var:preset|color|contrast"
+        },
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|contrast"
+          }
+        }
+      }
+    },
+    "css": "&{overflow:hidden;padding:var(--wp--preset--spacing--20);transition:box-shadow 300ms ease;} &:hover{box-shadow:var(--wp--preset--shadow--300)!important;} & .horizontal-card__body{padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);} & .horizontal-card__details{border-top-style:none;border-top-width:0;border-bottom-style:none;border-bottom-width:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0);} & .wp-block-cover,& .wp-block-post-featured-image{overflow:hidden;} & .wp-block-cover .wp-block-cover__image-background,& .wp-block-post-featured-image img{transition:transform 300ms ease;} &:hover .wp-block-cover .wp-block-cover__image-background,&:hover .wp-block-post-featured-image img{transform:scale(1.05);} & .wp-block-post-featured-image img{border-radius:var(--wp--preset--border-radius--100);} & .wp-block-post-title a,& .wp-block-post-title a:hover{color:var(--wp--preset--color--contrast);} & :where(.wp-block-post-excerpt__excerpt a,.wp-block-post-excerpt__more-link,.wp-block-post-terms a,.lsx-info-value a,p a):not(.wp-block-button__link){color:var(--wp--preset--color--accent-500);} & :where(.wp-block-post-excerpt__excerpt a,.wp-block-post-excerpt__more-link,.wp-block-post-terms a,.lsx-info-value a,p a):not(.wp-block-button__link):hover{color:var(--wp--preset--color--accent-600);} & .wp-block-outermost-icon-block .icon-container{color:var(--wp--preset--color--accent-500)!important;} & .wp-block-outermost-icon-block svg{fill:currentColor!important;} & .wp-block-button__link{padding:0;background-color:transparent;color:var(--wp--preset--color--accent-500);box-shadow:none;text-transform:none;text-decoration:none;} & .wp-block-button__link:hover{background-color:transparent;color:var(--wp--preset--color--accent-600);} & .wp-block-button__link:focus-visible{outline:2px solid var(--wp--preset--color--accent-500);outline-offset:2px;}"
+  }
+}
