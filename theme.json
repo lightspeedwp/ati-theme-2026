@@ -558,7 +558,7 @@
     "elements": {
       "button": {
         "border": {
-          "radius": "0px"
+          "radius": "var:preset|border-radius|100"
         },
         "color": {
           "background": "var:preset|color|cta-500",
@@ -660,7 +660,8 @@
             "border": {
               "width": "1px",
               "color": "var:preset|color|base",
-              "style": "solid"
+              "style": "solid",
+              "radius": "var:preset|border-radius|100"
             },
             "color": {
               "background": "color-mix(in srgb, var(--wp--preset--color--contrast) 40%, transparent)",
