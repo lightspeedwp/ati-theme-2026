@@ -7,12 +7,8 @@
  */
 ?>
 
-<!-- wp:group {"metadata":{"name":"Tour Card","patternName":"ati-tour-card"},"className":"overflow-hidden is-style-tour-card-light","style":{"spacing":{"blockGap":"var:preset|spacing|20"},"border":{"radius":{"topLeft":"var:preset|border-radius|300","topRight":"var:preset|border-radius|300","bottomLeft":"var:preset|border-radius|300","bottomRight":"var:preset|border-radius|300"}},"shadow":"var:preset|shadow|200"},"backgroundColor":"base","layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
-<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-light has-base-background-color has-background" style="border-top-left-radius:var(--wp--preset--border-radius--300);border-top-right-radius:var(--wp--preset--border-radius--300);border-bottom-left-radius:var(--wp--preset--border-radius--300);border-bottom-right-radius:var(--wp--preset--border-radius--300);box-shadow:var(--wp--preset--shadow--200)"><!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#727759","isUserOverlayColor":false,"className":"is-style-ati-cover-hover-zoom","style":{"dimensions":{"aspectRatio":"3/2"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-style-ati-cover-hover-zoom"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#727759"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"placeholder":"Write title…","style":{"typography":{"textAlign":"center"}},"fontSize":"large"} -->
-<p class="has-text-align-center has-large-font-size"></p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:cover -->
+<!-- wp:group {"metadata":{"name":"Tour Card","patternName":"ati-tour-card"},"className":"overflow-hidden is-style-tour-card-light is-style-card-light","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"backgroundColor":"base","layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
+<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-light is-style-card-light has-base-background-color has-background"><!-- wp:post-featured-image {"aspectRatio":"3/2"} /-->
 
 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"metadata":{"name":"Tour Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
