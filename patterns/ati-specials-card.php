@@ -7,7 +7,7 @@
  */
 ?>
 
-<!-- wp:group {"metadata":{"name":"Specials Card"},"className":"overflow-hidden is-style-horizontal-card-light","layout":{"type":"default"},"ariaLabel":"Specials Card"} -->
+<!-- wp:group {"metadata":{"name":"Specials Card","patternName":"ati-specials-card"},"className":"overflow-hidden is-style-horizontal-card-light","layout":{"type":"default"},"ariaLabel":"Specials Card","linkDestination":"post"} -->
 <div aria-label="Specials Card" class="wp-block-group overflow-hidden is-style-horizontal-card-light"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /--></div>
@@ -22,7 +22,7 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Special Text Content"},"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":65,"className":"line-clamp-4","fontSize":"200"} /--></div>
+<div class="wp-block-group"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":65,"fontSize":"200"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:buttons -->
@@ -34,7 +34,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"40%"} -->
-<div class="wp-block-column" style="flex-basis:40%"><!-- wp:group {"metadata":{"name":"Special Information"},"className":"horizontal-card__details","layout":{"type":"default"},"ariaLabel":"Special details"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:group {"metadata":{"name":"Special Information"},"className":"horizontal-card__details","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"default"},"ariaLabel":"Special details"} -->
 <div aria-label="Special details" class="wp-block-group horizontal-card__details"><!-- wp:group {"metadata":{"name":"Price Row"},"className":"lsx-price-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group lsx-price-wrapper" style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)"><!-- wp:group {"className":"lsx-info-label","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group lsx-info-label" style="padding-top:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0)"><!-- wp:outermost/icon-block {"iconName":"","iconColor":"accent-500","iconColorValue":"#AA653C","width":"20px"} -->
