@@ -9,7 +9,7 @@
   "description": "Light ATI styling for reusable horizontal cards.",
   "styles": {
     "border": {
-      "radius": "var:preset|border-radius|300"
+      "radius": "var:preset|border-radius|100"
     },
     "color": {
       "background": "var:preset|color|base",
@@ -42,6 +42,60 @@
         }
       }
     },
-    "css": "&{overflow:hidden;padding:var(--wp--preset--spacing--20);transition:box-shadow 300ms ease;} &:hover{box-shadow:var(--wp--preset--shadow--300)!important;} & .horizontal-card__body{padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);} & .horizontal-card__details{border-top-style:none;border-top-width:0;border-bottom-style:none;border-bottom-width:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0);} & .wp-block-cover,& .wp-block-post-featured-image{overflow:hidden;} & .wp-block-cover .wp-block-cover__image-background,& .wp-block-post-featured-image img{transition:transform 300ms ease;} &:hover .wp-block-cover .wp-block-cover__image-background,&:hover .wp-block-post-featured-image img{transform:scale(1.05);} & .wp-block-post-featured-image img{border-radius:var(--wp--preset--border-radius--100);} & .wp-block-post-title a,& .wp-block-post-title a:hover{color:var(--wp--preset--color--contrast);} & :where(.wp-block-post-excerpt__excerpt a,.wp-block-post-excerpt__more-link,.wp-block-post-terms a,.lsx-info-value a,p a):not(.wp-block-button__link){color:var(--wp--preset--color--accent-500);} & :where(.wp-block-post-excerpt__excerpt a,.wp-block-post-excerpt__more-link,.wp-block-post-terms a,.lsx-info-value a,p a):not(.wp-block-button__link):hover{color:var(--wp--preset--color--accent-600);} & .wp-block-outermost-icon-block .icon-container{color:var(--wp--preset--color--accent-500)!important;} & .wp-block-outermost-icon-block svg{fill:currentColor!important;} & .wp-block-button__link{padding:0;background-color:transparent;color:var(--wp--preset--color--accent-500);box-shadow:none;text-transform:none;text-decoration:none;} & .wp-block-button__link:hover{background-color:transparent;color:var(--wp--preset--color--accent-600);} & .wp-block-button__link:focus-visible{outline:2px solid var(--wp--preset--color--accent-500);outline-offset:2px;}"
+    "blocks": {
+      "core/post-featured-image": {
+        "border": {
+          "radius": "var:preset|border-radius|100"
+        }
+      },
+      "core/post-excerpt": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var:preset|color|accent-500"
+            },
+            ":hover": {
+              "color": {
+                "text": "var:preset|color|accent-600"
+              }
+            }
+          }
+        }
+      },
+      "core/post-terms": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var:preset|color|accent-500"
+            },
+            ":hover": {
+              "color": {
+                "text": "var:preset|color|accent-600"
+              }
+            }
+          }
+        }
+      },
+      "core/paragraph": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var:preset|color|accent-500"
+            },
+            ":hover": {
+              "color": {
+                "text": "var:preset|color|accent-600"
+              }
+            }
+          }
+        }
+      },
+      "outermost/icon-block": {
+        "color": {
+          "text": "var:preset|color|accent-500"
+        }
+      }
+    },
+    "css": "&{overflow:hidden;transition:box-shadow 300ms ease;} &:hover{box-shadow:var(--wp--preset--shadow--300)!important;} & .horizontal-card__body{padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);} & .horizontal-card__details{border-top-style:none;border-top-width:0;border-bottom-style:none;border-bottom-width:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0);} & .wp-block-cover,& .wp-block-post-featured-image{overflow:hidden;} & .wp-block-cover .wp-block-cover__image-background,& .wp-block-post-featured-image img{transition:transform 300ms ease;} &:hover .wp-block-cover .wp-block-cover__image-background,&:hover .wp-block-post-featured-image img{transform:scale(1.05);} & .wp-block-outermost-icon-block svg{fill:currentColor!important;} & .wp-block-button__link:focus-visible{outline:2px solid var(--wp--preset--color--accent-500);outline-offset:2px;}"
   }
 }

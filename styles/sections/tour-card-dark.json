@@ -9,7 +9,7 @@
   "description": "Dark ATI styling for reusable tour cards.",
   "styles": {
     "border": {
-      "radius": "var:preset|border-radius|300"
+      "radius": "var:preset|border-radius|100"
     },
     "color": {
       "background": "var:preset|color|primary-500",
@@ -39,9 +39,6 @@
         "color": {
           "background": "var:preset|color|brand-500"
         }
-      },
-      "border": {
-        "radius": "var:preset|border-radius|300"
       }
     },
     "css": "&{overflow:hidden;max-width:30rem;transition:box-shadow 300ms ease;} &:hover{box-shadow:var(--wp--preset--shadow--300)!important;} & :is([aria-label=\"Details\"],[aria-label=\"Tour details\"]){border-top-color:var(--wp--preset--color--brand-500);} & .wp-block-cover,& .wp-block-post-featured-image{overflow:hidden;} & .wp-block-cover .wp-block-cover__image-background,& .wp-block-post-featured-image img{transition:transform 300ms ease;} &:hover .wp-block-cover .wp-block-cover__image-background,&:hover .wp-block-post-featured-image img{transform:scale(1.05);} & .wp-block-post-title a,& .wp-block-post-title a:hover{color:var(--wp--preset--color--base);} & :where(.wp-block-post-excerpt__excerpt a,.wp-block-post-excerpt__more-link,.wp-block-post-terms a,p a):not(.wp-block-button__link){color:var(--wp--preset--color--brand-500);} & :where(.wp-block-post-excerpt__excerpt a,.wp-block-post-excerpt__more-link,.wp-block-post-terms a,p a):not(.wp-block-button__link):hover{color:var(--wp--preset--color--brand-300);} & .wp-block-outermost-icon-block .icon-container{color:var(--wp--preset--color--brand-500);} & .wp-block-outermost-icon-block svg{fill:currentColor;} & .wp-block-button__link{background-color:var(--wp--preset--color--brand-500); color:var(--wp--preset--color--base);} & .wp-block-button__link:hover{background-color:var(--wp--preset--color--accent-500); color:var(--wp--preset--color--base);} & .wp-block-button__link:focus-visible{outline:2px solid var(--wp--preset--color--brand-500); outline-offset:2px;}"
