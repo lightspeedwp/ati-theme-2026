@@ -542,10 +542,6 @@ ul.lsx-not_included-list li svg {
 }
 
 @media (max-width: 781px) {
-	.ati-post-pager {
-		flex-wrap: wrap !important;
-	}
-
 	.ati-post-pager>.wp-block-post-navigation-link {
 		flex-basis: 100%;
 	}
@@ -555,14 +551,7 @@ ul.lsx-not_included-list li svg {
 	}
 
 	.ati-post-pager .post-navigation-link__title {
-		font-size: var(--wp--preset--font-size--400);
-	}
-
-	.ati-post-pager .post-navigation-link-next,
-	.ati-post-pager .post-navigation-link-next a {
-		justify-content: flex-start;
-		align-items: flex-start;
-		text-align: left;
+		display: none;
 	}
 
 }
