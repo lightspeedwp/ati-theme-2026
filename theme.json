@@ -610,21 +610,24 @@
 				"typography": {
 					"fontSize": "var:preset|font-size|800",
 					"lineHeight": "var:custom|typography|line-height|snug",
-					"fontWeight": "var:custom|typography|font-weight|bold"
+					"fontWeight": "var:custom|typography|font-weight|semibold",
+					"letterSpacing": "var:custom|typography|letter-spacing|wide"
 				}
 			},
 			"h2": {
 				"typography": {
 					"fontSize": "var:preset|font-size|600",
 					"lineHeight": "var:custom|typography|line-height|snug",
-					"fontWeight": "var:custom|typography|font-weight|bold"
+					"fontWeight": "var:custom|typography|font-weight|semibold",
+					"letterSpacing": "var:custom|typography|letter-spacing|wide"
 				}
 			},
 			"h3": {
 				"typography": {
 					"fontSize": "var:preset|font-size|400",
 					"lineHeight": "var:custom|typography|line-height|snug",
-					"fontWeight": "var:custom|typography|font-weight|bold"
+					"fontWeight": "var:custom|typography|font-weight|semibold",
+					"letterSpacing": "var:custom|typography|letter-spacing|wide"
 				}
 			},
 			"h4": {
