@@ -484,6 +484,12 @@ ul.lsx-not_included-list li svg {
 	color: inherit;
 }
 
+.ati-post-pager .wp-block-post-navigation-link-next,
+.ati-post-pager .wp-block-post-navigation-link-next .post-navigation-link__label,
+.ati-post-pager .wp-block-post-navigation-link-next .post-navigation-link__title {
+	text-align: right;
+}
+
 .ati-post-pager .wp-block-post-navigation-link__arrow-previous,
 .ati-post-pager .wp-block-post-navigation-link__arrow-next {
 	display: block;
