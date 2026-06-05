@@ -455,12 +455,12 @@
         {
           "name": "Base",
           "slug": "300",
-          "shadow": "0 6px 18px rgba(35, 31, 32, 0.16)"
+          "shadow": "0px 18px 14px -16px rgba(0, 0, 0, 0.20)"
         },
         {
           "name": "Lifted",
           "slug": "500",
-          "shadow": "0 12px 28px rgba(35, 31, 32, 0.20)"
+          "shadow": "0px 20px 14px -12px rgba(0, 0, 0, 0.35)"
         },
         {
           "name": "Overlay",
