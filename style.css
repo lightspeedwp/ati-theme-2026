@@ -461,11 +461,6 @@ ul.lsx-not_included-list li svg {
 	gap: var(--wp--preset--spacing--10);
 }
 
-.ati-post-pager .post-navigation-link-next {
-	justify-content: flex-end;
-	text-align: right;
-}
-
 .ati-post-pager .wp-block-post-navigation-link a {
 	display: flex;
 	flex-direction: column;
@@ -475,11 +470,6 @@ ul.lsx-not_included-list li svg {
 	word-break: break-word;
 	text-wrap: pretty;
 	transition: color 200ms ease;
-}
-
-.ati-post-pager .post-navigation-link-next a {
-	align-items: flex-end;
-	text-align: right;
 }
 
 .ati-post-pager .post-navigation-link__label {
