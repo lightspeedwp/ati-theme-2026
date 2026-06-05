@@ -403,7 +403,7 @@ ul.lsx-not_included-list li svg {
 	position: relative;
 	line-height: 1.3;
 	height: 2.5em;
-	background-image: url('/wp-content/themes/ati-theme-2026/assets/icons/sorting-chevron.svg');
+	background-image: url('assets/icons/sorting-chevron.svg');
 	background-repeat: no-repeat;
 	background-position: right 0.8rem center;
 	background-size: 1.5rem 1.5rem;
@@ -417,7 +417,7 @@ ul.lsx-not_included-list li svg {
 /* Remove default dropdown arrow in Firefox */
 @-moz-document url-prefix() {
 	.wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
-		background-image: url('/wp-content/themes/ati-theme-2026/assets/icons/sorting-chevron.svg');
+		background-image: url('assets/icons/sorting-chevron.svg');
 	}
 }
 

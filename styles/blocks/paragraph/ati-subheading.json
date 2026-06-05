@@ -1,5 +1,5 @@
 {
-	"$schema": "https://schemas.wp.org/wp/trunk/theme.json",
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
 	"version": 3,
 	"title": "ATI Subheading",
 	"slug": "ati-subheading",
