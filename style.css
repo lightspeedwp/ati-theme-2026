@@ -448,11 +448,6 @@ ul.lsx-not_included-list li svg {
 
 /* === Single Post Pager === */
 
-.ati-post-pager {
-	align-items: stretch !important;
-	gap: var(--wp--preset--spacing--20);
-}
-
 .ati-post-pager>.wp-block-post-navigation-link {
 	flex: 1 1 0;
 	min-width: 0;
@@ -469,7 +464,6 @@ ul.lsx-not_included-list li svg {
 	text-decoration: none;
 	word-break: break-word;
 	text-wrap: pretty;
-	transition: color 200ms ease;
 }
 
 .ati-post-pager .post-navigation-link__label {
