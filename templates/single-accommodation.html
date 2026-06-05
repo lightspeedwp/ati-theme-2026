@@ -1,6 +1,10 @@
 <!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:group {"metadata":{"name":"Main Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /--></div>
+<!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Single Hero"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull"
@@ -10,16 +14,7 @@
         style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--0);min-height:50px">
         <span aria-hidden="true"
             class="wp-block-cover__background has-contrast-background-color has-background-dim-10 has-background-dim"></span>
-        <div class="wp-block-cover__inner-container">
-            <!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"has-text-color has-link-color is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}},"color":{"background":"#dbbd8dde"}},"layout":{"type":"constrained"}} -->
-            <div class="wp-block-group alignfull has-text-color has-link-color is-style-default has-background"
-                style="background-color:#dbbd8dde;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
-                <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"200","layout":{"type":"default"}} -->
-                <div class="wp-block-group alignwide is-style-default has-200-font-size">
-                    <!-- wp:yoast-seo/breadcrumbs /--></div>
-                <!-- /wp:group -->
-            </div>
-            <!-- /wp:group -->
+        <div class="wp-block-cover__inner-container"><!-- wp:block {"ref":22500} /-->
 
             <!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40","right":"var:preset|spacing|20","left":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"center","contentSize":"1100px"}} -->
             <div class="wp-block-group alignwide"
@@ -86,9 +81,9 @@
 </div>
 <!-- /wp:lsx-tour-operator/sticky-menu -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|70"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|70"}}},"backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
 <section
-    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="SUMMARY" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--70)"
     data-sticky-menu-section="true" data-section-title="SUMMARY" role="region" aria-labelledby="SUMMARY-header">
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
@@ -141,9 +136,9 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"UNITS"},"align":"full","className":"lsx-units-wrapper is-style-ati-page-section-default","backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"UNITS","addToStickyMenu":true,"stickyMenuId":"UNITS","stickyMenuTitle":"UNITS"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"UNITS"},"align":"full","className":"lsx-units-wrapper is-style-ati-page-section-default","backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"UNITS","addToStickyMenu":true,"stickyMenuId":"UNITS","stickyMenuTitle":"UNITS"} -->
 <section
-    class="wp-block-group alignfull lsx-units-wrapper is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull lsx-units-wrapper is-style-ati-page-section-default has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="UNITS" data-sticky-menu-section="true" data-section-title="UNITS" role="region" aria-labelledby="UNITS-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
@@ -154,9 +149,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -286,9 +281,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -305,9 +300,9 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"GALLERY"},"className":"lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"GALLERY","addToStickyMenu":true,"stickyMenuId":"GALLERY","stickyMenuTitle":"GALLERY"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"GALLERY"},"className":"lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"GALLERY","addToStickyMenu":true,"stickyMenuId":"GALLERY","stickyMenuTitle":"GALLERY"} -->
 <section id="GALLERY"
-    class="wp-block-group lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group lsx-gallery-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     data-sticky-menu-section="true" data-section-title="GALLERY" role="region" aria-labelledby="GALLERY-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
@@ -318,9 +313,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -385,11 +380,11 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"REVIEWS"},"align":"full","className":"lsx-review-related-accommodation-query-wrapper lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"REVIEWS","addToStickyMenu":true,"stickyMenuId":"REVIEWS","stickyMenuTitle":"REVIEWS"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"REVIEWS"},"align":"full","className":"lsx-review-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"REVIEWS","addToStickyMenu":true,"stickyMenuId":"REVIEWS","stickyMenuTitle":"REVIEWS"} -->
 <section
-    class="wp-block-group alignfull lsx-review-related-accommodation-query-wrapper lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
-    id="REVIEWS" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"
-    data-sticky-menu-section="true" data-section-title="REVIEWS" role="region" aria-labelledby="REVIEWS-header">
+    class="wp-block-group alignfull lsx-review-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default has-brand-100-background-color has-background lsx-to-sticky-menu-section"
+    id="REVIEWS" data-sticky-menu-section="true" data-section-title="REVIEWS" role="region"
+    aria-labelledby="REVIEWS-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
         <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
@@ -399,9 +394,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -436,9 +431,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -583,9 +578,9 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"RELATED ACCOMMODATION"},"align":"full","className":"lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"RELATED-ACCOMMODATION","addToStickyMenu":true,"stickyMenuId":"RELATED-ACCOMMODATION","stickyMenuTitle":"RELATED ACCOMMODATION"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"RELATED ACCOMMODATION"},"align":"full","className":"lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default","backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"RELATED-ACCOMMODATION","addToStickyMenu":true,"stickyMenuId":"RELATED-ACCOMMODATION","stickyMenuTitle":"RELATED ACCOMMODATION"} -->
 <section
-    class="wp-block-group alignfull lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull lsx-accommodation-related-accommodation-query-wrapper lsx-to-sticky-menu-section is-style-ati-page-section-default has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="RELATED-ACCOMMODATION" data-sticky-menu-section="true" data-section-title="RELATED ACCOMMODATION" role="region"
     aria-labelledby="RELATED-ACCOMMODATION-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
@@ -597,9 +592,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -611,10 +606,10 @@
         <!-- wp:query {"queryId":28,"query":{"perPage":8,"pages":0,"offset":0,"postType":"accommodation","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]},"metadata":{"name":"Related Accommodation Query"},"align":"wide","className":"lsx-to-slider"} -->
         <div class="wp-block-query alignwide lsx-to-slider">
             <!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
-            <!-- wp:group {"metadata":{"name":"Accommodation Card","patternName":"ati-accommodation-card"},"className":"overflow-hidden is-style-tour-card-dark is-style-card-light","layout":{"type":"default"},"ariaLabel":"Accommodation Card","linkDestination":"post"} -->
+            <!-- wp:group {"metadata":{"name":"Accommodation Card","patternName":"ati-accommodation-card"},"className":"overflow-hidden is-style-tour-card-light is-style-card-light","layout":{"type":"default"},"ariaLabel":"Accommodation Card","linkDestination":"post"} -->
             <div aria-label="Accommodation Card"
-                class="wp-block-group overflow-hidden is-style-tour-card-dark is-style-card-light">
-                <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
+                class="wp-block-group overflow-hidden is-style-tour-card-light is-style-card-light">
+                <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 
                 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
                 <div class="wp-block-group"
@@ -625,9 +620,9 @@
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:group {"metadata":{"name":"Accommodation Information"},"className":"lsx-accommodation-info","style":{"spacing":{"padding":{"left":"var:preset|spacing|0","right":"var:preset|spacing|0","top":"var:preset|spacing|20","bottom":"var:preset|spacing|0"},"blockGap":"var:preset|spacing|10"},"border":{"top":{"color":"var:preset|color|brand-500","width":"1px"},"bottom":{"width":"0px","style":"none"},"right":[],"left":[]}},"layout":{"type":"default"},"ariaLabel":"Accommodation details"} -->
-                    <div aria-label="Accommodation details" class="wp-block-group lsx-accommodation-info"
-                        style="border-top-color:var(--wp--preset--color--brand-500);border-top-width:1px;border-bottom-style:none;border-bottom-width:0px;padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
+                    <!-- wp:group {"metadata":{"name":"Accommodation Information"},"className":"lsx-accommodation-info","style":{"spacing":{"padding":{"left":"var:preset|spacing|0","right":"var:preset|spacing|0","top":"var:preset|spacing|30","bottom":"var:preset|spacing|0"},"blockGap":"var:preset|spacing|10"},"border":{"top":{"color":"var:preset|color|accent-500","width":"1px"},"bottom":{"width":"0px","style":"none"}},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|accent-600"}},"color":{"text":"var:preset|color|accent-500"}}}},"layout":{"type":"default"},"ariaLabel":"Accommodation details"} -->
+                    <div aria-label="Accommodation details" class="wp-block-group lsx-accommodation-info has-link-color"
+                        style="border-top-color:var(--wp--preset--color--accent-500);border-top-width:1px;border-bottom-style:none;border-bottom-width:0px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
                         <!-- wp:group {"metadata":{"name":"Rating"},"className":"lsx-rating-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
                         <div class="wp-block-group lsx-rating-wrapper">
                             <!-- wp:outermost/icon-block {"iconName":"","width":"20px","style":{"spacing":{"padding":{"top":"4px","bottom":"4px"}}}} -->
@@ -822,9 +817,9 @@
 
                 <!-- wp:buttons -->
                 <div class="wp-block-buttons">
-                    <!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button-brand","style":{"border":{"radius":"0px"}}} -->
+                    <!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button","style":{"border":{"radius":"0px"}}} -->
                     <div
-                        class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button-brand">
+                        class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button">
                         <a class="wp-block-button__link has-primary-background-color has-background wp-element-button"
                             href="#permalink" style="border-radius:0px">View more</a></div>
                     <!-- /wp:button -->

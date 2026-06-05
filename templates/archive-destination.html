@@ -1,6 +1,10 @@
 <!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:group {"metadata":{"name":"Main Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /--></div>
+<!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Archive Hero"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull"
@@ -30,15 +34,15 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ati-page-section-default facetwp-template","backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ati-page-section-default facetwp-template","backgroundColor":"brand-100","layout":{"type":"constrained"}} -->
 <div
-    class="wp-block-group alignwide is-style-ati-page-section-default facetwp-template has-neutral-100-background-color has-background">
+    class="wp-block-group alignwide is-style-ati-page-section-default facetwp-template has-brand-100-background-color has-background">
     <!-- wp:query {"queryId":55,"query":{"perPage":15,"pages":"3","offset":"0","postType":"destination","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"align":"wide","className":"parents-only","layout":{"type":"constrained","contentSize":""},"enableFacetWP":false} -->
     <div class="wp-block-query alignwide parents-only">
         <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"22rem"}} -->
         <!-- wp:group {"tagName":"article","metadata":{"name":"Destination Card","patternName":"ati-destination-card"},"className":"is-style-tour-card-light is-style-card-light","layout":{"type":"default"},"ariaLabel":"Destination Card","linkDestination":"post"} -->
         <article aria-label="Destination Card" class="wp-block-group is-style-tour-card-light is-style-card-light">
-            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
+            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 
             <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
             <div class="wp-block-group"

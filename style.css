@@ -26,7 +26,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 .lsx-to-slider .slick-arrow {
 	position: absolute !important;
 	top: 50% !important;
-	transform: translateY(-50%) !important;
+	transform: translateY(-45%) !important;
 	z-index: 2;
 }
 
@@ -69,7 +69,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	right: auto !important;
 	transform: none !important;
 	width: max-content !important;
-	margin: var(--wp--preset--spacing--20) auto 0 !important;
+	margin: var(--wp--preset--spacing--30) auto 0 !important;
 	padding: 0 !important;
 	display: flex !important;
 	align-items: center !important;
@@ -104,7 +104,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	padding: 0 !important;
 	border: none !important;
 	display: block;
-	border-radius: 1px !important;
+	border-radius: 2px !important;
 	background: var(--wp--preset--color--brand-500) !important;
 	cursor: pointer;
 	overflow: hidden;

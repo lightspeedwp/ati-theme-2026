@@ -73,12 +73,12 @@
 </div>
 <!-- /wp:lsx-tour-operator/sticky-menu -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|70"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|70"}}},"backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
 <section
-    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="SUMMARY" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--70)"
     data-sticky-menu-section="true" data-section-title="SUMMARY" role="region" aria-labelledby="SUMMARY-header">
-    <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+    <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|70"}}}} -->
     <div class="wp-block-columns alignwide"><!-- wp:column {"width":"66.66%"} -->
         <div class="wp-block-column" style="flex-basis:66.66%">
             <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
@@ -137,9 +137,9 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"ITINERARY"},"align":"wide","className":"lsx-itinerary-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"ITINERARY","addToStickyMenu":true,"stickyMenuId":"ITINERARY","stickyMenuTitle":"ITINERARY"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"ITINERARY"},"align":"wide","className":"lsx-itinerary-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"ITINERARY","addToStickyMenu":true,"stickyMenuId":"ITINERARY","stickyMenuTitle":"ITINERARY"} -->
 <section
-    class="wp-block-group alignwide lsx-itinerary-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignwide lsx-itinerary-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="ITINERARY" data-sticky-menu-section="true" data-section-title="ITINERARY" role="region"
     aria-labelledby="ITINERARY-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
@@ -151,9 +151,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -350,9 +350,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -363,16 +363,22 @@
     <div class="wp-block-group alignwide">
         <!-- wp:gallery {"linkTarget":"_blank","linkTo":"media","sizeSlug":"thumbnail","metadata":{"name":"TO Gallery","bindings":{"content":{"source":"lsx/gallery"}}},"align":"wide"} -->
         <figure class="wp-block-gallery alignwide has-nested-images columns-default is-cropped">
-            <!-- wp:image {"linkDestination":"media"} -->
-            <figure class="wp-block-image"><img alt="" /></figure>
+            <!-- wp:image {"linkDestination":"media","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|100","topRight":"var:preset|border-radius|100","bottomLeft":"var:preset|border-radius|100","bottomRight":"var:preset|border-radius|100"}}}} -->
+            <figure class="wp-block-image has-custom-border"><img alt=""
+                    style="border-top-left-radius:var(--wp--preset--border-radius--100);border-top-right-radius:var(--wp--preset--border-radius--100);border-bottom-left-radius:var(--wp--preset--border-radius--100);border-bottom-right-radius:var(--wp--preset--border-radius--100)" />
+            </figure>
             <!-- /wp:image -->
 
-            <!-- wp:image {"linkDestination":"media"} -->
-            <figure class="wp-block-image"><img alt="" /></figure>
+            <!-- wp:image {"linkDestination":"media","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|100","topRight":"var:preset|border-radius|100","bottomLeft":"var:preset|border-radius|100","bottomRight":"var:preset|border-radius|100"}}}} -->
+            <figure class="wp-block-image has-custom-border"><img alt=""
+                    style="border-top-left-radius:var(--wp--preset--border-radius--100);border-top-right-radius:var(--wp--preset--border-radius--100);border-bottom-left-radius:var(--wp--preset--border-radius--100);border-bottom-right-radius:var(--wp--preset--border-radius--100)" />
+            </figure>
             <!-- /wp:image -->
 
-            <!-- wp:image {"linkDestination":"media"} -->
-            <figure class="wp-block-image"><img alt="" /></figure>
+            <!-- wp:image {"linkDestination":"media","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|100","topRight":"var:preset|border-radius|100","bottomLeft":"var:preset|border-radius|100","bottomRight":"var:preset|border-radius|100"}}}} -->
+            <figure class="wp-block-image has-custom-border"><img alt=""
+                    style="border-top-left-radius:var(--wp--preset--border-radius--100);border-top-right-radius:var(--wp--preset--border-radius--100);border-bottom-left-radius:var(--wp--preset--border-radius--100);border-bottom-right-radius:var(--wp--preset--border-radius--100)" />
+            </figure>
             <!-- /wp:image -->
         </figure>
         <!-- /wp:gallery -->
@@ -431,9 +437,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->

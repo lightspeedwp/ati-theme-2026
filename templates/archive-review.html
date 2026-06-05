@@ -1,6 +1,10 @@
 <!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:group {"metadata":{"name":"Main Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /--></div>
+<!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Archive Hero"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull"
@@ -38,9 +42,8 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ati-page-section-default ","backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
-<div
-    class="wp-block-group alignwide is-style-ati-page-section-default  has-neutral-100-background-color has-background">
+<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ati-page-section-default ","backgroundColor":"brand-100","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide is-style-ati-page-section-default  has-brand-100-background-color has-background">
     <!-- wp:query {"queryId":55,"query":{"perPage":8,"pages":"3","offset":"0","postType":"review","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[],"meta_query":[]},"namespace":"advanced-query-loop","align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
     <div class="wp-block-query alignwide">
         <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","layout":{"type":"default","columnCount":3,"minimumColumnWidth":"22rem"}} -->

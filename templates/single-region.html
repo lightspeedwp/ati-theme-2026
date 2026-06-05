@@ -1,6 +1,10 @@
 <!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:group {"metadata":{"name":"Main Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /--></div>
+<!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Single Hero"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull"
@@ -10,16 +14,7 @@
         style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--0);min-height:50px">
         <span aria-hidden="true"
             class="wp-block-cover__background has-contrast-background-color has-background-dim-10 has-background-dim"></span>
-        <div class="wp-block-cover__inner-container">
-            <!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"has-text-color has-link-color is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|neutral-900"}}}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}},"color":{"background":"#dbbd8dde"}},"layout":{"type":"constrained"}} -->
-            <div class="wp-block-group alignfull has-text-color has-link-color is-style-default has-background"
-                style="background-color:#dbbd8dde;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
-                <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"200","layout":{"type":"default"}} -->
-                <div class="wp-block-group alignwide is-style-default has-200-font-size">
-                    <!-- wp:yoast-seo/breadcrumbs /--></div>
-                <!-- /wp:group -->
-            </div>
-            <!-- /wp:group -->
+        <div class="wp-block-cover__inner-container"><!-- wp:block {"ref":22500} /-->
 
             <!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40","right":"var:preset|spacing|20","left":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"center","contentSize":"1100px"}} -->
             <div class="wp-block-group alignwide"
@@ -74,9 +69,9 @@
 </div>
 <!-- /wp:lsx-tour-operator/sticky-menu -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|70"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|70"}}},"backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
 <section
-    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignwide is-style-ati-page-section-default lsx-to-sticky-menu-section has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="SUMMARY" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--70)"
     data-sticky-menu-section="true" data-section-title="SUMMARY" role="region" aria-labelledby="SUMMARY-header">
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
@@ -146,9 +141,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -307,9 +302,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -633,9 +628,9 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"REGIONS"},"align":"full","className":"lsx-regions-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"REGIONS","addToStickyMenu":true,"stickyMenuId":"REGIONS","stickyMenuTitle":"REGIONS"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"REGIONS"},"align":"full","className":"lsx-regions-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"REGIONS","addToStickyMenu":true,"stickyMenuId":"REGIONS","stickyMenuTitle":"REGIONS"} -->
 <section
-    class="wp-block-group alignfull lsx-regions-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull lsx-regions-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="REGIONS" data-sticky-menu-section="true" data-section-title="REGIONS" role="region"
     aria-labelledby="REGIONS-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
@@ -647,9 +642,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -674,9 +669,9 @@
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:group {"metadata":{"name":"Destination Information"},"style":{"border":{"top":{"color":"var:preset|color|brand-500","width":"1px"},"bottom":{"width":"0px","style":"none"},"right":[],"left":[]},"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"},"ariaLabel":"Tour details"} -->
+                    <!-- wp:group {"metadata":{"name":"Destination Information"},"style":{"border":{"top":{"color":"var:preset|color|accent-500","width":"1px"},"bottom":{"width":"0px","style":"none"},"right":[],"left":[]},"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"},"ariaLabel":"Tour details"} -->
                     <div aria-label="Tour details" class="wp-block-group"
-                        style="border-top-color:var(--wp--preset--color--brand-500);border-top-width:1px;border-bottom-style:none;border-bottom-width:0px;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0)">
+                        style="border-top-color:var(--wp--preset--color--accent-500);border-top-width:1px;border-bottom-style:none;border-bottom-width:0px;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0)">
                         <!-- wp:group {"metadata":{"name":"Travel Style Row"},"className":"lsx-travel-style-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
                         <div class="wp-block-group lsx-travel-style-wrapper"
                             style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">
@@ -709,9 +704,9 @@
 
                 <!-- wp:buttons -->
                 <div class="wp-block-buttons">
-                    <!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button-brand","style":{"border":{"radius":"0px"}}} -->
+                    <!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button","style":{"border":{"radius":"0px"}}} -->
                     <div
-                        class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button-brand">
+                        class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button">
                         <a class="wp-block-button__link has-primary-background-color has-background wp-element-button"
                             href="#permalink" style="border-radius:0px">View more</a></div>
                     <!-- /wp:button -->
@@ -740,9 +735,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -771,9 +766,9 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"REVIEWS"},"align":"full","className":"lsx-review-related-destination-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"REVIEWS","addToStickyMenu":true,"stickyMenuId":"REVIEWS","stickyMenuTitle":"REVIEWS"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"REVIEWS"},"align":"full","className":"lsx-review-related-destination-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section","backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"REVIEWS","addToStickyMenu":true,"stickyMenuId":"REVIEWS","stickyMenuTitle":"REVIEWS"} -->
 <section
-    class="wp-block-group alignfull lsx-review-related-destination-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull lsx-review-related-destination-query-wrapper is-style-ati-page-section-default lsx-to-sticky-menu-section has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="REVIEWS" data-sticky-menu-section="true" data-section-title="REVIEWS" role="region"
     aria-labelledby="REVIEWS-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
@@ -785,17 +780,17 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide">
+    <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--40)">
         <!-- wp:query {"queryId":2,"query":{"perPage":8,"postType":"review","order":"desc","orderBy":"date"},"metadata":{"name":"Related Reviews Query"},"align":"wide","className":"lsx-to-slider"} -->
         <div class="wp-block-query alignwide lsx-to-slider">
             <!-- wp:post-template {"className":"lsx-review-related-destination-query","layout":{"type":"grid","columnCount":2}} -->

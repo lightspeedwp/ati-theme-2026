@@ -1,8 +1,34 @@
 <!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /-->
+<!-- wp:group {"metadata":{"name":"Main Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /--></div>
+<!-- /wp:group -->
 
-<!-- wp:block {"ref":22917} /-->
+<!-- wp:group {"metadata":{"name":"Single Hero"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:cover {"url":"https://ati-holidays.lightspeedwp.dev/wp-content/uploads/2016/08/Placeholder_team_banner-1-min-1024x681.jpg","id":11734,"dimRatio":10,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":50,"contentPosition":"center center","tagName":"section","sizeSlug":"large","metadata":{"name":"Hero"},"className":"alignfull is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|80","right":"var:preset|spacing|0","left":"var:preset|spacing|0"},"blockGap":"var:preset|spacing|70"}},"layout":{"type":"constrained"}} -->
+    <section class="wp-block-cover alignfull is-style-default"
+        style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--0);min-height:50px">
+        <img class="wp-block-cover__image-background wp-image-11734 size-large" alt=""
+            src="https://ati-holidays.lightspeedwp.dev/wp-content/uploads/2016/08/Placeholder_team_banner-1-min-1024x681.jpg"
+            data-object-fit="cover" /><span aria-hidden="true"
+            class="wp-block-cover__background has-contrast-background-color has-background-dim-10 has-background-dim"></span>
+        <div class="wp-block-cover__inner-container"><!-- wp:block {"ref":22500} /-->
+
+            <!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40","right":"var:preset|spacing|20","left":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"center","contentSize":"1100px"}} -->
+            <div class="wp-block-group alignwide"
+                style="min-height:0px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--20)">
+                <!-- wp:post-title {"textAlign":"center","level":1,"align":"wide","className":"is-style-shadow-text","style":{"typography":{"fontStyle":"normal","fontWeight":"500","textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"800"} /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+    </section>
+    <!-- /wp:cover -->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:lsx-tour-operator/sticky-menu {"menuItems":[{"id":"summary","title":"SUMMARY"},{"id":"destinations","title":"DESTINATIONS"},{"id":"tours","title":"TOURS"},{"id":"reviews","title":"REVIEWS"},{"id":"gallery","title":"GALLERY"}],"customActiveBackgroundColor":"#232020","customActiveTextColor":"#DBBD8D","hoverBackgroundColor":"primary-500","hoverTextColor":"brand-500","backgroundColor":"primary-500","textColor":"base","style":{"typography":{"textAlign":"left"},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} -->
 <div style="margin-top:0;margin-bottom:0;--active-bg-color:#232020;--active-text-color:#DBBD8D;--hover-bg-color:var(--wp--preset--color--primary-500);--hover-text-color:var(--wp--preset--color--brand-500)"
@@ -34,9 +60,9 @@
 </div>
 <!-- /wp:lsx-tour-operator/sticky-menu -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"full","className":"is-style-ati-page-section-default","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"summary","addToStickyMenu":true,"stickyMenuId":"summary","stickyMenuTitle":"SUMMARY"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"full","className":"is-style-ati-page-section-default","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"summary","addToStickyMenu":true,"stickyMenuId":"summary","stickyMenuTitle":"SUMMARY"} -->
 <section
-    class="wp-block-group alignfull is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull is-style-ati-page-section-default has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="summary" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"
     data-sticky-menu-section="true" data-section-title="SUMMARY" role="region" aria-labelledby="summary-header">
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|70"}}}} -->
@@ -191,9 +217,9 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"DESTINATIONS"},"align":"full","className":"lsx-related-destination-wrapper is-style-ati-page-section-default","backgroundColor":"neutral-100","layout":{"type":"constrained"},"anchor":"destinations","addToStickyMenu":true,"stickyMenuId":"destinations","stickyMenuTitle":"DESTINATIONS"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"DESTINATIONS"},"align":"full","className":"lsx-related-destination-wrapper is-style-ati-page-section-default","backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"destinations","addToStickyMenu":true,"stickyMenuId":"destinations","stickyMenuTitle":"DESTINATIONS"} -->
 <section
-    class="wp-block-group alignfull lsx-related-destination-wrapper is-style-ati-page-section-default has-neutral-100-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull lsx-related-destination-wrapper is-style-ati-page-section-default has-brand-100-background-color has-background lsx-to-sticky-menu-section"
     id="destinations" data-sticky-menu-section="true" data-section-title="DESTINATIONS" role="region"
     aria-labelledby="destinations-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
@@ -205,9 +231,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -302,9 +328,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
@@ -454,20 +480,36 @@
     class="wp-block-group is-style-ati-page-section-default lsx-review-to-team-wrapper lsx-to-sticky-menu-section"
     data-sticky-menu-section="true" data-section-title="REVIEWS" role="region" aria-labelledby="reviews-header">
     <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group"><!-- wp:heading {"style":{"typography":{"textAlign":"center"}}} -->
-            <h2 class="wp-block-heading has-text-align-center">Reviews</h2>
+    <div class="wp-block-group alignwide">
+        <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group alignwide">
+            <!-- wp:heading {"className":"wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+            <h2 class="wp-block-heading has-text-align-center has-heading-font-family has-brand-serif-font-family"
+                style="font-style:normal;font-weight:400">Reviews</h2>
             <!-- /wp:heading -->
+
+            <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
+            <div class="wp-block-group">
+                <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
+                <hr
+                    class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
+                <!-- /wp:separator -->
+            </div>
+            <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:query {"queryId":0,"query":{"perPage":9,"pages":0,"offset":0,"postType":"review","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]},"align":"wide","className":"lsx-to-slider"} -->
-        <div class="wp-block-query alignwide lsx-to-slider">
-            <!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
-            <!-- wp:block {"ref":22575} /-->
-            <!-- /wp:post-template -->
+        <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|20"}}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--20)">
+            <!-- wp:query {"queryId":0,"query":{"perPage":9,"pages":0,"offset":0,"postType":"review","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]},"align":"wide","className":"lsx-to-slider"} -->
+            <div class="wp-block-query alignwide lsx-to-slider">
+                <!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+                <!-- wp:block {"ref":22575} /-->
+                <!-- /wp:post-template -->
+            </div>
+            <!-- /wp:query -->
         </div>
-        <!-- /wp:query -->
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 </section>
@@ -485,9 +527,9 @@
 
         <!-- wp:group {"metadata":{"name":"Separator"},"layout":{"type":"constrained","contentSize":"200px"}} -->
         <div class="wp-block-group">
-            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"neutral-300"} -->
+            <!-- wp:separator {"align":"center","className":"is-style-separator-thin","style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"accent-500"} -->
             <hr
-                class="wp-block-separator aligncenter has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin" />
+                class="wp-block-separator aligncenter has-text-color has-accent-500-color has-alpha-channel-opacity has-accent-500-background-color has-background is-style-separator-thin" />
             <!-- /wp:separator -->
         </div>
         <!-- /wp:group -->
