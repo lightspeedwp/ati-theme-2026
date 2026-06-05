@@ -459,6 +459,8 @@ ul.lsx-not_included-list li svg {
 .ati-post-pager .wp-block-post-navigation-link a {
 	display: flex;
 	flex-direction: column;
+	flex: 1 1 auto;
+	min-width: 0;
 	max-width: 100%;
 	color: var(--wp--preset--color--contrast);
 	text-decoration: none;
@@ -488,6 +490,14 @@ ul.lsx-not_included-list li svg {
 .ati-post-pager .wp-block-post-navigation-link-next .post-navigation-link__label,
 .ati-post-pager .wp-block-post-navigation-link-next .post-navigation-link__title {
 	text-align: right;
+}
+
+.ati-post-pager .wp-block-post-navigation-link-next {
+	justify-content: flex-end;
+}
+
+.ati-post-pager .wp-block-post-navigation-link-next a {
+	align-items: flex-end;
 }
 
 .ati-post-pager .wp-block-post-navigation-link__arrow-previous,
