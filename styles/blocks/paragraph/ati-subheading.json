@@ -9,7 +9,7 @@
 	"description": "ATI paragraph subheading with centred divider",
 	"styles": {
 		"color": {
-			"text": "var:preset|color|neutral-500"
+			"text": "var:preset|color|accent-500"
 		},
 		"typography": {
 			"fontFamily": "var:preset|font-family|heading",
@@ -23,6 +23,6 @@
 				"bottom": "var:preset|spacing|30"
 			}
 		},
-		"css": "&{text-align:center;} &::after{content:''; display:block; inline-size:var(--wp--preset--spacing--80); block-size:var(--wp--custom--border--width--thick); margin-block-start:var(--wp--preset--spacing--20); margin-inline:auto; background-color:var(--wp--preset--color--neutral-300)}"
+		"css": "&{text-align:center;} &::after{content:''; display:block; inline-size:var(--wp--preset--spacing--80); block-size:var(--wp--custom--border--width--thick); margin-block-start:var(--wp--preset--spacing--20); margin-inline:auto; background-color:var(--wp--preset--color--accent-500)}"
 	}
 }
