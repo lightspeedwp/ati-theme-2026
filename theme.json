@@ -689,19 +689,19 @@
 				"variations": {
 					"outline": {
 						"border": {
-							"width": "1px",
-							"color": "var:preset|color|base",
+							"width": "2px",
+							"color": "var:preset|color|primary-500",
 							"style": "solid",
 							"radius": "var:preset|border-radius|100"
 						},
 						"color": {
 							"background": "var:preset|color|base",
-							"text": "var:preset|color|contrast"
+							"text": "var:preset|color|primary-500"
 						},
 						"typography": {
-							"fontSize": "var:preset|font-size|200",
+							"fontSize": "var:preset|font-size|300",
 							"fontWeight": "var:custom|typography|font-weight|normal",
-							"letterSpacing": "var:custom|typography|letter-spacing|wide",
+							"letterSpacing": "var:custom|typography|letter-spacing|widest",
 							"textTransform": "uppercase"
 						},
 						"spacing": {

@@ -9,6 +9,6 @@
 	],
 	"description": "Cover image scales slightly on hover",
 	"styles": {
-		"css": "&{overflow: hidden;} & .wp-block-cover__image-background{transition: transform 300ms ease;} &:hover .wp-block-cover__image-background{transform: scale(1.05);}"
+		"css": "&{overflow: hidden;} &.wp-block-cover .wp-block-cover__image-background,&.wp-block-image img{transition: transform 300ms ease;} &.wp-block-cover:hover .wp-block-cover__image-background,&.wp-block-image:hover img{transform: scale(1.05);}"
 	}
 }
