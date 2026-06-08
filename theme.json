@@ -522,7 +522,7 @@
 					"tight": "-0.025em",
 					"normal": "0",
 					"wide": "0.025em",
-					"wider": "0.05em",
+					"wider": "0.1em",
 					"widest": "0.15em"
 				},
 				"font-weight": {
@@ -585,7 +585,7 @@
 				"typography": {
 					"fontSize": "var:preset|font-size|300",
 					"fontWeight": "var:custom|typography|font-weight|bold",
-					"letterSpacing": "var:custom|typography|letter-spacing|widest",
+					"letterSpacing": "var:custom|typography|letter-spacing|wider",
 					"textTransform": "uppercase"
 				},
 				"spacing": {
@@ -701,7 +701,7 @@
 						"typography": {
 							"fontSize": "var:preset|font-size|300",
 							"fontWeight": "var:custom|typography|font-weight|normal",
-							"letterSpacing": "var:custom|typography|letter-spacing|widest",
+							"letterSpacing": "var:custom|typography|letter-spacing|wider",
 							"textTransform": "uppercase"
 						},
 						"spacing": {

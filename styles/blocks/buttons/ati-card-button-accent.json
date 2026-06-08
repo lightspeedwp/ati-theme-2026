@@ -12,13 +12,6 @@
 			"background": "var:preset|color|accent-500",
 			"text": "var:preset|color|base"
 		},
-		"typography": {
-			"fontFamily": "var:preset|font-family|brand-serif",
-			"fontSize": "var:preset|font-size|300",
-			"fontWeight": "200",
-			"letterSpacing": "var:custom|typography|letter-spacing|wide",
-			"textTransform": "uppercase"
-		},
 		"spacing": {
 			"padding": {
 				"top": "var:preset|spacing|10",
