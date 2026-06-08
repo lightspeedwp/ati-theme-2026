@@ -1,9 +1,14 @@
 <?php
 /**
  * Title: Archive Hero
- * Slug: archive-hero
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/archive-hero
+ * Description: Full-width hero section for archive pages featuring a background image, prominent heading, and tagline.
+ * Categories: featured, header
+ * Keywords: hero, archive, banner, heading, tagline, tours
+ * Viewport Width: 1280
+ * Block Types: core/group
+ * Template Types: archive
+ * Inserter: true
  */
 ?>
 

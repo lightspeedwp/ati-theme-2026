@@ -1,9 +1,13 @@
 <?php
 /**
  * Title: ATI Specials Card
- * Slug: ati-specials-card
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-specials-card
+ * Description: Horizontal special offer card with featured image, title, excerpt, price, linked tour, duration, travel style, destination, and booking validity dates.
+ * Categories: featured, call-to-action
+ * Keywords: specials, deals, offer, card, listing, safari
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Inserter: true
  */
 ?>
 

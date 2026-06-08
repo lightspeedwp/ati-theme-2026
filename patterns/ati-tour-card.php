@@ -1,9 +1,13 @@
 <?php
 /**
- * Title: Tour Card
- * Slug: ati-tour-card
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Title: ATI Tour Card
+ * Slug: ati-theme-2026/ati-tour-card
+ * Description: Vertical tour card with featured image, title, price, duration, travel styles, destination, and excerpt — for use in query loops.
+ * Categories: query, posts
+ * Keywords: tour, safari, card, listing, price, duration
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Inserter: true
  */
 ?>
 

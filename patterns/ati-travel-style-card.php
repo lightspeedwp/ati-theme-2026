@@ -1,9 +1,13 @@
 <?php
 /**
- * Title: Travel Style Card
- * Slug: ati-travel-style-card
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Title: ATI Travel Style Card
+ * Slug: ati-theme-2026/ati-travel-style-card
+ * Description: Square cover card for travel style taxonomy terms, with a bottom-to-top gradient overlay, centred title, and expandable excerpt — displayed in a grid on the travel styles page.
+ * Categories: featured, query
+ * Keywords: travel style, safari, card, taxonomy, grid
+ * Viewport Width: 500
+ * Block Types: core/cover
+ * Inserter: true
  */
 ?>
 

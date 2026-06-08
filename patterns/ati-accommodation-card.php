@@ -1,9 +1,13 @@
 <?php
 /**
  * Title: ATI Accommodation Card
- * Slug: ati-accommodation-card
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-accommodation-card
+ * Description: Vertical card displaying accommodation details including featured image, title, star rating, price, travel styles, type, number of rooms, and excerpt — for use in query loops.
+ * Categories: query, posts
+ * Keywords: accommodation, lodge, hotel, camp, card, listing
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Inserter: true
  */
 ?>
 
@@ -23,7 +27,7 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|5"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"2px","bottom":"0px"}}},"fontSize":"200"} -->
-<p class="has-200-font-size" style="padding-top:2px;padding-bottom:0px">Rating:</p>
+<p class="has-200-font-size" style="padding-top:2px;padding-bottom:0px"><?php esc_html_e( 'Rating:', 'ati-theme-2026' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating"}}}},"fontSize":"200"} -->
@@ -110,7 +114,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button","style":{"border":{"radius":"0px"}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button"><a class="wp-block-button__link has-primary-background-color has-background wp-element-button" href="#permalink" style="border-radius:0px">View more</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button"><a class="wp-block-button__link has-primary-background-color has-background wp-element-button" href="#permalink" style="border-radius:0px"><?php esc_html_e( 'View more', 'ati-theme-2026' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->

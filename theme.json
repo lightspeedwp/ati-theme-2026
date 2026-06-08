@@ -523,7 +523,7 @@
 					"normal": "0",
 					"wide": "0.025em",
 					"wider": "0.05em",
-					"widest": "0.1em"
+					"widest": "0.15em"
 				},
 				"font-weight": {
 					"thin": "100",
@@ -585,7 +585,7 @@
 				"typography": {
 					"fontSize": "var:preset|font-size|300",
 					"fontWeight": "var:custom|typography|font-weight|bold",
-					"letterSpacing": "var:custom|typography|letter-spacing|wider",
+					"letterSpacing": "var:custom|typography|letter-spacing|widest",
 					"textTransform": "uppercase"
 				},
 				"spacing": {
@@ -596,7 +596,7 @@
 						"bottom": "var:preset|spacing|20"
 					}
 				},
-				"css": "&{transition: background-color 200ms ease} &:hover{background-color: var(--wp--preset--color--accent-500); color: var(--wp--preset--color--base);} &:focus-visible{outline: 2px solid var(--wp--preset--color--cta-500); outline-offset: 2px;} &:active{background-color: var(--wp--preset--color--accent-500); color: var(--wp--preset--color--base);}"
+				"css": "&{transition: background-color 200ms ease} &:hover{background-color: var(--wp--preset--color--cta-600); color: var(--wp--preset--color--base);} &:focus-visible{outline: 2px solid var(--wp--preset--color--cta-500); outline-offset: 2px;} &:active{background-color: var(--wp--preset--color--accent-500); color: var(--wp--preset--color--base);}"
 			},
 			"heading": {
 				"color": {
@@ -695,8 +695,8 @@
 							"radius": "var:preset|border-radius|100"
 						},
 						"color": {
-							"background": "color-mix(in srgb, var(--wp--preset--color--contrast) 40%, transparent)",
-							"text": "var:preset|color|base"
+							"background": "var:preset|color|base",
+							"text": "var:preset|color|contrast"
 						},
 						"typography": {
 							"fontSize": "var:preset|font-size|200",
@@ -712,7 +712,7 @@
 								"bottom": "var(--wp--preset--spacing--20)"
 							}
 						},
-						"css": "&{transition: background-color 200ms ease; color: var(--wp--preset--color--base);} & svg{color: currentColor; fill: currentColor;} &:hover{background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 60%, transparent);}"
+						"css": "&{transition: background-color 200ms ease; color: var(--wp--preset--color--contrast);} & svg{color: currentColor; fill: currentColor;} &:hover{background-color: var(--wp--preset--color--brand-500);}"
 					}
 				}
 			},

@@ -8,8 +8,8 @@
 ?>
 
 
-<!-- wp:group {"metadata":{"name":"Reviews Card"},"className":"overflow-hidden is-style-default","style":{"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"backgroundColor":"base","layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
-<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-default has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><!-- wp:columns -->
+<!-- wp:group {"metadata":{"name":"Reviews Card"},"className":"overflow-hidden is-style-default","style":{"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"backgroundColor":"base","layout":{"type":"default"},"ariaLabel":"Review Card"} -->
+<div aria-label="Review Card" class="wp-block-group overflow-hidden is-style-default has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /--></div>
 <!-- /wp:column -->

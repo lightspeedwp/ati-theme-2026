@@ -1,14 +1,19 @@
 <?php
 /**
  * Title: ATI Blog Card
- * Slug: ati-blog-card
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-blog-card
+ * Description: Vertical blog post card with featured image, title, publish date, reading time, category, excerpt, author name, and read-more button — for use in post query loops.
+ * Categories: query, posts
+ * Keywords: blog, post, article, card, news, listing
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Post Types: post
+ * Inserter: true
  */
 ?>
 
-<!-- wp:group {"metadata":{"name":"Blog Card","patternName":"ati-theme-2026/ati-blog-card"},"className":"overflow-hidden is-style-tour-card-light","style":{"spacing":{"blockGap":"0"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
-<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-light" style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0"><!-- wp:post-featured-image {"aspectRatio":"3/2"} /-->
+<!-- wp:group {"metadata":{"name":"Blog Card","patternName":"ati-theme-2026/ati-blog-card"},"className":"overflow-hidden is-style-tour-card-light","style":{"spacing":{"blockGap":"0"},"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}},"layout":{"type":"default"},"ariaLabel":"Blog Card","linkDestination":"post"} -->
+<div aria-label="Blog Card" class="wp-block-group overflow-hidden is-style-tour-card-light" style="border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0"><!-- wp:post-featured-image {"aspectRatio":"3/2"} /-->
 
 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"metadata":{"name":"Title"},"style":{"dimensions":{"minHeight":"0rem"},"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->

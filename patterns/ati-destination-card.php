@@ -1,9 +1,13 @@
 <?php
 /**
  * Title: ATI Destination Card
- * Slug: ati-destination-card
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-destination-card
+ * Description: Vertical card for destination archive pages, showing featured image, destination title, tagline, travel styles, and excerpt.
+ * Categories: query, featured
+ * Keywords: destination, card, listing, travel, africa
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Inserter: true
  */
 ?>
 
