@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: header
+ * Title: Header
  * Slug: header
  * Theme: ati-theme-2026
- * Inserter: no
+ * Inserter: false
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Header"},"align":"full","className":"is-style-default","style":{"border":{"bottom":{"width":"0px","style":"none"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|200","position":{"type":"sticky","top":"0px"}},"backgroundColor":"base","layout":{"type":"constrained"},"stickyOnScrollUp":true} -->

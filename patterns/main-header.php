@@ -3,7 +3,7 @@
  * Title: Main Header
  * Slug: main-header
  * Theme: ati-theme-2026
- * Inserter: no
+ * Inserter: false
  */
 ?>
 

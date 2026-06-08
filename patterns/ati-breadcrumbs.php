@@ -1,9 +1,13 @@
 <?php
 /**
  * Title: ATI Breadcrumbs
- * Slug: ati-breadcrumbs
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-breadcrumbs
+ * Description: Full-width breadcrumb navigation bar with a warm-toned background, used at the top of page hero sections.
+ * Categories: header
+ * Keywords: breadcrumbs, navigation, trail, Yoast, SEO
+ * Viewport Width: 1280
+ * Block Types: core/group
+ * Inserter: true
  */
 ?>
 

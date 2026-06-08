@@ -1,9 +1,13 @@
 <?php
 /**
  * Title: ATI Review Card Large
- * Slug: ati-review-card-large
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-review-card-large
+ * Description: Horizontal two-column review card with featured image on the left and review details (title, excerpt, accommodation, tour, duration, travel style, destination) on the right.
+ * Categories: testimonials
+ * Keywords: review, testimonial, card, listing, guest
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Inserter: true
  */
 ?>
 
@@ -28,7 +32,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"base","textColor":"accent-500","hoverTextColor":"accent-600","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-500"}}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}},"typography":{"textTransform":"none"}},"icon":"arrow-right","iconSpacing":"0.2em"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-accent-500-color has-base-background-color has-text-color has-background has-link-color wp-element-button" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;text-transform:none">Read more</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-accent-500-color has-base-background-color has-text-color has-background has-link-color wp-element-button" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;text-transform:none"><?php esc_html_e( 'Read more', 'ati-theme-2026' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

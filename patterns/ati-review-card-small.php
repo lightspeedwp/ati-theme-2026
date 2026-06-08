@@ -1,9 +1,13 @@
 <?php
 /**
  * Title: ATI Review Card Small
- * Slug: ati-review-card-small
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-review-card-small
+ * Description: Compact review card with a circular thumbnail, reviewer name, and excerpt displayed on a primary-coloured background with rounded corners.
+ * Categories: testimonials
+ * Keywords: review, testimonial, card, guest, compact
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Inserter: true
  */
 ?>
 

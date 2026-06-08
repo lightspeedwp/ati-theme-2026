@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: footer
+ * Title: Footer
  * Slug: footer
  * Theme: ati-theme-2026
- * Inserter: no
+ * Inserter: false
  */
 ?>
 <!-- wp:group {"metadata":{"name":"footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|30","right":"var:preset|spacing|30","left":"var:preset|spacing|30"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|30"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","layout":{"inherit":true,"type":"constrained"}} -->

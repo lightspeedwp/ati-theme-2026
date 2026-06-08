@@ -1,9 +1,13 @@
 <?php
 /**
  * Title: ATI Team Card
- * Slug: ati-team-card
- * Theme: ati-theme-2026
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-team-card
+ * Description: Horizontal team member card showing a portrait image, name, role, bio excerpt, phone, email, and social media links (Facebook, LinkedIn, X).
+ * Categories: team, about
+ * Keywords: team, staff, consultant, card, contact
+ * Viewport Width: 500
+ * Block Types: core/post-template
+ * Inserter: true
  */
 ?>
 
@@ -27,7 +31,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"icon":"arrow-right","iconSpacing":"0.2em"} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Read more</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read more', 'ati-theme-2026' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

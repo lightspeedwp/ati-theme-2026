@@ -1,10 +1,13 @@
 <?php
 /**
  * Title: ATI Mega Menu Card
- * Slug: ati-mega-menu-card
- * Theme: ati-theme-2026
- * Description: Linked destination teaser card with image and centred heading.
- * Inserter: yes
+ * Slug: ati-theme-2026/ati-mega-menu-card
+ * Description: Linked destination teaser card with a background image and centred heading, used inside the navigation mega menu.
+ * Categories: header
+ * Keywords: mega menu, destination, card, navigation, teaser
+ * Viewport Width: 300
+ * Block Types: core/group
+ * Inserter: true
  */
 ?>
 
