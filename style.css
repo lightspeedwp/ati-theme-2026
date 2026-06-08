@@ -125,7 +125,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 /* ======= Site Logo responsive adjustments ======= */
 
 .wp-block-site-logo.is-style-header-logo {
-	width: clamp(120px, 18vw, 180px);
+	width: clamp(140px, 18vw, 200px);
 }
 
 .wp-block-site-logo.is-style-header-logo .custom-logo {
@@ -343,7 +343,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
     > .wp-block-navigation__responsive-close
     > .wp-block-navigation__responsive-dialog
     > .wp-block-navigation__responsive-container-close {
-    top: var(--wp--preset--spacing--90);
+    top: var(--wp--preset--spacing--60);
     right: var(--wp--preset--spacing--20);
     inline-size: 40px;
     block-size: 40px;
