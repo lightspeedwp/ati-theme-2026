@@ -284,15 +284,12 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 /* ========================================================================== */
 
 .wp-block-search.is-style-mobile-menu-search .wp-block-search__inside-wrapper {
-	display: flex;
-	align-items: stretch;
-	gap: var(--wp--preset--spacing--10);
+	gap: var(--wp--preset--spacing--5);
 }
 
 .wp-block-search.is-style-mobile-menu-search .wp-block-search__button {
-	padding-left: 10px;
-	padding-right: 10px;
-	aspect-ratio: 1;
+	padding-left: var(--wp--preset--spacing--20);
+	padding-right: var(--wp--preset--spacing--20);
 }
 
 /* Details block used for mobile menu */
