@@ -644,7 +644,7 @@ ul.lsx-not_included-list li svg {
 }
 
 #gform_wrapper_3 .gform_fields {
-	grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.35fr) minmax(180px, 0.9fr);
+	grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr) minmax(180px, 1fr);
 	grid-column-gap: var(--wp--preset--spacing--20) !important;
 	align-items: stretch;
 }
@@ -662,7 +662,7 @@ ul.lsx-not_included-list li svg {
 
 #gform_wrapper_3 .ginput_container input,
 #gform_wrapper_3 #gform_submit_button_3 {
-	padding: 0.95rem 1.125rem;
+	padding: var(--wp--preset--spacing--10) var(--wp--preset--spacing--20) !important;
 	border-radius: var(--wp--preset--border-radius--200) !important;
 	font-size: var(--wp--preset--font-size--200) !important;
 	line-height: 1.4;
@@ -671,10 +671,6 @@ ul.lsx-not_included-list li svg {
 #gform_wrapper_3 #field_submit {
 	display: flex;
 	align-items: stretch;
-}
-
-#gform_wrapper_3 #gform_submit_button_3 {
-	height: 100%;
 }
 
 @media (max-width: 781px) {
