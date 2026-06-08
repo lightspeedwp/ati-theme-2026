@@ -681,6 +681,9 @@ ul.lsx-not_included-list li svg {
 	#gform_wrapper_3 .gfield,
 	#gform_wrapper_3 .gfield--width-third,
 	#gform_wrapper_3 #field_submit {
+		width: 100% !important;
+		max-width: none !important;
+		min-width: 0;
 		grid-column: 1 / -1;
 	}
 
