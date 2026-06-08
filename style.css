@@ -311,7 +311,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
     > .wp-block-navigation__responsive-close
     > .wp-block-navigation__responsive-dialog
     > .wp-block-navigation__responsive-container-close {
-    top: var(--wp--preset--spacing--30);
+    top: var(--wp--preset--spacing--90);
     right: var(--wp--preset--spacing--20);
     inline-size: 40px;
     block-size: 40px;
