@@ -122,6 +122,17 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	outline-offset: 2px;
 }
 
+/* ======= Site Logo responsive adjustments ======= */
+
+.wp-block-site-logo.is-style-header-logo {
+	width: clamp(120px, 18vw, 180px);
+}
+
+.wp-block-site-logo.is-style-header-logo .custom-logo {
+	display: block;
+	width: 100%;
+	height: auto;
+}
 
 /* ========================================================================== */
 
@@ -271,6 +282,27 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 /* Mobile Menu styling                                                        */
 
 /* ========================================================================== */
+
+.wp-block-search.is-style-mobile-menu .wp-block-search__inside-wrapper {
+	display: flex;
+	align-items: stretch;
+	gap: var(--wp--preset--spacing--20);
+}
+
+.wp-block-search.is-style-mobile-menu .wp-block-search__input {
+	min-width: 0;
+}
+
+.wp-block-search.is-style-mobile-menu .wp-block-search__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	align-self: stretch;
+	padding: 0;
+	min-inline-size: 0;
+	aspect-ratio: 1;
+	flex: none;
+}
 
 /* Details block used for mobile menu */
 .wp-block-details.is-style-mobile-menu-details summary {
