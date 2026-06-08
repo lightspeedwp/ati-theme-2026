@@ -290,14 +290,9 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 }
 
 .wp-block-search.is-style-mobile-menu-search .wp-block-search__button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	align-self: stretch;
-	padding: 0;
-	min-inline-size: 0;
+	padding-left: 10px;
+	padding-right: 10px;
 	aspect-ratio: 1;
-	flex: none;
 }
 
 /* Details block used for mobile menu */
