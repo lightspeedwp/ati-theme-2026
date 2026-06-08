@@ -634,3 +634,85 @@ ul.lsx-not_included-list li svg {
 	}
 
 }
+
+/* =================================================== */
+/* Gravity Forms                                       */
+/* =================================================== */
+
+.gform-theme--foundation .gform_fields {
+	grid-row-gap: var(--wp--preset--spacing--20) !important;
+}
+
+#gform_wrapper_3[data-form-index="0"].gform-theme {
+	--ati-newsletter-radius: var(--wp--preset--border-radius--200, var(--wp--preset--border-radius--300));
+	--gf-radius: var(--ati-newsletter-radius);
+	--gf-font-size-secondary: var(--wp--preset--font-size--200);
+	--gf-font-size-tertiary: var(--wp--preset--font-size--200);
+}
+
+#gform_wrapper_3 .gform_fields {
+	grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.35fr) minmax(180px, 0.9fr);
+	grid-column-gap: var(--wp--preset--spacing--20) !important;
+	align-items: stretch;
+}
+
+#gform_wrapper_3 .gfield--width-third {
+	max-width: none !important;
+	grid-column: span 1;
+}
+
+#gform_wrapper_3 .ginput_container,
+#gform_wrapper_3 .ginput_container input,
+#gform_wrapper_3 #gform_submit_button_3 {
+	width: 100% !important;
+}
+
+#gform_wrapper_3 .ginput_container input,
+#gform_wrapper_3 #gform_submit_button_3 {
+	min-height: clamp(3.5rem, 4.5vw, 4.25rem);
+	padding: 0.95rem 1.125rem;
+	border-radius: var(--ati-newsletter-radius) !important;
+	font-size: var(--wp--preset--font-size--200) !important;
+	line-height: 1.4;
+}
+
+#gform_wrapper_3 #field_submit {
+	display: flex;
+	align-items: stretch;
+}
+
+#gform_wrapper_3 #gform_submit_button_3 {
+	height: 100%;
+}
+
+@media (max-width: 1024px) {
+	#gform_wrapper_3 .gform_fields {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	#gform_wrapper_3 #field_submit {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (max-width: 781px) {
+	#gform_wrapper_3 .gform_fields {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	#gform_wrapper_3 .gfield,
+	#gform_wrapper_3 .gfield--width-third,
+	#gform_wrapper_3 #field_submit {
+		grid-column: 1 / -1;
+	}
+
+	#gform_wrapper_3 .ginput_container,
+	#gform_wrapper_3 .ginput_container input,
+	#gform_wrapper_3 #gform_submit_button_3 {
+		width: 100% !important;
+	}
+
+	#gform_wrapper_3 #gform_submit_button_3 {
+		min-height: 3.75rem;
+	}
+}
