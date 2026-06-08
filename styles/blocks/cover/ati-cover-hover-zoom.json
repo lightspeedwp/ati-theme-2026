@@ -4,7 +4,8 @@
 	"title": "ATI Cover Hover Zoom",
 	"slug": "ati-cover-hover-zoom",
 	"blockTypes": [
-		"core/cover"
+		"core/cover",
+		"core/image"
 	],
 	"description": "Cover image scales slightly on hover",
 	"styles": {
