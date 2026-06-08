@@ -9,8 +9,8 @@
 	"description": "ATI Subheading Medium Paragraph",
 	"styles": {
 		"typography": {
-            "fontSize": "var(--wp--preset--font-size--400)",
-			"lineHeight": "var(--wp--custom--typography--line-height--snug)"
-        } 
+            "fontSize": "var:preset|font-size|400",
+			"lineHeight": "var:custom|typography|line-height|snug"
+        }
 	}
 }

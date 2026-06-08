@@ -12,6 +12,7 @@
       "background": "var:preset|color|primary-500",
       "text": "var:preset|color|base"
     },
+    "css": "&{overflow:hidden;text-decoration:none;} &:hover .wp-block-heading,&:hover .wp-block-heading.has-text-color,&:hover .wp-block-heading.has-base-color,&:hover .wp-block-heading a{color:var(--wp--preset--color--brand-500)!important;} &:focus-within .wp-block-heading,&:focus-within .wp-block-heading.has-text-color,&:focus-within .wp-block-heading.has-base-color,&:focus-within .wp-block-heading a{color:var(--wp--preset--color--brand-500)!important;}",
     "elements": {
       "heading": {
         "color": {
@@ -24,6 +25,21 @@
         }
       }
     },
-    "css": "&{overflow:hidden; text-decoration:none;} & .wp-block-heading{transition:color 200ms ease;} & .wp-block-heading a{transition:color 200ms ease;} &:hover .wp-block-heading{color:var(--wp--preset--color--brand-500) !important;} &:hover .wp-block-heading.has-text-color{color:var(--wp--preset--color--brand-500) !important;} &:hover .wp-block-heading.has-base-color{color:var(--wp--preset--color--brand-500) !important;} &:hover .wp-block-heading a{color:var(--wp--preset--color--brand-500) !important;} &:focus-within .wp-block-heading{color:var(--wp--preset--color--brand-500) !important;} &:focus-within .wp-block-heading.has-text-color{color:var(--wp--preset--color--brand-500) !important;} &:focus-within .wp-block-heading.has-base-color{color:var(--wp--preset--color--brand-500) !important;} &:focus-within .wp-block-heading a{color:var(--wp--preset--color--brand-500) !important;}"
+    "blocks": {
+      "core/image": {
+        "border": {
+          "radius": "var:preset|border-radius|200"
+        },
+        "css": "&{overflow:hidden;} & img{transition:transform 300ms ease;} :where(.wp-block-group.is-style-ati-mega-menu-card:hover) & img,:where(.wp-block-group.is-style-ati-mega-menu-card:focus-within) & img{transform:scale(1.05);}"
+      },
+      "core/heading": {
+        "css": "&{transition:color 200ms ease;}",
+        "elements": {
+          "link": {
+            "css": "&{transition:color 200ms ease;}"
+          }
+        }
+      }
+    }
   }
 }

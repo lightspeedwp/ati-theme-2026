@@ -25,6 +25,7 @@
         "left": "var:preset|spacing|20"
       }
     },
+    "css": "&{overflow:hidden;transition:box-shadow 300ms ease;} &:hover{box-shadow:var(--wp--preset--shadow--300)!important;} & .horizontal-card__body{padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);} & .horizontal-card__details{border-top-style:none;border-top-width:0;border-bottom-style:none;border-bottom-width:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0);} & .wp-block-cover,& .wp-block-post-featured-image{overflow:hidden;} & .wp-block-cover .wp-block-cover__image-background,& .wp-block-post-featured-image img{transition:transform 300ms ease;} &:hover .wp-block-cover .wp-block-cover__image-background,&:hover .wp-block-post-featured-image img{transform:scale(1.05);}",
     "elements": {
       "heading": {
         "color": {
@@ -40,6 +41,9 @@
             "text": "var:preset|color|contrast"
           }
         }
+      },
+      "button": {
+        "css": "&:focus-visible{outline:2px solid var(--wp--preset--color--accent-500);outline-offset:2px;}"
       }
     },
     "blocks": {
@@ -93,9 +97,9 @@
       "outermost/icon-block": {
         "color": {
           "text": "var:preset|color|accent-500"
-        }
+        },
+        "css": "& svg{fill:currentColor;}"
       }
-    },
-    "css": "&{overflow:hidden;transition:box-shadow 300ms ease;} &:hover{box-shadow:var(--wp--preset--shadow--300)!important;} & .horizontal-card__body{padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);} & .horizontal-card__details{border-top-style:none;border-top-width:0;border-bottom-style:none;border-bottom-width:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--0);} & .wp-block-cover,& .wp-block-post-featured-image{overflow:hidden;} & .wp-block-cover .wp-block-cover__image-background,& .wp-block-post-featured-image img{transition:transform 300ms ease;} &:hover .wp-block-cover .wp-block-cover__image-background,&:hover .wp-block-post-featured-image img{transform:scale(1.05);} & .wp-block-outermost-icon-block svg{fill:currentColor!important;} & .wp-block-button__link:focus-visible{outline:2px solid var(--wp--preset--color--accent-500);outline-offset:2px;}"
+    }
   }
 }
