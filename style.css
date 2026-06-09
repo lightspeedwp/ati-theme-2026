@@ -971,6 +971,7 @@ ul.lsx-not_included-list li svg {
 /* Hide search and sort flyout rows in FacetWP mobile flyout (third-party markup uses underscores) */
 .facetwp-flyout .flyout-row.name-search_tour,
 .facetwp-flyout .flyout-row.name-sort_by,
+.facetwp-flyout .flyout-row.name-sort_tours,
 .facetwp-flyout .flyout-row.name-search_archive {
 	display: none !important;
 }
