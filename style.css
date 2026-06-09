@@ -853,12 +853,6 @@ ul.lsx-not_included-list li svg {
 	line-height: 0;
 }
 
-.wp-block-hm-popup .icon-container svg {
-	width: 20px !important;
-	height: 20px !important;
-	display: block
-}
-
 /* ===== Accommodation modal title link hover ===== */
 /* Per-block wp-elements-* CSS for hover → primary-700 is not generated in modal
    context; falls back to theme default (accent-500 = orange). Force correct value. */
