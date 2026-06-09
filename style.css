@@ -470,14 +470,14 @@ ul.lsx-not_included-list li svg {
 /* Select dropdown */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
 	font-family: inherit !important;
-	border: none !important;
-	background-color: var(--wp--preset--color--base);
-	padding-right: 3.5rem;
+	border: 1px solid var(--wp--preset--color--contrast) !important;
+	background-color: var(--wp--preset--color--brand-100) !important;
+	padding-right: var(--wp--preset--spacing--30) !important;
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	position: relative;
-	line-height: 1.3;
+	line-height: 1;
 	height: 2.5em;
 	background-image: url('assets/icons/sorting-chevron.svg');
 	background-repeat: no-repeat;
