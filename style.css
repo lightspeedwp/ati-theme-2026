@@ -473,7 +473,7 @@ ul.lsx-not_included-list li svg {
 	border: 0 !important;
 	border-radius: var(--wp--preset--border-radius--100) !important;
 	background-color: var(--wp--preset--color--base) !important;
-	padding-right: 150px !important;
+	padding-right: 50px !important;
 	box-shadow: var(--wp--preset--shadow--200) !important;
 	appearance: none;
 	-webkit-appearance: none;
