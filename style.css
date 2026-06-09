@@ -470,6 +470,7 @@ ul.lsx-not_included-list li svg {
 /* Select dropdown */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
 	font-family: inherit !important;
+	font-size: var(--wp--preset--font-size--200) !important;
 	border-bottom: 1px solid var(--wp--preset--color--contrast) !important;
 	border-radius: 0 !important;
 	background-color: transparent !important;
