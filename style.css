@@ -769,11 +769,23 @@ ul.lsx-not_included-list li svg {
 
 .wp-block-hm-popup .wp-block-outermost-icon-block {
 	color: var(--wp--preset--color--accent-500);
+	flex-shrink: 0;
+}
+
+/* The Icon Block plugin sets svg { width: 100%; height: 100% }. The icon-container
+   has width:20px but no height, so height:100% in a flex context collapses to 0.
+   Explicitly size both dimensions so the SVG always renders. */
+.wp-block-hm-popup .icon-container {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+	align-self: center;
 }
 
 .wp-block-hm-popup .icon-container svg {
-	width: 20px;
-	aspect-ratio: 1;
+	width: 20px !important;
+	height: 20px !important;
+	display: block;
 	fill: currentColor;
 }
 
@@ -821,4 +833,52 @@ ul.lsx-not_included-list li svg {
 
 :where(.is-style-card-light:hover, .is-style-tour-card-light:hover) .wp-block-post-featured-image img {
 	transform: scale(1.05);
+}
+
+/* ===== Accommodation modal layout gaps ===== */
+/* WordPress generates per-instance wp-container-* CSS only during the main render
+   pass. Modal blocks rendered by do_blocks() in wp_footer never get it, so they
+   fall back to --wp--style--block-gap (spacing-30, ~24px). Override to the
+   intended values from the block JSON. */
+
+.wp-block-hm-popup .lsx-accommodation-info {
+	--wp--style--block-gap: var(--wp--preset--spacing--10);
+}
+
+/* Gap between icon and label within each field row */
+.wp-block-hm-popup .lsx-accommodation-info > .wp-block-group {
+	gap: var(--wp--preset--spacing--10);
+	align-items: center;
+}
+
+/* Rooms row has an extra lsx-info-label wrapper around the icon — normalise it */
+.wp-block-hm-popup .lsx-info-label {
+	flex-shrink: 0;
+	line-height: 0;
+}
+
+/* ===== Accommodation modal title link hover ===== */
+/* Per-block wp-elements-* CSS for hover → primary-700 is not generated in modal
+   context; falls back to theme default (accent-500 = orange). Force correct value. */
+
+.wp-block-hm-popup .wp-block-post-title a:hover {
+	color: var(--wp--preset--color--primary-700) !important;
+}
+
+/* ===== Accommodation modal button style ===== */
+/* is-style-card-button per-block CSS not generated in modal context.
+   Inline has-primary-background-color (#232020) wins without it.
+   Mirror the accent card-button variation from ati-card-button-accent.json. */
+
+.wp-block-hm-popup .wp-block-button.is-style-card-button .wp-block-button__link {
+	background-color: var(--wp--preset--color--accent-500) !important;
+	color: var(--wp--preset--color--base) !important;
+	text-decoration: none;
+	padding: var(--wp--preset--spacing--10) var(--wp--preset--spacing--20);
+	transition: background-color 200ms ease, color 200ms ease;
+}
+
+.wp-block-hm-popup .wp-block-button.is-style-card-button .wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--brand-500) !important;
+	color: var(--wp--preset--color--contrast) !important;
 }
