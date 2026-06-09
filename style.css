@@ -248,7 +248,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 
 .is-style-footer-nav .wp-block-navigation-item__content:hover,
 .is-style-footer-nav .wp-block-navigation-item__content:focus-visible {
-	color: var(--wp--preset--color--cta-500);
+	color: var(--wp--preset--color--brand-500);
 	text-decoration: none;
 }
 
