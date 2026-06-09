@@ -789,36 +789,6 @@ ul.lsx-not_included-list li svg {
 	fill: currentColor;
 }
 
-/* ===== Card Light style variation — global fallback ===== */
-/* WordPress only generates per-block CSS (is-style-card-light--XX) during the
-   main content render pass. Modals are rendered later via do_blocks() so they
-   never receive that scoped CSS. :where() gives zero specificity so the
-   per-block rules still win on archive pages. */
-
-:where(.is-style-card-light, .is-style-tour-card-light) {
-	background-color: var(--wp--preset--color--base);
-	color: var(--wp--preset--color--contrast);
-	border-radius: var(--wp--preset--border-radius--100);
-	box-shadow: var(--wp--preset--shadow--200);
-	transition: box-shadow 300ms ease;
-}
-
-:where(.is-style-card-light, .is-style-tour-card-light) .wp-block-post-terms a {
-	color: var(--wp--preset--color--accent-500);
-}
-
-:where(.is-style-card-light, .is-style-tour-card-light) .wp-block-post-terms a:hover {
-	color: var(--wp--preset--color--accent-600);
-}
-
-:where(.is-style-card-light, .is-style-tour-card-light) .wp-block-post-featured-image {
-	overflow: hidden;
-}
-
-:where(.is-style-card-light, .is-style-tour-card-light) .wp-block-post-featured-image img {
-	transition: transform 300ms ease;
-}
-
 /* ===== Accommodation modal layout gaps ===== */
 /* WordPress generates per-instance wp-container-* CSS only during the main render
    pass. Modal blocks rendered by do_blocks() in wp_footer never get it, so they
