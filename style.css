@@ -470,10 +470,11 @@ ul.lsx-not_included-list li svg {
 /* Select dropdown */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
 	font-family: inherit !important;
-	border: 0px 0px 1px 0px solid var(--wp--preset--color--contrast) !important;
-	border-radius: 0 !important;
-	background-color: var(--wp--preset--color--brand-100) !important;
+	border: 0 !important;
+	border-radius: var(--wp--preset--border-radius--100) !important;
+	background-color: var(--wp--preset--color--base) !important;
 	padding-right: var(--wp--preset--spacing--50) !important;
+	box-shadow: var(--wp--preset--shadow--200) !important;
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
