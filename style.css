@@ -999,8 +999,10 @@ body .facetwp-flyout {
 	left: 0 !important;
 	right: 0 !important;
 	width: 100% !important;
+	max-height: 60vh !important;
+	overflow-y: auto !important;
 	transform: translateY(100%) !important;
-	
+	transition: transform 0.3s ease !important;
 }
 
 .facetwp-flyout.active {
