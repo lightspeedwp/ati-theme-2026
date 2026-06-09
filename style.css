@@ -763,4 +763,6 @@ ul.lsx-not_included-list li svg {
 .wp-block-hm-popup__close:focus,
 .wp-block-hm-popup__close:hover {
 	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--accent-600);
+	border-color: var(--wp--preset--color--accent-600);
 }
