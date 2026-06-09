@@ -1040,7 +1040,21 @@ body .facetwp-flyout {
 
 /* ── Desktop sticky nav ──────────────────────────────────────────────────── */
 
+.lsx-to-sticky-menu-list {
+	display: flex !important;
+	width: 100% !important;
+}
+
+.lsx-to-sticky-menu-item {
+	flex: 1 !important;
+	display: flex !important;
+}
+
 .lsx-to-sticky-menu-button {
+	flex: 1 !important;
+	display: flex !important;
+	justify-content: center !important;
+	text-align: center !important;
 	color: var(--wp--preset--color--base) !important;
 	background-color: var(--wp--preset--color--primary-500) !important;
 	text-decoration: none;
