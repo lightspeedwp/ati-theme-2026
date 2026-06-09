@@ -902,7 +902,7 @@ ul.lsx-not_included-list li svg {
 	cursor: pointer;
 	font-size: var(--wp--preset--font-size--400);
 	margin-top: 0;
-	padding-bottom: var(--wp--preset--spacing--20);
+	padding-bottom: var(--wp--preset--spacing--30);
 	border-bottom: 1px solid var(--wp--preset--color--accent-500);
 	align-items: center;
 	justify-content: space-between;
@@ -930,6 +930,7 @@ ul.lsx-not_included-list li svg {
 
 .flyout-row.expanded h3 {
 	border-bottom: none;
+	margin-bottom: 0 !important;
 }
 
 .flyout-row.expanded {
@@ -958,17 +959,9 @@ ul.lsx-not_included-list li svg {
 	padding: 0 !important;
 }
 
-.facetwp-flyout .facetwp-slider .noUi-base {
-	background: var(--wp--preset--color--neutral-100);
-}
-
-.facetwp-flyout .facetwp-slider .noUi-connect {
-	background: var(--wp--preset--color--brand-500);
-}
-
 /* stylelint-disable selector-class-pattern */
 
-/* Hide search and sort flyout rows in FacetWP mobile flyout (third-party markup uses underscores) */
+/* Hide search and sort flyout rows in FacetWP mobile flyout (FacetWP markup uses underscores) */
 .facetwp-flyout .flyout-row.name-search_tour,
 .facetwp-flyout .flyout-row.name-sort_by,
 .facetwp-flyout .flyout-row.name-sort_tours,
