@@ -941,6 +941,8 @@ ul.lsx-not_included-list li svg {
 .facetwp-flyout-wrap {
 	padding: 0 var(--wp--preset--spacing--20);
 	margin-top: var(--wp--preset--spacing--40);
+	overflow-x: hidden;
+	box-sizing: border-box;
 }
 
 .facetwp-flyout-close {
@@ -993,11 +995,16 @@ ul.lsx-not_included-list li svg {
 
 body .facetwp-flyout {
 	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	max-height: 50vh;
+	overflow-y: auto;
 	transform: translateY(100%);
 }
 
 .facetwp-flyout.active {
-	border-radius: 0 8px 0 0;
+	border-radius: 0;
 	border: 1px solid var(--wp--preset--color--accent-500);
 }
 
