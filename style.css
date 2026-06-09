@@ -888,3 +888,133 @@ ul.lsx-not_included-list li svg {
 	background-color: var(--wp--preset--color--brand-500) !important;
 	color: var(--wp--preset--color--contrast) !important;
 }
+
+/* Facet Mobile expanding menus */
+.flyout-item {
+	display: none;
+}
+
+.flyout-row.expanded .flyout-item {
+	display: block;
+}
+
+.flyout-row h3 {
+	display: flex;
+	cursor: pointer;
+	font-size: var(--wp--preset--font-size--400);
+	margin-top: 0;
+	padding-bottom: var(--wp--preset--spacing--20);
+	border-bottom: 1px solid var(--wp--preset--color--accent-500);
+	align-items: center;
+	justify-content: space-between;
+}
+
+.facetwp-flyout-close h3 {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+	font-size: var(--wp--preset--font-size--500);
+	font-weight: 600;
+}
+
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+.facetwp-flyout-close button {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+/* stylelint-enable selector-class-pattern, no-descending-specificity */
+
+.flyout-row.expanded h3 {
+	border-bottom: none;
+}
+
+.flyout-row.expanded {
+	border-bottom: 1px solid var(--wp--preset--color--accent-500);
+	margin-bottom: var(--wp--preset--spacing--20);
+}
+
+.facetwp-flyout-wrap {
+	padding: 0 var(--wp--preset--spacing--20);
+	margin-top: var(--wp--preset--spacing--40);
+}
+
+.facetwp-flyout-close {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--wp--preset--spacing--10);
+	padding: var(--wp--preset--spacing--20) 0 !important;
+	margin: 0 var(--wp--preset--spacing--20);
+	align-items: center;
+	border-bottom: 2px solid var(--wp--preset--color--accent-500);
+}
+
+.facetwp-flyout-content {
+	padding: 0 !important;
+}
+
+.facetwp-flyout .facetwp-slider .noUi-base {
+	background: var(--wp--preset--color--neutral-100);
+}
+
+.facetwp-flyout .facetwp-slider .noUi-connect {
+	background: var(--wp--preset--color--brand-500);
+}
+
+/* stylelint-disable selector-class-pattern */
+
+/* Hide search and sort flyout rows in FacetWP mobile flyout (third-party markup uses underscores) */
+.facetwp-flyout .flyout-row.name-search_tour,
+.facetwp-flyout .flyout-row.name-sort_by,
+.facetwp-flyout .flyout-row.name-search_archive {
+	display: none !important;
+}
+
+/* stylelint-enable selector-class-pattern */
+
+.flyout-row h3::after {
+	content: '';
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url('/wp-content/themes/ati-theme-2026/assets/icons/plus-icon.svg') no-repeat center center;
+	background-size: 24px 24px;
+}
+
+.flyout-row.expanded h3::after {
+	content: '';
+	background: url('/wp-content/themes/ati-theme-2026/assets/icons/minus-icon.svg') no-repeat center center;
+	background-size: 24px 24px;
+}
+
+body .facetwp-flyout {
+	bottom: 0;
+	transform: translateY(100%);
+}
+
+.facetwp-flyout.active {
+	border-radius: 0 8px 0 0;
+	border: 1px solid var(--wp--preset--color--accent-500);
+}
+
+/* Hide FacetWP search and sort facets in mobile flyout */
+.facetwp-flyout .facetwp-facet.facetwp-type-search,
+.facetwp-flyout .facetwp-facet.facetwp-type-sort {
+	display: none !important;
+}
+
+.facetwp-facet.facetwp-facet-result_count {
+	margin: 0;
+}
+
+/* Hide elements on mobile */
+@media (max-width: 781px) {
+
+	/* Hide .filters class on mobile */
+	.filters {
+		display: none !important;
+	}
+}

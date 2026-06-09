@@ -476,3 +476,42 @@ add_filter(
     10,
     2
 );
+
+// Facet Mobile expanding menus
+add_action('wp_head', function () {
+    ?>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        fUtil().on('click', '.flyout-row h3', function() {
+          fUtil(this).closest('.flyout-row').toggleClass('expanded');
+        });
+      });
+    </script>
+<?php });
+
+
+add_action('wp_head', function () {
+    ?>
+    <script>
+      (function($) {
+        $(function() {
+          if ('object' != typeof FWP) return;
+ 
+          /* Modify the flyout wrapper HTML */
+          FWP.hooks.addFilter('facetwp/flyout/flyout_html', function(flyout_html) {
+                        return flyout_html.replace(
+                            ' <div class="facetwp-flyout-close">x</div>',
+                            ' <div class="facetwp-flyout-close">'
+                                + '<h3>Filters</h3>'
+                                + '<button type="button" aria-label="Close filters" >'
+                                + '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6L18 18" stroke="#090909" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                                + '</button>'
+                                + '</div>'
+                        );
+          });
+ 
+        });
+      })(jQuery);
+    </script>
+  <?php
+}, 100);
