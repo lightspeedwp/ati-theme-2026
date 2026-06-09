@@ -907,6 +907,7 @@ ul.lsx-not_included-list li svg {
 	border-bottom: 1px solid var(--wp--preset--color--accent-500);
 	align-items: center;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .facetwp-flyout-close h3 {
