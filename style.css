@@ -825,12 +825,16 @@ ul.lsx-not_included-list li svg {
    fall back to --wp--style--block-gap (spacing-30, ~24px). Override to the
    intended values from the block JSON. */
 
-.wp-block-hm-popup .lsx-accommodation-info {
+/* Targets accommodation info section (.lsx-accommodation-info) and
+   tour/destination info sections ([aria-label="Tour details"]) */
+.wp-block-hm-popup .lsx-accommodation-info,
+.wp-block-hm-popup [aria-label="Tour details"] {
 	--wp--style--block-gap: var(--wp--preset--spacing--10) !important;
 }
 
 /* Gap between icon and label within each field row */
-.wp-block-hm-popup .lsx-accommodation-info > .wp-block-group {
+.wp-block-hm-popup .lsx-accommodation-info > .wp-block-group,
+.wp-block-hm-popup [aria-label="Tour details"] > .wp-block-group {
 	gap: var(--wp--preset--spacing--10);
 	align-items: center;
 }
@@ -865,4 +869,29 @@ ul.lsx-not_included-list li svg {
 .wp-block-hm-popup .wp-block-button.is-style-card-button .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--brand-500) !important;
 	color: var(--wp--preset--color--contrast) !important;
+}
+
+/* ===== Tour modal button style (is-style-card-button-brand) ===== */
+/* Tour modal uses the same accent button as the others. Any remaining
+   is-style-card-button-brand buttons get the same amber treatment for
+   visual consistency. */
+
+.wp-block-hm-popup .wp-block-button.is-style-card-button-brand .wp-block-button__link {
+	background-color: var(--wp--preset--color--accent-500) !important;
+	color: var(--wp--preset--color--base) !important;
+	text-decoration: none;
+	padding: var(--wp--preset--spacing--10) var(--wp--preset--spacing--20);
+	transition: background-color 200ms ease, color 200ms ease;
+}
+
+.wp-block-hm-popup .wp-block-button.is-style-card-button-brand .wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--brand-500) !important;
+	color: var(--wp--preset--color--contrast) !important;
+}
+
+/*======== Secondary Sticky Navigation Offset =======*/
+
+.secondary-sticky-nav-offset {
+	/* Height of the admin bar + some breathing room */
+	top: 86px;
 }

@@ -1,5 +1,5 @@
-<!-- wp:group {"metadata":{"name":"Tour Card"},"className":"overflow-hidden is-style-default","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
-<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-default">
+<!-- wp:group {"metadata":{"name":"Tour Card"},"className":"overflow-hidden is-style-tour-card-light is-style-card-light","style":{"border":{"radius":{"topLeft":"0rem","topRight":"0rem","bottomLeft":"0rem","bottomRight":"0rem"}},"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Tour Card"} -->
+<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-light is-style-card-light" style="border-top-left-radius:0rem;border-top-right-radius:0rem;border-bottom-left-radius:0rem;border-bottom-right-radius:0rem">
     <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
 
     <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|5","bottom":"var:preset|spacing|5"}}},"layout":{"type":"default"}} -->
@@ -7,7 +7,7 @@
         style="padding-top:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--30)">
         <!-- wp:group {"metadata":{"name":"Tour Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
         <div class="wp-block-group center-vertically" style="min-height:0rem">
-            <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|base"}}}}}} /-->
+            <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}}}} /-->
         </div>
         <!-- /wp:group -->
 
@@ -112,10 +112,10 @@
 
     <!-- wp:buttons -->
     <div class="wp-block-buttons">
-        <!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button-brand","style":{"border":{"radius":"0px"}}} -->
+        <!-- wp:button {"backgroundColor":"primary","width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button","style":{"border":{"radius":"0px"}}} -->
         <div
-            class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button-brand">
-            <a class="wp-block-button__link wp-element-button" href="#permalink" style="border-radius:0px">View more</a>
+            class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button">
+            <a class="wp-block-button__link has-primary-background-color has-background wp-element-button" href="#permalink" style="border-radius:0px">View more</a>
         </div>
         <!-- /wp:button -->
     </div>

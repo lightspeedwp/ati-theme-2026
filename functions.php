@@ -286,6 +286,8 @@ add_filter(
 	'lsx_to_template_parts',
 	function ( $template_parts ) {
 		unset( $template_parts['modal-accommodation'] );
+		unset( $template_parts['modal-tour'] );
+		unset( $template_parts['modal-destination'] );
 		return $template_parts;
 	}
 );
