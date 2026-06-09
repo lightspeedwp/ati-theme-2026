@@ -766,3 +766,13 @@ ul.lsx-not_included-list li svg {
 	color: var(--wp--preset--color--accent-600);
 	border-color: var(--wp--preset--color--accent-600);
 }
+
+.wp-block-hm-popup .wp-block-outermost-icon-block {
+	color: var(--wp--preset--color--accent-500);
+}
+
+.wp-block-hm-popup .icon-container svg {
+	width: 20px;
+	aspect-ratio: 1;
+	fill: currentColor;
+}
