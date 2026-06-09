@@ -995,10 +995,18 @@ body .facetwp-flyout {
 	left: 0;
 	right: 0;
 	width: 100%;
-	transform: translateY(60vh);
+	transform: translateY(100%);
+	
 }
 
 .facetwp-flyout.active {
+	position: fixed !important;
+	top: auto !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+	transform: translateY(0) !important;
 	border-radius: 0;
 	border-top: 1px solid var(--wp--preset--color--accent-500);
 	max-height: 60vh;
