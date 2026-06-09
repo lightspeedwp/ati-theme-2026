@@ -803,18 +803,6 @@ ul.lsx-not_included-list li svg {
 	transition: box-shadow 300ms ease;
 }
 
-:where(.is-style-card-light:hover, .is-style-tour-card-light:hover) {
-	box-shadow: var(--wp--preset--shadow--500);
-}
-
-:where(.is-style-card-light, .is-style-tour-card-light) .wp-block-outermost-icon-block {
-	color: var(--wp--preset--color--accent-500);
-}
-
-:where(.is-style-card-light, .is-style-tour-card-light) .icon-container svg {
-	fill: currentColor;
-}
-
 :where(.is-style-card-light, .is-style-tour-card-light) .wp-block-post-terms a {
 	color: var(--wp--preset--color--accent-500);
 }
