@@ -1079,5 +1079,9 @@ body .facetwp-flyout {
 /* ========================================================================== */
 
 #mega-menu-1-dropdown {
+	margin-left: -32px;
+}
+
+#mega-menu-21-dropdown {
 	margin-left: -20px;
 }
