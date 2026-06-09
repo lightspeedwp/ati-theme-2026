@@ -694,3 +694,73 @@ ul.lsx-not_included-list li svg {
 	}
 
 }
+
+
+/* ========== Modal Styling ========== */
+
+.wp-block-hm-popup {
+	align-items: center;
+	background: none;
+	border: 0;
+	box-sizing: border-box;
+	height: 95vh;
+	justify-content: center;
+	max-width: 600px;
+	opacity: 0;
+	overflow: auto;
+	padding: 0;
+	top: 100%;
+	transition: opacity .2s ease, top 0s ease .2s, overlay allow-discrete .2s ease, display allow-discrete .2s ease;
+	width: 90vw;
+	z-index: 200
+}
+
+.wp-block-hm-popup[open] {
+	display: flex;
+	opacity: 1;
+	padding: 0;
+	top: 0;
+	transition: opacity .2s ease
+}
+
+.wp-block-hm-popup>* {
+	background-color: var(--wp--preset--color--base);
+	max-height: 100%;
+	overflow-y: auto;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	z-index: 2;
+	border-radius: var(--wp--preset--border-radius--100);
+}
+
+.wp-block-hm-popup::backdrop {
+	background-color: transparent;
+	transition: display allow-discrete .15s, overlay allow-discrete .15s, background-color .15s
+}
+
+.wp-block-hm-popup[open]::backdrop {
+	background-color: rgba(0, 0, 0, .25)
+}
+
+.wp-block-hm-popup__close {
+	align-items: center;
+	color: var(--wp--preset--color--accent-500);
+	background: hsla(0, 0%, 100%, .9);
+	border: 2px solid var(--wp--preset--color--accent-500);
+	border-radius: var(--wp--preset--border-radius--100);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	padding: var(--wp--preset--spacing--10);
+	position: absolute;
+	z-index: 3;
+	top: var(--wp--preset--spacing--20);
+	right: var(--wp--preset--spacing--20);
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.wp-block-hm-popup__close:focus,
+.wp-block-hm-popup__close:hover {
+	background: var(--wp--preset--color--base);
+}
