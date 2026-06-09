@@ -277,6 +277,20 @@ return $block_content;
 add_filter( 'render_block', 'ati_theme_2026_render_rating_stars', 35, 2 );
 
 /**
+ * Prevent the Tour Operator plugin from seeding its own modal-accommodation
+ * template part into the database. Without this, the plugin re-creates the
+ * post from its own plugin file on every init after a Site Editor reset,
+ * overriding the theme's parts/modal-accommodation.html.
+ */
+add_filter(
+	'lsx_to_template_parts',
+	function ( $template_parts ) {
+		unset( $template_parts['modal-accommodation'] );
+		return $template_parts;
+	}
+);
+
+/**
  * Register custom theme blocks from their block.json manifests.
  *
  * Each subdirectory under /blocks/ contains a block.json (which declares the
