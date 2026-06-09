@@ -888,10 +888,3 @@ ul.lsx-not_included-list li svg {
 	background-color: var(--wp--preset--color--brand-500) !important;
 	color: var(--wp--preset--color--contrast) !important;
 }
-
-/*======== Secondary Sticky Navigation Offset =======*/
-
-.secondary-sticky-nav-offset {
-	/* Height of the admin bar + some breathing room */
-	top: 86px;
-}
