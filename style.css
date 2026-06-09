@@ -831,10 +831,6 @@ ul.lsx-not_included-list li svg {
 	transition: transform 300ms ease;
 }
 
-:where(.is-style-card-light:hover, .is-style-tour-card-light:hover) .wp-block-post-featured-image img {
-	transform: scale(1.05);
-}
-
 /* ===== Accommodation modal layout gaps ===== */
 /* WordPress generates per-instance wp-container-* CSS only during the main render
    pass. Modal blocks rendered by do_blocks() in wp_footer never get it, so they
@@ -862,7 +858,7 @@ ul.lsx-not_included-list li svg {
    context; falls back to theme default (accent-500 = orange). Force correct value. */
 
 .wp-block-hm-popup .wp-block-post-title a:hover {
-	color: var(--wp--preset--color--primary-700) !important;
+	color: var(--wp--preset--color--contrast) !important;
 }
 
 /* ===== Accommodation modal button style ===== */
