@@ -291,6 +291,37 @@ add_filter(
 );
 
 /**
+ * Restore the viewBox attribute on icon-block SVGs inside modals.
+ *
+ * The Tour Operator plugin outputs modal HTML through wp_kses() with a custom
+ * allowed-HTML array that lists 'viewBox' with camelCase. wp_kses lowercases
+ * every attribute name before checking the allowlist, so 'viewBox' never
+ * matches and the attribute is stripped. Without viewBox="0 0 256 256" the
+ * Phosphor icon paths (coordinate space 0–256) are drawn outside the 32 × 32
+ * SVG canvas and are completely invisible.
+ *
+ * Because modals require JavaScript to function, a footer inline script is the
+ * cleanest theme-side workaround without patching the plugin.
+ */
+add_action(
+	'wp_footer',
+	function () {
+		?>
+		<script>
+		(function () {
+			document.querySelectorAll(
+				'.wp-block-hm-popup .wp-block-outermost-icon-block svg:not([viewBox])'
+			).forEach( function ( svg ) {
+				svg.setAttribute( 'viewBox', '0 0 256 256' );
+			} );
+		})();
+		</script>
+		<?php
+	},
+	15
+);
+
+/**
  * Register custom theme blocks from their block.json manifests.
  *
  * Each subdirectory under /blocks/ contains a block.json (which declares the
