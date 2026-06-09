@@ -991,11 +991,13 @@ ul.lsx-not_included-list li svg {
 }
 
 body .facetwp-flyout {
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	transform: translateY(100%);
+	position: fixed !important;
+	top: auto !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+	transform: translateY(100%) !important;
 	
 }
 
