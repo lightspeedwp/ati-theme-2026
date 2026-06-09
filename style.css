@@ -1031,3 +1031,43 @@ body .facetwp-flyout {
 		display: none !important;
 	}
 }
+
+/* ========================================================================== */
+
+/* LSX Tour Operator — Secondary Sticky Menu                                  */
+
+/* ========================================================================== */
+
+/* ── Desktop sticky nav ──────────────────────────────────────────────────── */
+
+.lsx-to-sticky-menu-button {
+	color: var(--wp--preset--color--base) !important;
+	background-color: var(--wp--preset--color--primary-500) !important;
+	text-decoration: none;
+	transition: color 200ms ease;
+}
+
+.lsx-to-sticky-menu-button:hover,
+.lsx-to-sticky-menu-button:focus-visible,
+.lsx-to-sticky-menu-button.active,
+.lsx-to-sticky-menu-button[aria-current="location"] {
+	color: var(--wp--preset--color--brand-500) !important;
+	background-color: var(--wp--preset--color--primary-500) !important;
+	text-decoration: none;
+}
+
+/* ── Mobile section headers ──────────────────────────────────────────────── */
+
+.lsx-to-section-header {
+	color: var(--wp--preset--color--base) !important;
+	background-color: var(--wp--preset--color--primary-500) !important;
+	transition: color 200ms ease;
+}
+
+.lsx-to-section-header:hover,
+.lsx-to-section-header:focus-visible,
+.lsx-to-section-header.active,
+.lsx-to-section-header[aria-current="location"] {
+	color: var(--wp--preset--color--brand-500) !important;
+	background-color: var(--wp--preset--color--primary-500) !important;
+}
