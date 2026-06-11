@@ -674,6 +674,17 @@ ul.lsx-not_included-list li svg {
 	padding-right: 0 !important;
 }
 
+/* GF form footer: same stray <br>/<p> injection. The <p> wraps hidden inputs
+   and the <br> elements sit between them — both create visible height inside
+   the modal where GF's all:unset reset doesn't cascade correctly. */
+.wp-block-hm-popup .gform_footer br {
+	display: none !important;
+}
+
+.wp-block-hm-popup .gform_footer p {
+	display: contents !important;
+}
+
 /* Keep Day / Month / Year on one line.
    GF renders a .gform-grid-row with three .gfield_date_dropdown_* children,
    each sized to --gf-field-date-width (168px). Override to fill equally. */
