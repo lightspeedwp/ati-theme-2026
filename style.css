@@ -1072,6 +1072,20 @@ body .facetwp-flyout {
 	background-color: var(--wp--preset--color--primary-500) !important;
 }
 
+/* ── Modal enquiry button ────────────────────────────────────────────────── */
+
+.wp-block-lsx-tour-operator-modal-button .wp-block-button__link {
+	background-color: var(--wp--preset--color--enquiry-button);
+	color: var(--wp--preset--color--contrast);
+	transition: background-color 200ms ease, color 200ms ease;
+}
+
+.wp-block-lsx-tour-operator-modal-button .wp-block-button__link:hover,
+.wp-block-lsx-tour-operator-modal-button .wp-block-button__link:focus-visible {
+	background-color: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--base);
+}
+
 /* ========================================================================== */
 
 /* Mega Menu Dropdown Offset                                                   */
