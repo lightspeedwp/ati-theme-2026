@@ -489,6 +489,9 @@
 		},
 		"custom": {
 			"color": {
+				"button": {
+					"enquiry": "#f7ae00"
+				},
 				"surface": {
 					"default": "var(--wp--preset--color--base)",
 					"soft": "var(--wp--preset--color--neutral-100)",
@@ -813,6 +816,9 @@
 				"color": {
 					"text": "var:preset|color|contrast"
 				}
+			},
+			"lsx-tour-operator/modal-button": {
+				"css": "& .wp-block-button__link { background-color: var(--wp--preset--color--enquiry-button); color: var(--wp--preset--color--contrast); transition: background-color 200ms ease, color 200ms ease; } & .wp-block-button__link:hover, & .wp-block-button__link:focus-visible { background-color: var(--wp--preset--color--primary-500); color: var(--wp--preset--color--base); }"
 			}
 		}
 	},

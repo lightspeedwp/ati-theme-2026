@@ -1,6 +1,6 @@
 <!-- wp:template-part {"slug":"top-header","theme":"ati-theme-2026","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Main Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"}} -->
+<!-- wp:group {"metadata":{"name":"Main Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"},"stickyZIndex":99} -->
 <div class="wp-block-group"
     style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
     <!-- wp:template-part {"slug":"main-header","theme":"ati-theme-2026","area":"header"} /--></div>
@@ -34,40 +34,47 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:lsx-tour-operator/sticky-menu {"menuItems":[{"id":"SUMMARY","title":"SUMMARY"},{"id":"FEATURED-TOURS","title":"FEATURED TOURS"},{"id":"TRAVEL-INFORMATION","title":"TRAVEL INFORMATION"},{"id":"REGIONS","title":"REGIONS"},{"id":"GALLERY","title":"GALLERY"},{"id":"REVIEWS","title":"REVIEWS"}],"customActiveBackgroundColor":"#232020","customActiveTextColor":"#DBBD8D","hoverBackgroundColor":"primary-500","hoverTextColor":"brand-500","backgroundColor":"primary-500","textColor":"base","style":{"typography":{"textAlign":"left"},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} -->
-<div style="margin-top:0;margin-bottom:0;--active-bg-color:#232020;--active-text-color:#DBBD8D;--hover-bg-color:var(--wp--preset--color--primary-500);--hover-text-color:var(--wp--preset--color--brand-500)"
-    class="wp-block-lsx-tour-operator-sticky-menu has-text-align-left has-base-color has-primary-500-background-color has-text-color has-background has-link-color">
-    <nav class="lsx-to-sticky-menu-nav is-layout-constrained has-global-padding" aria-label="Page section navigation">
-        <ul class="lsx-to-sticky-menu-list alignwide" aria-label="Page sections">
-            <li class="lsx-to-sticky-menu-item" data-section-id="SUMMARY"><a class="lsx-to-sticky-menu-button"
-                    href="#SUMMARY" data-section-id="SUMMARY" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">SUMMARY</a>
-            </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="FEATURED-TOURS"><a class="lsx-to-sticky-menu-button"
-                    href="#FEATURED-TOURS" data-section-id="FEATURED-TOURS" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">FEATURED
-                    TOURS</a></li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="TRAVEL-INFORMATION"><a
-                    class="lsx-to-sticky-menu-button" href="#TRAVEL-INFORMATION" data-section-id="TRAVEL-INFORMATION"
-                    aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">TRAVEL
-                    INFORMATION</a></li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="REGIONS"><a class="lsx-to-sticky-menu-button"
-                    href="#REGIONS" data-section-id="REGIONS" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">REGIONS</a>
-            </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="GALLERY"><a class="lsx-to-sticky-menu-button"
-                    href="#GALLERY" data-section-id="GALLERY" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">GALLERY</a>
-            </li>
-            <li class="lsx-to-sticky-menu-item" data-section-id="REVIEWS"><a class="lsx-to-sticky-menu-button"
-                    href="#REVIEWS" data-section-id="REVIEWS" aria-current="false"
-                    style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">REVIEWS</a>
-            </li>
-        </ul>
-    </nav>
+<!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"}}},"backgroundColor":"primary-500","layout":{"type":"constrained"},"stickyScrollOffset":"86px","stickyZIndex":2} -->
+<div class="wp-block-group has-primary-500-background-color has-background"
+    style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0)">
+    <!-- wp:lsx-tour-operator/sticky-menu {"menuItems":[{"id":"SUMMARY","title":"SUMMARY"},{"id":"FEATURED-TOURS","title":"FEATURED TOURS"},{"id":"TRAVEL-INFORMATION","title":"TRAVEL INFORMATION"},{"id":"REGIONS","title":"REGIONS"},{"id":"GALLERY","title":"GALLERY"},{"id":"REVIEWS","title":"REVIEWS"}],"align":"wide","style":{"typography":{"textAlign":"left"},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
+    <div style="margin-top:0;margin-bottom:0"
+        class="wp-block-lsx-tour-operator-sticky-menu has-text-align-left alignwide">
+        <nav class="lsx-to-sticky-menu-nav is-layout-constrained has-global-padding"
+            aria-label="Page section navigation">
+            <ul class="lsx-to-sticky-menu-list alignwide" aria-label="Page sections">
+                <li class="lsx-to-sticky-menu-item" data-section-id="SUMMARY"><a class="lsx-to-sticky-menu-button"
+                        href="#SUMMARY" data-section-id="SUMMARY" aria-current="false"
+                        style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">SUMMARY</a>
+                </li>
+                <li class="lsx-to-sticky-menu-item" data-section-id="FEATURED-TOURS"><a
+                        class="lsx-to-sticky-menu-button" href="#FEATURED-TOURS" data-section-id="FEATURED-TOURS"
+                        aria-current="false"
+                        style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">FEATURED
+                        TOURS</a></li>
+                <li class="lsx-to-sticky-menu-item" data-section-id="TRAVEL-INFORMATION"><a
+                        class="lsx-to-sticky-menu-button" href="#TRAVEL-INFORMATION"
+                        data-section-id="TRAVEL-INFORMATION" aria-current="false"
+                        style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">TRAVEL
+                        INFORMATION</a></li>
+                <li class="lsx-to-sticky-menu-item" data-section-id="REGIONS"><a class="lsx-to-sticky-menu-button"
+                        href="#REGIONS" data-section-id="REGIONS" aria-current="false"
+                        style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">REGIONS</a>
+                </li>
+                <li class="lsx-to-sticky-menu-item" data-section-id="GALLERY"><a class="lsx-to-sticky-menu-button"
+                        href="#GALLERY" data-section-id="GALLERY" aria-current="false"
+                        style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">GALLERY</a>
+                </li>
+                <li class="lsx-to-sticky-menu-item" data-section-id="REVIEWS"><a class="lsx-to-sticky-menu-button"
+                        href="#REVIEWS" data-section-id="REVIEWS" aria-current="false"
+                        style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">REVIEWS</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- /wp:lsx-tour-operator/sticky-menu -->
 </div>
-<!-- /wp:lsx-tour-operator/sticky-menu -->
+<!-- /wp:group -->
 
 <!-- wp:group {"tagName":"section","metadata":{"name":"SUMMARY"},"align":"wide","className":"is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|70"}}},"backgroundColor":"brand-100","layout":{"type":"constrained"},"anchor":"SUMMARY","addToStickyMenu":true,"stickyMenuId":"SUMMARY","stickyMenuTitle":"SUMMARY"} -->
 <section
@@ -90,9 +97,9 @@
 
         <!-- wp:column {"width":"35%","style":{"spacing":{"blockGap":"0"}}} -->
         <div class="wp-block-column" style="flex-basis:35%">
-            <!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"},"stickyScrollOffset":"80px","unstickOnMobile":true} -->
+            <!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"},"stickyScrollOffset":"160px","stickyZIndex":1,"unstickOnMobile":true} -->
             <div class="wp-block-group">
-                <!-- wp:template-part {"slug":"fast-facts-destination","theme":"ati-theme-2026","area":"fast-facts"} /-->
+                <!-- wp:template-part {"slug":"ati-fast-facts-destination","theme":"ati-theme-2026","area":"uncategorized"} /-->
             </div>
             <!-- /wp:group -->
         </div>
@@ -288,7 +295,7 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"TRAVEL INFORMATION","categories":["lsx-tour-operator"],"patternName":"lsx-tour-operator/travel-information"},"align":"wide","className":"lsx-travel-information-wrapper lsx-to-slider is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"},"anchor":"TRAVEL-INFORMATION","addToStickyMenu":true,"stickyMenuId":"TRAVEL-INFORMATION","stickyMenuTitle":"TRAVEL INFORMATION"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"TRAVEL INFORMATION","categories":["lsx-tour-operator"],"patternName":"lsx-tour-operator/travel-information","blockVisibility":false},"align":"wide","className":"lsx-travel-information-wrapper lsx-to-slider is-style-ati-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"},"anchor":"TRAVEL-INFORMATION","addToStickyMenu":true,"stickyMenuId":"TRAVEL-INFORMATION","stickyMenuTitle":"TRAVEL INFORMATION"} -->
 <section
     class="wp-block-group alignwide lsx-travel-information-wrapper lsx-to-slider is-style-ati-page-section-default lsx-to-sticky-menu-section lsx-to-sticky-menu-section"
     id="TRAVEL-INFORMATION" data-sticky-menu-section="true" data-section-title="TRAVEL INFORMATION" role="region"
@@ -791,10 +798,36 @@
 
     <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--40)">
-        <!-- wp:query {"queryId":2,"query":{"perPage":8,"postType":"review","order":"desc","orderBy":"date"},"metadata":{"name":"Related Reviews Query"},"align":"wide","className":"lsx-to-slider"} -->
-        <div class="wp-block-query alignwide lsx-to-slider">
+        <!-- wp:query {"queryId":2,"query":{"perPage":8,"postType":"review","order":"desc","orderBy":"date"},"metadata":{"name":"Related Reviews Query"},"align":"wide"} -->
+        <div class="wp-block-query alignwide">
             <!-- wp:post-template {"className":"lsx-review-related-destination-query","layout":{"type":"grid","columnCount":2}} -->
-            <!-- wp:block {"ref":22575} /-->
+            <!-- wp:group {"metadata":{"name":"Review Card","patternName":"ati-review-card-small"},"className":"overflow-hidden is-style-default","style":{"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"border":{"radius":{"topLeft":"var:preset|border-radius|100","topRight":"var:preset|border-radius|100","bottomLeft":"var:preset|border-radius|100","bottomRight":"var:preset|border-radius|100"}}},"backgroundColor":"primary-500","textColor":"base","layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
+            <div aria-label="Tour Card"
+                class="wp-block-group overflow-hidden is-style-default has-base-color has-primary-500-background-color has-text-color has-background has-link-color"
+                style="border-top-left-radius:var(--wp--preset--border-radius--100);border-top-right-radius:var(--wp--preset--border-radius--100);border-bottom-left-radius:var(--wp--preset--border-radius--100);border-bottom-right-radius:var(--wp--preset--border-radius--100);padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
+                <!-- wp:group {"metadata":{"name":"Content"},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                <div class="wp-block-group">
+                    <!-- wp:post-featured-image {"aspectRatio":"1","height":"160px","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|100","topRight":"var:preset|border-radius|100","bottomLeft":"var:preset|border-radius|100","bottomRight":"var:preset|border-radius|100"}}}} /-->
+
+                    <!-- wp:group {"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group">
+                        <!-- wp:group {"metadata":{"name":"Reviewers"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+                        <div class="wp-block-group center-vertically" style="min-height:0rem">
+                            <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|base"}},"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
+                        </div>
+                        <!-- /wp:group -->
+
+                        <!-- wp:group {"metadata":{"name":"Review Content"},"layout":{"type":"default"}} -->
+                        <div class="wp-block-group">
+                            <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":40,"className":"line-clamp-4","style":{"typography":{"fontStyle":"italic","fontWeight":"300"}},"fontSize":"200"} /-->
+                        </div>
+                        <!-- /wp:group -->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
             <!-- /wp:post-template -->
         </div>
         <!-- /wp:query -->
