@@ -644,6 +644,17 @@ ul.lsx-not_included-list li svg {
 
 /* ── Tour Enquiry form (ID 5) ──────────────────────────────────────────── */
 
+/* GF wraps each name sub-field span in a <p> and injects <br> tags around
+   the input — remove those so name fields match the spacing of all other fields. */
+#gform_wrapper_5 .ginput_container--name > p {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#gform_wrapper_5 .ginput_container--name br {
+	display: none !important;
+}
+
 /* Keep Day / Month / Year on one line.
    GF renders a .gform-grid-row with three .gfield_date_dropdown_* children,
    each sized to --gf-field-date-width (168px). Override to fill equally. */
