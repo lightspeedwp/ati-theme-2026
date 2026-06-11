@@ -644,21 +644,31 @@ ul.lsx-not_included-list li svg {
 
 /* ── Tour Enquiry form (ID 5) ──────────────────────────────────────────── */
 
-/* Remove <p> margin added by the name sub-field wrapper */
+/* Remove <p> margin from name sub-field wrappers (GF renders <p> around each span) */
 #gform_wrapper_5 .ginput_container--name p {
 	margin: 0 !important;
+	padding: 0 !important;
 }
 
-/* Keep Day / Month / Year on one line */
-#gform_wrapper_5 .ginput_container_date {
-	display: flex !important;
+/* Keep Day / Month / Year on one line.
+   GF renders a .gform-grid-row with three .gfield_date_dropdown_* children,
+   each sized to --gf-field-date-width (168px). Override to fill equally. */
+#gform_wrapper_5 .gfield--type-date .gform-grid-row {
 	flex-wrap: nowrap !important;
-	gap: var(--wp--preset--spacing--10) !important;
-	align-items: center !important;
 }
 
-#gform_wrapper_5 .ginput_container_date select {
+#gform_wrapper_5 .gfield_date_dropdown_day,
+#gform_wrapper_5 .gfield_date_dropdown_month,
+#gform_wrapper_5 .gfield_date_dropdown_year {
 	flex: 1 1 0 !important;
+	width: auto !important;
+	min-width: 0 !important;
+}
+
+#gform_wrapper_5 .gfield_date_dropdown_day select,
+#gform_wrapper_5 .gfield_date_dropdown_month select,
+#gform_wrapper_5 .gfield_date_dropdown_year select {
+	width: 100% !important;
 	min-width: 0 !important;
 }
 
