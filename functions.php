@@ -531,7 +531,7 @@ add_action('wp_head', function () {
  * @return string
  */
 function ati_gf_fix_name_field_html( $content, $field, $value, $entry_id, $form_id ) {
-	if ( (int) $form_id !== 5 || 'name' !== $field->type ) {
+	if ( 'name' !== $field->type ) {
 		return $content;
 	}
 

@@ -644,15 +644,30 @@ ul.lsx-not_included-list li svg {
 
 /* ── Tour Enquiry form (ID 5) ──────────────────────────────────────────── */
 
-/* GF name field: neutralise the grid-row negative margins and ensure the
-   sub-field span fills the container. <p>/<br> cleanup is done in PHP via
-   gform_field_content so the DOM never receives them. */
-#gform_wrapper_5 .ginput_container--name {
+/* GF name field quirks inside the enquiry modal.
+   GF wraps each sub-field <span> in a stray <p> and injects a <br /> as the
+   first child of the span. Outside the modal GF's own all:unset reset neutralises
+   both, but the modal context breaks that cascade. Fix all three here:
+   1. Remove the -6px negative margins from the grid-row on the container.
+   2. Make <p> layout-transparent so spans become direct flex children.
+   3. Hide the <br /> that creates visible height before each input.
+   The PHP gform_field_content filter in functions.php also removes <p>/<br>
+   at the HTML level for form 5; this CSS is a belt-and-braces fallback covering
+   all forms rendered inside the modal. */
+.wp-block-hm-popup .ginput_container--name {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
 
-#gform_wrapper_5 .ginput_container--name .gform-grid-col {
+.wp-block-hm-popup .ginput_container--name > p {
+	display: contents !important;
+}
+
+.wp-block-hm-popup .ginput_container--name br {
+	display: none !important;
+}
+
+.wp-block-hm-popup .ginput_container--name .gform-grid-col {
 	flex: 1 1 100% !important;
 	width: 100% !important;
 	padding-left: 0 !important;
