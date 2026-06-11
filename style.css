@@ -644,15 +644,29 @@ ul.lsx-not_included-list li svg {
 
 /* ── Tour Enquiry form (ID 5) ──────────────────────────────────────────── */
 
-/* GF wraps each name sub-field span in a <p> and injects <br> tags around
-   the input — remove those so name fields match the spacing of all other fields. */
+/* GF name field quirks fix:
+   1. .gform-grid-row on the container applies margin: -6px each side (grid-gutter
+      technique) — override to keep the field flush with all others.
+   2. GF wraps each sub-field <span> in a stray <p> — use display:contents so the
+      span becomes a direct flex child of the row as GF intends.
+   3. GF injects <br> tags around each input — hide them. */
+#gform_wrapper_5 .ginput_container--name.gform-grid-row {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
 #gform_wrapper_5 .ginput_container--name > p {
-	margin: 0 !important;
-	padding: 0 !important;
+	display: contents !important;
 }
 
 #gform_wrapper_5 .ginput_container--name br {
 	display: none !important;
+}
+
+#gform_wrapper_5 .ginput_container--name .gform-grid-col {
+	flex: 1 1 100% !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 /* Keep Day / Month / Year on one line.
