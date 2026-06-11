@@ -644,27 +644,17 @@ ul.lsx-not_included-list li svg {
 
 /* ── Tour Enquiry form (ID 5) ──────────────────────────────────────────── */
 
-/* GF name field quirks fix:
-   1. .gform-grid-row on the container applies margin: -6px each side (grid-gutter
-      technique) — override to keep the field flush with all others.
-   2. GF wraps each sub-field <span> in a stray <p> — use display:contents so the
-      span becomes a direct flex child of the row as GF intends.
-   3. GF injects <br> tags around each input — hide them. */
-#gform_wrapper_5 .ginput_container--name.gform-grid-row {
+/* GF name field: neutralise the grid-row negative margins and ensure the
+   sub-field span fills the container. <p>/<br> cleanup is done in PHP via
+   gform_field_content so the DOM never receives them. */
+#gform_wrapper_5 .ginput_container--name {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
 
-#gform_wrapper_5 .ginput_container--name > p {
-	display: contents !important;
-}
-
-#gform_wrapper_5 .ginput_container--name br {
-	display: none !important;
-}
-
 #gform_wrapper_5 .ginput_container--name .gform-grid-col {
 	flex: 1 1 100% !important;
+	width: 100% !important;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }

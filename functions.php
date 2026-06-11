@@ -515,3 +515,33 @@ add_action('wp_head', function () {
     </script>
   <?php
 }, 100);
+
+/**
+ * Remove stray <p> wrappers and <br> tags from name fields in GF form 5.
+ *
+ * GF's name field type wraps each sub-field <span> in a <p> and injects <br>
+ * tags around the input. These break vertical spacing and interfere with the
+ * flex layout. Fixing at the HTML level avoids CSS specificity battles.
+ *
+ * @param string   $content  Full field HTML.
+ * @param GF_Field $field    Field object.
+ * @param mixed    $value    Field value.
+ * @param int      $entry_id Entry ID (0 for new entries).
+ * @param int      $form_id  Form ID.
+ * @return string
+ */
+function ati_gf_fix_name_field_html( $content, $field, $value, $entry_id, $form_id ) {
+	if ( (int) $form_id !== 5 || 'name' !== $field->type ) {
+		return $content;
+	}
+
+	return preg_replace_callback(
+		'/(<div\b[^>]*\bginput_container--name\b[^>]*>)(.*?)(<\/div\s*>)/is',
+		static function ( $m ) {
+			$inner = preg_replace( '/<p\b[^>]*>|<\/p>|<br\s*\/?>/', '', $m[2] );
+			return $m[1] . $inner . $m[3];
+		},
+		$content
+	);
+}
+add_filter( 'gform_field_content', 'ati_gf_fix_name_field_html', 20, 5 );
