@@ -642,6 +642,28 @@ ul.lsx-not_included-list li svg {
 	grid-row-gap: var(--wp--preset--spacing--20) !important;
 }
 
+/* ── Tour Enquiry form (ID 5) ──────────────────────────────────────────── */
+
+/* Remove <p> margin added by the name sub-field wrapper */
+#gform_wrapper_5 .ginput_container--name p {
+	margin: 0;
+}
+
+/* Keep Day / Month / Year on one line */
+#gform_wrapper_5 .ginput_container_date {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: var(--wp--preset--spacing--10);
+	align-items: center;
+}
+
+#gform_wrapper_5 .ginput_container_date select {
+	flex: 1;
+	min-width: 0;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+
 #gform_wrapper_3 .gform_fields {
 	grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.6fr) minmax(180px, 1fr);
 	grid-column-gap: var(--wp--preset--spacing--20) !important;
