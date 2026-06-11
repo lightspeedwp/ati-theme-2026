@@ -764,7 +764,7 @@ ul.lsx-not_included-list li svg {
 }
 
 .wp-block-hm-popup>* {
-	background-color: var(--wp--preset--color--base);
+	background-color: var(--wp--preset--color--brand-500);
 	max-height: 100%;
 	overflow-y: auto;
 	padding: 0;
@@ -780,7 +780,7 @@ ul.lsx-not_included-list li svg {
 }
 
 .wp-block-hm-popup[open]::backdrop {
-	background-color: rgba(0, 0, 0, .25)
+	background-color: rgba(0, 0, 0, .40)
 }
 
 .wp-block-hm-popup__close {
