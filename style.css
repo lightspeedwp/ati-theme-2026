@@ -644,10 +644,14 @@ ul.lsx-not_included-list li svg {
 
 /* ── Tour Enquiry form (ID 5) ──────────────────────────────────────────── */
 
-/* Remove <p> margin from name sub-field wrappers (GF renders <p> around each span) */
-#gform_wrapper_5 .ginput_container--name p {
+/* Remove <p> margin and <br> line-breaks GF injects inside the name sub-fields */
+#input_5_1 > p {
 	margin: 0 !important;
 	padding: 0 !important;
+}
+
+#input_5_1 br {
+	display: none !important;
 }
 
 /* Keep Day / Month / Year on one line.
