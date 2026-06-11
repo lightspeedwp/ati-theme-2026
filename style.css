@@ -646,20 +646,20 @@ ul.lsx-not_included-list li svg {
 
 /* Remove <p> margin added by the name sub-field wrapper */
 #gform_wrapper_5 .ginput_container--name p {
-	margin: 0;
+	margin: 0 !important;
 }
 
 /* Keep Day / Month / Year on one line */
 #gform_wrapper_5 .ginput_container_date {
-	display: flex;
-	flex-wrap: nowrap;
-	gap: var(--wp--preset--spacing--10);
-	align-items: center;
+	display: flex !important;
+	flex-wrap: nowrap !important;
+	gap: var(--wp--preset--spacing--10) !important;
+	align-items: center !important;
 }
 
 #gform_wrapper_5 .ginput_container_date select {
-	flex: 1;
-	min-width: 0;
+	flex: 1 1 0 !important;
+	min-width: 0 !important;
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
