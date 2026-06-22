@@ -274,20 +274,20 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 
 /* === Currency Switcher Navigation: Base & Hover === */
 
-.is-style-currency-switcher .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+.wp-block-navigation.is-style-currency-switcher .has-child .wp-block-navigation__submenu-container {
 	z-index: 100;
-	padding-right: var(--wp--preset--spacing--20);
+	transform: translateY(var(--wp--preset--spacing--10)) translateX(calc(-1 * var(--wp--preset--spacing--20)));
 }
 
-.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item,
-.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item__content {
+.wp-block-navigation.is-style-currency-switcher .wp-block-navigation-item,
+.wp-block-navigation.is-style-currency-switcher .wp-block-navigation-item__content {
 	color: var(--wp--preset--color--brand-500);
 }
 
-.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item:hover,
-.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item:focus-within,
-.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item__content:hover,
-.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item__content:focus {
+.wp-block-navigation.is-style-currency-switcher .wp-block-navigation-item__content:hover,
+.wp-block-navigation.is-style-currency-switcher .wp-block-navigation-item__content:focus,
+.wp-block-navigation.is-style-currency-switcher .wp-block-navigation-item:hover .wp-block-navigation-item__content,
+.wp-block-navigation.is-style-currency-switcher .wp-block-navigation-item:focus-within .wp-block-navigation-item__content {
 	color: var(--wp--preset--color--brand-300);
 }
 
