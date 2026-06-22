@@ -274,11 +274,31 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 
 /* === Currency Switcher Navigation: Base & Hover === */
 
+/* Positioning context for the dropdown */
+.wp-block-navigation.is-style-currency-switcher .has-child {
+	position: relative;
+}
+
 .wp-block-navigation.is-style-currency-switcher .has-child .wp-block-navigation__submenu-container {
 	z-index: 100;
-	padding-top: var(--wp--preset--spacing--10);
+	/* Sit flush under the trigger; padding-top is the hoverable bridge, not a gap */
+	top: 100%;
+	margin-top: 0;
+	padding-top: var(--wp--preset--spacing--20);
 	transform: translateX(calc(-1 * var(--wp--preset--spacing--20)));
 	border: none;
+}
+
+/* Invisible bridge spanning the trigger + horizontal offset so the cursor never
+   crosses a non-hoverable gap on its way into the dropdown (it stays inside the
+   menu item, so mouseleave never fires and the menu doesn't snap shut). */
+.wp-block-navigation.is-style-currency-switcher .has-child .wp-block-navigation__submenu-container::before {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+	height: var(--wp--preset--spacing--20);
 }
 
 
