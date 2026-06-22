@@ -1161,3 +1161,8 @@ body .facetwp-flyout {
 #mega-menu-21-dropdown {
 	margin-left: -20px;
 }
+
+
+.is-style-currency-switcher .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+	z-index: 100;
+}
