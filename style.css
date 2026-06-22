@@ -272,6 +272,25 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	cursor: default;
 }
 
+/* === Currency Switcher Navigation: Base & Hover === */
+
+.is-style-currency-switcher .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+	z-index: 100;
+	padding-right: var(--wp--preset--spacing--20);
+}
+
+.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item,
+.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item__content {
+	color: var(--wp--preset--color--brand-500);
+}
+
+.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item:hover,
+.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item:focus-within,
+.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item__content:hover,
+.is-style-currency-switcher .wp-block-navigation .wp-block-navigation-item__content:focus {
+	color: var(--wp--preset--color--brand-300);
+}
+
 /* ========================================================================== */
 
 /* Mobile Menu styling                                                        */
@@ -1163,6 +1182,3 @@ body .facetwp-flyout {
 }
 
 
-.is-style-currency-switcher .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
-	z-index: 100;
-}
