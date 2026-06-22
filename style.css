@@ -276,7 +276,8 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 
 .wp-block-navigation.is-style-currency-switcher .has-child .wp-block-navigation__submenu-container {
 	z-index: 100;
-	transform: translateY(var(--wp--preset--spacing--10)) translateX(calc(-1 * var(--wp--preset--spacing--20)));
+	padding-top: var(--wp--preset--spacing--10);
+	transform: translateX(calc(-1 * var(--wp--preset--spacing--20)));
 	border: none;
 }
 
