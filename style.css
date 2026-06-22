@@ -69,6 +69,7 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	right: auto !important;
 	transform: none !important;
 	width: max-content !important;
+	max-width: 100% !important;
 	margin: var(--wp--preset--spacing--30) auto 0 !important;
 	padding: 0 !important;
 	display: flex !important;
@@ -77,12 +78,6 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	gap: var(--wp--preset--spacing--20) !important;
 	list-style: none !important;
 }
-
-/* @media (min-width: 782px) {
-	.lsx-to-slider .slick-dots {
-		display: none !important;
-	}
-} */
 
 .lsx-to-slider .slick-dots li {
 	margin: 0 !important;
