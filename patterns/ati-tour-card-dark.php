@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: ATI Tour Card
- * Slug: ati-theme-2026/ati-tour-card
- * Description: Vertical tour card with featured image, title, price, duration, travel styles, destination, and excerpt — for use in query loops. Light section styling.
+ * Title: ATI Tour Card (Dark)
+ * Slug: ati-theme-2026/ati-tour-card-dark
+ * Description: Vertical tour card with featured image, title, price, duration, travel styles, destination, and excerpt — for use in query loops. Dark section styling.
  * Categories: query, posts
  * Keywords: tour, safari, card, listing, price, duration
  * Viewport Width: 500
@@ -11,8 +11,8 @@
  */
 ?>
 
-<!-- wp:group {"metadata":{"name":"Tour Card","patternName":"ati-tour-card"},"className":"overflow-hidden is-style-tour-card-light is-style-card-light","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
-<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-light is-style-card-light"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
+<!-- wp:group {"metadata":{"name":"Tour Card","patternName":"ati-tour-card-dark"},"className":"overflow-hidden is-style-tour-card-dark is-style-card-dark","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
+<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-tour-card-dark is-style-card-dark"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 
 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|5","bottom":"var:preset|spacing|5"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"metadata":{"name":"Tour Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
@@ -65,8 +65,8 @@
 <!-- /wp:group -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button","style":{"border":{"radius":"0px"}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button"><a class="wp-block-button__link wp-element-button" href="#permalink" style="border-radius:0px">View more</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"button-full-width-false button-3d-false is-style-card-button-brand","style":{"border":{"radius":"0px"}}} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 button-full-width-false button-3d-false is-style-card-button-brand"><a class="wp-block-button__link wp-element-button" href="#permalink" style="border-radius:0px">View more</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
