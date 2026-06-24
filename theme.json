@@ -832,17 +832,17 @@
 		},
 		{
 			"area": "uncategorized",
-			"name": "fast-facts-tour",
+			"name": "ati-fast-facts-tour",
 			"title": "Fast Facts - Tour"
 		},
 		{
 			"area": "uncategorized",
-			"name": "fast-facts-destination",
+			"name": "ati-fast-facts-destination",
 			"title": "Fast Facts - Destination"
 		},
 		{
 			"area": "uncategorized",
-			"name": "fast-facts-accommodation",
+			"name": "ati-fast-facts-accommodation",
 			"title": "Fast Facts - Accommodation"
 		},
 		{
@@ -902,8 +902,18 @@
 		},
 		{
 			"area": "uncategorized",
-			"name": "fast-facts-specials",
+			"name": "ati-fast-facts-specials",
 			"title": "Fast Facts - Specials"
+		},
+		{
+			"area": "uncategorized",
+			"name": "dropdown-menu",
+			"title": "Dropdown Menu"
+		},
+		{
+			"area": "uncategorized",
+			"name": "navigation-overlay",
+			"title": "Navigation Overlay"
 		}
 	]
 }
