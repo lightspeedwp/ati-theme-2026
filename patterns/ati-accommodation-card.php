@@ -11,8 +11,8 @@
  */
 ?>
 
-<!-- wp:group {"metadata":{"name":"Accommodation Card","categories":["lsx-tour-operator"]},"className":"overflow-hidden is-style-tour-card-light","style":{"border":{"radius":{"topLeft":"0rem","topRight":"0rem","bottomLeft":"0rem","bottomRight":"0rem"}}},"layout":{"type":"default"},"ariaLabel":"Accommodation Card"} -->
-<div aria-label="Accommodation Card" class="wp-block-group overflow-hidden is-style-tour-card-light" style="border-top-left-radius:0rem;border-top-right-radius:0rem;border-bottom-left-radius:0rem;border-bottom-right-radius:0rem"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","linkTarget":"_blank"} /-->
+<!-- wp:group {"metadata":{"name":"Accommodation Card","patternName":"ati-accommodation-card"},"className":"overflow-hidden is-style-tour-card-light is-style-card-light","layout":{"type":"default"},"ariaLabel":"Accommodation Card","linkDestination":"post"} -->
+<div aria-label="Accommodation Card" class="wp-block-group overflow-hidden is-style-tour-card-light is-style-card-light"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 
 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"metadata":{"name":"Accommodation Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
