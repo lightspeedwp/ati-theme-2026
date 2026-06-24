@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Impact Stats
- * Slug: impact-stats
+ * Slug: ati-theme-2026/impact-stats
  * Description: Four-column statistics strip showing B Impact Score, Country Offices, Flagship Initiatives, and Partners & Suppliers.
  * Theme: ati-theme-2026
  * Inserter: yes

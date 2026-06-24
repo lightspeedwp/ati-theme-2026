@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Impact Trusted Partners
- * Slug: impact-partners
+ * Slug: ati-theme-2026/impact-partners
  * Description: Centred section with "Working with trusted partners" heading and a row of five partner logos.
  * Theme: ati-theme-2026
  * Inserter: yes

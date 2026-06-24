@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Impact TOSCO ReGen Programme
- * Slug: impact-tosco
+ * Slug: ati-theme-2026/impact-tosco
  * Description: Two-column section with TOSCO ReGen copy on the left and a landscape image on the right.
  * Theme: ati-theme-2026
  * Inserter: yes

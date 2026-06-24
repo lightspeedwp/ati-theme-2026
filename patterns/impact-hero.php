@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Impact Hero
- * Slug: impact-hero
+ * Slug: ati-theme-2026/impact-hero
  * Description: Full-width cover hero for the Impact page with eyebrow, title and subheading.
  * Theme: ati-theme-2026
  * Inserter: yes

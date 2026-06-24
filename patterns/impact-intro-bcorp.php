@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Impact Intro B Corp
- * Slug: impact-intro-bcorp
+ * Slug: ati-theme-2026/impact-intro-bcorp
  * Description: Two-column intro section with "Meaningful journeys" copy on the left and B Corp certification panel on the right.
  * Theme: ati-theme-2026
  * Inserter: yes

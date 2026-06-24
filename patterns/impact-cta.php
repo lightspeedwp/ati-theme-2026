@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Impact Closing CTA
- * Slug: impact-cta
+ * Slug: ati-theme-2026/impact-cta
  * Description: Split closing CTA section: lion photograph on the left, "Together, we can go further" text and CTA button on the right.
  * Theme: ati-theme-2026
  * Inserter: yes

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Impact Future Namibia Fund
- * Slug: impact-fnf
+ * Slug: ati-theme-2026/impact-fnf
  * Description: Two-column section with image on the left and Future Namibia Fund copy on the right.
  * Theme: ati-theme-2026
  * Inserter: yes
