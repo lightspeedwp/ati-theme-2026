@@ -16,7 +16,7 @@
 <div class="wp-block-columns alignfull has-base-background-color has-background" style="border-top-left-radius:var(--wp--preset--border-radius--100);border-top-right-radius:var(--wp--preset--border-radius--100);border-bottom-left-radius:var(--wp--preset--border-radius--100);border-bottom-right-radius:var(--wp--preset--border-radius--100);padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20);box-shadow:var(--wp--preset--shadow--200)"><!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"Image"},"className":"lsx-unit-image","style":{"layout":{"selfStretch":"fixed","flexSize":"275px"},"dimensions":{"minHeight":"275px"},"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group lsx-unit-image" style="min-height:275px"><!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"medium","linkDestination":"none","className":"unit-image","style":{"border":{"radius":"0.5rem"},"layout":{"selfStretch":"fixed","flexSize":"275px"}}} -->
-<figure class="wp-block-image size-medium has-custom-border unit-image"><img src="https://ati-holidays.lightspeedwp.dev/wp-content/plugins/tour-operator/assets/img/blocks/placeholder.png" alt="Room image" style="border-radius:0.5rem;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image size-medium has-custom-border unit-image"><img src="/wp-content/plugins/tour-operator/assets/img/blocks/placeholder.png" alt="Room image" style="border-radius:0.5rem;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
