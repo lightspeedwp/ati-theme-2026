@@ -74,7 +74,7 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"lsx-info-value","style":{"spacing":{"padding":{"top":"0.125rem","bottom":"0.125rem"},"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-info-value" style="padding-top:0.125rem;padding-bottom:0.125rem"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"destination_to_tour"}},"__default":{"source":"core/pattern-overrides"}},"name":"Destination"},"fontSize":"200"} -->
+<div class="wp-block-group lsx-info-value" style="padding-top:0.125rem;padding-bottom:0.125rem"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_tour"}},"__default":{"source":"core/pattern-overrides"}},"name":"Destination"},"fontSize":"200"} -->
 <p class="has-200-font-size"></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
