@@ -586,11 +586,29 @@ ul.lsx-not_included-list li svg {
 	cursor: default;
 }
 
-/* Prev / Next — mirror core query-pagination-previous/next padding (6px 16px) */
+/* Prev / Next — wider sides than numbers, but same vertical padding so the
+   pill height matches the number buttons exactly */
 .wp-block-facetwp-facet .facetwp-page.prev,
 .wp-block-facetwp-facet .facetwp-page.next {
 	min-width: auto;
-	padding: 6px 16px;
+	padding: 0.25rem 16px;
+}
+
+/* Mobile: show only Prev / Next, hide the page numbers */
+@media (max-width: 781px) {
+	.wp-block-facetwp-facet .facetwp-page {
+		display: none;
+	}
+
+	.wp-block-facetwp-facet .facetwp-page.prev,
+	.wp-block-facetwp-facet .facetwp-page.next {
+		display: inline-flex;
+	}
+
+	/* Push Prev to the left and Next to the right */
+	.wp-block-facetwp-facet .facetwp-pager {
+		justify-content: space-between;
+	}
 }
 
 /* Rating Stars Styling */
