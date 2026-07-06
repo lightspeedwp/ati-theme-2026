@@ -524,6 +524,75 @@ ul.lsx-not_included-list li svg {
 	}
 }
 
+/* === FacetWP Pager === */
+/* Styles the FacetWP pager facet (.facetwp-type-pager > .facetwp-pager) to match
+   the core query-pagination look defined in theme.json (core/query-pagination*).
+   Needed because FacetWP's pager markup is not a core block, so theme.json block
+   styles don't reach it. Uses FacetWP's own block so pagination refreshes via AJAX. */
+
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager {
+	margin-bottom: 0 !important;
+}
+
+.wp-block-facetwp-facet .facetwp-pager {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: var(--wp--preset--spacing--10);
+}
+
+/* Page links — mirror core .page-numbers */
+.wp-block-facetwp-facet .facetwp-page {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2rem;
+	min-height: 2.1rem;
+	padding: 0.25rem 0.5rem;
+	line-height: 1.4;
+	text-decoration: none;
+	border: 2px solid var(--wp--preset--color--accent-500);
+	border-radius: var(--wp--preset--border-radius--100);
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--accent-500);
+	box-shadow: none;
+	cursor: pointer;
+	transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.wp-block-facetwp-facet .facetwp-page:hover {
+	background-color: var(--wp--preset--color--accent-500);
+	color: var(--wp--preset--color--base);
+}
+
+/* Current page — mirror core .page-numbers.current */
+.wp-block-facetwp-facet .facetwp-page.active {
+	background-color: var(--wp--preset--color--accent-500);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--accent-500);
+	cursor: default;
+}
+
+/* Ellipsis — mirror core .page-numbers.dots */
+.wp-block-facetwp-facet .facetwp-page.dots,
+.wp-block-facetwp-facet .facetwp-page.dots:hover {
+	min-width: auto;
+	min-height: auto;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--wp--preset--color--contrast);
+	cursor: default;
+}
+
+/* Prev / Next — mirror core query-pagination-previous/next padding (6px 16px) */
+.wp-block-facetwp-facet .facetwp-page.prev,
+.wp-block-facetwp-facet .facetwp-page.next {
+	min-width: auto;
+	padding: 6px 16px;
+}
+
 /* Rating Stars Styling */
 
 /* Rating stars */
