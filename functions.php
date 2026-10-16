@@ -277,10 +277,11 @@ return $block_content;
 add_filter( 'render_block', 'ati_theme_2026_render_rating_stars', 35, 2 );
 
 /**
- * Prevent the Tour Operator plugin from seeding its own modal-accommodation
- * template part into the database. Without this, the plugin re-creates the
- * post from its own plugin file on every init after a Site Editor reset,
- * overriding the theme's parts/modal-accommodation.html.
+ * Prevent the Tour Operator plugin from seeding its own template parts into
+ * the database. Without this, the plugin re-creates each post from its own
+ * plugin file on every init after a Site Editor reset, overriding the theme's
+ * parts/*.html. The theme ships its own modals and its fast facts under the
+ * `ati-` prefix, so none of the plugin's seeds are wanted.
  */
 add_filter(
 	'lsx_to_template_parts',
@@ -288,6 +289,10 @@ add_filter(
 		unset( $template_parts['modal-accommodation'] );
 		unset( $template_parts['modal-tour'] );
 		unset( $template_parts['modal-destination'] );
+		unset( $template_parts['modal-enquiry'] );
+		unset( $template_parts['fast-facts-tour'] );
+		unset( $template_parts['fast-facts-accommodation'] );
+		unset( $template_parts['fast-facts-destination'] );
 		return $template_parts;
 	}
 );
