@@ -1217,6 +1217,21 @@ body .facetwp-flyout {
 
 /* ========================================================================== */
 
+/* ── Section wrappers ─────────────────────────────────────────────────────── */
+
+/*
+ * Tour Operator 2.2 wraps every sticky-menu section in a plain div. That div,
+ * not the section, is now the flow-layout child, so it picks up the parent's
+ * blockGap and opens a gap between full-width sections. The section style
+ * variations already set margin 0; apply it to the wrapper too. flow-root
+ * stops margins inside a section (e.g. an empty map details block) from
+ * collapsing through the padding-less wrapper into the gap.
+ */
+.wp-site-blocks .lsx-to-sticky-menu-section-wrapper {
+	display: flow-root;
+	margin-block: 0;
+}
+
 /* ── Desktop sticky nav ──────────────────────────────────────────────────── */
 
 .lsx-to-sticky-menu-button {

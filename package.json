@@ -1,0 +1,44 @@
+{
+	"name": "ati-theme-2026",
+	"version": "0.1.0",
+	"description": "ATI Holidays 2026 block theme — test harness (static theme contract tests, Playwright e2e).",
+	"author": "LightSpeed",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"engines": {
+		"node": ">=22",
+		"npm": ">=10"
+	},
+	"devDependencies": {
+		"@axe-core/playwright": "^4.13.0",
+		"@playwright/test": "^1.63.0",
+		"axe-core": "^4.14.0",
+		"vitest": "^3.2.4"
+	},
+	"scripts": {
+		"test": "npm run test:unit",
+		"test:unit": "vitest run",
+		"test:unit:watch": "vitest",
+		"test:php-lint": "vitest run tests/unit/theme/patterns.test.js",
+		"test:e2e": "playwright test --project=desktop --project=tablet --project=mobile --project=responsive --project=a11y --project=editor",
+		"test:e2e:all": "playwright test",
+		"test:e2e:ui": "playwright test --ui",
+		"test:e2e:debug": "playwright test --debug",
+		"test:e2e:headed": "playwright test --headed",
+		"test:e2e:ci": "playwright test --reporter=dot",
+		"test:smoke": "playwright test --project=desktop --grep @smoke",
+		"test:templates": "playwright test --project=desktop tests/e2e/templates",
+		"test:pages": "playwright test --project=desktop tests/e2e/templates/static-pages.spec.js",
+		"test:parts": "playwright test --project=desktop tests/e2e/parts",
+		"test:forms": "playwright test --project=desktop tests/e2e/forms",
+		"test:layout": "playwright test --project=desktop tests/e2e/layout",
+		"test:cards": "playwright test --project=desktop tests/e2e/templates/cards.spec.js",
+		"test:responsive": "playwright test --project=responsive --project=tablet --project=mobile",
+		"test:a11y": "playwright test --project=a11y",
+		"test:a11y:baseline": "ATI_UPDATE_A11Y_BASELINE=true playwright test --project=a11y",
+		"test:editor": "playwright test --project=editor",
+		"test:parity": "ATI_RUN_PARITY=true playwright test --project=parity",
+		"test:report": "playwright show-report tests/e2e/playwright-report",
+		"test:install": "playwright install chromium firefox webkit"
+	}
+}

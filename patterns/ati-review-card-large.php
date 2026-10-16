@@ -47,7 +47,7 @@
 <!-- /wp:outermost/icon-block --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"accommodation-to-review"}},"__default":{"source":"core/pattern-overrides"}},"name":"Price"},"className":"lsx-info-value","fontSize":"200","prefix":"Accommodation: "} -->
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"accommodation_to_review"}},"__default":{"source":"core/pattern-overrides"}},"name":"Price"},"className":"lsx-info-value","fontSize":"200","prefix":"Accommodation: "} -->
 <p class="lsx-info-value has-200-font-size"></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
@@ -59,7 +59,7 @@
 <!-- /wp:outermost/icon-block --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tour-to-review"}},"__default":{"source":"core/pattern-overrides"}},"name":"Price"},"className":"lsx-info-value","fontSize":"200","prefix":"Tours: "} -->
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"tour_to_review"}},"__default":{"source":"core/pattern-overrides"}},"name":"Price"},"className":"lsx-info-value","fontSize":"200","prefix":"Tours: "} -->
 <p class="lsx-info-value has-200-font-size"></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
@@ -91,7 +91,7 @@
 <!-- /wp:outermost/icon-block --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"destination-to-review"}},"__default":{"source":"core/pattern-overrides"}},"name":"Destination"},"fontSize":"200","prefix":"Destination: "} -->
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_review"}},"__default":{"source":"core/pattern-overrides"}},"name":"Destination"},"fontSize":"200","prefix":"Destination: "} -->
 <p class="has-200-font-size"></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

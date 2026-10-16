@@ -293,6 +293,24 @@ add_filter(
 );
 
 /**
+ * Register wrappers that hold more than one Tour Operator meta field.
+ *
+ * Tour Operator hides any block whose class matches `lsx-<key>-wrapper` when
+ * the `<key>` meta is empty. The specials "Booking Validity" row wraps two
+ * fields (start and end date) and no `booking_validity` meta exists, so the
+ * row was always hidden. Listing its fields here keeps the row while either
+ * date is set.
+ *
+ * @param array $wrappers Wrapper key => meta keys it contains.
+ * @return array
+ */
+function ati_theme_2026_multi_field_wrappers( $wrappers ) {
+	$wrappers['booking-validity'] = array( 'booking_validity_start', 'booking_validity_end' );
+	return $wrappers;
+}
+add_filter( 'lsx_to_multi_field_wrappers', 'ati_theme_2026_multi_field_wrappers' );
+
+/**
  * Restore the viewBox attribute on icon-block SVGs inside modals.
  *
  * The Tour Operator plugin outputs modal HTML through wp_kses() with a custom
