@@ -17,26 +17,7 @@
  */
 
 const KNOWN_PENDING = [
-	{
-		field: /^card\.accommodation\.(location|style)$/,
-		reason:
-			'Accommodation card: Location row added and the travel-style wrapper corrected (patterns/ati-accommodation-card.php, working tree).',
-	},
-	{
-		field: /^fact\.validity$/,
-		types: [ 'special' ],
-		reason:
-			'Special "Booking Validity": registered through the lsx_to_multi_field_wrappers filter (functions.php, working tree).',
-	},
-	{
-		field: /^fact\.tagline$/,
-		reason: 'Tagline bindings added (working tree).',
-	},
-	{
-		field: /^body\.additional-info$/,
-		reason:
-			'Travel information: lsx-general-wrapper renamed to lsx-additional-info-wrapper (working tree).',
-	},
+	// Empty: every fix listed here on 2026-10-16 deployed with e80c7be.
 ];
 
 /**

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Top Header
- * Slug: top-header
+ * Slug: ati-theme-2026/top-header
  * Theme: ati-theme-2026
  * Inserter: false
  */

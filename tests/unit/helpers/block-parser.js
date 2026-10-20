@@ -15,20 +15,28 @@ const DELIMITER =
 	/<!--\s+(\/)?wp:([a-z][a-z0-9_-]*(?:\/[a-z][a-z0-9_-]*)?)(?:\s+(\{[\s\S]*?\}))?(?=\s*\/?-->)\s*(\/)?-->/g;
 
 /**
- * @param {string} source Text up to an offset.
- * @param {number} offset Character offset.
+ * Line number of an offset, from a precomputed list of line-start offsets
+ * (binary search; a linear scan per delimiter is quadratic on large files).
+ *
+ * @param {number[]} starts Offsets at which each line begins.
+ * @param {number}   offset Character offset.
  * @return {number} 1-based line number.
  */
-function lineAt( source, offset ) {
-	let line = 1;
+function lineAt( starts, offset ) {
+	let low = 0;
+	let high = starts.length - 1;
 
-	for ( let i = 0; i < offset; i++ ) {
-		if ( '\n' === source[ i ] ) {
-			line++;
+	while ( low < high ) {
+		const mid = Math.ceil( ( low + high ) / 2 );
+
+		if ( starts[ mid ] <= offset ) {
+			low = mid;
+		} else {
+			high = mid - 1;
 		}
 	}
 
-	return line;
+	return low + 1;
 }
 
 /**
@@ -44,11 +52,18 @@ export function parseBlocks( source ) {
 	const stack = [ root ];
 	const errors = [];
 	const all = [];
+	const starts = [ 0 ];
+
+	for ( let i = 0; i < source.length; i++ ) {
+		if ( '\n' === source[ i ] ) {
+			starts.push( i + 1 );
+		}
+	}
 
 	for ( const match of source.matchAll( DELIMITER ) ) {
 		const [ , closing, rawName, rawAttrs, selfClosing ] = match;
 		const name = rawName.includes( '/' ) ? rawName : `core/${ rawName }`;
-		const line = lineAt( source, match.index );
+		const line = lineAt( starts, match.index );
 
 		if ( closing ) {
 			const top = stack[ stack.length - 1 ];

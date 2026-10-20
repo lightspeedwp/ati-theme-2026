@@ -151,10 +151,12 @@ const test = base.test.extend( {
 	],
 
 	/**
-	 * Read past the page cache. Dev sits behind a page cache (`x-cache-status:
-	 * HIT`) that bypasses any request carrying a `comment_author_*` cookie. The
-	 * name is inert to everything else, and it is a cookie rather than a query
-	 * string so no URL a spec asserts on changes.
+	 * Optional cache bypass (`ATI_BYPASS_CACHE=true`). Dev sits behind a page
+	 * cache (`x-cache-status: HIT`) that skips any request carrying a
+	 * `comment_author_*` cookie. Off by default: reading through the cache is
+	 * faster and gentler on a host the client is reviewing; turn it on after a
+	 * deploy to rule out stale cached HTML. A cookie rather than a query string
+	 * so no URL a spec asserts on changes.
 	 * @param {Object}                                    root0         Fixtures.
 	 * @param {import('@playwright/test').BrowserContext} root0.context Browser context.
 	 * @param {string}                                    root0.baseURL Site under test.
@@ -162,9 +164,11 @@ const test = base.test.extend( {
 	 */
 	bypassPageCache: [
 		async ( { context, baseURL }, use ) => {
-			await context.addCookies( [
-				{ name: 'comment_author_ati_e2e', value: '1', url: baseURL },
-			] );
+			if ( 'true' === process.env.ATI_BYPASS_CACHE ) {
+				await context.addCookies( [
+					{ name: 'comment_author_ati_e2e', value: '1', url: baseURL },
+				] );
+			}
 			await use();
 		},
 		{ auto: true },

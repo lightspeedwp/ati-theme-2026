@@ -227,6 +227,8 @@ const IMPLICIT_TEMPLATES = {
 	'single.html': 'single blog post (RESOLVED_ROUTES.post)',
 	'archive.html': 'generic archive fallback (author/date archives)',
 	'index.html': '/blog/ (posts page)',
+	'single-destination.html':
+		'fallback for a destination with neither the country nor the region template; every published destination resolves to one of those two, so no route reaches it (checked by singles.spec.js via the country/region samples)',
 };
 
 module.exports = {

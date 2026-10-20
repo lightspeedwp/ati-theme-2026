@@ -109,6 +109,8 @@ function extractPage( { html, side } ) {
 		'Minimum child age',
 		'Single supplement',
 		'Your travel expert',
+		'Date travelled',
+		'Date traveled',
 	].sort( ( a, b ) => b.length - a.length );
 	const LABEL_SCAN = new RegExp(
 		`(?<![A-Za-z])(${ PRINTED.map( ( l ) => l.replace( /[-\s]/g, '[-\\s]' ) ).join( '|' ) })\\s*:\\s*`,
@@ -211,10 +213,32 @@ function extractPage( { html, side } ) {
 		return match ? match[ 1 ] : '';
 	};
 
-	const cardNodes =
+	const selfMatch = String( ( $( 'body' ) || {} ).className || '' ).match( /\b(?:postid|page-id|term)-(\d+)\b/ );
+	const selfId = selfMatch ? selfMatch[ 1 ] : '';
+
+	/**
+	 * live: widget cards are `.lsx-to-widget-item-wrap article`; archive grids
+	 *       and slider clones repeat, so cards are de-duplicated by type:id.
+	 *       The page's own entry (`article.post-<selfId>`) and the per-day
+	 *       accommodation entries inside the itinerary are not cards.
+	 * dev:  `li.wp-block-post` inside a post-template.
+	 */
+	const itineraryHost = $$( '[id]', root ).find( ( el ) => 'itinerary' === el.id.toLowerCase() ) || null;
+	const cardNodes = (
 		'live' === side
-			? $$( 'article[class*="type-"]', root ).filter( ( el ) => idOf( el ) )
-			: $$( 'li.wp-block-post', root );
+			? $$( 'article[class*="type-"]', root ).filter(
+					( el ) =>
+						idOf( el ) &&
+						idOf( el ) !== selfId &&
+						! ( itineraryHost && itineraryHost.contains( el ) ) &&
+						! el.closest( '.lsx-map, .map-data' )
+				)
+			: $$( 'li.wp-block-post', root ).filter( ( el ) => idOf( el ) !== selfId )
+	).filter( ( el, index, all ) => {
+		const key = `${ typeOf( el ) }:${ idOf( el ) }`;
+
+		return all.findIndex( ( other ) => `${ typeOf( other ) }:${ idOf( other ) }` === key ) === index;
+	} );
 
 	const cardFields = ( card ) => {
 		const fields = {};
@@ -269,7 +293,7 @@ function extractPage( { html, side } ) {
 		const links = $$( 'a[href]', card )
 			.map( ( a ) => a.getAttribute( 'href' ) )
 			.filter( ( href ) => href && ! href.startsWith( '#' ) && ! /^(mailto|tel):/.test( href ) );
-		const own = links.find( ( href ) => pathOf( href ).startsWith( `/${ type }/` ) ) || links[ 0 ] || '';
+		const own = links.find( ( href ) => pathOf( href ).startsWith( `/${ type }/` ) ) || '';
 		const titleEl = $( 'h2, h3, h4, h5, .wp-block-post-title, .lsx-to-widget-title', card );
 
 		return {
@@ -290,7 +314,7 @@ function extractPage( { html, side } ) {
 		'.lsx-to-widget-item-wrap,.wp-block-post-template,.lsx-to-widget-items,li.wp-block-post',
 		'[class*="modal"],[id*="modal"],.lsx-to-sr-only,.screen-reader-text',
 		'.breadcrumbs,.yoast-breadcrumbs,[class*="breadcrumb"]',
-		'form,.gform_wrapper,.envira-gallery-wrap',
+		'form,.gform_wrapper,.envira-gallery-wrap,.lsx-map,.map-data',
 	].join( ',' );
 
 	const factRoot = root.cloneNode( true );
@@ -329,14 +353,47 @@ function extractPage( { html, side } ) {
 	const facts = {};
 	const factLines = linesOf( factNodes );
 
+	if ( 'live' === side ) {
+		// Live's spans run together in text ("Duration: 11Departs from: …"), so
+		// read them as the elements they are.
+		$$( '.lsx-to-meta-data', factNodes ).forEach( ( span ) => {
+			const keyEl = $( '.lsx-to-meta-data-key', span );
+			const key = keyEl ? canonical( clean( keyEl.textContent ).replace( /:$/, '' ) ) : null;
+			const value = keyEl ? clean( span.textContent ).slice( clean( keyEl.textContent ).length ) : '';
+
+			if ( key && clean( value ) && ! ( key in facts ) ) {
+				facts[ key ] = clean( value );
+			}
+		} );
+	}
+
 	factLines.forEach( ( line ) => {
-		const marks = [ ...line.matchAll( LABEL_SCAN ) ];
+		const marks = 'live' === side ? [] : [ ...line.matchAll( LABEL_SCAN ) ];
 
 		marks.forEach( ( mark, index ) => {
 			const key = canonical( mark[ 1 ] );
 			const start = mark.index + mark[ 0 ].length;
 			const end = index + 1 < marks.length ? marks[ index + 1 ].index : line.length;
-			const value = clean( line.slice( start, end ) );
+			let value = clean( line.slice( start, end ) );
+
+			// A bound value in its own element sits on the following line(s):
+			// "Date travelled:" / "January 1, 1970" / "–" / "January 1, 1970".
+			if ( ! value && index + 1 === marks.length ) {
+				const at = factLines.indexOf( line );
+				const tail = [];
+
+				for ( const next of factLines.slice( at + 1, at + 4 ) ) {
+					LABEL_SCAN.lastIndex = 0;
+
+					if ( LABEL_SCAN.test( next ) ) {
+						break;
+					}
+
+					tail.push( next );
+				}
+
+				value = clean( tail.join( ' ' ) );
+			}
 
 			if ( key && value && ! ( key in facts ) ) {
 				facts[ key ] = value;

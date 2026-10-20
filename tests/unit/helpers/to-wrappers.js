@@ -33,7 +33,9 @@
  * @subpackage Tests
  */
 
-import { bindingsOf, descendants } from './block-parser.js';
+import { bindingsOf, parseBlocks } from './block-parser.js';
+import { markup, patternsBySlug, read, themePath } from './theme-files.js';
+import fs from 'node:fs';
 
 /**
  * The plugin's own pattern, verbatim.
@@ -64,7 +66,7 @@ export const TAXONOMIES = [
  * `travel-information` mirrors TO's default `lsx_to_multi_field_wrappers`;
  * `include-exclude` is the hard-coded `included` + `not_included` branch.
  */
-export const MULTI_FIELD_WRAPPERS = {
+const BASE_MULTI_FIELD_WRAPPERS = {
 	'travel-information': [
 		'additional_info',
 		'banking',
@@ -78,6 +80,35 @@ export const MULTI_FIELD_WRAPPERS = {
 		'visa',
 	],
 	'include-exclude': [ 'included', 'not_included' ],
+};
+
+/**
+ * Wrappers the THEME registers through the `lsx_to_multi_field_wrappers`
+ * filter (functions.php: `$wrappers['booking-validity'] = array( … )`), which
+ * is how TO lets a wrapper stand for several meta keys. Read from the source so
+ * the static check agrees with what the plugin will do at runtime.
+ *
+ * @return {Object<string, string[]>} Wrapper key → meta keys.
+ */
+function themeRegisteredWrappers() {
+	if ( ! fs.existsSync( themePath( 'functions.php' ) ) ) {
+		return {};
+	}
+
+	const found = {};
+
+	for ( const match of read( 'functions.php' ).matchAll(
+		/\$wrappers\[\s*'([a-z0-9_-]+)'\s*\]\s*=\s*array\(([^)]*)\)/g
+	) ) {
+		found[ match[ 1 ] ] = [ ...match[ 2 ].matchAll( /'([a-z0-9_]+)'/g ) ].map( ( m ) => m[ 1 ] );
+	}
+
+	return found;
+}
+
+export const MULTI_FIELD_WRAPPERS = {
+	...BASE_MULTI_FIELD_WRAPPERS,
+	...themeRegisteredWrappers(),
 };
 
 /**
@@ -191,6 +222,40 @@ function insideNestedWrapper( block, within ) {
 	return false;
 }
 
+const PATTERNS = patternsBySlug();
+
+/**
+ * A block's descendants, with theme patterns EXPANDED in place.
+ *
+ * The templates were collapsed to `wp:pattern` references (the card and room
+ * patterns hold the bindings), so a wrapper whose content is a pattern must be
+ * judged by what that pattern contains. Expanded blocks get the `core/pattern`
+ * block as their parent, so nested-wrapper detection still sees the chain.
+ * Plugin patterns (not in patterns/) cannot be expanded and are left opaque.
+ *
+ * @param {Object}      block Parsed block.
+ * @param {Set<string>} seen  Pattern slugs on the stack (cycle guard).
+ * @return {Object[]} Descendants.
+ */
+function expandedDescendants( block, seen = new Set() ) {
+	let children = block.children;
+
+	if ( 'core/pattern' === block.name && block.attrs?.slug ) {
+		const slug = block.attrs.slug;
+		const file = PATTERNS.get( slug ) || PATTERNS.get( `ati-theme-2026/${ slug }` );
+
+		if ( file && ! seen.has( slug ) ) {
+			children = parseBlocks( markup( file ) ).blocks;
+			children.forEach( ( child ) => {
+				child.parent = block;
+			} );
+			seen = new Set( seen ).add( slug );
+		}
+	}
+
+	return children.flatMap( ( child ) => [ child, ...expandedDescendants( child, seen ) ] );
+}
+
 /**
  * What a wrapper's own subtree provides.
  *
@@ -198,7 +263,7 @@ function insideNestedWrapper( block, within ) {
  * @return {{metaKeys: string[], sources: string[], terms: string[], hasQuery: boolean}} Provisions.
  */
 export function provisions( wrapper ) {
-	const nodes = [ wrapper, ...descendants( wrapper ) ].filter(
+	const nodes = [ wrapper, ...expandedDescendants( wrapper ) ].filter(
 		( node ) => ! insideNestedWrapper( node, wrapper )
 	);
 
@@ -287,7 +352,7 @@ export function judge( block ) {
 		const ok =
 			found.metaKeys.some( ( k ) => allowed.map( normalise ).includes( k ) ) ||
 			// Nested sub-wrappers (visa, climate, …) carry the bindings.
-			descendants( block ).some( ( node ) => {
+			expandedDescendants( block ).some( ( node ) => {
 				const nested = wrapperOf( node );
 
 				return (

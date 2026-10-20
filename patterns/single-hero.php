@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Single Hero
- * Slug: ati-single-hero
+ * Slug: ati-theme-2026/single-hero
  * Theme: ati-theme-2026
  * Inserter: yes
  */

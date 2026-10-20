@@ -177,7 +177,11 @@ function compare( { type, live, dev, devIndex = {}, listing = false } ) {
 		const d = dev.facts[ key ];
 		const label = `Fact: ${ key }`;
 
-		if ( l && ! d ) {
+		if ( d && /\b1970\b/.test( d ) ) {
+			// A date binding that resolved to the Unix epoch (empty/zero timestamp
+			// formatted as a date): data is shown, but it is wrong, and live has it.
+			add( 'MISSING_ON_DEV', `fact.${ key }`, label, l || '(none)', d, 'dev renders the epoch (1970) — the date binding is not receiving the stored value' );
+		} else if ( l && ! d ) {
 			add( 'MISSING_ON_DEV', `fact.${ key }`, label, l, '' );
 		} else if ( ! l && d ) {
 			add( 'EXTRA_ON_DEV', `fact.${ key }`, label, '', d );
@@ -219,8 +223,10 @@ function compare( { type, live, dev, devIndex = {}, listing = false } ) {
 		}
 
 		// Gallery (tolerant: lazy loading and sizes make exact counts noisy).
-		if ( live.gallery.count && ! dev.gallery.count ) {
+		if ( 2 <= live.gallery.count && ! dev.gallery.count ) {
 			add( 'MISSING_ON_DEV', 'gallery', 'Gallery images', String( live.gallery.count ), '0' );
+		} else if ( 1 === live.gallery.count && ! dev.gallery.count ) {
+			add( 'CONTENT_DRIFT', 'gallery', 'Gallery images', '1', '0' );
 		} else if ( live.gallery.count >= 4 && dev.gallery.count < live.gallery.count * 0.5 ) {
 			add( 'CONTENT_DRIFT', 'gallery', 'Gallery images', String( live.gallery.count ), String( dev.gallery.count ) );
 		}
@@ -241,12 +247,16 @@ function compare( { type, live, dev, devIndex = {}, listing = false } ) {
 		for ( const cardType of types ) {
 			const l = live.cards.filter( ( c ) => c.type === cardType );
 			const d = dev.cards.filter( ( c ) => c.type === cardType );
-			const lost = l.filter( ( c ) => ! d.some( ( x ) => sameCard( c, x ) ) );
+			// A live item is "shown" on dev if a card matches, or (team members,
+			// reviewers) its name appears in the page text.
+			const shown = ( c ) => c.title && ` ${ dev.text } `.includes( ` ${ norm( c.title ) } ` );
+			const lost = l.filter( ( c ) => ! d.some( ( x ) => sameCard( c, x ) ) && ! shown( c ) );
 			const gained = d.filter( ( c ) => ! l.some( ( x ) => sameCard( c, x ) ) );
-			const name = ( c ) => c.slug || c.title;
+			const name = ( c ) => c.slug || c.title || `#${ c.id }`;
+			const names = ( list ) => `${ list.slice( 0, 4 ).map( name ).join( ', ' ) }${ 4 < list.length ? ` (+${ list.length - 4 } more)` : '' }`;
 
-			if ( l.length && ! d.length ) {
-				add( 'MISSING_ON_DEV', `related.${ cardType }`, `Related ${ cardType } list`, `${ l.length } items`, '0', l.slice( 0, 4 ).map( name ).join( ', ' ) );
+			if ( lost.length && ! d.length ) {
+				add( 'MISSING_ON_DEV', `related.${ cardType }`, `Related ${ cardType } list`, `${ l.length } items`, '0', names( lost ) );
 			} else if ( lost.length ) {
 				const index = devIndex[ cardType ];
 				const onDev = lost.filter( ( c ) => index && ( index.slugs.has( c.slug ) || index.ids.has( c.id ) ) );
@@ -254,16 +264,16 @@ function compare( { type, live, dev, devIndex = {}, listing = false } ) {
 
 				if ( onDev.length ) {
 					// Exists on dev but is not connected/shown there: connection data or binding.
-					add( 'CONTENT_DRIFT', `related.${ cardType }`, `Related ${ cardType } set`, `${ l.length } items`, `${ d.length } items`, `live links to ${ onDev.map( name ).join( ', ' ) } — post exists on dev but is not in the list` );
+					add( 'CONTENT_DRIFT', `related.${ cardType }`, `Related ${ cardType } set`, `${ l.length } items`, `${ d.length } items`, `live also lists ${ names( onDev ) } — post exists on dev but is not in the list` );
 				}
 
 				if ( gone.length ) {
-					add( 'STALE', `related.${ cardType }`, `Related ${ cardType } set`, `${ l.length } items`, `${ d.length } items`, `only on live (not on dev yet): ${ gone.map( name ).join( ', ' ) }` );
+					add( 'STALE', `related.${ cardType }`, `Related ${ cardType } set`, `${ l.length } items`, `${ d.length } items`, `only on live (not on dev yet): ${ names( gone ) }` );
 				}
 			}
 
 			if ( gained.length && ! lost.length ) {
-				add( 'EXTRA_ON_DEV', `related.${ cardType }`, `Related ${ cardType } set`, `${ l.length } items`, `${ d.length } items`, `extra on dev: ${ gained.map( name ).join( ', ' ) }` );
+				add( 'EXTRA_ON_DEV', `related.${ cardType }`, `Related ${ cardType } set`, `${ l.length } items`, `${ d.length } items`, `extra on dev: ${ names( gained ) }` );
 			}
 		}
 	}

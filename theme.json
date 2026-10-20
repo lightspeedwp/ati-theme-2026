@@ -914,6 +914,11 @@
 			"area": "uncategorized",
 			"name": "navigation-overlay",
 			"title": "Navigation Overlay"
+		},
+		{
+			"area": "uncategorized",
+			"name": "mobile-menu",
+			"title": "Mobile Menu"
 		}
 	]
 }

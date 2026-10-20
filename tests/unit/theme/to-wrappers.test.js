@@ -111,11 +111,10 @@ describe( 'the checker can fail (controls)', () => {
 		expect( verdict.kind ).toBe( 'class-quirk' );
 	} );
 
-	it( 'documents the multi-field allowlist', () => {
-		expect( Object.keys( MULTI_FIELD_WRAPPERS ).sort() ).toEqual( [
-			'include-exclude',
-			'travel-information',
-		] );
+	it( 'documents the multi-field allowlist (TO defaults plus theme-registered)', () => {
+		expect( Object.keys( MULTI_FIELD_WRAPPERS ) ).toEqual(
+			expect.arrayContaining( [ 'include-exclude', 'travel-information' ] )
+		);
 	} );
 } );
 

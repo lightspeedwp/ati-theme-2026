@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Footer
- * Slug: footer
+ * Slug: ati-theme-2026/footer
  * Theme: ati-theme-2026
  * Inserter: false
  */
@@ -67,13 +67,12 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:social-links {"iconColor":"neutral-200","iconColorValue":"#E8E1D8","size":"has-normal-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}},"layout":{"type":"flex","justifyContent":"center"},"hoverTextColor":"cta-500"} -->
-<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"twitter"} /-->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://twitter.com/atiholidays","service":"twitter"} /-->
 
-<!-- wp:social-link {"url":"#","service":"instagram"} /-->
+<!-- wp:social-link {"url":"https://www.instagram.com/atiholidays/","service":"instagram"} /-->
 
-<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
 
-<!-- wp:social-link {"url":"#","service":"facebook"} /--></ul>
+<!-- wp:social-link {"url":"https://www.facebook.com/atiholidays","service":"facebook"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:group -->
 

@@ -316,6 +316,221 @@ function ati_theme_2026_multi_field_wrappers( $wrappers ) {
 add_filter( 'lsx_to_multi_field_wrappers', 'ati_theme_2026_multi_field_wrappers' );
 
 /**
+ * Clean Tour Operator connection meta when the front end reads it.
+ *
+ * Two data problems in the imported `*_to_*` connections (e.g.
+ * destination_to_accommodation) break the front end:
+ *
+ * - Some posts store the connection as an array of arrays rather than a flat
+ *   list of post IDs. Tour Operator's lsx/post-connection binding uses each item
+ *   as an array key, so a nested item is a fatal error, and any page whose cards
+ *   or fast facts read such a post fails with a critical error.
+ * - Some connections point at draft posts. Tour Operator counts drafts as
+ *   existing, so public pages link to them, and the modal trigger it renders for
+ *   the link has no modal behind it.
+ *
+ * Returning a flat list of published IDs keeps every reader of the connection
+ * working. Meta that needs neither fix is left untouched, and the admin is left
+ * alone so the editor saves what it loaded.
+ *
+ * @param mixed  $value     Null, or a value short-circuited by another filter.
+ * @param int    $object_id Post ID.
+ * @param string $meta_key  Meta key.
+ * @return mixed
+ */
+function ati_theme_2026_clean_connection_meta( $value, $object_id, $meta_key ) {
+	static $reading = false;
+
+	if ( null !== $value || $reading || is_admin() || ! is_string( $meta_key ) || false === strpos( $meta_key, '_to_' ) || 'best_time_to_visit' === $meta_key ) {
+		return $value;
+	}
+
+	$reading = true;
+	$stored  = get_post_meta( $object_id, $meta_key, false );
+	$reading = false;
+
+	$nested = false;
+	foreach ( $stored as $item ) {
+		if ( is_array( $item ) && array_filter( $item, 'is_array' ) ) {
+			$nested = true;
+			break;
+		}
+	}
+
+	$ids         = array();
+	$is_ids      = true;
+	$unpublished = false;
+	array_walk_recursive(
+		$stored,
+		static function ( $id ) use ( &$ids, &$is_ids, &$unpublished ) {
+			if ( ! is_scalar( $id ) || '' === (string) $id ) {
+				return;
+			}
+			if ( ! ctype_digit( (string) $id ) ) {
+				$is_ids = false;
+				return;
+			}
+			if ( 'publish' !== get_post_status( (int) $id ) ) {
+				$unpublished = true;
+				return;
+			}
+			$ids[] = (string) $id;
+		}
+	);
+
+	if ( ! $is_ids || ( ! $nested && ! $unpublished ) ) {
+		return $value;
+	}
+
+	// One meta row holding the flat list: get_metadata() returns it whole for a
+	// single read, and as the only row for a multiple read.
+	return array( array_values( array_unique( $ids ) ) );
+}
+add_filter( 'get_post_metadata', 'ati_theme_2026_clean_connection_meta', 10, 3 );
+
+/**
+ * Format review travel dates that are stored as date strings.
+ *
+ * The migrated reviews store date_of_visit_start/end as date strings, not
+ * timestamps. Tour Operator Reviews formats the bound value with
+ * date_i18n( $format, (int) $value ), which turns a string into a timestamp
+ * near zero and prints January 1, 1970. Runs after that filter (priority 5)
+ * and re-formats any non-numeric value with strtotime(), as the plugin's own
+ * lsx_to_review_dates() template tag does.
+ *
+ * @param string $html     Filtered output.
+ * @param string $meta_key Meta key.
+ * @param mixed  $value    Raw meta value.
+ * @param string $before   HTML before the output.
+ * @param string $after    HTML after the output.
+ * @return string
+ */
+function ati_theme_2026_review_travel_dates( $html, $meta_key = '', $value = '', $before = '', $after = '' ) {
+	if ( ! in_array( $meta_key, array( 'date_of_visit_start', 'date_of_visit_end' ), true ) || ! is_string( $value ) || '' === $value || is_numeric( $value ) ) {
+		return $html;
+	}
+
+	$timestamp = strtotime( $value );
+	if ( false === $timestamp ) {
+		return $html;
+	}
+
+	return $before . date_i18n( get_option( 'date_format' ), $timestamp ) . $after;
+}
+add_filter( 'lsx_to_custom_field_query', 'ati_theme_2026_review_travel_dates', 6, 5 );
+
+/**
+ * Let Gravity Forms markup survive Tour Operator's modal sanitising.
+ *
+ * Tour Operator echoes every modal through wp_kses() with the "post" allowlist
+ * plus a few modal tags. That list has no form controls, so the enquiry form in
+ * the enquiry modal lost its form id, its button types and its data attributes,
+ * and Gravity Forms' JavaScript never initialised the form.
+ *
+ * wp_kses() does not re-filter an array allowlist, so the widening has to go on
+ * the "post" context Tour Operator builds its list from. It is only hooked while
+ * Tour Operator prints its modals (wp_footer priorities 10 and 11), so post
+ * sanitising elsewhere is unchanged.
+ *
+ * @param array[] $tags    Allowed tags and attributes.
+ * @param string  $context Context name.
+ * @return array[]
+ */
+function ati_theme_2026_modal_allowed_html( $tags, $context ) {
+	if ( 'post' !== $context ) {
+		return $tags;
+	}
+
+	$common = array(
+		'id'               => true,
+		'class'            => true,
+		'name'             => true,
+		'style'            => true,
+		'title'            => true,
+		'role'             => true,
+		'tabindex'         => true,
+		'disabled'         => true,
+		'data-*'           => true,
+		'aria-describedby' => true,
+		'aria-invalid'     => true,
+		'aria-required'    => true,
+		'aria-label'       => true,
+		'aria-labelledby'  => true,
+		'aria-live'        => true,
+		'aria-hidden'      => true,
+		'aria-atomic'      => true,
+	);
+	$field  = $common + array(
+		'type'         => true,
+		'value'        => true,
+		'placeholder'  => true,
+		'required'     => true,
+		'readonly'     => true,
+		'autocomplete' => true,
+		'maxlength'    => true,
+		'min'          => true,
+		'max'          => true,
+		'step'         => true,
+		'pattern'      => true,
+		'size'         => true,
+		'checked'      => true,
+		'multiple'     => true,
+		'accept'       => true,
+		'onclick'      => true,
+		'onkeypress'   => true,
+		'onchange'     => true,
+	);
+
+	$tags['form']     = $common + array(
+		'action'     => true,
+		'method'     => true,
+		'enctype'    => true,
+		'target'     => true,
+		'novalidate' => true,
+	);
+	$tags['input']    = $field;
+	$tags['button']   = $field;
+	$tags['select']   = $field;
+	$tags['textarea'] = $field + array(
+		'rows' => true,
+		'cols' => true,
+	);
+	$tags['option']   = $common + array(
+		'value'    => true,
+		'selected' => true,
+	);
+	$tags['optgroup'] = $common + array( 'label' => true );
+	$tags['label']    = ( $tags['label'] ?? array() ) + $common + array( 'for' => true );
+	$tags['fieldset'] = ( $tags['fieldset'] ?? array() ) + $common;
+	$tags['legend']   = ( $tags['legend'] ?? array() ) + $common;
+	$tags['div']      = ( $tags['div'] ?? array() ) + $common;
+	$tags['span']     = ( $tags['span'] ?? array() ) + $common;
+
+	return $tags;
+}
+add_action(
+	'wp_footer',
+	function () {
+		add_filter( 'wp_kses_allowed_html', 'ati_theme_2026_modal_allowed_html', 10, 2 );
+	},
+	9
+);
+add_action(
+	'wp_footer',
+	function () {
+		remove_filter( 'wp_kses_allowed_html', 'ati_theme_2026_modal_allowed_html', 10 );
+	},
+	12
+);
+
+/*
+ * Print the Gravity Forms hooks bootstrap in <head> on every page. On pages whose
+ * only form sits in a footer modal, Gravity Forms otherwise prints it inline in the
+ * form, where Tour Operator's wp_kses() pass entity-encodes it into a syntax error.
+ */
+add_filter( 'gform_force_hooks_js_output', '__return_true' );
+
+/**
  * Restore the viewBox attribute on icon-block SVGs inside modals.
  *
  * The Tour Operator plugin outputs modal HTML through wp_kses() with a custom
@@ -338,6 +553,23 @@ add_action(
 				'.wp-block-hm-popup .wp-block-outermost-icon-block svg:not([viewBox])'
 			).forEach( function ( svg ) {
 				svg.setAttribute( 'viewBox', '0 0 256 256' );
+			} );
+
+			// Tour Operator's dialogs carry no accessible name. Name each one by
+			// its first heading, or by the text of a link that opens it.
+			document.querySelectorAll(
+				'dialog.wp-block-hm-popup:not([aria-label]):not([aria-labelledby])'
+			).forEach( function ( dialog ) {
+				var heading = dialog.querySelector( 'h1, h2, h3, h4' );
+				if ( heading && heading.textContent.trim() ) {
+					heading.id = heading.id || dialog.id + '-title';
+					dialog.setAttribute( 'aria-labelledby', heading.id );
+					return;
+				}
+				var trigger = document.querySelector( '[aria-controls="' + dialog.id + '"], a[href="#' + dialog.id + '"]' );
+				if ( trigger && trigger.textContent.trim() ) {
+					dialog.setAttribute( 'aria-label', trigger.textContent.trim() );
+				}
 			} );
 		})();
 		</script>
@@ -505,6 +737,10 @@ add_action('wp_head', function () {
     ?>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // FacetWP only loads fUtil on pages that have facets.
+        if ( typeof fUtil !== 'function' ) {
+          return;
+        }
         fUtil().on('click', '.flyout-row h3', function() {
           fUtil(this).closest('.flyout-row').toggleClass('expanded');
         });
