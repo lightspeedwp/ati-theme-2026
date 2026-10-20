@@ -81,6 +81,11 @@ const STATIC_ROUTES = [
 		path: '/jobs/',
 		template: 'page-no-title.html',
 	},
+	{
+		name: 'sitemap (page-sitemap)',
+		path: '/sitemap/',
+		template: 'page-sitemap.html',
+	},
 ];
 
 /**
