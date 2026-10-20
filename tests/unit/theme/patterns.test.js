@@ -61,7 +61,7 @@ describe( 'pattern headers', () => {
 } );
 
 describe( 'php syntax', () => {
-	for ( const file of [ ...PATTERNS, 'functions.php' ] ) {
+	for ( const file of [ ...PATTERNS, 'functions.php', ...list( 'inc', '.php' ) ] ) {
 		it.skipIf( ! HAS_PHP )( `${ file } is php -l clean`, () => {
 			const result = spawnSync( 'php', [ '-l', themePath( file ) ], {
 				encoding: 'utf8',

@@ -16,7 +16,10 @@ Standalone Ollie-derived block theme for ATI Holidays. The theme implements the 
 = 0.1.4 =
 * Fix: Google maps on destinations, regions, tours and accommodation show the right places, as on live (Tour Operator 1.x). See inc/class-ati-to-google-maps.php:
   * Places without coordinates are left off the map instead of being drawn at 0,0.
+  * Accommodation maps keep their position and tour maps their itinerary stops (Tour Operator 2.2 lost them reading its own cache).
   * Maps use the post's own zoom (Tour Operator 2.2 fell back to 15).
+  * A tour, accommodation or destination with no map shows no map section, plate or Map menu item.
+  * Upstream: TO-218.
   * The `.lsx-map` container fix from 0.1.3 moves into the same class.
 * New: `wp ati-maps migrate-locations [--apply]` copies 1.x `location[lat|long]` to the 2.x `latitude|longitude` keys and clears Tour Operator's cached map data. Run once per environment migrated from 1.x.
 

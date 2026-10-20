@@ -39,6 +39,32 @@ const PAGES = [
 	),
 ];
 
+/**
+ * Published posts on dev with no map: no position of their own, nothing
+ * placeable connected, no KML route (checked against dev data 2026-10-20, after
+ * `wp ati-maps migrate-locations`). If one gains a location, swap it for another.
+ */
+const NO_MAP = [
+	{ name: 'accommodation: Luwi Bush Camp', path: '/accommodation/luwi-bush-camp/' },
+	{ name: 'accommodation: Naankuse Lodge', path: '/accommodation/naankuse-lodge/' },
+	{ name: 'region: Rundu', path: '/destination/namibia/rundu/' },
+	{ name: 'region: Nxai Pan', path: '/destination/botswana/nxai-pan/' },
+	{ name: 'tour: 7 Night Seychelles Island Escape', path: '/tour/7-night-seychelles-island-escape/' },
+	{ name: 'tour: 6 Night Seychelles Luxury Retreat', path: '/tour/6-night-seychelles-luxury-retreat/' },
+];
+
+test.describe( 'No map, no map section', () => {
+	for ( const target of NO_MAP ) {
+		test( `${ target.name } — shows no map section, plate or Map menu item`, async ( { page, visit } ) => {
+			await visit( target.path );
+
+			await expect( page.locator( '.lsx-location-wrapper' ), 'a map section rendered for a post with no map' ).toHaveCount( 0 );
+			await expect( page.locator( '.lsx-map-preview' ), '"Click here to display the map" rendered with no map behind it' ).toHaveCount( 0 );
+			await expect( page.locator( '[data-sticky-menu-section]#map' ), 'the sticky menu would offer a Map section' ).toHaveCount( 0 );
+		} );
+	}
+} );
+
 test.describe( 'Google maps', () => {
 	for ( const target of PAGES ) {
 		test( `${ target.name } — the map plate opens a map with real coordinates`, async ( { page, visit } ) => {
