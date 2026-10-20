@@ -28,10 +28,6 @@ $meta_key  = 'team_to_' . $post_type; // e.g. team_to_lsx-to-tour
 $team_ids = get_post_meta( $post_id, $meta_key, true );
 $team_ids = array_filter( (array) $team_ids );
 
-if ( empty( $team_ids ) ) {
-	return;
-}
-
 // The first connected team member a visitor can actually see: a draft's
 // permalink is a ?post_type=team&p= URL that 404s for the public.
 $team_id = 0;
@@ -41,20 +37,35 @@ foreach ( $team_ids as $candidate ) {
 		break;
 	}
 }
-if ( ! $team_id ) {
-	return;
-}
 
-$name      = get_the_title( $team_id );
-$permalink = get_permalink( $team_id );
-$thumbnail = get_the_post_thumbnail(
-	$team_id,
-	'medium',
-	array(
-		'class' => 'wp-post-image',
-		'alt'   => esc_attr( $name ),
-	)
-);
+if ( $team_id ) {
+	$name      = get_the_title( $team_id );
+	$permalink = get_permalink( $team_id );
+	$thumbnail = get_the_post_thumbnail(
+		$team_id,
+		'medium',
+		array(
+			'class' => 'wp-post-image',
+			'alt'   => esc_attr( $name ),
+		)
+	);
+} else {
+	// No team member connected (most destinations and accommodation): fall back
+	// to the company as the contact, unlinked, as the live site does.
+	$name      = ! empty( $attributes['fallbackName'] ) ? $attributes['fallbackName'] : get_bloginfo( 'name' );
+	$permalink = '';
+	$thumbnail = ! empty( $attributes['fallbackImageId'] )
+		? wp_get_attachment_image(
+			(int) $attributes['fallbackImageId'],
+			'medium',
+			false,
+			array(
+				'class' => 'wp-post-image',
+				'alt'   => esc_attr( $name ),
+			)
+		)
+		: '';
+}
 
 if ( ! $name ) {
 	return;
@@ -67,23 +78,33 @@ $wrapper_attributes = get_block_wrapper_attributes(
 	array( 'class' => 'lsx-to-contact-widget' )
 );
 
+/**
+ * Wrap content in a link to the team member, or leave it as is for the fallback.
+ *
+ * @param string $html      Content.
+ * @param string $permalink Link target, or empty for none.
+ * @return string
+ */
+$link = static function ( $html, $permalink ) {
+	if ( '' === $permalink ) {
+		return $html;
+	}
+
+	return sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>', esc_url( $permalink ), $html );
+};
+
 $thumb_html = '';
 if ( $thumbnail ) {
-	$thumb_html = sprintf(
-		'<div class="lsx-to-contact-thumb"><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></div>',
-		esc_url( $permalink ),
-		$thumbnail
-	);
+	$thumb_html = '<div class="lsx-to-contact-thumb">' . $link( $thumbnail, $permalink ) . '</div>';
 }
 
 $info_html = sprintf(
 	'<div class="lsx-to-contact-info">' .
 		'<small class="lsx-to-contact-prefix">%s</small>' .
-		'<h4 class="lsx-to-contact-name"><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h4>' .
+		'<h4 class="lsx-to-contact-name">%s</h4>' .
 	'</div>',
 	esc_html__( 'Your travel expert:', 'ati-theme-2026' ),
-	esc_url( $permalink ),
-	esc_html( $name )
+	$link( esc_html( $name ), $permalink )
 );
 
 printf(

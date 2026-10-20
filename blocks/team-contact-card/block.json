@@ -2,14 +2,24 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "ati/team-contact-card",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"title": "Team Contact Card",
 	"category": "theme",
-	"description": "Displays the team member connected to the current tour, accommodation, or destination.",
+	"description": "Displays the team member connected to the current tour, accommodation, or destination, or a fallback contact (the site name and an image) when none is connected.",
 	"icon": "id-alt",
 	"keywords": [ "team", "contact", "expert", "travel" ],
 	"textdomain": "ati-theme-2026",
 	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"fallbackName": {
+			"type": "string",
+			"default": ""
+		},
+		"fallbackImageId": {
+			"type": "number",
+			"default": 0
+		}
+	},
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php",
 	"supports": {

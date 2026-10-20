@@ -113,6 +113,24 @@ test.describe( 'Single templates', () => {
 		).not.toContainText( /January 1, 1970|1970-01-01|01 Jan 1970/ );
 	} );
 
+	for ( const key of [ 'country', 'region', 'tour', 'accommodation' ] ) {
+		test( `${ key }: the fast facts show a travel expert above Enquire`, async ( { page, visit } ) => {
+			const path = ( ROUTES.samples[ key ] || [] )[ 0 ];
+			test.skip( ! path, `no published ${ key }` );
+
+			await visit( path );
+
+			// The connected team member, or the "ATI Holidays" fallback when none is
+			// connected (as on live); never the Enquire button on its own.
+			const card = page.locator( '.wp-block-ati-team-contact-card' ).first();
+
+			await expect( card, 'no travel expert card in the fast facts' ).toBeVisible();
+			await expect( card.locator( '.lsx-to-contact-prefix' ) ).toHaveText( /your travel expert/i );
+			await expect( card.locator( '.lsx-to-contact-name' ) ).not.toBeEmpty();
+			await expect( card.locator( '.lsx-to-contact-thumb img' ), 'the travel expert card has no image' ).toBeVisible();
+		} );
+	}
+
 	test( 'team member: shows contact details', async ( { page, visit, routes } ) => {
 		const target = routes.post( 'team' );
 		test.skip( ! target, 'no published team member' );
