@@ -39,6 +39,31 @@ Open (not theme code):
 Keep in mind: bump the theme `Version` whenever a pattern file or slug changes, or WordPress keeps serving the
 cached pattern list (this blanked the header and footer on dev once).
 
+## Dev vs live parity (the artefact catcher)
+
+The rebuild must look and work like live, apart from deliberate design and accessibility changes. Run this
+before every review round, and before go-live:
+
+    npm run test:parity           # content + cards + chrome, fails on anything live has and dev lacks
+    npm run test:parity:visual    # also screenshots live and dev side by side (loads live in a browser)
+    open tests/e2e/test-results/parity-report.html
+
+- `parity/content-parity.spec.js`: per page (a sample of every type, `ATI_PARITY_SAMPLE`, default 4, plus every
+  static page): facts (incl. "Your travel expert"), body text, itinerary days, rooms, gallery, map, the places on
+  the map, enquiry, related cards.
+- `parity/card-parity.spec.js`: card fields.
+- `parity/chrome-parity.spec.js`: main menu items, every dropdown link and its target, top-bar phone/email,
+  footer links, social profiles. Catches empty mega menus and mis-linked menu cards.
+- `parity/visual-parity.spec.js`: full-page live/dev screenshots, one per template, in the report's "Side by side"
+  section. Never fails on appearance; it is for eyeballing what the content checks cannot see.
+
+Classes: MISSING_ON_DEV fails; KNOWN_PENDING (`fixtures/known-pending.js`, fix not deployed yet) and INTENTIONAL
+(`fixtures/intentional-differences.js`, a design decision) are reported but do not fail; CONTENT_DRIFT, STALE and
+EXTRA_ON_DEV are informational. Keep both allow-lists short and specific (`live:` regex), with a reason.
+
+Live is production: everything is GET only. Content/chrome parity reads live through `utils/live.js` (serial,
+paused, capped, cached 12 h); the visual spec loads one page per template in a browser and aborts any non-GET.
+
 ## Commands
 
     npm install && npx playwright install chromium
@@ -49,6 +74,7 @@ cached pattern list (this blanked the header and footer on dev once).
     npm run test:responsive           # responsive + tablet + mobile
     npm run test:a11y                 # axe (report-only until a baseline exists)
     npm run test:editor               # needs WP_REST_AUTH, GET only
-    npm run test:parity               # opt-in, reads ati-holidays.com; report: tests/e2e/test-results/parity-report.md
+    npm run test:parity               # opt-in, reads ati-holidays.com; report: tests/e2e/test-results/parity-report.html
+    npm run test:parity:visual        # + live/dev screenshots side by side
     WP_BASE_URL=http://localhost:8900 npm run test:e2e   # local Studio (stale DB, TO 2.1.1)
     ATI_BYPASS_CACHE=true ...         # render dev fresh (slower)
