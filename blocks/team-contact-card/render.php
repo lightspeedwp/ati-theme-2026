@@ -32,7 +32,15 @@ if ( empty( $team_ids ) ) {
 	return;
 }
 
-$team_id = intval( reset( $team_ids ) );
+// The first connected team member a visitor can actually see: a draft's
+// permalink is a ?post_type=team&p= URL that 404s for the public.
+$team_id = 0;
+foreach ( $team_ids as $candidate ) {
+	if ( 'publish' === get_post_status( intval( $candidate ) ) ) {
+		$team_id = intval( $candidate );
+		break;
+	}
+}
 if ( ! $team_id ) {
 	return;
 }

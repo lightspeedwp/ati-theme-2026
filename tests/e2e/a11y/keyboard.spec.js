@@ -20,7 +20,7 @@ test.describe( 'Keyboard @a11y', () => {
 		const first = await page.evaluate( () => {
 			const el = document.activeElement;
 
-			return { tag: el.tagName, href: el.getAttribute( 'href' ) || '', text: ( el.textContent || '' ).trim().slice( 0, 40 ), inHeader: !! el.closest( 'header' ), skip: /skip/i.test( el.textContent || '' ) };
+			return { tag: el.tagName, href: el.getAttribute( 'href' ) || '', text: ( el.textContent || '' ).trim().slice( 0, 40 ), inHeader: !! el.closest( 'header, .ati-top-header' ), skip: /skip/i.test( el.textContent || '' ) };
 		} );
 
 		expect( first.skip || first.inHeader, `first Tab landed on <${ first.tag }> "${ first.text }" outside the header` ).toBe( true );

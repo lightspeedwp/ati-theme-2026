@@ -103,14 +103,23 @@ test.describe( 'Mega menu (desktop)', () => {
 			[ ...new Set( links.map( ( a ) => a.href ).filter( ( h ) => h.startsWith( location.origin ) && ! h.includes( '#' ) ) ) ]
 		);
 
+		// Around 60 full page renders on dev: allow for them, and fetch four at a
+		// time (the suite's politeness cap) rather than one after another.
+		test.setTimeout( 3 * 60 * 1000 );
+
 		const broken = [];
+		const targets = hrefs.slice( 0, 60 );
 
-		for ( const href of hrefs.slice( 0, 60 ) ) {
-			const response = await request.get( href, { maxRedirects: 5, headers: devHeaders() } );
+		for ( let i = 0; i < targets.length; i += 4 ) {
+			await Promise.all(
+				targets.slice( i, i + 4 ).map( async ( href ) => {
+					const response = await request.get( href, { maxRedirects: 5, headers: devHeaders(), timeout: 45 * 1000 } );
 
-			if ( 400 <= response.status() ) {
-				broken.push( `${ href } → ${ response.status() }` );
-			}
+					if ( 400 <= response.status() ) {
+						broken.push( `${ href } → ${ response.status() }` );
+					}
+				} )
+			);
 		}
 
 		expect( broken, `navigation links that do not resolve:\n  ${ broken.join( '\n  ' ) }` ).toEqual( [] );

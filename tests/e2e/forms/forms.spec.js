@@ -38,8 +38,10 @@ for ( const form of FORMS ) {
 			const wrapper = page.locator( `#gform_wrapper_${ form.id }, #gform_${ form.id }` ).first();
 
 			await expect( wrapper, `Gravity Form #${ form.id } did not render on ${ form.path }` ).toBeVisible();
+
+			// A multi-page form shows Next on its first page; submit is on the last.
 			await expect(
-				page.locator( `#gform_${ form.id } input[type="submit"], #gform_${ form.id } button[type="submit"]` ).first()
+				page.locator( `#gform_${ form.id } :is(input, button)[type="submit"], #gform_${ form.id } .gform_next_button` ).first()
 			).toBeVisible();
 		} );
 

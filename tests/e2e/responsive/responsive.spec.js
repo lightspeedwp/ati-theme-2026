@@ -81,7 +81,7 @@ test.describe( 'Touch targets', () => {
 		await visit( '/' );
 
 		const undersized = await page
-			.locator( 'header a[href], header button, header input:not([type="hidden"])' )
+			.locator( ':is(header, .ati-top-header) :is(a[href], button, input:not([type="hidden"]))' )
 			.evaluateAll( ( nodes, minimum ) =>
 				nodes
 					.filter( ( node ) => {

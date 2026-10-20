@@ -7,7 +7,7 @@ Description: Standalone Ollie-derived block theme for ATI Holidays, using the AT
 Requires at least: 6.9
 Tested up to: 6.9
 Requires PHP: 7.3
-Version: 0.1.1
+Version: 0.1.2
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: ati-theme-2026
@@ -37,6 +37,21 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 
 .lsx-to-slider .slick-next {
 	right: -2rem !important;
+}
+
+/*
+ * The sliders are wide-aligned (1320px), so arrows 2rem outside them need a
+ * viewport of about 1400px. Below that they sat past the screen edge and the
+ * page scrolled sideways; keep them on the slider's edge instead.
+ */
+@media (max-width: 1400px) {
+	.lsx-to-slider .slick-prev {
+		left: 0 !important;
+	}
+
+	.lsx-to-slider .slick-next {
+		right: 0 !important;
+	}
 }
 
 /* Remove default arrows */
@@ -299,6 +314,24 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	left: 0;
 	right: 0;
 	height: var(--wp--preset--spacing--20);
+}
+
+/*
+ * Top bar controls: at least 24x24px to tap (WCAG 2.5.8). The links are
+ * small text (email measured 15px tall, currency 21px, its submenu arrow 8px);
+ * extend the hit area without changing how the text looks.
+ */
+.ati-top-header a:not(.wp-block-social-link-anchor),
+.ati-top-header .wp-block-navigation-item__content {
+	display: inline-flex;
+	align-items: center;
+	min-height: 24px;
+}
+
+.ati-top-header .wp-block-navigation .wp-block-navigation__submenu-icon {
+	min-width: 24px;
+	min-height: 24px;
+	justify-content: center;
 }
 
 

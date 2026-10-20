@@ -12,9 +12,10 @@
 const { expect } = require( '@playwright/test' );
 
 /**
- * A rendered query-loop item.
+ * A rendered query-loop item. FacetWP renders its empty state as
+ * `li.facetwp-no-results` inside the post template, which is not a result.
  */
-const POST_ITEM = '.wp-block-post, .wp-block-post-template > li';
+const POST_ITEM = '.wp-block-post, .wp-block-post-template > li:not(.facetwp-no-results)';
 
 /**
  * The main landmark. Result counts must be scoped through this: the header's

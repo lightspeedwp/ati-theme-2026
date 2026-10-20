@@ -72,10 +72,11 @@ test.describe( 'Accessibility — structure @a11y', () => {
 		await visit( '/' );
 
 		/**
-		 * The header is two patterns that each render a `<header>`; two page-level
-		 * `<header>`s are two `banner` landmarks (axe: landmark-no-duplicate-banner).
+		 * Only main-header renders a `<header>`; the top bar and both template-part
+		 * wrappers are `<div>`s, because every page-level `<header>` is a `banner`
+		 * landmark (axe: landmark-no-duplicate-banner).
 		 */
-		await expect( page.getByRole( 'banner' ), 'more than one banner landmark (top-header and main-header both render <header>)' ).toHaveCount( 1 );
+		await expect( page.getByRole( 'banner' ), 'more than one banner landmark (only main-header may render <header>)' ).toHaveCount( 1 );
 		await expect( page.getByRole( 'contentinfo' ) ).toHaveCount( 1 );
 		await expect( page.getByRole( 'main' ) ).toHaveCount( 1 );
 	} );

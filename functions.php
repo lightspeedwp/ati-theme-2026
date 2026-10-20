@@ -277,6 +277,56 @@ return $block_content;
 add_filter( 'render_block', 'ati_theme_2026_render_rating_stars', 35, 2 );
 
 /**
+ * Link bound contact details: phone numbers to tel:, emails to mailto:.
+ *
+ * Tour Operator's lsx/post-meta binding prints contact_number and
+ * contact_email as plain text, so a visitor cannot tap to call or email a team
+ * member. Wraps the bound value (as escaped in the rendered paragraph) in a
+ * link; the "Call: " / "Email: " prefix stays outside it.
+ *
+ * @param string $block_content Rendered block content.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function ati_theme_2026_link_contact_details( $block_content, $block ) {
+	if ( empty( $block_content ) || 'core/paragraph' !== ( $block['blockName'] ?? '' ) ) {
+		return $block_content;
+	}
+
+	$key = $block['attrs']['metadata']['bindings']['content']['args']['key'] ?? '';
+	if ( ! in_array( $key, array( 'contact_number', 'contact_email' ), true ) || false !== strpos( $block_content, '<a ' ) ) {
+		return $block_content;
+	}
+
+	$value = trim( (string) get_post_meta( get_the_ID(), $key, true ) );
+	if ( '' === $value ) {
+		return $block_content;
+	}
+
+	if ( 'contact_email' === $key ) {
+		if ( ! is_email( $value ) ) {
+			return $block_content;
+		}
+		$href = 'mailto:' . $value;
+	} else {
+		$digits = preg_replace( '/\(0\)|[^\d+]/', '', $value );
+		if ( strlen( $digits ) < 6 ) {
+			return $block_content;
+		}
+		$href = 'tel:' . $digits;
+	}
+
+	$text = esc_html( $value );
+	$pos  = strpos( $block_content, $text );
+	if ( false === $pos ) {
+		return $block_content;
+	}
+
+	return substr_replace( $block_content, '<a href="' . esc_url( $href, array( 'tel', 'mailto' ) ) . '">' . $text . '</a>', $pos, strlen( $text ) );
+}
+add_filter( 'render_block', 'ati_theme_2026_link_contact_details', 35, 2 );
+
+/**
  * Prevent the Tour Operator plugin from seeding its own template parts into
  * the database. Without this, the plugin re-creates each post from its own
  * plugin file on every init after a Site Editor reset, overriding the theme's
@@ -505,6 +555,28 @@ add_action(
  * form, where Tour Operator's wp_kses() pass entity-encodes it into a syntax error.
  */
 add_filter( 'gform_force_hooks_js_output', '__return_true' );
+
+/**
+ * Drop the duplicate Gravity Forms hooks script from forms in footer modals.
+ *
+ * Gravity Forms also prepends its hooks bootstrap to the form markup
+ * (GFForms::maybe_prepend_hooks_js_script). In a Tour Operator modal that copy
+ * goes through wp_kses()/wpautop, which entity-encode `=>` and `&&` into a
+ * syntax error ("Unexpected token ')'") on every page with the enquiry modal.
+ * The copy printed at the top of the page already defines `gform`, and the
+ * script is guarded (`gform||`), so the modal copy is redundant.
+ *
+ * @param string $form_string Form markup.
+ * @return string
+ */
+function ati_theme_2026_drop_modal_gform_hooks_js( $form_string ) {
+	if ( ! doing_action( 'wp_footer' ) || ! is_string( $form_string ) ) {
+		return $form_string;
+	}
+
+	return preg_replace( '#<script\b[^>]*>\s*var gform;gform\|\|.*?</script>#s', '', $form_string, 1 );
+}
+add_filter( 'gform_get_form_filter', 'ati_theme_2026_drop_modal_gform_hooks_js', 999 );
 
 /**
  * Restore the viewBox attribute on icon-block SVGs inside modals.
