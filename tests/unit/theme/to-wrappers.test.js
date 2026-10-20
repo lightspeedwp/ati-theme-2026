@@ -44,6 +44,46 @@ function wrappersIn( file ) {
 		.map( ( block ) => ( { block, verdict: judge( block ) } ) );
 }
 
+/**
+ * Bindings whose key is not covered by any ancestor wrapper.
+ *
+ * @param {Object[]} blocks Parsed blocks.
+ * @return {Object[]} Unmatched blocks and bindings, for diagnostics.
+ */
+function unmatchedBindings( blocks ) {
+	return blocks.flatMap( ( block ) =>
+		bindingsOf( block )
+			.filter( ( binding ) =>
+				/post-(meta|connection)$/.test( binding.source )
+			)
+			.filter( ( binding ) => {
+				const key = normalise( binding.key );
+
+				for (
+					let ancestor = block.parent;
+					ancestor;
+					ancestor = ancestor.parent
+				) {
+					const wrapper = wrapperOf( ancestor );
+
+					if (
+						wrapper &&
+						key &&
+						( normalise( wrapper.key ) === key ||
+							( MULTI_FIELD_WRAPPERS[ wrapper.key ] || [] ).some(
+								( field ) => normalise( field ) === key
+							) )
+					) {
+						return false;
+					}
+				}
+
+				return true;
+			} )
+			.map( ( binding ) => ( { block, binding } ) )
+	);
+}
+
 const FILES = markupFiles().filter( ( file ) => wrappersIn( file ).length );
 
 describe( 'the checker can fail (controls)', () => {
@@ -92,6 +132,43 @@ describe( 'the checker can fail (controls)', () => {
 				group( 'lsx-travel-information-wrapper', group( 'lsx-visa-wrapper', meta( 'visa' ) ) )
 			).every( ( v ) => v.ok )
 		).toBe( true );
+	} );
+
+	it( 'finds missing and mismatched ancestors for meta and connection bindings', () => {
+		const source =
+			meta( 'rating' ) +
+			group( 'lsx-price-wrapper', meta( 'duration' ) ) +
+			group(
+				'lsx-price-wrapper',
+				meta( 'location' ).replace(
+					'lsx/post-meta',
+					'lsx/post-connection'
+				)
+			);
+
+		expect(
+			unmatchedBindings( parseBlocks( source ).all ).map(
+				( { binding } ) => binding.key
+			)
+		).toEqual( [ 'rating', 'duration', 'location' ] );
+	} );
+
+	it( 'matches distant ancestors, normalised keys, and multi-field wrapper keys', () => {
+		const source =
+			group(
+				'lsx-number-of-rooms-wrapper',
+				group( 'content', meta( 'number_of_rooms' ) )
+			) +
+			group(
+				'lsx-include-exclude-wrapper',
+				meta( 'included' ) + meta( 'not_included' )
+			);
+		const { all } = parseBlocks( source );
+
+		expect(
+			all.filter( wrapperOf ).map( ( block ) => wrapperOf( block ).key )
+		).toContain( 'include-exclude' );
+		expect( unmatchedBindings( all ) ).toEqual( [] );
 	} );
 
 	it( 'does not let a nested wrapper’s binding satisfy its parent', () => {
@@ -204,9 +281,16 @@ describe( 'card patterns carry the field rows live shows', () => {
 		const { all } = parseBlocks( markup( 'patterns/ati-accommodation-card.php' ) );
 		const bound = all
 			.flatMap( bindingsOf )
-			.filter( ( b ) => /post-(meta|connection)/.test( b.source ) )
-			.map( ( b ) => normalise( b.key ) );
+			.filter( ( b ) => /post-(meta|connection)$/.test( b.source ) );
+		const unmatched = unmatchedBindings( all ).map(
+			( { block, binding } ) =>
+				`line ${ block.line }: ${ binding.source } ${ binding.attribute } key "${ binding.key || '(missing)' }" has no matching ancestor wrapper`
+		);
 
 		expect( bound.length ).toBeGreaterThan( 0 );
+		expectNone(
+			unmatched,
+			'Accommodation card bindings without matching ancestor wrappers:'
+		);
 	} );
 } );

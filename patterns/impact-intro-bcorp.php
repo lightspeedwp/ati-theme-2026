@@ -7,7 +7,6 @@
  * Inserter: yes
  */
 
-$bcorp_logo = esc_url( get_theme_file_uri( 'assets/logos/partners/bcorp-certified.png' ) );
 ?>
 
 
@@ -37,7 +36,7 @@ $bcorp_logo = esc_url( get_theme_file_uri( 'assets/logos/partners/bcorp-certifie
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":23190,"width":"160px","aspectRatio":"0.5947518724069185","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large is-resized"><img src="/wp-content/uploads/2026/06/bcorp-certified-609x1024.png" alt="" class="wp-image-23190" style="aspect-ratio:0.5947518724069185;object-fit:cover;width:160px"/></figure>
+<figure class="wp-block-image size-large is-resized"><img src="/wp-content/uploads/2026/06/bcorp-certified-609x1024.png" alt="Certified B Corporation" class="wp-image-23190" style="aspect-ratio:0.5947518724069185;object-fit:cover;width:160px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 

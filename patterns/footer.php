@@ -8,7 +8,7 @@
 ?>
 
 
-<!-- wp:group {"metadata":{"name":"footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|30","right":"var:preset|spacing|30","left":"var:preset|spacing|30"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|30"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary-500","textColor":"base","layout":{"inherit":true,"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|30","right":"var:preset|spacing|30","left":"var:preset|spacing|30"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|30"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary-500","textColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-color has-primary-500-background-color has-text-color has-background has-link-color" style="margin-top:0px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|0"},"blockGap":{"top":"var:preset|spacing|5","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--0)"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:paragraph {"className":"is-style-subheading-medium","style":{"spacing":{"padding":{"top":"var:preset|spacing|5","bottom":"var:preset|spacing|40"}}},"fontSize":"500"} -->
@@ -62,12 +62,12 @@
 <!-- wp:group {"metadata":{"name":"Footer Subnav"},"align":"wide"} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}}},"textColor":"neutral-700","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"},"isStackedOnMobile":true} -->
 <div class="wp-block-group has-neutral-700-color has-text-color has-link-color"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"300","textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"200"} -->
-<p class="has-text-align-center has-base-color has-text-color has-link-color has-200-font-size" style="font-style:normal;font-weight:300">© 2026 ATI Holidays All Rights Reserved</p>
+<p class="has-text-align-center has-base-color has-text-color has-link-color has-200-font-size" style="font-style:normal;font-weight:300">© <?php echo esc_html( gmdate( 'Y' ) ); ?> ATI Holidays All Rights Reserved</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:social-links {"iconColor":"neutral-200","iconColorValue":"#E8E1D8","size":"has-normal-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}},"layout":{"type":"flex","justifyContent":"center"},"hoverTextColor":"cta-500"} -->
-<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://twitter.com/atiholidays","service":"twitter"} /-->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://twitter.com/atiholidays","service":"x"} /-->
 
 <!-- wp:social-link {"url":"https://www.instagram.com/atiholidays/","service":"instagram"} /-->
 

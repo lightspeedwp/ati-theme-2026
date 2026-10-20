@@ -21,7 +21,7 @@
 const { test, expect, readResolvedRoutes } = require( '../fixtures/base.js' );
 const { acceptCookies } = require( '../utils/helpers.js' );
 const { scrollThrough } = require( '../utils/page-contract.js' );
-const { LIVE_ORIGIN } = require( '../utils/live.js' );
+const { LIVE_ORIGIN, LIVE_HOSTS } = require( '../utils/live.js' );
 
 const RUN = 'true' === process.env.ATI_PARITY_VISUAL;
 const ROUTES = readResolvedRoutes();
@@ -126,7 +126,7 @@ test.describe( 'Side by side with live @parity', () => {
 			// Read-only on production: anything but a GET to live is refused.
 			await livePage.route( '**/*', ( route ) =>
 				'GET' !== route.request().method() &&
-				route.request().url().startsWith( LIVE_ORIGIN )
+				LIVE_HOSTS.includes( new URL( route.request().url() ).hostname )
 					? route.abort()
 					: route.continue()
 			);

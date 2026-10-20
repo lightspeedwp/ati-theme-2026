@@ -153,4 +153,4 @@ class LiveClient {
 	}
 }
 
-module.exports = { LiveClient, LIVE_ORIGIN, USER_AGENT };
+module.exports = { LiveClient, LIVE_ORIGIN, LIVE_HOSTS, USER_AGENT };

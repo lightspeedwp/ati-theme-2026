@@ -12,7 +12,7 @@
  * is reported too.
  *
  * Needs `WP_REST_AUTH` (a full Authorization header value — a WordPress
- * application password, in `.env`). The project is dropped when it is unset. The
+ * application password, in `.env`). The tests skip when it is unset. The
  * header is read here and sent only to the configured target with GET requests;
  * it is never printed.
  *
@@ -24,6 +24,7 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 const { test, expect, request } = require( '@playwright/test' );
 const { readResolvedRoutes } = require( '../fixtures/base.js' );
+const { hasRestAuth } = require( '../utils/env.js' );
 
 const THEME_ROOT = path.join( __dirname, '..', '..', '..' );
 
@@ -43,7 +44,10 @@ test.describe( 'Site Editor overrides (read-only REST)', () => {
 	let api;
 
 	test.beforeAll( async () => {
-		test.skip( ! process.env.WP_REST_AUTH, 'WP_REST_AUTH is not set — see .env.example' );
+		test.skip(
+			! hasRestAuth(),
+			'WP_REST_AUTH is not set — see .env.example'
+		);
 
 		api = await request.newContext( {
 			baseURL: readResolvedRoutes().baseURL,

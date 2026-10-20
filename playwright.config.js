@@ -30,7 +30,6 @@ const {
 	loadEnv,
 	hostOf,
 	assertSafeTarget,
-	hasRestAuth,
 } = require( './tests/e2e/utils/env.js' );
 
 loadEnv();
@@ -209,19 +208,15 @@ module.exports = defineConfig( {
 
 		/**
 		 * Read-only REST checks in edit context (template/part database
-		 * overrides). Needs WP_REST_AUTH; the project drops out when it is
-		 * unset. The header is read inside the spec, never put in this config,
+		 * overrides). Tests skip when WP_REST_AUTH is unset. The header is read
+		 * inside the spec, never put in this config,
 		 * so it cannot leak into a report or trace.
 		 */
-		...( hasRestAuth()
-			? [
-					{
-						name: 'editor',
-						testMatch: 'editor/**/*.spec.js',
-						use: { trace: 'off', screenshot: 'off' },
-					},
-				]
-			: [] ),
+		{
+			name: 'editor',
+			testMatch: 'editor/**/*.spec.js',
+			use: { trace: 'off', screenshot: 'off' },
+		},
 
 		/**
 		 * Dev-vs-live parity, on a sample. Opt-in with ATI_RUN_PARITY=true

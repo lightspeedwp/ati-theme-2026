@@ -2,14 +2,14 @@
 /**
  * Title: Impact Stats
  * Slug: ati-theme-2026/impact-stats
- * Description: Four-column statistics strip showing B Impact Score, Country Offices, Flagship Initiatives, and Partners & Suppliers.
+ * Description: Three-column statistics strip showing B Impact Score, Flagship Initiatives, and Partners & Suppliers.
  * Theme: ati-theme-2026
  * Inserter: yes
  */
 ?>
 
 
-<!-- wp:group {"metadata":{"name":"Impact Stats","patternName":"impact-stats","description":"Four-column statistics strip showing B Impact Score, Country Offices, Flagship Initiatives, and Partners \u0026 Suppliers."},"align":"full","className":"is-style-ati-page-section-default","backgroundColor":"brand-100","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Impact Stats","patternName":"impact-stats","description":"Three-column statistics strip showing B Impact Score, Flagship Initiatives, and Partners \u0026 Suppliers."},"align":"full","className":"is-style-ati-page-section-default","backgroundColor":"brand-100","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-ati-page-section-default has-brand-100-background-color has-background"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->

@@ -12,8 +12,8 @@
 ?>
 
 
-<!-- wp:group {"metadata":{"name":"Reviews Card","patternName":"ati-review-card-large"},"className":"overflow-hidden is-style-horizontal-card-light","backgroundColor":"base","layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
-<div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-horizontal-card-light has-base-background-color has-background"><!-- wp:columns -->
+<!-- wp:group {"metadata":{"name":"Reviews Card","patternName":"ati-review-card-large"},"className":"overflow-hidden is-style-horizontal-card-light","backgroundColor":"base","layout":{"type":"default"},"ariaLabel":"Review Card","linkDestination":"post"} -->
+<div aria-label="Review Card" class="wp-block-group overflow-hidden is-style-horizontal-card-light has-base-background-color has-background"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /--></div>
 <!-- /wp:column -->

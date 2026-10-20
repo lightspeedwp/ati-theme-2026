@@ -536,9 +536,6 @@ function ati_theme_2026_modal_allowed_html( $tags, $context ) {
 		'checked'      => true,
 		'multiple'     => true,
 		'accept'       => true,
-		'onclick'      => true,
-		'onkeypress'   => true,
-		'onchange'     => true,
 	);
 
 	$tags['form']     = $common + array(

@@ -104,7 +104,14 @@ for ( const form of FORMS ) {
 				expect( new URL( action, page.url() ).origin, 'form posts to another origin' ).toBe( new URL( page.url() ).origin );
 			}
 
-			expect( await root.locator( '.gform_validation_container, [name="gform_honeypot"]' ).count(), 'no honeypot field' ).toBeGreaterThanOrEqual( 0 );
+			expect(
+				await root
+					.locator(
+						'.gform_validation_container, [name="gform_honeypot"]'
+					)
+					.count(),
+				'no honeypot field'
+			).toBeGreaterThan( 0 );
 		} );
 	} );
 }

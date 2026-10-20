@@ -11,12 +11,12 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"article","metadata":{"name":"Destination Card","patternName":"ati-destination-card-dark"},"className":"is-style-tour-card-dark is-style-card-light","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Destination Card","linkDestination":"post"} -->
-<article aria-label="Destination Card" class="wp-block-group is-style-tour-card-dark is-style-card-light"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
+<!-- wp:group {"tagName":"article","metadata":{"name":"Destination Card","patternName":"ati-destination-card-dark"},"className":"is-style-card-dark","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"},"ariaLabel":"Destination Card","linkDestination":"post"} -->
+<article aria-label="Destination Card" class="wp-block-group is-style-card-dark"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 
 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20)"><!-- wp:group {"metadata":{"name":"Destination Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<div class="wp-block-group center-vertically" style="min-height:0rem"><!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|contrast"}}}}},"textColor":"contrast"} /--></div>
+<div class="wp-block-group center-vertically" style="min-height:0rem"><!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{":hover":{"color":{"text":"var:preset|color|base"}}}}},"textColor":"base"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Destination Information"},"style":{"border":{"top":{"color":"var:preset|color|accent-500","width":"1px"},"bottom":{"width":"0px","style":"none"},"right":[],"left":[]},"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|0"}}},"layout":{"type":"default"},"ariaLabel":"Tour details"} -->
