@@ -316,82 +316,53 @@ function ati_theme_2026_multi_field_wrappers( $wrappers ) {
 add_filter( 'lsx_to_multi_field_wrappers', 'ati_theme_2026_multi_field_wrappers' );
 
 /**
- * Clean Tour Operator connection meta when the front end reads it.
+ * Placeholder Tour Operator receives in place of an unpublished connection.
+ */
+const ATI_THEME_2026_OMITTED_CONNECTION = '<!--ati-omitted-connection-->';
+
+/**
+ * Leave unpublished posts out of Tour Operator connection lists.
  *
- * Two data problems in the imported `*_to_*` connections (e.g.
- * destination_to_accommodation) break the front end:
+ * Tour Operator's lsx/post-connection binding links every stored ID with no
+ * status check, so a connection to a draft renders as a link (or modal trigger)
+ * to a page a visitor cannot see. The item is swapped for a placeholder rather
+ * than an empty string because Tour Operator has already chosen the separator
+ * by then; ati_theme_2026_drop_omitted_connections() removes each placeholder
+ * together with its separator. Same approach as Southern Destinations.
  *
- * - Some posts store the connection as an array of arrays rather than a flat
- *   list of post IDs. Tour Operator's lsx/post-connection binding uses each item
- *   as an array key, so a nested item is a fatal error, and any page whose cards
- *   or fast facts read such a post fails with a critical error.
- * - Some connections point at draft posts. Tour Operator counts drafts as
- *   existing, so public pages link to them, and the modal trigger it renders for
- *   the link has no modal behind it.
+ * @param string $html    The rendered item.
+ * @param int    $post_id The connected post.
+ * @return string
+ */
+function ati_theme_2026_omit_unpublished_connection( $html, $post_id ) {
+	if ( 'publish' !== get_post_status( (int) $post_id ) ) {
+		return ATI_THEME_2026_OMITTED_CONNECTION;
+	}
+
+	return $html;
+}
+add_filter( 'lsx_to_connected_list_item', 'ati_theme_2026_omit_unpublished_connection', 20, 2 );
+
+/**
+ * Remove omitted connection placeholders, and one separator each, from a list.
  *
- * Returning a flat list of published IDs keeps every reader of the connection
- * working. Meta that needs neither fix is left untouched, and the admin is left
- * alone so the editor saves what it loaded.
+ * Matching the placeholder rather than splitting on ', ' keeps a title that
+ * itself contains a comma intact.
  *
- * @param mixed  $value     Null, or a value short-circuited by another filter.
- * @param int    $object_id Post ID.
- * @param string $meta_key  Meta key.
- * @param bool   $single    Whether a single value was requested.
+ * @param mixed $value The joined connection list.
  * @return mixed
  */
-function ati_theme_2026_clean_connection_meta( $value, $object_id, $meta_key, $single = false ) {
-	static $reading = false;
-
-	if ( null !== $value || $reading || is_admin() || ! is_string( $meta_key ) || false === strpos( $meta_key, '_to_' ) || 'best_time_to_visit' === $meta_key ) {
+function ati_theme_2026_drop_omitted_connections( $value ) {
+	if ( ! is_string( $value ) || false === strpos( $value, ATI_THEME_2026_OMITTED_CONNECTION ) ) {
 		return $value;
 	}
 
-	$reading = true;
-	$stored  = get_post_meta( $object_id, $meta_key, false );
-	$reading = false;
+	$value = str_replace( ATI_THEME_2026_OMITTED_CONNECTION . ', ', '', $value );
+	$value = str_replace( ', ' . ATI_THEME_2026_OMITTED_CONNECTION, '', $value );
 
-	$nested = false;
-	foreach ( $stored as $item ) {
-		if ( is_array( $item ) && array_filter( $item, 'is_array' ) ) {
-			$nested = true;
-			break;
-		}
-	}
-
-	$ids         = array();
-	$is_ids      = true;
-	$unpublished = false;
-	array_walk_recursive(
-		$stored,
-		static function ( $id ) use ( &$ids, &$is_ids, &$unpublished ) {
-			if ( ! is_scalar( $id ) || '' === (string) $id ) {
-				return;
-			}
-			if ( ! ctype_digit( (string) $id ) ) {
-				$is_ids = false;
-				return;
-			}
-			if ( 'publish' !== get_post_status( (int) $id ) ) {
-				$unpublished = true;
-				return;
-			}
-			$ids[] = (string) $id;
-		}
-	);
-
-	if ( ! $is_ids || ( ! $nested && ! $unpublished ) ) {
-		return $value;
-	}
-
-	$ids = array_values( array_unique( $ids ) );
-
-	// get_metadata() returns $value[0] for a single read and $value as-is for a
-	// multiple read. A single read gets the whole flat list; a multiple read gets
-	// one ID per row, as readers such as Tour Operator's schema expect (they use
-	// each row as an array key, so a nested row is a fatal error).
-	return $single ? array( $ids ) : $ids;
+	return str_replace( ATI_THEME_2026_OMITTED_CONNECTION, '', $value );
 }
-add_filter( 'get_post_metadata', 'ati_theme_2026_clean_connection_meta', 10, 4 );
+add_filter( 'lsx_to_post_connections_value', 'ati_theme_2026_drop_omitted_connections', 5 );
 
 /**
  * Format review travel dates that are stored as date strings.
