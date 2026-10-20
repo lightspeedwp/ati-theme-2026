@@ -13,6 +13,10 @@ Standalone Ollie-derived block theme for ATI Holidays. The theme implements the 
 
 == Changelog ==
 
+= 0.1.3 =
+* Fix: "Click here to display the map" now opens the Google map on destinations, regions, tours and accommodation. Tour Operator 2.2 outputs the map data without the `.lsx-map` container its maps.js needs, so the click only jumped to the top of the page.
+* Fix: the duplicate Gravity Forms hooks script is now removed wherever the form renders, not only in wp_footer (Tour Operator renders the enquiry modal during the page body), ending the "Unexpected token ')'" error.
+
 = 0.1.2 =
 * Fix: accommodation and review pages no longer crash on Tour Operator connections (connection data migrated; draft connections are left out of connection lists instead of being reshaped in meta).
 * Fix: one banner landmark per page; the top bar is no longer a <header>.

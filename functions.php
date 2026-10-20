@@ -327,6 +327,35 @@ function ati_theme_2026_link_contact_details( $block_content, $block ) {
 add_filter( 'render_block', 'ati_theme_2026_link_contact_details', 35, 2 );
 
 /**
+ * Wrap Tour Operator's Google map output in the `.lsx-map` container its JS needs.
+ *
+ * Bindings::render_map_block() (render_block, priority 10) replaces the
+ * "Map Details" group with lsx_to_map()'s bare `.lsx-map-details` markup. TO's
+ * maps.js only acts when a `.lsx-map` exists — it reads `.lsx-map .lsx-map-details`
+ * and binds the "Click here to display the map" plate inside the same
+ * `.lsx-location-wrapper` — so without the container the plate's `href="#"`
+ * just jumps to the top of the page. Same defect is open on Southern
+ * Destinations (TO 2.2 dead map click).
+ *
+ * @param string $block_content Rendered block content.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function ati_theme_2026_wrap_map_details( $block_content, $block ) {
+	$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
+	if ( 'lsx/map' !== ( $binding['source'] ?? '' ) || ! is_string( $block_content ) ) {
+		return $block_content;
+	}
+
+	if ( false === strpos( $block_content, 'lsx-map-details' ) || preg_match( '/class="[^"]*\blsx-map\b[^-]/', $block_content ) ) {
+		return $block_content;
+	}
+
+	return '<div class="lsx-map">' . $block_content . '</div>';
+}
+add_filter( 'render_block', 'ati_theme_2026_wrap_map_details', 11, 2 );
+
+/**
  * Prevent the Tour Operator plugin from seeding its own template parts into
  * the database. Without this, the plugin re-creates each post from its own
  * plugin file on every init after a Site Editor reset, overriding the theme's
@@ -557,20 +586,22 @@ add_action(
 add_filter( 'gform_force_hooks_js_output', '__return_true' );
 
 /**
- * Drop the duplicate Gravity Forms hooks script from forms in footer modals.
+ * Drop the duplicate Gravity Forms hooks script from rendered forms.
  *
  * Gravity Forms also prepends its hooks bootstrap to the form markup
- * (GFForms::maybe_prepend_hooks_js_script). In a Tour Operator modal that copy
- * goes through wp_kses()/wpautop, which entity-encode `=>` and `&&` into a
- * syntax error ("Unexpected token ')'") on every page with the enquiry modal.
- * The copy printed at the top of the page already defines `gform`, and the
- * script is guarded (`gform||`), so the modal copy is redundant.
+ * (GFForms::maybe_prepend_hooks_js_script). Tour Operator renders the enquiry
+ * modal while the page body renders (Modals::register_button_modal) and prints
+ * it in wp_footer through wp_kses()/wpautop, which entity-encode `=>` and `&&`
+ * into a syntax error ("Unexpected token ')'") on every page with the modal.
+ * gform_force_hooks_js_output above prints the same script in <head> on every
+ * page with a form, and the script is guarded (`gform||`), so the prepended copy
+ * is redundant wherever it appears.
  *
  * @param string $form_string Form markup.
  * @return string
  */
 function ati_theme_2026_drop_modal_gform_hooks_js( $form_string ) {
-	if ( ! doing_action( 'wp_footer' ) || ! is_string( $form_string ) ) {
+	if ( is_admin() || wp_doing_ajax() || ! is_string( $form_string ) ) {
 		return $form_string;
 	}
 
