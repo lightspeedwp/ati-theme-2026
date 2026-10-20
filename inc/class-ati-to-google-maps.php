@@ -3,17 +3,13 @@
  * Tour Operator 2.x Google maps for sites migrated from Tour Operator 1.x.
  *
  * Live ATI (TO 1.x) shows a Google cluster map on destinations, tours and
- * accommodation. On TO 2.2 the same map, fed the migrated data, fails three ways:
+ * accommodation. On TO 2.2 the same map, fed the migrated data, fails two ways:
  *
- * 1. "Click here to display the map" only jumps to the top of the page. TO's
- *    lsx/map binding (Bindings::render_map_block(), render_block priority 10)
- *    emits lsx_to_map()'s bare `.lsx-map-details`, but maps.js only binds the
- *    plate when that markup sits inside a `.lsx-map` container.
- * 2. Markers without coordinates. Maps::map_output() skips a connection only
+ * 1. Markers without coordinates. Maps::map_output() skips a connection only
  *    when its `location['longitude']` is set and empty, so a location with no
  *    2.x keys renders a marker with empty coordinates, which maps.js places at
  *    0,0 and fits into the bounds. Live (1.x) leaves those regions off the map.
- * 3. Wrong zoom. lsx_to_map() reads the zoom from the cached map data, which
+ * 2. Wrong zoom. lsx_to_map() reads the zoom from the cached map data, which
  *    does not carry it, so every map falls back to 15. Live uses the post's own
  *    `location['zoom']` (Zimbabwe: 4).
  *
@@ -36,7 +32,6 @@ class ATI_TO_Google_Maps {
 	 * Register the hooks.
 	 */
 	public function register() {
-		add_filter( 'render_block', array( $this, 'wrap_map_details' ), 11, 2 );
 		add_filter( 'render_block', array( $this, 'remove_empty_map_section' ), 12, 2 );
 		add_filter( 'lsx_to_maps_args', array( $this, 'filter_map_args' ), 20, 2 );
 	}
@@ -120,27 +115,6 @@ class ATI_TO_Google_Maps {
 	}
 
 	/**
-	 * Wrap the lsx/map binding's output in the `.lsx-map` container maps.js reads.
-	 *
-	 * @param string $block_content Rendered block content.
-	 * @param array  $block         Parsed block data.
-	 * @return string
-	 */
-	public function wrap_map_details( $block_content, $block ) {
-		$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
-
-		if ( 'lsx/map' !== ( $binding['source'] ?? '' ) || ! is_string( $block_content ) ) {
-			return $block_content;
-		}
-
-		if ( false === strpos( $block_content, 'lsx-map-details' ) || preg_match( '/class="[^"]*\blsx-map\b[^-]/', $block_content ) ) {
-			return $block_content;
-		}
-
-		return '<div class="lsx-map">' . $block_content . '</div>';
-	}
-
-	/**
 	 * Leave out markers that have no coordinates, and use the post's own zoom.
 	 *
 	 * @param mixed $args    Map arguments for Maps::map_output().
@@ -184,7 +158,7 @@ class ATI_TO_Google_Maps {
 	/**
 	 * Fill the map arguments lsx_to_map() lost from Tour Operator's own cache.
 	 *
-	 * lsx_to_has_map() caches `array( 'location' => …, 'args' => … )` in the
+	 * Tour Operator's lsx_to_has_map() caches `array( 'location' => …, 'args' => … )` in the
 	 * `{post_id}_location` transient, but lsx_to_map() reads `latitude`,
 	 * `longitude` and `connections` from the top level of that array, where they
 	 * never are. Accommodation maps lose their position and tour route maps their
