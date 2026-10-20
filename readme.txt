@@ -13,6 +13,9 @@ Standalone Ollie-derived block theme for ATI Holidays. The theme implements the 
 
 == Changelog ==
 
+= 0.1.1 =
+* Namespace header, footer, main-header, top-header, single-hero and home-page-destinations-section pattern slugs as ati-theme-2026/<file>. The version bump also invalidates WordPress's cached theme pattern list, which otherwise kept the old slugs and rendered the header and footer empty.
+
 = 0.1.0 =
 * Initial standalone ATI Theme 2026 implementation.
 
