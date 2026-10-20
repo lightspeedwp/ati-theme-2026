@@ -56,7 +56,7 @@ function extractPage( { html, side } ) {
 		[ 'styles', /^(travel )?styles?$/ ],
 		[ 'type', /^(accommodation )?type$/ ],
 		[ 'location', /^(location|destinations?|country|region|regions)$/ ],
-		[ 'rooms', /^(number of )?rooms$/ ],
+		[ 'rooms', /^(number of )?(rooms|units)$/ ],
 		[ 'rating', /^rating$/ ],
 		[ 'departs', /^departs from$/ ],
 		[ 'ends', /^ends in$/ ],
@@ -87,18 +87,23 @@ function extractPage( { html, side } ) {
 	const PRINTED = [
 		'From price',
 		'Price from',
+		'From',
 		'Duration',
 		'Departs from',
 		'Ends in',
 		'Destinations',
 		'Destination',
 		'Location',
+		'Regions',
+		'Country',
+		'Region',
 		'Travel Styles',
 		'Travel Style',
 		'Style',
 		'Accommodation Type',
 		'Type',
 		'Number of rooms',
+		'Number of units',
 		'Rooms',
 		'Rating',
 		'Booking validity',
@@ -294,6 +299,20 @@ function extractPage( { html, side } ) {
 				}
 			} );
 		} else {
+			// Block-theme labelled rows: an `.lsx-info-label` (icon + "From:")
+			// beside an `.lsx-info-value` holding the bound value.
+			$$( '.lsx-info-label', card ).forEach( ( labelEl ) => {
+				const row = labelEl.parentElement || card;
+				const valueEl = $( '.lsx-info-value', row );
+
+				if ( valueEl ) {
+					add(
+						clean( labelEl.textContent ).replace( /:$/, '' ),
+						valueEl.textContent
+					);
+				}
+			} );
+
 			// Block-theme rows: a post-terms block (prefix span carries the
 			// label) or a bound paragraph whose prefix reads "Rooms: 8".
 			$$( '.wp-block-post-terms', card ).forEach( ( terms ) => {
@@ -445,6 +464,11 @@ function extractPage( { html, side } ) {
 	}
 
 	factLines.forEach( ( line ) => {
+		// LABEL_SCAN is global: matchAll() starts from its lastIndex, which the
+		// look-ahead `.test()` below leaves mid-line. Without the reset every
+		// row after a value-less one ("Rating:") is scanned from that offset
+		// and its label is skipped.
+		LABEL_SCAN.lastIndex = 0;
 		const marks = 'live' === side ? [] : [ ...line.matchAll( LABEL_SCAN ) ];
 
 		marks.forEach( ( mark, index ) => {
@@ -457,7 +481,10 @@ function extractPage( { html, side } ) {
 			let value = clean( line.slice( start, end ) );
 
 			// A bound value in its own element sits on the following line(s):
-			// "Date travelled:" / "January 1, 1970" / "–" / "January 1, 1970".
+			// "Date travelled:" / "January 1, 1970" / "–" / "January 1, 1970",
+			// "Your travel expert:" / "<name>", or a label/value pair in separate
+			// elements. One line, except a date range; the scan stops at the next
+			// label, so an empty row (a star rating) stays empty.
 			if ( ! value && index + 1 === marks.length ) {
 				const at = factLines.indexOf( line );
 				const tail = [];
@@ -472,7 +499,11 @@ function extractPage( { html, side } ) {
 					tail.push( next );
 				}
 
-				value = clean( tail.join( ' ' ) );
+				value = clean(
+					[ 'date', 'validity' ].includes( key )
+						? tail.join( ' ' )
+						: tail[ 0 ] || ''
+				);
 			}
 
 			if ( key && value && ! ( key in facts ) ) {

@@ -196,11 +196,14 @@ function compare( { type, live, dev, devIndex = {}, listing = false } ) {
 		add( 'CONTENT_DRIFT', 'h1', 'Page heading (h1)', live.h1, dev.h1 );
 	}
 
-	// Facts.
-	for ( const key of new Set( [
-		...Object.keys( live.facts ),
-		...Object.keys( dev.facts ),
-	] ) ) {
+	// Facts. Not on listings: their cards are separate on dev but part of the
+	// page on live, so live's "page facts" are really its first card's.
+	for ( const key of listing
+		? []
+		: new Set( [
+				...Object.keys( live.facts ),
+				...Object.keys( dev.facts ),
+			] ) ) {
 		const l = live.facts[ key ];
 		const d = dev.facts[ key ];
 		const label = `Fact: ${ key }`;
@@ -334,10 +337,20 @@ function compare( { type, live, dev, devIndex = {}, listing = false } ) {
 		// The places on the map: a map that renders but marks the wrong places
 		// (or none) looks fine as "present".
 		if ( live.map && dev.map && ( live.mapPlaces || [] ).length ) {
-			const devPlaces = new Set( ( dev.mapPlaces || [] ).map( norm ) );
-			const lost = live.mapPlaces.filter(
-				( place ) => ! devPlaces.has( norm( place ) )
-			);
+			// Names differ in detail ("Camp Silwane, Hwange National Park" on
+			// live, "Camp Silwane" on dev): match on the name before any comma.
+			const head = ( place ) => norm( String( place ).split( ',' )[ 0 ] );
+			const devPlaces = ( dev.mapPlaces || [] ).map( head );
+			const lost = live.mapPlaces.filter( ( place ) => {
+				const name = head( place );
+
+				return ! devPlaces.some(
+					( d ) =>
+						d &&
+						name &&
+						( d.startsWith( name ) || name.startsWith( d ) )
+				);
+			} );
 
 			if ( lost.length ) {
 				add(
@@ -497,7 +510,8 @@ function compare( { type, live, dev, devIndex = {}, listing = false } ) {
 	// Body text.
 	let similarity = 1;
 
-	if ( live.paragraphs.length ) {
+	// Not on listings, for the same reason as the facts: live's card text.
+	if ( ! listing && live.paragraphs.length ) {
 		const devText = ` ${ dev.text } `;
 		const devParas = dev.paragraphs.map( norm );
 		const missing = [];

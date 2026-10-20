@@ -55,6 +55,27 @@ const PAGES = [
 ];
 
 /**
+ * A full-page screenshot, capped in height: Chrome cannot capture very tall
+ * pages in one image ("Unable to capture screenshot"), and the top of a page
+ * shows most of what a side-by-side review needs.
+ *
+ * @param {import('@playwright/test').Page} page Page.
+ * @return {Promise<Buffer>} PNG.
+ */
+async function capture( page ) {
+	const { width, height } = await page.evaluate( () => ( {
+		width: document.documentElement.clientWidth,
+		height: document.documentElement.scrollHeight,
+	} ) );
+
+	return page.screenshot( {
+		fullPage: true,
+		clip: { x: 0, y: 0, width, height: Math.min( height, 12000 ) },
+		timeout: 30 * 1000,
+	} );
+}
+
+/**
  * Bring a page to its settled, fully-loaded state before the screenshot.
  *
  * @param {import('@playwright/test').Page} page Page.
@@ -63,15 +84,22 @@ async function settle( page ) {
 	await acceptCookies( page );
 	await scrollThrough( page );
 	await page.evaluate( () => window.scrollTo( 0, 0 ) );
-	// Lazy images finish loading after the scroll has requested them.
-	await page.waitForFunction( () =>
-		Array.from( document.images ).every( ( img ) => img.complete )
-	);
+	// Displayed images finish loading after the scroll has requested them.
+	// Images in closed menus or modals never load, so only rendered ones count,
+	// and a slow image must not cost the screenshot.
+	await page
+		.waitForFunction(
+			() =>
+				Array.from( document.images )
+					.filter( ( img ) => img.getClientRects().length )
+					.every( ( img ) => img.complete ),
+			null,
+			{ timeout: 15 * 1000 }
+		)
+		.catch( () => {} );
 }
 
 test.describe( 'Side by side with live @parity', () => {
-	test.describe.configure( { mode: 'serial' } );
-
 	for ( const target of PAGES ) {
 		test( `${ target.type }: ${ target.path }`, async ( {
 			page,
@@ -88,7 +116,7 @@ test.describe( 'Side by side with live @parity', () => {
 			await visit( target.path );
 			await settle( page );
 			await testInfo.attach( 'visual-dev.png', {
-				body: await page.screenshot( { fullPage: true } ),
+				body: await capture( page ),
 				contentType: 'image/png',
 			} );
 
@@ -115,7 +143,7 @@ test.describe( 'Side by side with live @parity', () => {
 
 			await settle( livePage );
 			await testInfo.attach( 'visual-live.png', {
-				body: await livePage.screenshot( { fullPage: true } ),
+				body: await capture( livePage ),
 				contentType: 'image/png',
 			} );
 			await testInfo.attach( 'visual.json', {
