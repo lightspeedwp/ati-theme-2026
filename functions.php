@@ -336,9 +336,10 @@ add_filter( 'lsx_to_multi_field_wrappers', 'ati_theme_2026_multi_field_wrappers'
  * @param mixed  $value     Null, or a value short-circuited by another filter.
  * @param int    $object_id Post ID.
  * @param string $meta_key  Meta key.
+ * @param bool   $single    Whether a single value was requested.
  * @return mixed
  */
-function ati_theme_2026_clean_connection_meta( $value, $object_id, $meta_key ) {
+function ati_theme_2026_clean_connection_meta( $value, $object_id, $meta_key, $single = false ) {
 	static $reading = false;
 
 	if ( null !== $value || $reading || is_admin() || ! is_string( $meta_key ) || false === strpos( $meta_key, '_to_' ) || 'best_time_to_visit' === $meta_key ) {
@@ -382,11 +383,15 @@ function ati_theme_2026_clean_connection_meta( $value, $object_id, $meta_key ) {
 		return $value;
 	}
 
-	// One meta row holding the flat list: get_metadata() returns it whole for a
-	// single read, and as the only row for a multiple read.
-	return array( array_values( array_unique( $ids ) ) );
+	$ids = array_values( array_unique( $ids ) );
+
+	// get_metadata() returns $value[0] for a single read and $value as-is for a
+	// multiple read. A single read gets the whole flat list; a multiple read gets
+	// one ID per row, as readers such as Tour Operator's schema expect (they use
+	// each row as an array key, so a nested row is a fatal error).
+	return $single ? array( $ids ) : $ids;
 }
-add_filter( 'get_post_metadata', 'ati_theme_2026_clean_connection_meta', 10, 3 );
+add_filter( 'get_post_metadata', 'ati_theme_2026_clean_connection_meta', 10, 4 );
 
 /**
  * Format review travel dates that are stored as date strings.
