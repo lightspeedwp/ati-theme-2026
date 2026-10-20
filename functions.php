@@ -592,7 +592,8 @@ function ati_theme_2026_drop_modal_gform_hooks_js( $form_string ) {
 
 	return preg_replace( '#<script\b[^>]*>\s*var gform;gform\|\|.*?</script>#s', '', $form_string, 1 );
 }
-add_filter( 'gform_get_form_filter', 'ati_theme_2026_drop_modal_gform_hooks_js', 999 );
+// After GFForms::maybe_prepend_hooks_js_script(), which prepends at 9999.
+add_filter( 'gform_get_form_filter', 'ati_theme_2026_drop_modal_gform_hooks_js', 10000 );
 
 /**
  * Restore the viewBox attribute on icon-block SVGs inside modals.

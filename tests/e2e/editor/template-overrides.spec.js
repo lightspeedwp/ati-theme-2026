@@ -67,6 +67,36 @@ test.describe( 'Site Editor overrides (read-only REST)', () => {
 		return ( await response.json() ).filter( ( item ) => ! item.theme || 'ati-theme-2026' === item.theme );
 	}
 
+	/**
+	 * Template-part slugs each navigation menu points at.
+	 *
+	 * Navigation menus are database posts (`wp_navigation`); their blocks name
+	 * template parts by slug: ollie/mega-menu `menuSlug`, core/navigation
+	 * `mobileMenuSlug` and `overlay`, and core/template-part `slug`. These
+	 * references are invisible to anything that only reads the theme files.
+	 *
+	 * @return {Promise<Map<string, string[]>>} Part slug → menus that use it.
+	 */
+	async function navigationPartRefs() {
+		const response = await api.get( '/wp-json/wp/v2/navigation?context=edit&per_page=100&status=publish&_fields=id,title,content' );
+
+		expect( response.status(), `navigation returned ${ response.status() }` ).toBe( 200 );
+
+		const refs = new Map();
+		const pattern = /"(?:menuSlug|mobileMenuSlug|overlay)":"([^"]+)"|<!-- wp:template-part \{[^}]*"slug":"([^"]+)"/g;
+
+		for ( const menu of await response.json() ) {
+			const name = `#${ menu.id } ${ menu.title?.raw || '' }`.trim();
+
+			for ( const match of ( menu.content?.raw || '' ).matchAll( pattern ) ) {
+				const slug = match[ 1 ] || match[ 2 ];
+				refs.set( slug, [ ...( refs.get( slug ) || [] ), name ] );
+			}
+		}
+
+		return refs;
+	}
+
 	test( 'templates with a database override (source=custom) — reported, goal zero', async () => {
 		const templates = await fetchAll( 'templates' );
 		const shadowed = templates.filter( ( t ) => 'custom' === t.source && t.has_theme_file ).map( ( t ) => t.slug ).sort();
@@ -83,16 +113,39 @@ test.describe( 'Site Editor overrides (read-only REST)', () => {
 
 	test( 'template parts with a database override (source=custom) — reported, goal zero', async () => {
 		const parts = await fetchAll( 'template-parts' );
+		const refs = await navigationPartRefs();
 		const shadowed = parts.filter( ( t ) => 'custom' === t.source && t.has_theme_file ).map( ( t ) => t.slug ).sort();
-		const orphans = parts.filter( ( t ) => 'custom' === t.source && ! t.has_theme_file ).map( ( t ) => t.slug ).sort();
+		const dbOnly = parts.filter( ( t ) => 'custom' === t.source && ! t.has_theme_file ).map( ( t ) => t.slug ).sort();
+
+		// A DB-only part a navigation menu uses is live, not an orphan: deleting it
+		// empties that menu item (dropdown-menu-2/-3 emptied the Travel Styles and
+		// About mega menus on dev, 2026-10-20).
+		const inUse = dbOnly.filter( ( slug ) => refs.has( slug ) ).map( ( slug ) => `${ slug } (used by ${ refs.get( slug ).join( ', ' ) })` );
+		const orphans = dbOnly.filter( ( slug ) => ! refs.has( slug ) );
 
 		test.info().annotations.push(
 			{ type: 'warning', description: `${ shadowed.length } part(s) shadowed by a DB override: ${ shadowed.join( ', ' ) || 'none' }` },
-			{ type: 'warning', description: `${ orphans.length } custom part(s) with no theme file: ${ orphans.join( ', ' ) || 'none' }` }
+			{ type: 'warning', description: `${ inUse.length } DB-only part(s) IN USE by navigation — do not delete: ${ inUse.join( ', ' ) || 'none' }` },
+			{ type: 'warning', description: `${ orphans.length } DB-only part(s) not referenced by templates' theme files or navigation menus: ${ orphans.join( ', ' ) || 'none' }` }
 		);
-		process.stderr.write( `\n  ⚠ parts with source=custom (${ shadowed.length }): ${ shadowed.join( ', ' ) || 'none' }\n  ⚠ orphan custom parts (${ orphans.length }): ${ orphans.join( ', ' ) || 'none' }\n` );
+		process.stderr.write(
+			`\n  ⚠ parts with source=custom (${ shadowed.length }): ${ shadowed.join( ', ' ) || 'none' }` +
+				`\n  ⚠ DB-only parts IN USE by navigation, do not delete (${ inUse.length }): ${ inUse.join( ', ' ) || 'none' }` +
+				`\n  ⚠ DB-only parts unreferenced by navigation (${ orphans.length }): ${ orphans.join( ', ' ) || 'none' } — also check templates and patterns before deleting\n`
+		);
 
 		expect( true ).toBe( true );
+	} );
+
+	test( 'every template part a navigation menu points at exists', async () => {
+		const parts = new Set( ( await fetchAll( 'template-parts' ) ).map( ( t ) => t.slug ) );
+		const refs = await navigationPartRefs();
+
+		const missing = [ ...refs.entries() ]
+			.filter( ( [ slug ] ) => ! parts.has( slug ) )
+			.map( ( [ slug, menus ] ) => `${ slug } (used by ${ menus.join( ', ' ) })` );
+
+		expect( missing, `navigation menus point at template parts that do not exist — those menu items render empty:\n  ${ missing.join( '\n  ' ) }` ).toEqual( [] );
 	} );
 
 	test( 'every template and part file in the theme is registered with WordPress', async () => {

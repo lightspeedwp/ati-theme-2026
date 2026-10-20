@@ -119,7 +119,8 @@ test.describe( 'Single templates', () => {
 
 		await visit( target );
 
-		await expect( mainContent( page ).locator( 'h1' ) ).toBeVisible();
+		// The name is the hero's h1, which sits above <main> like every single template's.
+		await expect( page.locator( 'h1' ) ).toBeVisible();
 		expect(
 			await mainContent( page ).locator( 'a[href^="tel:"], a[href^="mailto:"]' ).count(),
 			'a team member page with no phone or email'

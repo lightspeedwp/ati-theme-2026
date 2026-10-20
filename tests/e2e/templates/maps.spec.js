@@ -97,9 +97,6 @@ test.describe( 'Google maps', () => {
 				expect( data.lat, 'the map centres on Tour Operator\'s Cape Town default: the post has no latitude/longitude' ).not.toBe( TO_DEFAULT_LAT );
 			}
 
-			await plate.scrollIntoViewIfNeeded();
-			const before = await page.evaluate( () => window.scrollY );
-
 			await plate.click();
 
 			await expect(
@@ -107,9 +104,11 @@ test.describe( 'Google maps', () => {
 				'clicking the plate did not load a Google map'
 			).toBeVisible( { timeout: 20 * 1000 } );
 
-			const after = await page.evaluate( () => window.scrollY );
-
-			expect( Math.abs( after - before ), 'clicking the plate scrolled the page (the href="#" was followed)' ).toBeLessThan( 50 );
+			// The regression is the `href="#"` being followed: the page jumps to the
+			// top and the map is scrolled out of view. (Comparing scroll offsets
+			// around the click is unreliable: click() may itself scroll the plate.)
+			expect( await page.evaluate( () => window.scrollY ), 'clicking the plate jumped to the top of the page' ).toBeGreaterThan( 0 );
+			await expect( page.locator( '.lsx-map-preview' ).first(), 'the map is no longer on screen after the click' ).toBeInViewport();
 		} );
 	}
 } );
