@@ -326,34 +326,19 @@ function ati_theme_2026_link_contact_details( $block_content, $block ) {
 }
 add_filter( 'render_block', 'ati_theme_2026_link_contact_details', 35, 2 );
 
-/**
- * Wrap Tour Operator's Google map output in the `.lsx-map` container its JS needs.
- *
- * Bindings::render_map_block() (render_block, priority 10) replaces the
- * "Map Details" group with lsx_to_map()'s bare `.lsx-map-details` markup. TO's
- * maps.js only acts when a `.lsx-map` exists — it reads `.lsx-map .lsx-map-details`
- * and binds the "Click here to display the map" plate inside the same
- * `.lsx-location-wrapper` — so without the container the plate's `href="#"`
- * just jumps to the top of the page. Same defect is open on Southern
- * Destinations (TO 2.2 dead map click).
- *
- * @param string $block_content Rendered block content.
- * @param array  $block         Parsed block data.
- * @return string
+/*
+ * Tour Operator 2.x Google maps on content migrated from Tour Operator 1.x: the
+ * `.lsx-map` container, markers without coordinates, and the post's own zoom.
+ * See inc/class-ati-to-google-maps.php. The coordinates themselves are migrated
+ * once with `wp ati-maps migrate-locations`.
  */
-function ati_theme_2026_wrap_map_details( $block_content, $block ) {
-	$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
-	if ( 'lsx/map' !== ( $binding['source'] ?? '' ) || ! is_string( $block_content ) ) {
-		return $block_content;
-	}
+require_once get_theme_file_path( 'inc/class-ati-to-google-maps.php' );
+( new ATI_TO_Google_Maps() )->register();
 
-	if ( false === strpos( $block_content, 'lsx-map-details' ) || preg_match( '/class="[^"]*\blsx-map\b[^-]/', $block_content ) ) {
-		return $block_content;
-	}
-
-	return '<div class="lsx-map">' . $block_content . '</div>';
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require_once get_theme_file_path( 'inc/class-ati-to-maps-location-migration.php' );
+	WP_CLI::add_command( 'ati-maps', 'ATI_TO_Maps_Location_Migration' );
 }
-add_filter( 'render_block', 'ati_theme_2026_wrap_map_details', 11, 2 );
 
 /**
  * Prevent the Tour Operator plugin from seeding its own template parts into
