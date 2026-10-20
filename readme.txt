@@ -13,6 +13,35 @@ Standalone Ollie-derived block theme for ATI Holidays. The theme implements the 
 
 == Changelog ==
 
+= 0.1.4 =
+* Fix: Google maps on destinations, regions, tours and accommodation show the right places, as on live (Tour Operator 1.x). See inc/class-ati-to-google-maps.php:
+  * Places without coordinates are left off the map instead of being drawn at 0,0.
+  * Accommodation maps keep their position and tour maps their itinerary stops (Tour Operator 2.2 lost them reading its own cache).
+  * Maps use the post's own zoom (Tour Operator 2.2 fell back to 15).
+  * A tour, accommodation or destination with no map shows no map section, plate or Map menu item.
+  * Upstream: TO-218.
+  * The `.lsx-map` container fix from 0.1.3 moves into the same class.
+* New: `wp ati-maps migrate-locations [--apply]` copies 1.x `location[lat|long]` to the 2.x `latitude|longitude` keys and clears Tour Operator's cached map data. Run once per environment migrated from 1.x.
+
+= 0.1.3 =
+* Fix: "Click here to display the map" now opens the Google map on destinations, regions, tours and accommodation. Tour Operator 2.2 outputs the map data without the `.lsx-map` container its maps.js needs, so the click only jumped to the top of the page.
+* Fix: the duplicate Gravity Forms hooks script is now removed wherever the form renders, not only in wp_footer (Tour Operator renders the enquiry modal during the page body), ending the "Unexpected token ')'" error.
+
+= 0.1.2 =
+* Fix: accommodation and review pages no longer crash on Tour Operator connections (connection data migrated; draft connections are left out of connection lists instead of being reshaped in meta).
+* Fix: one banner landmark per page; the top bar is no longer a <header>.
+* Fix: team pages have a single <h1>, and team phone numbers and emails are tel:/mailto: links.
+* Fix: the team contact card skips draft team members.
+* Fix: the review "Trip details" heading no longer skips a level.
+* Fix: slider arrows no longer push the page wider than the screen below 1400px.
+* Fix: top-bar links and the currency menu toggle meet the 24px minimum target size.
+* Fix: the enquiry modal no longer prints a broken duplicate of the Gravity Forms hooks script.
+* Search with no results now shows search-appropriate copy.
+* Remove the unused legacy header pattern and template part.
+
+= 0.1.1 =
+* Namespace header, footer, main-header, top-header, single-hero and home-page-destinations-section pattern slugs as ati-theme-2026/<file>. The version bump also invalidates WordPress's cached theme pattern list, which otherwise kept the old slugs and rendered the header and footer empty.
+
 = 0.1.0 =
 * Initial standalone ATI Theme 2026 implementation.
 

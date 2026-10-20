@@ -7,7 +7,7 @@ Description: Standalone Ollie-derived block theme for ATI Holidays, using the AT
 Requires at least: 6.9
 Tested up to: 6.9
 Requires PHP: 7.3
-Version: 0.1.0
+Version: 0.1.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: ati-theme-2026
@@ -37,6 +37,21 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 
 .lsx-to-slider .slick-next {
 	right: -2rem !important;
+}
+
+/*
+ * The sliders are wide-aligned (1320px), so arrows 2rem outside them need a
+ * viewport of about 1400px. Below that they sat past the screen edge and the
+ * page scrolled sideways; keep them on the slider's edge instead.
+ */
+@media (max-width: 1400px) {
+	.lsx-to-slider .slick-prev {
+		left: 0 !important;
+	}
+
+	.lsx-to-slider .slick-next {
+		right: 0 !important;
+	}
 }
 
 /* Remove default arrows */
@@ -301,6 +316,24 @@ Tags: block-patterns, block-styles, full-site-editing, template-editing, transla
 	height: var(--wp--preset--spacing--20);
 }
 
+/*
+ * Top bar controls: at least 24x24px to tap (WCAG 2.5.8). The links are
+ * small text (email measured 15px tall, currency 21px, its submenu arrow 8px);
+ * extend the hit area without changing how the text looks.
+ */
+.ati-top-header a:not(.wp-block-social-link-anchor),
+.ati-top-header .wp-block-navigation-item__content {
+	display: inline-flex;
+	align-items: center;
+	min-height: 24px;
+}
+
+.ati-top-header .wp-block-navigation .wp-block-navigation__submenu-icon {
+	min-width: 24px;
+	min-height: 24px;
+	justify-content: center;
+}
+
 
 /* ========================================================================== */
 
@@ -521,6 +554,93 @@ ul.lsx-not_included-list li svg {
 @-moz-document url-prefix() {
 	.wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
 		background-image: url('assets/icons/sorting-chevron.svg');
+	}
+}
+
+/* === FacetWP Pager === */
+/* Styles the FacetWP pager facet (.facetwp-type-pager > .facetwp-pager) to match
+   the core query-pagination look defined in theme.json (core/query-pagination*).
+   Needed because FacetWP's pager markup is not a core block, so theme.json block
+   styles don't reach it. Uses FacetWP's own block so pagination refreshes via AJAX. */
+
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager {
+	margin-bottom: 0 !important;
+}
+
+.wp-block-facetwp-facet .facetwp-pager {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: var(--wp--preset--spacing--10);
+}
+
+/* Page links — mirror core .page-numbers */
+.wp-block-facetwp-facet .facetwp-page {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2rem;
+	min-height: 2.1rem;
+	padding: 0.25rem 0.5rem;
+	line-height: 1.4;
+	text-decoration: none;
+	border: 2px solid var(--wp--preset--color--accent-500);
+	border-radius: var(--wp--preset--border-radius--100);
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--accent-500);
+	box-shadow: none;
+	cursor: pointer;
+	transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.wp-block-facetwp-facet .facetwp-page:hover {
+	background-color: var(--wp--preset--color--accent-500);
+	color: var(--wp--preset--color--base);
+}
+
+/* Current page — mirror core .page-numbers.current */
+.wp-block-facetwp-facet .facetwp-page.active {
+	background-color: var(--wp--preset--color--accent-500);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--accent-500);
+	cursor: default;
+}
+
+/* Ellipsis — mirror core .page-numbers.dots */
+.wp-block-facetwp-facet .facetwp-page.dots,
+.wp-block-facetwp-facet .facetwp-page.dots:hover {
+	min-width: auto;
+	min-height: auto;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--wp--preset--color--contrast);
+	cursor: default;
+}
+
+/* Prev / Next — wider sides than numbers, but same vertical padding so the
+   pill height matches the number buttons exactly */
+.wp-block-facetwp-facet .facetwp-page.prev,
+.wp-block-facetwp-facet .facetwp-page.next {
+	min-width: auto;
+	padding: 0.25rem 16px;
+}
+
+/* Mobile: show only Prev / Next, hide the page numbers */
+@media (max-width: 781px) {
+	.wp-block-facetwp-facet .facetwp-page {
+		display: none;
+	}
+
+	.wp-block-facetwp-facet .facetwp-page.prev,
+	.wp-block-facetwp-facet .facetwp-page.next {
+		display: inline-flex;
+	}
+
+	/* Push Prev to the left and Next to the right */
+	.wp-block-facetwp-facet .facetwp-pager {
+		justify-content: space-between;
 	}
 }
 
@@ -1129,6 +1249,21 @@ body .facetwp-flyout {
 /* LSX Tour Operator — Secondary Sticky Menu                                  */
 
 /* ========================================================================== */
+
+/* ── Section wrappers ─────────────────────────────────────────────────────── */
+
+/*
+ * Tour Operator 2.2 wraps every sticky-menu section in a plain div. That div,
+ * not the section, is now the flow-layout child, so it picks up the parent's
+ * blockGap and opens a gap between full-width sections. The section style
+ * variations already set margin 0; apply it to the wrapper too. flow-root
+ * stops margins inside a section (e.g. an empty map details block) from
+ * collapsing through the padding-less wrapper into the gap.
+ */
+.wp-site-blocks .lsx-to-sticky-menu-section-wrapper {
+	display: flow-root;
+	margin-block: 0;
+}
 
 /* ── Desktop sticky nav ──────────────────────────────────────────────────── */
 

@@ -6,16 +6,16 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-exit;
+	exit;
 }
 
 /**
  * Set up theme defaults and editor support.
  */
 function ati_theme_2026_setup() {
-load_theme_textdomain( 'ati-theme-2026', get_template_directory() . '/languages' );
-add_editor_style( 'style.css' );
-remove_theme_support( 'core-block-patterns' );
+	load_theme_textdomain( 'ati-theme-2026', get_template_directory() . '/languages' );
+	add_editor_style( 'style.css' );
+	remove_theme_support( 'core-block-patterns' );
 }
 add_action( 'after_setup_theme', 'ati_theme_2026_setup' );
 
@@ -23,43 +23,43 @@ add_action( 'after_setup_theme', 'ati_theme_2026_setup' );
  * Enqueue front-end assets.
  */
 function ati_theme_2026_enqueue_scripts() {
-$theme = wp_get_theme();
+	$theme = wp_get_theme();
 
-wp_enqueue_style(
-'ati-theme-2026',
-get_stylesheet_uri(),
-array(),
-$theme->get( 'Version' )
-);
+	wp_enqueue_style(
+		'ati-theme-2026',
+		get_stylesheet_uri(),
+		array(),
+		$theme->get( 'Version' )
+	);
 
-$faq_script = get_theme_file_path( 'assets/js/faq-accordion.js' );
-$responsive_image_map_script = get_theme_file_path( 'assets/js/responsive-image-maps.js' );
+	$faq_script                  = get_theme_file_path( 'assets/js/faq-accordion.js' );
+	$responsive_image_map_script = get_theme_file_path( 'assets/js/responsive-image-maps.js' );
 
-if ( file_exists( $faq_script ) ) {
-wp_enqueue_script(
-'ati-theme-2026-faq-accordion',
-get_theme_file_uri( 'assets/js/faq-accordion.js' ),
-array(),
-$theme->get( 'Version' ),
-array(
-'strategy'  => 'defer',
-'in_footer' => true,
-)
-);
-}
+	if ( file_exists( $faq_script ) ) {
+		wp_enqueue_script(
+			'ati-theme-2026-faq-accordion',
+			get_theme_file_uri( 'assets/js/faq-accordion.js' ),
+			array(),
+			$theme->get( 'Version' ),
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+	}
 
-if ( file_exists( $responsive_image_map_script ) ) {
-wp_enqueue_script(
-'ati-theme-2026-responsive-image-maps',
-get_theme_file_uri( 'assets/js/responsive-image-maps.js' ),
-array(),
-$theme->get( 'Version' ),
-array(
-'strategy'  => 'defer',
-'in_footer' => true,
-)
-);
-}
+	if ( file_exists( $responsive_image_map_script ) ) {
+		wp_enqueue_script(
+			'ati-theme-2026-responsive-image-maps',
+			get_theme_file_uri( 'assets/js/responsive-image-maps.js' ),
+			array(),
+			$theme->get( 'Version' ),
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'ati_theme_2026_enqueue_scripts' );
 
@@ -71,50 +71,50 @@ add_action( 'wp_enqueue_scripts', 'ati_theme_2026_enqueue_scripts' );
  * @return string
  */
 function ati_theme_2026_render_button_links( $block_content, $block ) {
-if ( empty( $block_content ) || empty( $block['blockName'] ) || 'core/paragraph' !== $block['blockName'] ) {
-return $block_content;
-}
+	if ( empty( $block_content ) || empty( $block['blockName'] ) || 'core/paragraph' !== $block['blockName'] ) {
+		return $block_content;
+	}
 
-$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
-if ( empty( $binding['source'] ) || 'lsx/post-connection' !== $binding['source'] ) {
-return $block_content;
-}
+	$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
+	if ( empty( $binding['source'] ) || 'lsx/post-connection' !== $binding['source'] ) {
+		return $block_content;
+	}
 
-if ( false === strpos( $block_content, 'is-style-ati-button' ) ) {
-return $block_content;
-}
+	if ( false === strpos( $block_content, 'is-style-ati-button' ) ) {
+		return $block_content;
+	}
 
-preg_match_all( '/<a\b[^>]*>.*?<\/a>/si', $block_content, $matches );
-if ( empty( $matches[0] ) || count( $matches[0] ) < 2 ) {
-return $block_content;
-}
+	preg_match_all( '/<a\b[^>]*>.*?<\/a>/si', $block_content, $matches );
+	if ( empty( $matches[0] ) || count( $matches[0] ) < 2 ) {
+		return $block_content;
+	}
 
-$links_html = implode( '', array_map( 'trim', $matches[0] ) );
+	$links_html = implode( '', array_map( 'trim', $matches[0] ) );
 
-$block_content = preg_replace_callback(
-'/<p\b([^>]*)class="([^"]*)"([^>]*)>/i',
-static function ( $matches ) {
-$classes = preg_split( '/\s+/', trim( $matches[2] ) );
-if ( ! in_array( 'ati-button-links', $classes, true ) ) {
-$classes[] = 'ati-button-links';
-}
+	$block_content = preg_replace_callback(
+		'/<p\b([^>]*)class="([^"]*)"([^>]*)>/i',
+		static function ( $matches ) {
+			$classes = preg_split( '/\s+/', trim( $matches[2] ) );
+			if ( ! in_array( 'ati-button-links', $classes, true ) ) {
+				$classes[] = 'ati-button-links';
+			}
 
-return '<p' . $matches[1] . 'class="' . esc_attr( implode( ' ', array_filter( $classes ) ) ) . '"' . $matches[3] . '>';
-},
-$block_content,
-1
-);
+			return '<p' . $matches[1] . 'class="' . esc_attr( implode( ' ', array_filter( $classes ) ) ) . '"' . $matches[3] . '>';
+		},
+		$block_content,
+		1
+	);
 
-$block_content = preg_replace_callback(
-'/(<p\b[^>]*>)(.*?)(<\/p>)/si',
-static function ( $matches ) use ( $links_html ) {
-return $matches[1] . $links_html . $matches[3];
-},
-$block_content,
-1
-);
+	$block_content = preg_replace_callback(
+		'/(<p\b[^>]*>)(.*?)(<\/p>)/si',
+		static function ( $matches ) use ( $links_html ) {
+			return $matches[1] . $links_html . $matches[3];
+		},
+		$block_content,
+		1
+	);
 
-return $block_content;
+	return $block_content;
 }
 add_filter( 'render_block', 'ati_theme_2026_render_button_links', 30, 2 );
 
@@ -146,7 +146,7 @@ define(
  * @return string
  */
 function ati_theme_2026_build_star_markup( $full_count, $empty_count ) {
-	$label  = sprintf(
+	$label = sprintf(
 		/* translators: %1$d filled, %2$d total */
 		_n( '%1$d star out of %2$d', '%1$d stars out of %2$d', $full_count, 'ati-theme-2026' ),
 		$full_count,
@@ -204,83 +204,168 @@ add_filter( 'lsx_to_custom_field_query', 'ati_theme_2026_filter_rating_stars', 1
  * @return string
  */
 function ati_theme_2026_render_rating_stars( $block_content, $block ) {
-if ( empty( $block_content ) || empty( $block['blockName'] ) || 'core/paragraph' !== $block['blockName'] ) {
-return $block_content;
-}
-
-$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
-if ( empty( $binding['source'] ) || 'lsx/post-meta' !== $binding['source'] || empty( $binding['args']['key'] ) || 'rating' !== $binding['args']['key'] ) {
-return $block_content;
-}
-
-// Prefer an authoritative count from post meta so we are not dependent on
-// whatever survived wp_kses_post() sanitisation in the bound HTML.
-$post_id = get_the_ID();
-if ( $post_id ) {
-	$raw_rating = (int) get_post_meta( $post_id, 'rating', true );
-	if ( $raw_rating > 0 ) {
-		$full_count  = min( $raw_rating, 5 );
-		$empty_count = max( 0, 5 - $full_count );
-	}
-}
-
-// Fallback: count star images still present in the HTML (non-binding contexts).
-if ( ! isset( $full_count ) ) {
-	$full_count  = preg_match_all( '/rating-star-full\.png/i', $block_content );
-	$empty_count = preg_match_all( '/rating-star-empty\.png/i', $block_content );
-
-	if ( 0 === $full_count + $empty_count ) {
-		$full_count  = preg_match_all( '/\bfa-star\b(?!-o)/i', $block_content );
-		$empty_count = preg_match_all( '/\bfa-star-o\b/i', $block_content );
-	}
-
-	if ( 0 === $full_count + $empty_count ) {
+	if ( empty( $block_content ) || empty( $block['blockName'] ) || 'core/paragraph' !== $block['blockName'] ) {
 		return $block_content;
 	}
-}
 
-$stars_markup = ati_theme_2026_build_star_markup( $full_count, $empty_count );
+	$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
+	if ( empty( $binding['source'] ) || 'lsx/post-meta' !== $binding['source'] || empty( $binding['args']['key'] ) || 'rating' !== $binding['args']['key'] ) {
+		return $block_content;
+	}
 
-// Replace an existing (possibly empty) .ati-rating-stars span – left by the
-// lsx_to_custom_field_query filter after wp_kses_post() stripped its SVG children.
-if ( false !== strpos( $block_content, 'ati-rating-stars' ) ) {
-	return preg_replace(
-		'/<span[^>]+class="[^"]*ati-rating-stars[^"]*"[^>]*>.*?<\/span>/si',
-		$stars_markup,
-		$block_content,
-		1
-	);
-}
+	// Prefer an authoritative count from post meta so we are not dependent on
+	// whatever survived wp_kses_post() sanitisation in the bound HTML.
+	$post_id = get_the_ID();
+	if ( $post_id ) {
+		$raw_rating = (int) get_post_meta( $post_id, 'rating', true );
+		if ( $raw_rating > 0 ) {
+			$full_count  = min( $raw_rating, 5 );
+			$empty_count = max( 0, 5 - $full_count );
+		}
+	}
 
-// Fallback: replace figure/img star elements, preserving any prefix text.
-if ( false !== strpos( $block_content, 'rating-star' ) ) {
-	return preg_replace(
-		'/(?:<figure[^>]*>.*?rating-star-(?:full|empty)\.png[^>]*\/?>(?:.*?<\/figure>)?\s*)+/si',
-		$stars_markup,
-		$block_content,
-		1
-	);
-}
+	// Fallback: count star images still present in the HTML (non-binding contexts).
+	if ( ! isset( $full_count ) ) {
+		$full_count  = preg_match_all( '/rating-star-full\.png/i', $block_content );
+		$empty_count = preg_match_all( '/rating-star-empty\.png/i', $block_content );
 
-// Fallback: replace Font Awesome star icons (tour post type).
-if ( false !== strpos( $block_content, 'fa-star' ) ) {
-	return preg_replace(
-		'/(?:<i[^>]+class="[^"]*fa[^"]*fa-star[^"]*"[^>]*>.*?<\/i>\s*)+/si',
-		$stars_markup,
-		$block_content,
-		1
-	);
-}
+		if ( 0 === $full_count + $empty_count ) {
+			$full_count  = preg_match_all( '/\bfa-star\b(?!-o)/i', $block_content );
+			$empty_count = preg_match_all( '/\bfa-star-o\b/i', $block_content );
+		}
 
-return $block_content;
+		if ( 0 === $full_count + $empty_count ) {
+			return $block_content;
+		}
+	}
+
+	$stars_markup = ati_theme_2026_build_star_markup( $full_count, $empty_count );
+
+	// The grading body after the stars, as Tour Operator 1.x printed it: "(TGCSA)".
+	$rating_type = $post_id ? trim( (string) get_post_meta( $post_id, 'rating_type', true ) ) : '';
+	if ( '' !== $rating_type && 0 !== stripos( $rating_type, 'Unspecified' ) ) {
+		$stars_markup .= ' <small class="ati-rating-type">(' . esc_html( $rating_type ) . ')</small>';
+	}
+
+	// Replace an existing (possibly empty) .ati-rating-stars span – left by the
+	// lsx_to_custom_field_query filter after wp_kses_post() stripped its SVG children.
+	if ( false !== strpos( $block_content, 'ati-rating-stars' ) ) {
+		return preg_replace(
+			'/<span[^>]+class="[^"]*ati-rating-stars[^"]*"[^>]*>.*?<\/span>/si',
+			$stars_markup,
+			$block_content,
+			1
+		);
+	}
+
+	// Fallback: replace figure/img star elements, preserving any prefix text.
+	if ( false !== strpos( $block_content, 'rating-star' ) ) {
+		return preg_replace(
+			'/(?:<figure[^>]*>.*?rating-star-(?:full|empty)\.png[^>]*\/?>(?:.*?<\/figure>)?\s*)+/si',
+			$stars_markup,
+			$block_content,
+			1
+		);
+	}
+
+	// Fallback: replace Font Awesome star icons (tour post type).
+	if ( false !== strpos( $block_content, 'fa-star' ) ) {
+		return preg_replace(
+			'/(?:<i[^>]+class="[^"]*fa[^"]*fa-star[^"]*"[^>]*>.*?<\/i>\s*)+/si',
+			$stars_markup,
+			$block_content,
+			1
+		);
+	}
+
+	return $block_content;
 }
 add_filter( 'render_block', 'ati_theme_2026_render_rating_stars', 35, 2 );
 
 /**
- * Prevent the Tour Operator plugin from seeding its own modal-accommodation
- * template part into the database. Without this, the plugin re-creates the
- * post from its own plugin file on every init after a Site Editor reset,
- * overriding the theme's parts/modal-accommodation.html.
+ * Link bound contact details: phone numbers to tel:, emails to mailto:.
+ *
+ * Tour Operator's lsx/post-meta binding prints contact_number and
+ * contact_email as plain text, so a visitor cannot tap to call or email a team
+ * member. Wraps the bound value (as escaped in the rendered paragraph) in a
+ * link; the "Call: " / "Email: " prefix stays outside it.
+ *
+ * @param string $block_content Rendered block content.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function ati_theme_2026_link_contact_details( $block_content, $block ) {
+	if ( empty( $block_content ) || 'core/paragraph' !== ( $block['blockName'] ?? '' ) ) {
+		return $block_content;
+	}
+
+	$key = $block['attrs']['metadata']['bindings']['content']['args']['key'] ?? '';
+	if ( ! in_array( $key, array( 'contact_number', 'contact_email' ), true ) || false !== strpos( $block_content, '<a ' ) ) {
+		return $block_content;
+	}
+
+	$value = trim( (string) get_post_meta( get_the_ID(), $key, true ) );
+	if ( '' === $value ) {
+		return $block_content;
+	}
+
+	if ( 'contact_email' === $key ) {
+		if ( ! is_email( $value ) ) {
+			return $block_content;
+		}
+		$href = 'mailto:' . $value;
+	} else {
+		$digits = preg_replace( '/\(0\)|[^\d+]/', '', $value );
+		if ( strlen( $digits ) < 6 ) {
+			return $block_content;
+		}
+		$href = 'tel:' . $digits;
+	}
+
+	$text = esc_html( $value );
+	$pos  = strpos( $block_content, $text );
+	if ( false === $pos ) {
+		return $block_content;
+	}
+
+	return substr_replace( $block_content, '<a href="' . esc_url( $href, array( 'tel', 'mailto' ) ) . '">' . $text . '</a>', $pos, strlen( $text ) );
+}
+add_filter( 'render_block', 'ati_theme_2026_link_contact_details', 35, 2 );
+
+/*
+ * Tour Operator 2.x Google maps on content migrated from Tour Operator 1.x: markers
+ * without coordinates and the post's own zoom. The `.lsx-map` container maps.js
+ * needs is the Map Container block's class in the templates.
+ * See inc/class-ati-to-google-maps.php. The coordinates themselves are migrated
+ * once with `wp ati-maps migrate-locations`.
+ */
+require_once get_theme_file_path( 'inc/class-ati-to-google-maps.php' );
+( new ATI_TO_Google_Maps() )->register();
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require_once get_theme_file_path( 'inc/class-ati-to-maps-location-migration.php' );
+	WP_CLI::add_command( 'ati-maps', 'ATI_TO_Maps_Location_Migration' );
+}
+
+/*
+ * Tour Operator 1.x / WETU field values on 2.x: multi-value fields (spoken
+ * languages, special interests …) are split into one row per value with
+ * `wp ati-meta split-multi-values`, then shown title-cased as on live.
+ */
+require_once get_theme_file_path( 'inc/class-ati-to-multi-value-labels.php' );
+( new ATI_TO_Multi_Value_Labels() )->register();
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require_once get_theme_file_path( 'inc/class-ati-to-meta-migration.php' );
+	WP_CLI::add_command( 'ati-meta', 'ATI_TO_Meta_Migration' );
+}
+
+/**
+ * Prevent the Tour Operator plugin from seeding its own template parts into
+ * the database. Without this, the plugin re-creates each post from its own
+ * plugin file on every init after a Site Editor reset, overriding the theme's
+ * parts/*.html. The theme ships its own modals and its fast facts under the
+ * `ati-` prefix, so none of the plugin's seeds are wanted.
  */
 add_filter(
 	'lsx_to_template_parts',
@@ -288,9 +373,244 @@ add_filter(
 		unset( $template_parts['modal-accommodation'] );
 		unset( $template_parts['modal-tour'] );
 		unset( $template_parts['modal-destination'] );
+		unset( $template_parts['modal-enquiry'] );
+		unset( $template_parts['fast-facts-tour'] );
+		unset( $template_parts['fast-facts-accommodation'] );
+		unset( $template_parts['fast-facts-destination'] );
 		return $template_parts;
 	}
 );
+
+/**
+ * Register wrappers that hold more than one Tour Operator meta field.
+ *
+ * Tour Operator hides any block whose class matches `lsx-<key>-wrapper` when
+ * the `<key>` meta is empty. The specials "Booking Validity" row wraps two
+ * fields (start and end date) and no `booking_validity` meta exists, so the
+ * row was always hidden. Listing its fields here keeps the row while either
+ * date is set.
+ *
+ * @param array $wrappers Wrapper key => meta keys it contains.
+ * @return array
+ */
+function ati_theme_2026_multi_field_wrappers( $wrappers ) {
+	$wrappers['booking-validity'] = array( 'booking_validity_start', 'booking_validity_end' );
+	return $wrappers;
+}
+add_filter( 'lsx_to_multi_field_wrappers', 'ati_theme_2026_multi_field_wrappers' );
+
+/**
+ * Placeholder Tour Operator receives in place of an unpublished connection.
+ */
+const ATI_THEME_2026_OMITTED_CONNECTION = '<!--ati-omitted-connection-->';
+
+/**
+ * Leave unpublished posts out of Tour Operator connection lists.
+ *
+ * Tour Operator's lsx/post-connection binding links every stored ID with no
+ * status check, so a connection to a draft renders as a link (or modal trigger)
+ * to a page a visitor cannot see. The item is swapped for a placeholder rather
+ * than an empty string because Tour Operator has already chosen the separator
+ * by then; ati_theme_2026_drop_omitted_connections() removes each placeholder
+ * together with its separator. Same approach as Southern Destinations.
+ *
+ * @param string $html    The rendered item.
+ * @param int    $post_id The connected post.
+ * @return string
+ */
+function ati_theme_2026_omit_unpublished_connection( $html, $post_id ) {
+	if ( 'publish' !== get_post_status( (int) $post_id ) ) {
+		return ATI_THEME_2026_OMITTED_CONNECTION;
+	}
+
+	return $html;
+}
+add_filter( 'lsx_to_connected_list_item', 'ati_theme_2026_omit_unpublished_connection', 20, 2 );
+
+/**
+ * Remove omitted connection placeholders, and one separator each, from a list.
+ *
+ * Matching the placeholder rather than splitting on ', ' keeps a title that
+ * itself contains a comma intact.
+ *
+ * @param mixed $value The joined connection list.
+ * @return mixed
+ */
+function ati_theme_2026_drop_omitted_connections( $value ) {
+	if ( ! is_string( $value ) || false === strpos( $value, ATI_THEME_2026_OMITTED_CONNECTION ) ) {
+		return $value;
+	}
+
+	$value = str_replace( ATI_THEME_2026_OMITTED_CONNECTION . ', ', '', $value );
+	$value = str_replace( ', ' . ATI_THEME_2026_OMITTED_CONNECTION, '', $value );
+
+	return str_replace( ATI_THEME_2026_OMITTED_CONNECTION, '', $value );
+}
+add_filter( 'lsx_to_post_connections_value', 'ati_theme_2026_drop_omitted_connections', 5 );
+
+/**
+ * Format review travel dates that are stored as date strings.
+ *
+ * The migrated reviews store date_of_visit_start/end as date strings, not
+ * timestamps. Tour Operator Reviews formats the bound value with
+ * date_i18n( $format, (int) $value ), which turns a string into a timestamp
+ * near zero and prints January 1, 1970. Runs after that filter (priority 5)
+ * and re-formats any non-numeric value with strtotime(), as the plugin's own
+ * lsx_to_review_dates() template tag does.
+ *
+ * @param string $html     Filtered output.
+ * @param string $meta_key Meta key.
+ * @param mixed  $value    Raw meta value.
+ * @param string $before   HTML before the output.
+ * @param string $after    HTML after the output.
+ * @return string
+ */
+function ati_theme_2026_review_travel_dates( $html, $meta_key = '', $value = '', $before = '', $after = '' ) {
+	if ( ! in_array( $meta_key, array( 'date_of_visit_start', 'date_of_visit_end' ), true ) || ! is_string( $value ) || '' === $value || is_numeric( $value ) ) {
+		return $html;
+	}
+
+	$timestamp = strtotime( $value );
+	if ( false === $timestamp ) {
+		return $html;
+	}
+
+	return $before . date_i18n( get_option( 'date_format' ), $timestamp ) . $after;
+}
+add_filter( 'lsx_to_custom_field_query', 'ati_theme_2026_review_travel_dates', 6, 5 );
+
+/**
+ * Let Gravity Forms markup survive Tour Operator's modal sanitising.
+ *
+ * Tour Operator echoes every modal through wp_kses() with the "post" allowlist
+ * plus a few modal tags. That list has no form controls, so the enquiry form in
+ * the enquiry modal lost its form id, its button types and its data attributes,
+ * and Gravity Forms' JavaScript never initialised the form.
+ *
+ * wp_kses() does not re-filter an array allowlist, so the widening has to go on
+ * the "post" context Tour Operator builds its list from. It is only hooked while
+ * Tour Operator prints its modals (wp_footer priorities 10 and 11), so post
+ * sanitising elsewhere is unchanged.
+ *
+ * @param array[] $tags    Allowed tags and attributes.
+ * @param string  $context Context name.
+ * @return array[]
+ */
+function ati_theme_2026_modal_allowed_html( $tags, $context ) {
+	if ( 'post' !== $context ) {
+		return $tags;
+	}
+
+	$common = array(
+		'id'               => true,
+		'class'            => true,
+		'name'             => true,
+		'style'            => true,
+		'title'            => true,
+		'role'             => true,
+		'tabindex'         => true,
+		'disabled'         => true,
+		'data-*'           => true,
+		'aria-describedby' => true,
+		'aria-invalid'     => true,
+		'aria-required'    => true,
+		'aria-label'       => true,
+		'aria-labelledby'  => true,
+		'aria-live'        => true,
+		'aria-hidden'      => true,
+		'aria-atomic'      => true,
+	);
+	$field  = $common + array(
+		'type'         => true,
+		'value'        => true,
+		'placeholder'  => true,
+		'required'     => true,
+		'readonly'     => true,
+		'autocomplete' => true,
+		'maxlength'    => true,
+		'min'          => true,
+		'max'          => true,
+		'step'         => true,
+		'pattern'      => true,
+		'size'         => true,
+		'checked'      => true,
+		'multiple'     => true,
+		'accept'       => true,
+	);
+
+	$tags['form']     = $common + array(
+		'action'     => true,
+		'method'     => true,
+		'enctype'    => true,
+		'target'     => true,
+		'novalidate' => true,
+	);
+	$tags['input']    = $field;
+	$tags['button']   = $field;
+	$tags['select']   = $field;
+	$tags['textarea'] = $field + array(
+		'rows' => true,
+		'cols' => true,
+	);
+	$tags['option']   = $common + array(
+		'value'    => true,
+		'selected' => true,
+	);
+	$tags['optgroup'] = $common + array( 'label' => true );
+	$tags['label']    = ( $tags['label'] ?? array() ) + $common + array( 'for' => true );
+	$tags['fieldset'] = ( $tags['fieldset'] ?? array() ) + $common;
+	$tags['legend']   = ( $tags['legend'] ?? array() ) + $common;
+	$tags['div']      = ( $tags['div'] ?? array() ) + $common;
+	$tags['span']     = ( $tags['span'] ?? array() ) + $common;
+
+	return $tags;
+}
+add_action(
+	'wp_footer',
+	function () {
+		add_filter( 'wp_kses_allowed_html', 'ati_theme_2026_modal_allowed_html', 10, 2 );
+	},
+	9
+);
+add_action(
+	'wp_footer',
+	function () {
+		remove_filter( 'wp_kses_allowed_html', 'ati_theme_2026_modal_allowed_html', 10 );
+	},
+	12
+);
+
+/*
+ * Print the Gravity Forms hooks bootstrap in <head> on every page. On pages whose
+ * only form sits in a footer modal, Gravity Forms otherwise prints it inline in the
+ * form, where Tour Operator's wp_kses() pass entity-encodes it into a syntax error.
+ */
+add_filter( 'gform_force_hooks_js_output', '__return_true' );
+
+/**
+ * Drop the duplicate Gravity Forms hooks script from rendered forms.
+ *
+ * Gravity Forms also prepends its hooks bootstrap to the form markup
+ * (GFForms::maybe_prepend_hooks_js_script). Tour Operator renders the enquiry
+ * modal while the page body renders (Modals::register_button_modal) and prints
+ * it in wp_footer through wp_kses()/wpautop, which entity-encode `=>` and `&&`
+ * into a syntax error ("Unexpected token ')'") on every page with the modal.
+ * gform_force_hooks_js_output above prints the same script in <head> on every
+ * page with a form, and the script is guarded (`gform||`), so the prepended copy
+ * is redundant wherever it appears.
+ *
+ * @param string $form_string Form markup.
+ * @return string
+ */
+function ati_theme_2026_drop_modal_gform_hooks_js( $form_string ) {
+	if ( is_admin() || wp_doing_ajax() || ! is_string( $form_string ) ) {
+		return $form_string;
+	}
+
+	return preg_replace( '#<script\b[^>]*>\s*var gform;gform\|\|.*?</script>#s', '', $form_string, 1 );
+}
+// After GFForms::maybe_prepend_hooks_js_script(), which prepends at 9999.
+add_filter( 'gform_get_form_filter', 'ati_theme_2026_drop_modal_gform_hooks_js', 10000 );
 
 /**
  * Restore the viewBox attribute on icon-block SVGs inside modals.
@@ -315,6 +635,23 @@ add_action(
 				'.wp-block-hm-popup .wp-block-outermost-icon-block svg:not([viewBox])'
 			).forEach( function ( svg ) {
 				svg.setAttribute( 'viewBox', '0 0 256 256' );
+			} );
+
+			// Tour Operator's dialogs carry no accessible name. Name each one by
+			// its first heading, or by the text of a link that opens it.
+			document.querySelectorAll(
+				'dialog.wp-block-hm-popup:not([aria-label]):not([aria-labelledby])'
+			).forEach( function ( dialog ) {
+				var heading = dialog.querySelector( 'h1, h2, h3, h4' );
+				if ( heading && heading.textContent.trim() ) {
+					heading.id = heading.id || dialog.id + '-title';
+					dialog.setAttribute( 'aria-labelledby', heading.id );
+					return;
+				}
+				var trigger = document.querySelector( '[aria-controls="' + dialog.id + '"], a[href="#' + dialog.id + '"]' );
+				if ( trigger && trigger.textContent.trim() ) {
+					dialog.setAttribute( 'aria-label', trigger.textContent.trim() );
+				}
 			} );
 		})();
 		</script>
@@ -350,46 +687,46 @@ add_action( 'init', 'ati_theme_2026_register_blocks' );
  * @return string Processed HTML with list formatting and icons.
  */
 add_filter(
-    'lsx_to_custom_field_query',
-    function ($return_html, $meta_key, $value, $before, $after) {
-        // Only process included and not_included fields
-        if (!in_array($meta_key, array('included', 'not_included'), true)) {
-            return $return_html;
-        }
+	'lsx_to_custom_field_query',
+	function ( $return_html, $meta_key, $value, $before, $after ) {
+		// Only process included and not_included fields.
+		if ( ! in_array( $meta_key, array( 'included', 'not_included' ), true ) ) {
+			return $return_html;
+		}
 
-        if (empty($value)) {
-            return $return_html;
-        }
+		if ( empty( $value ) ) {
+			return $return_html;
+		}
 
-        // Strip out paragraph tags that WYSIWYG editors often add
-        $processed_value = preg_replace('/<p[^>]*>|<\/p>/i', '', $value);
+		// Strip out paragraph tags that WYSIWYG editors often add.
+		$processed_value = preg_replace( '/<p[^>]*>|<\/p>/i', '', $value );
 
-        // If already contains list markup, keep as-is for now
-        if (preg_match('/<[ou]l[^>]*>/i', $processed_value)) {
-            return $before . $processed_value . $after;
-        }
+		// If already contains list markup, keep as-is for now.
+		if ( preg_match( '/<[ou]l[^>]*>/i', $processed_value ) ) {
+			return $before . $processed_value . $after;
+		}
 
-        // Split by line breaks (handles different line ending types)
-        $lines = preg_split('/\r\n|\r|\n/', $processed_value);
+		// Split by line breaks (handles different line ending types).
+		$lines = preg_split( '/\r\n|\r|\n/', $processed_value );
 
-        // Filter out empty lines
-        $lines = array_filter(array_map('trim', $lines));
+		// Filter out empty lines.
+		$lines = array_filter( array_map( 'trim', $lines ) );
 
-        if (empty($lines)) {
-            return $return_html;
-        }
+		if ( empty( $lines ) ) {
+			return $return_html;
+		}
 
-        // Build unordered list without icons (icons added via render_block filter)
-        $output = '<ul class="lsx-' . esc_attr($meta_key) . '-list">';
-        foreach ($lines as $line) {
-            $output .= '<li>' . wp_kses_post($line) . '</li>';
-        }
-        $output .= '</ul>';
+		// Build unordered list without icons (icons added via render_block filter).
+		$output = '<ul class="lsx-' . esc_attr( $meta_key ) . '-list">';
+		foreach ( $lines as $line ) {
+			$output .= '<li>' . wp_kses_post( $line ) . '</li>';
+		}
+		$output .= '</ul>';
 
-        return $before . $output . $after;
-    },
-    10,
-    5
+		return $before . $output . $after;
+	},
+	10,
+	5
 );
 
 /**
@@ -404,117 +741,129 @@ add_filter(
  * @return string Modified block content with icons.
  */
 add_filter(
-    'render_block',
-    function ($block_content, $block) {
-        // Only process paragraph blocks with LSX post-meta bindings
-        if ('core/paragraph' !== $block['blockName']) {
-            return $block_content;
-        }
+	'render_block',
+	function ( $block_content, $block ) {
+		// Only process paragraph blocks with LSX post-meta bindings.
+		if ( 'core/paragraph' !== $block['blockName'] ) {
+			return $block_content;
+		}
 
-        // Check if this has our list classes
-        $has_included = strpos($block_content, 'lsx-included-list') !== false;
-        $has_excluded = strpos($block_content, 'lsx-not_included-list') !== false;
+		// Check if this has our list classes.
+		$has_included = strpos( $block_content, 'lsx-included-list' ) !== false;
+		$has_excluded = strpos( $block_content, 'lsx-not_included-list' ) !== false;
 
-        if (!$has_included && !$has_excluded) {
-            return $block_content;
-        }
+		if ( ! $has_included && ! $has_excluded ) {
+			return $block_content;
+		}
 
-        // Define icons
-        $check_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
-            . 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-            . '<path d="M9 12.75L11.25 15L15 9.75M21 12C21 16.9706 16.9706 21 12 21'
-            . 'C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 '
-            . '7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" '
-            . 'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+		// Define icons.
+		$check_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
+			. 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+			. '<path d="M9 12.75L11.25 15L15 9.75M21 12C21 16.9706 16.9706 21 12 21'
+			. 'C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 '
+			. '7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" '
+			. 'stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-        $cross_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
-            . 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-            . '<path d="M9.75 9.75L14.25 14.25M14.25 9.75L9.75 14.25M21 12C21 '
-            . '16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 '
-            . '7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" '
-            . 'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
-            . '</svg>';
+		$cross_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
+			. 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+			. '<path d="M9.75 9.75L14.25 14.25M14.25 9.75L9.75 14.25M21 12C21 '
+			. '16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 '
+			. '7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" '
+			. 'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
+			. '</svg>';
 
-        // Inject check icon into included list items
-        if ($has_included) {
-            $block_content = preg_replace_callback(
-                '/<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
-                function ($matches) use ($check_icon) {
-                    $ul_content = $matches[1];
-                    // Add check icon to each <li> in this ul
-                    $ul_content = preg_replace('/(<li>)/i', '$1' . $check_icon, $ul_content);
-                    // Rebuild the ul
-                    // Find the opening <ul ...> tag
-                    preg_match('/^<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>/i', $matches[0], $ul_open);
-                    $ul_tag = $ul_open[0];
-                    return $ul_tag . $ul_content . '</ul>';
-                },
-                $block_content
-            );
-        }
+		// Inject check icon into included list items.
+		if ( $has_included ) {
+			$block_content = preg_replace_callback(
+				'/<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
+				function ( $matches ) use ( $check_icon ) {
+					$ul_content = $matches[1];
+					// Add check icon to each <li> in this ul.
+					$ul_content = preg_replace( '/(<li>)/i', '$1' . $check_icon, $ul_content );
+					// Rebuild the ul
+					// Find the opening <ul ...> tag.
+					preg_match( '/^<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>/i', $matches[0], $ul_open );
+					$ul_tag = $ul_open[0];
+					return $ul_tag . $ul_content . '</ul>';
+				},
+				$block_content
+			);
+		}
 
-        // Inject cross icon into not_included list items
-        if ($has_excluded) {
-            $block_content = preg_replace_callback(
-                '/<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
-                function ($matches) use ($cross_icon) {
-                    $ul_content = $matches[1];
-                    // Add cross icon to each <li> in this ul
-                    $ul_content = preg_replace('/(<li>)/i', '$1' . $cross_icon, $ul_content);
-                    // Rebuild the ul
-                    // Find the opening <ul ...> tag
-                    preg_match('/^<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>/i', $matches[0], $ul_open);
-                    $ul_tag = $ul_open[0];
-                    return $ul_tag . $ul_content . '</ul>';
-                },
-                $block_content
-            );
-        }
+		// Inject cross icon into not_included list items.
+		if ( $has_excluded ) {
+			$block_content = preg_replace_callback(
+				'/<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
+				function ( $matches ) use ( $cross_icon ) {
+					$ul_content = $matches[1];
+					// Add cross icon to each <li> in this ul.
+					$ul_content = preg_replace( '/(<li>)/i', '$1' . $cross_icon, $ul_content );
+					// Rebuild the ul
+					// Find the opening <ul ...> tag.
+					preg_match( '/^<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>/i', $matches[0], $ul_open );
+					$ul_tag = $ul_open[0];
+					return $ul_tag . $ul_content . '</ul>';
+				},
+				$block_content
+			);
+		}
 
-        return $block_content;
-    },
-    10,
-    2
+		return $block_content;
+	},
+	10,
+	2
 );
 
-// Facet Mobile expanding menus
-add_action('wp_head', function () {
-    ?>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        fUtil().on('click', '.flyout-row h3', function() {
-          fUtil(this).closest('.flyout-row').toggleClass('expanded');
-        });
-      });
-    </script>
-<?php });
+// Facet Mobile expanding menus.
+add_action(
+	'wp_head',
+	function () {
+		?>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		// FacetWP only loads fUtil on pages that have facets.
+		if ( typeof fUtil !== 'function' ) {
+			return;
+		}
+		fUtil().on('click', '.flyout-row h3', function() {
+			fUtil(this).closest('.flyout-row').toggleClass('expanded');
+		});
+		});
+	</script>
+		<?php
+	}
+);
 
 
-add_action('wp_head', function () {
-    ?>
-    <script>
-      (function($) {
-        $(function() {
-          if ('object' != typeof FWP) return;
+add_action(
+	'wp_head',
+	function () {
+		?>
+	<script>
+		(function($) {
+		$(function() {
+			if ('object' != typeof FWP) return;
  
-          /* Modify the flyout wrapper HTML */
-          FWP.hooks.addFilter('facetwp/flyout/flyout_html', function(flyout_html) {
-                        return flyout_html.replace(
-                            ' <div class="facetwp-flyout-close">x</div>',
-                            ' <div class="facetwp-flyout-close">'
-                                + '<h3>Filters</h3>'
-                                + '<button type="button" aria-label="Close filters" >'
-                                + '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6L18 18" stroke="#090909" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-                                + '</button>'
-                                + '</div>'
-                        );
-          });
+			/* Modify the flyout wrapper HTML */
+			FWP.hooks.addFilter('facetwp/flyout/flyout_html', function(flyout_html) {
+						return flyout_html.replace(
+							' <div class="facetwp-flyout-close">x</div>',
+							' <div class="facetwp-flyout-close">'
+								+ '<h3>Filters</h3>'
+								+ '<button type="button" aria-label="Close filters" >'
+								+ '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6L18 18" stroke="#090909" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+								+ '</button>'
+								+ '</div>'
+						);
+			});
  
-        });
-      })(jQuery);
-    </script>
-  <?php
-}, 100);
+		});
+		})(jQuery);
+	</script>
+		<?php
+	},
+	100
+);
 
 /**
  * Remove stray <p> wrappers and <br> tags from name fields in GF form 5.

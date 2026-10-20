@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Home Page Destinations Section
- * Slug: home-page-destinations-section
+ * Slug: ati-theme-2026/home-page-destinations-section
  * Description: ATI home page destination image map linking to featured destination archive pages.
  * Inserter: yes
  */
